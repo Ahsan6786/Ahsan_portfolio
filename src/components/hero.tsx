@@ -71,13 +71,13 @@ export function Hero() {
               <Button size="lg" variant="outline" className="font-semibold rounded-full border-foreground/50 hover:bg-foreground/10 px-8 py-6 text-base">MY WORKS</Button>
             </div>
           </div>
-          <div className="relative w-full aspect-square max-w-md mx-auto">
+          <div className="relative w-full aspect-square max-w-md mx-auto bg-black rounded-lg">
             {heroContent.map((content, index) => (
               <Image
                 key={index}
                 alt="Portrait of Clark Thompson"
                 className={cn(
-                  "rounded-lg object-cover transition-opacity duration-1000",
+                  "rounded-lg object-contain transition-opacity duration-1000",
                   { "opacity-100": index === activeIndex, "opacity-0": index !== activeIndex }
                 )}
                 src={content.image}
