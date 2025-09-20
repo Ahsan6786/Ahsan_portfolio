@@ -1,13 +1,14 @@
 export function Footer() {
   return (
-    <footer className="p-4 md:p-6">
-        <div className="container mx-auto flex justify-center items-center">
-            <div className="flex space-x-2">
-                <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-                <span className="w-2 h-2 rounded-full bg-primary"></span>
-                <span className="w-2 h-2 rounded-full bg-gray-400"></span>
-            </div>
-        </div>
+    <footer className="py-8 bg-card text-center">
+      <div className="container mx-auto px-4 md:px-6">
+        <p className="text-2xl font-bold mb-2">&lt;Ahsan/&gt;</p>
+        <p className="text-muted-foreground mb-4">Building digital experiences with passion and precision</p>
+        <p className="text-sm text-muted-foreground">
+          Made with ♥ by Ahsan Imam Khan
+        </p>
+        <p className="text-xs text-muted-foreground mt-2">© 2025 All rights reserved</p>
+      </div>
     </footer>
   );
 }

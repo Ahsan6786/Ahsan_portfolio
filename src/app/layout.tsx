@@ -11,8 +11,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Clark Thompson - Portfolio",
-  description: "A freelance web designer portfolio.",
+  title: "Ahsan Imam Khan - Portfolio",
+  description: "A passionate software developer portfolio.",
 };
 
 export default function RootLayout({
@@ -22,9 +22,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-      </head>
       <body className={cn("font-display antialiased", poppins.variable)}>
         {children}
         <Toaster />
