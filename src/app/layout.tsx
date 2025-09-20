@@ -6,13 +6,13 @@ import { cn } from "@/lib/utils";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-display",
 });
 
 export const metadata: Metadata = {
-  title: "Ahsan Imam Khan - Portfolio",
-  description: "A passionate software developer portfolio.",
+  title: "Clark Thompson - Portfolio",
+  description: "A freelance web designer.",
 };
 
 export default function RootLayout({

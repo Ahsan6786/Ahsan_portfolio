@@ -8,14 +8,14 @@ html {
 
 @layer base {
   :root {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 12%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 4%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 8%;
+    --popover: 0 0% 0%;
     --popover-foreground: 0 0% 98%;
-    --primary: 340 82% 52%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 45 98% 60%;
+    --primary-foreground: 0 0% 0%;
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 15%;
@@ -26,19 +26,19 @@ html {
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 340 82% 52%;
+    --ring: 45 98% 60%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 12%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 4%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 8%;
+    --popover: 0 0% 0%;
     --popover-foreground: 0 0% 98%;
-    --primary: 340 82% 52%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 45 98% 60%;
+    --primary-foreground: 0 0% 0%;
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 15%;
@@ -49,7 +49,7 @@ html {
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 340 82% 52%;
+    --ring: 45 98% 60%;
   }
 }
 
@@ -60,4 +60,34 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes text-pan {
+  0% {
+    color: transparent;
+    background-position: 100% 0;
+  }
+  100% {
+    color: hsl(var(--primary));
+    background-position: 0 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-pan-animation {
+  animation: text-pan 1s ease-out forwards;
+}
+
+.slide-in-animation {
+  animation: slide-in 0.5s ease-out forwards;
 }
