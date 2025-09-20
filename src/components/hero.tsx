@@ -11,14 +11,14 @@ const heroContent = [
     greeting: "HELLO",
     mainText: ["I am ", "Ahsan", "", ""],
     subText: "a web designer",
-    image: "/hero-image-1.jpg",
+    image: "/my-image-1.jpg",
     aiHint: "man portrait",
   },
   {
     greeting: "YEP!",
     mainText: ["I'm a ", "creative mind", " ready to ", "build"],
     subText: "Crafting Digital Experiences",
-    image: "https://picsum.photos/seed/clark2/800/800",
+    image: "/my-image-2.jpg",
     aiHint: "abstract art",
   },
   {
