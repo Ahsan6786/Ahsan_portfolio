@@ -11,7 +11,7 @@ const heroContent = [
     greeting: "HELLO",
     mainText: ["I am ", "Ahsan", "", ""],
     subText: "a web designer",
-    image: "https://picsum.photos/seed/clark1/800/800",
+    image: "/hero-image-1.jpg",
     aiHint: "man portrait",
   },
   {
@@ -81,7 +81,8 @@ export function Hero() {
                   { "opacity-100": index === activeIndex, "opacity-0": index !== activeIndex }
                 )}
                 src={content.image}
-                fill
+                width={800}
+                height={800}
                 data-ai-hint={content.aiHint}
               />
             ))}
