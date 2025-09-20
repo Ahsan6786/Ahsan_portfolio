@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 
 const heroContent = [
   {
-    greeting: "HELLO!",
-    mainText: ["I'm a ", "web designer", " based in ", "London"],
-    subText: "A Freelance Web Designer",
+    greeting: "HELLO",
+    mainText: ["I am ", "Ahsan", "", ""],
+    subText: "a web designer",
     image: "https://picsum.photos/seed/clark1/800/800",
     aiHint: "man portrait",
   },
