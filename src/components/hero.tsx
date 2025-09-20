@@ -77,12 +77,11 @@ export function Hero() {
                 key={index}
                 alt="Portrait of Clark Thompson"
                 className={cn(
-                  "rounded-lg object-cover transition-opacity duration-1000 absolute inset-0",
+                  "rounded-lg object-cover transition-opacity duration-1000",
                   { "opacity-100": index === activeIndex, "opacity-0": index !== activeIndex }
                 )}
                 src={content.image}
-                width={800}
-                height={800}
+                fill
                 data-ai-hint={content.aiHint}
               />
             ))}
