@@ -1,19 +1,13 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
-import { Skills } from "@/components/skills";
-import { Testimonials } from "@/components/testimonials";
-import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
-      <main>
+      <main className="flex-grow flex items-center">
         <Hero />
-        <Skills />
-        <Testimonials />
-        <Contact />
       </main>
       <Footer />
     </div>
