@@ -14,5 +14,9 @@
     "project3": {
         "src": "https://picsum.photos/seed/project3/600/400",
         "aiHint": "code editor"
+    },
+    "contactImage": {
+        "src": "https://picsum.photos/seed/contact/600/600",
+        "aiHint": "man portrait"
     }
 }
