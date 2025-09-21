@@ -50,8 +50,8 @@ export function Hero() {
   const currentContent = heroContent[currentIndex];
 
   return (
-    <section id="home" className="relative flex items-center justify-center min-h-[calc(100vh-80px)] py-20 md:py-32 md:min-h-0 overflow-hidden">
-        <div className="absolute inset-0">
+    <section id="home" className="relative flex items-center justify-center min-h-[calc(100vh-80px)] py-20 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 md:hidden">
             {heroImagesData.map((image, index) => (
                 <Image
                     key={index}
@@ -94,6 +94,21 @@ export function Hero() {
               <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
               <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">MY WORKS</Button>
             </div>
+          </div>
+          <div className="hidden md:block relative h-[500px] w-full">
+            {heroImagesData.map((image, index) => (
+                <Image
+                    key={index}
+                    alt="Hero Image"
+                    src={image.src}
+                    fill
+                    className={cn(
+                        "object-cover object-center rounded-lg transition-opacity duration-1000",
+                        index === currentIndex ? "opacity-100" : "opacity-0"
+                    )}
+                    data-ai-hint={image.aiHint}
+                />
+            ))}
           </div>
         </div>
       </div>
