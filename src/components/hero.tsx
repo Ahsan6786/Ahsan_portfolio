@@ -60,16 +60,15 @@ export function Hero() {
                     src={image.src}
                     fill
                     className={cn(
-                        "object-cover object-center transition-opacity duration-1000 rounded-lg",
+                        "object-cover object-center transition-opacity duration-1000",
                         index === currentIndex ? "opacity-100" : "opacity-0"
                     )}
-                    style={image.style || {}}
                     data-ai-hint={image.aiHint}
                     priority={index === 0}
                 />
             ))}
             <div className={cn(
-                "absolute inset-0 rounded-lg",
+                "absolute inset-0",
                 isThirdImage 
                 ? "bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.3)_0%,rgba(0,0,0,0.9)_100%)]" 
                 : "bg-gradient-to-t from-black/70 to-black/30"
@@ -117,7 +116,6 @@ export function Hero() {
                         "object-cover object-center rounded-lg transition-opacity duration-1000",
                         index === currentIndex ? "opacity-100" : "opacity-0"
                     )}
-                    style={image.style || {}}
                     data-ai-hint={image.aiHint}
                 />
             ))}

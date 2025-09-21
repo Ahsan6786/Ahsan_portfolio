@@ -6,17 +6,11 @@
     },
     "heroImage2": {
         "src": "/my-image-2.png",
-        "aiHint": "abstract design",
-        "style": {
-            "transform": "scale(1.1)"
-        }
+        "aiHint": "abstract design"
     },
     "heroImage3": {
         "src": "/my-image-3.png",
-        "aiHint": "modern art",
-        "style": {
-            "transform": "scale(1.1)"
-        }
+        "aiHint": "modern art"
     },
     "aboutImage": {
         "src": "/about.jpg",
