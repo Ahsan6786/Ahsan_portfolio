@@ -10,7 +10,7 @@ import placeholderData from '@/lib/placeholder-images.json';
 const heroImagesData = [
     placeholderData.heroImage,
     placeholderData.heroImage2,
-    placeholderData.heroImage,
+    placeholderData.heroImage3,
 ];
 
 const heroContent = [

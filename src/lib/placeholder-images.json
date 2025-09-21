@@ -8,6 +8,10 @@
         "src": "/my-image-2.png",
         "aiHint": "abstract design"
     },
+    "heroImage3": {
+        "src": "/my-image-3.jpeg",
+        "aiHint": "modern art"
+    },
     "aboutImage": {
         "src": "/about.jpg",
         "aiHint": "man portrait"
