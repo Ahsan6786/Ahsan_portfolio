@@ -98,8 +98,12 @@ export function Hero() {
             </h2>
             <p className="text-2xl md:text-3xl font-light mt-2">{currentContent.subText}</p>
             <div className="mt-8 flex justify-center md:justify-start space-x-4">
-              <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
-              <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">MY WORKS</Button>
+              <Link href="#contact">
+                <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
+              </Link>
+              <Link href="#projects">
+                <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">MY WORKS</Button>
+              </Link>
             </div>
           </div>
           <div className="hidden md:block relative h-[500px] w-full">
