@@ -55,9 +55,9 @@ export function Header() {
   }, []);
 
   return (
-    <header className="p-4 md:p-6 sticky top-0 bg-background/80 backdrop-blur-sm z-50">
-        <div className="container mx-auto flex justify-between items-center">
-            <Link href="#" className="text-2xl font-bold">AHSAN</Link>
+    <header className="p-4 md:p-6 sticky top-0 bg-background/80 backdrop-blur-sm z-50 flex justify-between items-center w-full">
+        <Link href="#" className="text-2xl font-bold ml-4">AHSAN</Link>
+        <div className="container mx-auto flex justify-center items-center">
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
                 {navLinks.map((link) => (
                     <Link
@@ -69,34 +69,34 @@ export function Header() {
                     </Link>
                 ))}
             </nav>
-            <div className="md:hidden">
-              <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                      <Menu />
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="left">
-                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                    <div className="p-6">
-                      <Link href="#" className="text-2xl font-bold mb-8 block">AHSAN</Link>
-                      <nav className="flex flex-col space-y-4">
-                          {navLinks.map((link) => (
-                              <SheetClose key={link.label} asChild>
-                                <Link
-                                    href={link.href}
-                                    className={`text-lg hover:text-primary transition-colors ${activeLink === link.label ? 'text-primary' : ''}`}
-                                    onClick={() => setIsSheetOpen(false)}
-                                >
-                                    {link.label}
-                                </Link>
-                              </SheetClose>
-                          ))}
-                      </nav>
-                    </div>
-                </SheetContent>
-              </Sheet>
-            </div>
+        </div>
+        <div className="md:hidden mr-4">
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                  <Menu />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left">
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                <div className="p-6">
+                  <Link href="#" className="text-2xl font-bold mb-8 block">AHSAN</Link>
+                  <nav className="flex flex-col space-y-4">
+                      {navLinks.map((link) => (
+                          <SheetClose key={link.label} asChild>
+                            <Link
+                                href={link.href}
+                                className={`text-lg hover:text-primary transition-colors ${activeLink === link.label ? 'text-primary' : ''}`}
+                                onClick={() => setIsSheetOpen(false)}
+                            >
+                                {link.label}
+                            </Link>
+                          </SheetClose>
+                      ))}
+                  </nav>
+                </div>
+            </SheetContent>
+          </Sheet>
         </div>
     </header>
   );
