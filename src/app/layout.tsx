@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Clark Thompson - Portfolio",
+  title: "Ahsan Thompson - Portfolio",
   description: "A freelance web designer.",
 };
 

@@ -20,7 +20,7 @@ export function Header() {
   return (
     <header className="p-4 md:p-6 sticky top-0 bg-background/80 backdrop-blur-sm z-50">
         <div className="container mx-auto flex justify-between items-center">
-            <Link href="#" className="text-2xl font-bold">CLARK</Link>
+            <Link href="#" className="text-2xl font-bold">AHSAN</Link>
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
                 {navLinks.map((link, index) => (
                     <Link

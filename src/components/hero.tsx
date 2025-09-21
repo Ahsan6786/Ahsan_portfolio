@@ -77,7 +77,7 @@ export function Hero() {
           <div className="relative w-full aspect-square max-w-md mx-auto bg-black rounded-lg">
               <div className="relative w-full h-full">
                 <Image
-                    alt="Portrait of Clark Thompson"
+                    alt="Portrait of Ahsan Thompson"
                     className={`rounded-lg object-contain transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}
                     src={currentContent.image}
                     fill
