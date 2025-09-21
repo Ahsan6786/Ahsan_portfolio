@@ -10,14 +10,14 @@ const projects = [
     description: "A decentralized application built on blockchain technology, featuring smart contracts and Web3 integration for a seamless user experience.",
     tags: ["React", "Solidity", "Web3.js", "Blockchain"],
     image: placeholderData.project1,
-    liveDemo: "#"
+    liveDemo: "https://ahsanverse.vercel.app/"
   },
   {
     title: "BJP News Archive",
     description: "A comprehensive news archive system that collects, categorizes, and displays news articles with search functionality and user-friendly interface.",
     tags: ["JavaScript", "React", "API", "Database"],
     image: placeholderData.project2,
-    liveDemo: "#"
+    liveDemo: "https://bjp-news-archive.vercel.app/"
   },
   {
     title: "Portfolio",
