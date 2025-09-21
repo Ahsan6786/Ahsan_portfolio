@@ -74,16 +74,14 @@ export function Hero() {
               <Button size="lg" variant="outline" className="font-semibold rounded-full border-foreground/50 hover:bg-foreground/10 px-8 py-6 text-base">MY WORKS</Button>
             </div>
           </div>
-          <div className="relative w-full aspect-square max-w-md mx-auto bg-black rounded-lg">
-              <div className="relative w-full h-full">
-                <Image
-                    alt="Portrait of Ahsan Thompson"
-                    className={`rounded-lg object-contain transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}
-                    src={currentContent.image}
-                    fill
-                    data-ai-hint={currentContent.aiHint}
-                />
-              </div>
+          <div className="relative w-full h-full min-h-[400px] md:min-h-[500px]">
+            <Image
+                alt="Portrait of Ahsan Thompson"
+                className={`rounded-lg object-cover transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}
+                src={currentContent.image}
+                fill
+                data-ai-hint={currentContent.aiHint}
+            />
           </div>
         </div>
       </div>
