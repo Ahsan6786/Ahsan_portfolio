@@ -33,10 +33,15 @@ const heroContent = [
 
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
+        setIsAnimating(true);
+        setTimeout(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
+            setIsAnimating(false);
+        }, 500);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -47,28 +52,37 @@ export function Hero() {
 
   return (
     <section id="home" className="relative flex items-center justify-center min-h-[calc(100vh-80px)] py-20 md:py-32 md:min-h-0">
-        <div className="absolute inset-0 md:hidden">
-            <Image
-            alt="Background"
-            src={currentImage.src}
-            fill
-            className="object-cover transition-opacity duration-1000"
-            data-ai-hint={currentImage.aiHint}
-            key={currentIndex}
-            />
+        <div className="absolute inset-0">
+            {heroImagesData.map((image, index) => (
+                <Image
+                    key={index}
+                    alt="Background"
+                    src={image.src}
+                    fill
+                    className={cn(
+                        "object-cover transition-opacity duration-1000",
+                        index === currentIndex ? "opacity-100" : "opacity-0"
+                    )}
+                    data-ai-hint={image.aiHint}
+                    priority={index === 0}
+                />
+            ))}
             <div className="absolute inset-0 bg-black/50" />
         </div>
       <div className="container relative mx-auto px-4 md:px-6 z-10">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className={`text-center md:text-left`}>
-            <p className="text-lg font-medium mb-2 slide-in-animation">{currentContent.greeting}</p>
+          <div className={cn(
+              "text-center md:text-left transition-all duration-500",
+              isAnimating ? "opacity-0 -translate-y-4" : "opacity-100 translate-y-0"
+          )}>
+            <p className="text-lg font-medium mb-2">{currentContent.greeting}</p>
             <h2 className="text-5xl md:text-6xl font-bold leading-tight">
               {currentContent.mainText.map((text, index) => (
                 <span
                   key={index}
                   className={cn(
                     "bg-gradient-to-r from-primary to-primary bg-no-repeat bg-clip-text",
-                     index === 1 ? 'text-pan-animation' : index % 2 === 0 ? 'text-foreground' : ''
+                     index === 1 ? 'text-pan-animation' : 'text-foreground'
                   )}
                   style={index === 1 ? { backgroundSize: '0% 100%'} : {}}
                 >
@@ -76,21 +90,27 @@ export function Hero() {
                 </span>
               ))}
             </h2>
-            <p className="text-2xl md:text-3xl font-light mt-2 slide-in-animation">{currentContent.subText}</p>
-            <div className="mt-8 flex justify-center md:justify-start space-x-4 slide-in-animation">
+            <p className="text-2xl md:text-3xl font-light mt-2">{currentContent.subText}</p>
+            <div className="mt-8 flex justify-center md:justify-start space-x-4">
               <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
               <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">MY WORKS</Button>
             </div>
           </div>
           <div className="hidden md:block relative w-full aspect-square max-w-md mx-auto">
-             <Image
-              alt="Hero Image"
-              className="rounded-lg object-cover transition-opacity duration-1000"
-              src={currentImage.src}
-              fill
-              data-ai-hint={currentImage.aiHint}
-              key={currentIndex}
-            />
+             {heroImagesData.map((image, index) => (
+                <Image
+                    key={index}
+                    alt="Hero Image"
+                    className={cn(
+                        "rounded-lg object-cover transition-opacity duration-1000 absolute inset-0",
+                        index === currentIndex ? "opacity-100" : "opacity-0"
+                    )}
+                    src={image.src}
+                    fill
+                    data-ai-hint={image.aiHint}
+                    priority={index === 0}
+                />
+             ))}
           </div>
         </div>
       </div>
