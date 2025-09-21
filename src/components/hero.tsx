@@ -29,15 +29,10 @@ const heroContent = [
 
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-        setIsAnimating(true);
-        setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
-            setIsAnimating(false);
-        }, 500);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -46,7 +41,7 @@ export function Hero() {
   const currentContent = heroContent[currentIndex];
 
   return (
-    <section id="home" className="relative flex items-center min-h-[calc(100vh-80px)] md:min-h-0 py-20 md:py-32 overflow-hidden">
+    <section id="home" className="relative flex items-center justify-center min-h-[calc(100vh-80px)] py-20 md:py-32 md:min-h-0">
         <div className="absolute inset-0 md:hidden">
             <Image
             alt="Background"
@@ -59,7 +54,7 @@ export function Hero() {
         </div>
       <div className="container relative mx-auto px-4 md:px-6 z-10">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className={`text-center md:text-left transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
+          <div className={`text-center md:text-left`}>
             <p className="text-lg font-medium mb-2 slide-in-animation">{currentContent.greeting}</p>
             <h2 className="text-5xl md:text-6xl font-bold leading-tight">
               {currentContent.mainText.map((text, index) => (
