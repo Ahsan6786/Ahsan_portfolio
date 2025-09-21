@@ -8,7 +8,7 @@
         "src": "/my-image-2.png",
         "aiHint": "abstract design",
         "style": {
-            "transform": "translateX(20px)"
+            "transform": "translateX(10px)"
         }
     },
     "heroImage3": {
