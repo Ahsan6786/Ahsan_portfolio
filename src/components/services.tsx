@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, FlaskConical, Lightbulb } from "lucide-react";
+import { Search, Lightbulb, TrendingUp } from "lucide-react";
 
 const services = [
   {
@@ -8,8 +8,8 @@ const services = [
     title: "WEB DESIGN",
   },
   {
-    icon: <FlaskConical className="w-12 h-12 text-primary" />,
-    title: "PHOTOGRAPHY",
+    icon: <TrendingUp className="w-12 h-12 text-primary" />,
+    title: "SEO",
   },
   {
     icon: <Lightbulb className="w-12 h-12 text-primary" />,
