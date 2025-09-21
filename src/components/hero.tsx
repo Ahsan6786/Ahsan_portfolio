@@ -24,11 +24,6 @@ const heroContent = [
     },
 ];
 
-const heroImage = {
-    src: "/my-image-1.jpg",
-    aiHint: "man portrait",
-};
-
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -48,21 +43,10 @@ export function Hero() {
   const currentContent = heroContent[currentIndex];
 
   return (
-    <section id="home" className="relative flex items-center min-h-[calc(100vh-80px)] md:min-h-0 py-10 md:py-20 overflow-hidden">
-      <div className="absolute inset-0 md:hidden">
-          <Image
-              alt="Portrait of Ahsan Thompson"
-              className="object-cover"
-              src={heroImage.src}
-              fill
-              data-ai-hint={heroImage.aiHint}
-              priority
-          />
-          <div className="absolute inset-0 bg-black/50"></div>
-      </div>
+    <section id="home" className="relative flex items-center min-h-[calc(100vh-80px)] md:min-h-0 py-20 md:py-32 overflow-hidden">
       <div className="container relative mx-auto px-4 md:px-6 z-10">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className={`text-center md:text-left transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
+        <div className="w-full">
+          <div className={`text-center transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
             <p className="text-lg font-medium mb-2 slide-in-animation">{currentContent.greeting}</p>
             <h2 className="text-5xl md:text-6xl font-bold leading-tight">
               {currentContent.mainText.map((text, index) => (
@@ -70,7 +54,7 @@ export function Hero() {
                   key={index}
                   className={cn(
                     "bg-gradient-to-r from-primary to-primary bg-no-repeat bg-clip-text",
-                     index === 1 ? 'text-pan-animation' : index % 2 === 0 ? 'text-white md:text-foreground' : ''
+                     index === 1 ? 'text-pan-animation' : index % 2 === 0 ? 'text-foreground' : ''
                   )}
                   style={index === 1 ? { backgroundSize: '0% 100%'} : {}}
                 >
@@ -79,19 +63,10 @@ export function Hero() {
               ))}
             </h2>
             <p className="text-2xl md:text-3xl font-light mt-2 slide-in-animation">{currentContent.subText}</p>
-            <div className="mt-8 flex justify-center md:justify-start space-x-4 slide-in-animation">
+            <div className="mt-8 flex justify-center space-x-4 slide-in-animation">
               <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
               <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">MY WORKS</Button>
             </div>
-          </div>
-          <div className="relative w-full h-full min-h-[400px] md:min-h-[500px] hidden md:block">
-            <Image
-                alt="Portrait of Ahsan Thompson"
-                className="rounded-lg object-cover"
-                src={heroImage.src}
-                fill
-                data-ai-hint={heroImage.aiHint}
-            />
           </div>
         </div>
       </div>
