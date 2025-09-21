@@ -27,6 +27,12 @@ export function Certificates() {
                 data-ai-hint={certificateImage.aiHint}
             />
         </div>
+        <div className="text-center mt-8">
+            <h3 className="text-2xl font-bold">Python Programming</h3>
+            <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
+                This certificate validates my proficiency in Python, covering fundamental to advanced concepts of the language.
+            </p>
+        </div>
       </div>
     </section>
   );
