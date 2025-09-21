@@ -30,12 +30,12 @@ export function About() {
             </div>
              <p className="text-lg text-muted-foreground mb-6">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8 text-lg">
-                <p><span className="font-bold">Name:</span> Ahsan Imam Khan</p>
-                <p><span className="font-bold">Date of birth:</span> September 16, 2005</p>
-                <p><span className="font-bold">Address:</span> Maharashtra Pune</p>
-                <p><span className="font-bold">Zip code:</span> 411046</p>
-                <p><span className="font-bold">Email:</span> ahsanimamkhan06@gmail.com</p>
-                <p><span className="font-bold">Phone:</span> +91 9162248786</p>
+                <p><span className="font-bold text-foreground">Name:</span> <span className="text-muted-foreground">Ahsan Imam Khan</span></p>
+                <p><span className="font-bold text-foreground">Date of birth:</span> <span className="text-muted-foreground">September 16, 2005</span></p>
+                <p><span className="font-bold text-foreground">Address:</span> <span className="text-muted-foreground">Maharashtra Pune</span></p>
+                <p><span className="font-bold text-foreground">Zip code:</span> <span className="text-muted-foreground">411046</span></p>
+                <p><span className="font-bold text-foreground">Email:</span> <span className="text-muted-foreground">ahsanimamkhan06@gmail.com</span></p>
+                <p><span className="font-bold text-foreground">Phone:</span> <span className="text-muted-foreground">+91 9162248786</span></p>
             </div>
             <p className="text-2xl text-primary font-bold mb-6">120 Projects complete</p>
             <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">
