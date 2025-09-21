@@ -3,6 +3,12 @@ import React from 'react';
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu } from 'lucide-react';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose
+} from "@/components/ui/sheet";
 
 const navLinks = [
     { href: "#home", label: "Home" },
@@ -15,6 +21,8 @@ const navLinks = [
 
 export function Header() {
   const [activeLink, setActiveLink] = React.useState('Home');
+  const [isSheetOpen, setIsSheetOpen] = React.useState(false);
+
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -22,11 +30,22 @@ export function Header() {
       const sections = validNavLinks.map(link => document.querySelector(link.href));
       const scrollPosition = window.scrollY + 150;
 
-      sections.forEach((section, index) => {
+      let currentSection = 'Home';
+      for (const section of sections) {
         if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
-          setActiveLink(validNavLinks[index].label);
+           const matchingLink = validNavLinks.find(link => link.href === `#${section.id}`);
+           if (matchingLink) {
+            currentSection = matchingLink.label;
+           }
+           break;
         }
-      });
+      }
+      const homeSection = document.querySelector('#home');
+      if (homeSection && window.scrollY < homeSection.offsetTop) {
+        currentSection = 'Home';
+      }
+
+      setActiveLink(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -48,9 +67,33 @@ export function Header() {
                     </Link>
                 ))}
             </nav>
-            <Button className="md:hidden" variant="ghost" size="icon">
-                <Menu />
-            </Button>
+            <div className="md:hidden">
+              <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                      <Menu />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left">
+                    <div className="p-6">
+                      <Link href="#" className="text-2xl font-bold mb-8 block">AHSAN</Link>
+                      <nav className="flex flex-col space-y-4">
+                          {navLinks.map((link) => (
+                              <SheetClose key={link.label} asChild>
+                                <Link
+                                    href={link.href}
+                                    className={`text-lg hover:text-primary transition-colors ${activeLink === link.label ? 'text-primary' : ''}`}
+                                    onClick={() => setIsSheetOpen(false)}
+                                >
+                                    {link.label}
+                                </Link>
+                              </SheetClose>
+                          ))}
+                      </nav>
+                    </div>
+                </SheetContent>
+              </Sheet>
+            </div>
         </div>
     </header>
   );
