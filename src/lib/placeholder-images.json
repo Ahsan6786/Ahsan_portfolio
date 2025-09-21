@@ -5,11 +5,7 @@
     },
     "heroImage2": {
         "src": "/my-image-2.png",
-        "aiHint": "abstract design",
-        "style": {
-            "objectPosition": "right",
-            "transform": "scale(1.1)"
-        }
+        "aiHint": "abstract design"
     },
     "heroImage3": {
         "src": "/my-image-3.jpeg",
