@@ -28,7 +28,7 @@ export function About() {
                 <p><span className="font-bold">Name:</span> Ahsan Imam Khan</p>
                 <p><span className="font-bold">Date of birth:</span> September 16, 2005</p>
                 <p><span className="font-bold">Address:</span> Maharashtra Pune</p>
-                <p><span className="font-bold">Zip code:</span> 1000</p>
+                <p><span className="font-bold">Zip code:</span> 411046</p>
                 <p><span className="font-bold">Email:</span> ahsanimamkhan06@gmail.com</p>
                 <p><span className="font-bold">Phone:</span> +91 9162248786</p>
             </div>
