@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Menu } from 'lucide-react';
 
 const navLinks = [
-    { href: "#", label: "Home" },
+    { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#resume", label: "Resume" },
     { href: "#services", label: "Services" },
@@ -20,12 +20,13 @@ export function Header() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const sections = navLinks.map(link => document.querySelector(link.href.startsWith('#') ? link.href : ''));
+      const validNavLinks = navLinks.filter(link => link.href.length > 1 && link.href.startsWith('#'));
+      const sections = validNavLinks.map(link => document.querySelector(link.href));
       const scrollPosition = window.scrollY + 150;
 
       sections.forEach((section, index) => {
         if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
-          setActiveLink(navLinks[index].label);
+          setActiveLink(validNavLinks[index].label);
         }
       });
     };
