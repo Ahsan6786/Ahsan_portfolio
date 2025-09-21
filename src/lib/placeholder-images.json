@@ -6,10 +6,7 @@
     },
     "heroImage2": {
         "src": "/my-image-2.png",
-        "aiHint": "abstract design",
-        "style": {
-            "transform": "translateX(10px)"
-        }
+        "aiHint": "abstract design"
     },
     "heroImage3": {
         "src": "/my-image-3.jpeg",
@@ -38,5 +35,9 @@
     "contactImage": {
         "src": "https://picsum.photos/seed/contact/600/600",
         "aiHint": "man portrait"
+    },
+    "certificate1": {
+        "src": "/certificate1.png",
+        "aiHint": "certificate document"
     }
 }
