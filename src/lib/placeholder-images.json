@@ -1,3 +1,4 @@
+
 {
     "heroImage": {
         "src": "/my-image-1.png",
@@ -5,7 +6,10 @@
     },
     "heroImage2": {
         "src": "/my-image-2.png",
-        "aiHint": "abstract design"
+        "aiHint": "abstract design",
+        "style": {
+            "transform": "translateX(20px)"
+        }
     },
     "heroImage3": {
         "src": "/my-image-3.jpeg",
