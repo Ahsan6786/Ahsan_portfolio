@@ -11,24 +11,23 @@ const heroContent = [
         greeting: "HELLO",
         mainText: ["I am ", "Ahsan", "", ""],
         subText: "a web designer",
-        image: "/my-image-1.jpg",
-        aiHint: "man portrait",
     },
     {
         greeting: "YEP!",
         mainText: ["I'm a ", "creative mind", " ready to ", "build"],
         subText: "Crafting Digital Experiences",
-        image: "/my-image-2.jpg",
-        aiHint: "abstract art",
     },
     {
         greeting: "GO!",
         mainText: ["Let's create", " something amazing", " together"],
         subText: "Your Vision, My Code",
-        image: "/my-image-3.jpg",
-        aiHint: "teamwork concept",
     },
 ];
+
+const heroImage = {
+    src: "/my-image-1.jpg",
+    aiHint: "man portrait",
+};
 
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -53,10 +52,10 @@ export function Hero() {
       <div className="absolute inset-0 md:hidden">
           <Image
               alt="Portrait of Ahsan Thompson"
-              className={`object-cover transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}
-              src={currentContent.image}
+              className="object-cover"
+              src={heroImage.src}
               fill
-              data-ai-hint={currentContent.aiHint}
+              data-ai-hint={heroImage.aiHint}
               priority
           />
           <div className="absolute inset-0 bg-black/50"></div>
@@ -88,10 +87,10 @@ export function Hero() {
           <div className="relative w-full h-full min-h-[400px] md:min-h-[500px] hidden md:block">
             <Image
                 alt="Portrait of Ahsan Thompson"
-                className={`rounded-lg object-cover transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}
-                src={currentContent.image}
+                className="rounded-lg object-cover"
+                src={heroImage.src}
                 fill
-                data-ai-hint={currentContent.aiHint}
+                data-ai-hint={heroImage.aiHint}
             />
           </div>
         </div>
