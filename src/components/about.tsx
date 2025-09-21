@@ -25,7 +25,7 @@ export function About() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
              <p className="text-lg text-muted-foreground mb-6">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8 text-lg">
-                <p><span className="font-bold">Name:</span> Ahsan Thompson</p>
+                <p><span className="font-bold">Name:</span> Ahsan Imam Khan</p>
                 <p><span className="font-bold">Date of birth:</span> September 16, 2005</p>
                 <p><span className="font-bold">Address:</span> Maharashtra Pune</p>
                 <p><span className="font-bold">Zip code:</span> 1000</p>
