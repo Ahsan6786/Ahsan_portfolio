@@ -62,6 +62,7 @@ export function Hero() {
                         "object-cover object-center transition-opacity duration-1000",
                         index === currentIndex ? "opacity-100" : "opacity-0"
                     )}
+                    style={image.style || {}}
                     data-ai-hint={image.aiHint}
                     priority={index === 0}
                 />
@@ -106,6 +107,7 @@ export function Hero() {
                         "object-cover object-center rounded-lg transition-opacity duration-1000",
                         index === currentIndex ? "opacity-100" : "opacity-0"
                     )}
+                    style={image.style || {}}
                     data-ai-hint={image.aiHint}
                 />
             ))}
