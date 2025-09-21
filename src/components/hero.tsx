@@ -7,7 +7,11 @@ import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import placeholderData from '@/lib/placeholder-images.json';
 
-const heroImageData = placeholderData.heroImage;
+const heroImagesData = [
+    placeholderData.heroImage,
+    placeholderData.heroImage2,
+    placeholderData.heroImage,
+];
 
 const heroContent = [
     {
@@ -39,16 +43,18 @@ export function Hero() {
   }, []);
 
   const currentContent = heroContent[currentIndex];
+  const currentImage = heroImagesData[currentIndex];
 
   return (
     <section id="home" className="relative flex items-center justify-center min-h-[calc(100vh-80px)] py-20 md:py-32 md:min-h-0">
         <div className="absolute inset-0 md:hidden">
             <Image
             alt="Background"
-            src={heroImageData.src}
+            src={currentImage.src}
             fill
-            className="object-cover"
-            data-ai-hint={heroImageData.aiHint}
+            className="object-cover transition-opacity duration-1000"
+            data-ai-hint={currentImage.aiHint}
+            key={currentIndex}
             />
             <div className="absolute inset-0 bg-black/50" />
         </div>
@@ -79,10 +85,11 @@ export function Hero() {
           <div className="hidden md:block relative w-full aspect-square max-w-md mx-auto">
              <Image
               alt="Hero Image"
-              className="rounded-lg object-cover"
-              src={heroImageData.src}
+              className="rounded-lg object-cover transition-opacity duration-1000"
+              src={currentImage.src}
               fill
-              data-ai-hint={heroImageData.aiHint}
+              data-ai-hint={currentImage.aiHint}
+              key={currentIndex}
             />
           </div>
         </div>

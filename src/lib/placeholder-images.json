@@ -4,6 +4,10 @@
         "src": "/my-image-1.png",
         "aiHint": "abstract background"
     },
+    "heroImage2": {
+        "src": "/my-image-2.png",
+        "aiHint": "abstract design"
+    },
     "aboutImage": {
         "src": "/about.jpg",
         "aiHint": "man portrait"
