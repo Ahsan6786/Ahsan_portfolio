@@ -37,7 +37,7 @@ export function About() {
                 <p><span className="font-bold text-foreground">Email:</span> <span className="text-muted-foreground">ahsanimamkhan06@gmail.com</span></p>
                 <p><span className="font-bold text-foreground">Phone:</span> <span className="text-muted-foreground">+91 9162248786</span></p>
             </div>
-            <p className="text-2xl text-primary font-bold mb-6">120 Projects complete</p>
+            <p className="text-2xl text-primary font-bold mb-6">6 Projects complete</p>
             <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">
               HIRE ME
             </Button>
