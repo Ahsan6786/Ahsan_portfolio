@@ -15,6 +15,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
+import { db } from "@/lib/firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -43,13 +45,26 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const docRef = await addDoc(collection(db, "contacts"), {
+        ...values,
+        createdAt: new Date(),
+      });
+      console.log("Document written with ID: ", docRef.id);
+      toast({
+        title: "Message Sent!",
+        description: "Thanks for reaching out. Your message has been stored.",
+      });
+      form.reset();
+    } catch (e) {
+      console.error("Error adding document: ", e);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    }
   }
 
   return (
