@@ -11,7 +11,7 @@ export function About() {
     <section id="about" className="py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-center">
-          <div className="relative w-full aspect-square max-w-md mx-auto">
+          <div className="relative w-full aspect-square mx-auto">
             <Image
               alt="About Me Image"
               className="rounded-lg object-cover"
