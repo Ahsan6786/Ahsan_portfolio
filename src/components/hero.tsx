@@ -59,7 +59,7 @@ export function Hero() {
                     src={image.src}
                     fill
                     className={cn(
-                        "object-cover object-center transition-opacity duration-1000",
+                        "object-cover object-center transition-opacity duration-1000 rounded-lg",
                         index === currentIndex ? "opacity-100" : "opacity-0"
                     )}
                     style={image.style || {}}
@@ -67,7 +67,7 @@ export function Hero() {
                     priority={index === 0}
                 />
             ))}
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30 rounded-lg" />
         </div>
       <div className="container relative mx-auto px-4 md:px-6 z-10">
         <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -111,6 +111,7 @@ export function Hero() {
                     data-ai-hint={image.aiHint}
                 />
             ))}
+             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent rounded-lg" />
           </div>
         </div>
       </div>
