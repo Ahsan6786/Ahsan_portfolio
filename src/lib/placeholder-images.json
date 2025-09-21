@@ -2,5 +2,17 @@
     "aboutImage": {
         "src": "https://picsum.photos/seed/about/600/600",
         "aiHint": "man portrait"
+    },
+    "project1": {
+        "src": "https://picsum.photos/seed/project1/600/400",
+        "aiHint": "blockchain technology"
+    },
+    "project2": {
+        "src": "https://picsum.photos/seed/project2/600/400",
+        "aiHint": "news archive"
+    },
+    "project3": {
+        "src": "https://picsum.photos/seed/project3/600/400",
+        "aiHint": "code editor"
     }
 }
