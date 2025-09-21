@@ -1,5 +1,9 @@
 
 {
+    "heroImage": {
+        "src": "/my-image-1.png",
+        "aiHint": "abstract background"
+    },
     "aboutImage": {
         "src": "/about.jpg",
         "aiHint": "man portrait"

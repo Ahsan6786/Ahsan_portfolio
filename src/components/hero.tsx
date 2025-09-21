@@ -5,6 +5,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import placeholderData from '@/lib/placeholder-images.json';
+
+const heroImageData = placeholderData.heroImage;
 
 const heroContent = [
     {
@@ -44,9 +47,19 @@ export function Hero() {
 
   return (
     <section id="home" className="relative flex items-center min-h-[calc(100vh-80px)] md:min-h-0 py-20 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 md:hidden">
+            <Image
+            alt="Background"
+            src={heroImageData.src}
+            fill
+            className="object-cover"
+            data-ai-hint={heroImageData.aiHint}
+            />
+            <div className="absolute inset-0 bg-black/50" />
+        </div>
       <div className="container relative mx-auto px-4 md:px-6 z-10">
-        <div className="w-full">
-          <div className={`text-center transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <div className={`text-center md:text-left transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
             <p className="text-lg font-medium mb-2 slide-in-animation">{currentContent.greeting}</p>
             <h2 className="text-5xl md:text-6xl font-bold leading-tight">
               {currentContent.mainText.map((text, index) => (
@@ -63,10 +76,19 @@ export function Hero() {
               ))}
             </h2>
             <p className="text-2xl md:text-3xl font-light mt-2 slide-in-animation">{currentContent.subText}</p>
-            <div className="mt-8 flex justify-center space-x-4 slide-in-animation">
+            <div className="mt-8 flex justify-center md:justify-start space-x-4 slide-in-animation">
               <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
               <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">MY WORKS</Button>
             </div>
+          </div>
+          <div className="hidden md:block relative w-full aspect-square max-w-md mx-auto">
+             <Image
+              alt="Hero Image"
+              className="rounded-lg object-cover"
+              src={heroImageData.src}
+              fill
+              data-ai-hint={heroImageData.aiHint}
+            />
           </div>
         </div>
       </div>
