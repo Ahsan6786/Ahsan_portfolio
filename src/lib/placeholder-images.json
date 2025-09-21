@@ -1,7 +1,7 @@
 
 {
     "aboutImage": {
-        "src": "https://picsum.photos/seed/about/600/600",
+        "src": "/about.jpg",
         "aiHint": "man portrait"
     },
     "project1": {
@@ -17,7 +17,7 @@
         "aiHint": "code editor"
     },
     "project4": {
-        "src": "https://picsum.photos/seed/project4/600/400",
+        "src": "/img4.png",
         "aiHint": "mental wellness"
     },
     "contactImage": {
