@@ -42,16 +42,15 @@ export function Hero() {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
             setIsAnimating(false);
         }, 500);
-    }, 5000);
+    }, 5500);
 
     return () => clearInterval(interval);
   }, []);
 
   const currentContent = heroContent[currentIndex];
-  const currentImage = heroImagesData[currentIndex];
 
   return (
-    <section id="home" className="relative flex items-center justify-center min-h-[calc(100vh-80px)] py-20 md:py-32 md:min-h-0">
+    <section id="home" className="relative flex items-center justify-center min-h-[calc(100vh-80px)] py-20 md:py-32 md:min-h-0 overflow-hidden">
         <div className="absolute inset-0">
             {heroImagesData.map((image, index) => (
                 <Image
@@ -60,7 +59,7 @@ export function Hero() {
                     src={image.src}
                     fill
                     className={cn(
-                        "object-cover transition-opacity duration-1000",
+                        "object-cover object-center transition-opacity duration-1000",
                         index === currentIndex ? "opacity-100" : "opacity-0"
                     )}
                     data-ai-hint={image.aiHint}
@@ -95,22 +94,6 @@ export function Hero() {
               <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
               <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">MY WORKS</Button>
             </div>
-          </div>
-          <div className="hidden md:block relative w-full aspect-square max-w-md mx-auto">
-             {heroImagesData.map((image, index) => (
-                <Image
-                    key={index}
-                    alt="Hero Image"
-                    className={cn(
-                        "rounded-lg object-cover transition-opacity duration-1000 absolute inset-0",
-                        index === currentIndex ? "opacity-100" : "opacity-0"
-                    )}
-                    src={image.src}
-                    fill
-                    data-ai-hint={image.aiHint}
-                    priority={index === 0}
-                />
-             ))}
           </div>
         </div>
       </div>
