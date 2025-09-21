@@ -7,7 +7,8 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
-  SheetClose
+  SheetClose,
+  SheetTitle,
 } from "@/components/ui/sheet";
 
 const navLinks = [
@@ -75,6 +76,7 @@ export function Header() {
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="left">
+                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                     <div className="p-6">
                       <Link href="#" className="text-2xl font-bold mb-8 block">AHSAN</Link>
                       <nav className="flex flex-col space-y-4">
