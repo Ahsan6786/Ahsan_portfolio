@@ -98,10 +98,25 @@ html {
   }
 }
 
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .text-pan-animation {
   animation: text-pan 1s ease-out forwards;
 }
 
 .slide-in-animation {
   animation: slide-in 0.5s ease-out forwards;
+}
+
+.fade-in-up-animation {
+  animation: fade-in-up 0.8s ease-in-out forwards;
 }
