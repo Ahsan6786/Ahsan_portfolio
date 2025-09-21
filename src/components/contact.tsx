@@ -49,17 +49,7 @@ export function Contact() {
             </div>
           ))}
         </div>
-        <div className="grid md:grid-cols-2 gap-10 md:gap-20 items-start">
-            <div className="relative w-full aspect-square max-w-md mx-auto">
-                <Image
-                alt="Contact Image"
-                className="rounded-lg object-cover"
-                src={contactImageData.src}
-                width={600}
-                height={600}
-                data-ai-hint={contactImageData.aiHint}
-                />
-            </div>
+        <div className="max-w-2xl mx-auto">
             <ContactForm />
         </div>
       </div>
