@@ -22,7 +22,12 @@ export function About() {
             />
           </div>
           <div className="relative text-center md:text-left">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
+            <div className="relative mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold">About Me</h2>
+              <p className="text-6xl md:text-8xl font-bold absolute -top-4 -left-4 text-foreground/5 z-0">
+                About
+              </p>
+            </div>
              <p className="text-lg text-muted-foreground mb-6">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-8 text-lg">
                 <p><span className="font-bold">Name:</span> Ahsan Imam Khan</p>
