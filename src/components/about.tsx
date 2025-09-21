@@ -24,7 +24,7 @@ export function About() {
           <div className="relative text-center md:text-left">
             <div className="relative mb-4">
               <h2 className="text-4xl md:text-5xl font-bold">About Me</h2>
-              <p className="text-6xl md:text-8xl font-bold absolute -top-4 -left-4 text-foreground/5 z-0">
+              <p className="text-6xl md:text-8xl font-bold absolute -top-4 left-1/2 -translate-x-1/2 md:left-0 md:-translate-x-0 md:-left-4 text-foreground/5 z-0 w-full text-center md:text-left">
                 About
               </p>
             </div>
