@@ -21,7 +21,7 @@ export function Certificates() {
         <div className="relative h-[600px] w-full max-w-4xl mx-auto">
             <Image
                 src={certificateImage.src}
-                alt="Certificate"
+                alt="Python Programming Certificate"
                 fill
                 className="object-contain"
                 data-ai-hint={certificateImage.aiHint}

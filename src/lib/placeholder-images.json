@@ -38,6 +38,6 @@
     },
     "certificate1": {
         "src": "/certificate1.png",
-        "aiHint": "certificate document"
+        "aiHint": "python certificate"
     }
 }
