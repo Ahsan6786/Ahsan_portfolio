@@ -10,12 +10,12 @@ export function About() {
           <div className="relative text-center">
             <div className="relative mb-4">
               <h2 className="text-4xl md:text-5xl font-bold">About Me</h2>
-              <p className="text-6xl md:text-8xl font-bold absolute -top-4 left-1/2 -translate-x-1/2 text-foreground/5 z-0 w-full text-center">
+               <p className="text-6xl md:text-8xl font-bold absolute -top-4 left-1/2 -translate-x-1/2 text-foreground/5 z-0 w-full text-center">
                 About
               </p>
             </div>
             <div className="flex justify-center mb-8">
-                <p className="text-lg text-muted-foreground"><span className="font-bold text-foreground">Ahsan Imam Khan</span></p>
+                <p className="text-lg"><span className="font-bold text-primary">Ahsan Imam Khan</span></p>
             </div>
              <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">Passionate developer crafting digital experiences with precision and creativity</p>
              <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">I am a B.Tech Computer Science student at MIT-WPU. I am passionate about coding, exploring new technologies, and turning ideas into real-world applications.</p>
