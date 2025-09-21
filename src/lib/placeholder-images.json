@@ -16,6 +16,10 @@
         "src": "/img3.png",
         "aiHint": "code editor"
     },
+    "project4": {
+        "src": "https://picsum.photos/seed/project4/600/400",
+        "aiHint": "mental wellness"
+    },
     "contactImage": {
         "src": "https://picsum.photos/seed/contact/600/600",
         "aiHint": "man portrait"

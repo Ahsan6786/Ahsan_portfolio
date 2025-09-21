@@ -25,6 +25,13 @@ const projects = [
     tags: ["React", "TypeScript", "Monaco Editor", "WebAssembly"],
     image: placeholderData.project3,
     liveDemo: "#"
+  },
+  {
+    title: "Mitra Ai",
+    description: "A digital mental wellness app, stigma-free.",
+    tags: ["AI", "Mental Health", "Web App"],
+    image: placeholderData.project4,
+    liveDemo: "https://mitraai.shop/"
   }
 ];
 
