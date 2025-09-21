@@ -9,7 +9,7 @@ export function Footer() {
   useEffect(() => {
     const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-    }, 5500); 
+    }, 3000); 
 
     return () => clearInterval(interval);
   }, []);

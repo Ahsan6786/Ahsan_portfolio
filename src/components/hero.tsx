@@ -42,7 +42,7 @@ export function Hero() {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
             setIsAnimating(false);
         }, 500);
-    }, 5500);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
