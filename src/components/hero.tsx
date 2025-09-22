@@ -105,7 +105,7 @@ export function Hero() {
               </Link>
             </div>
           </div>
-          <div className="hidden md:block relative h-[500px] w-full">
+          <div className="hidden md:block relative h-[600px] w-full">
             {heroImagesData.map((image, index) => (
                 <Image
                     key={index}
