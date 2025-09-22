@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 import placeholderData from '@/lib/placeholder-images.json';
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone, Instagram, Linkedin, Github } from "lucide-react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 
 const contactImageData = placeholderData.contactImage;
@@ -26,6 +26,21 @@ const contactDetails = [
   },
 ];
 
+const socialLinks = [
+  {
+    href: "https://www.instagram.com/khan_ahsan_8055?igsh=MWhpYnJ1OGo2Y214ZA%3D%3D&utm_source=qr",
+    icon: <Instagram className="w-8 h-8 text-primary" />,
+  },
+  {
+    href: "https://www.linkedin.com/in/ahsan-imam-khan-9a0443328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    icon: <Linkedin className="w-8 h-8 text-primary" />,
+  },
+  {
+    href: "https://github.com/Ahsan8055",
+    icon: <Github className="w-8 h-8 text-primary" />,
+  },
+];
+
 export function Contact() {
   return (
     <section id="contact" className="py-20 md:py-32 bg-card">
@@ -40,7 +55,7 @@ export function Contact() {
               Have a project in mind? Let's talk. I am here to help you.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             {contactDetails.map((detail) => (
               <div key={detail.title} className="text-center">
                 <div className="flex items-center justify-center w-20 h-20 rounded-full bg-background mx-auto mb-4">
@@ -49,6 +64,19 @@ export function Contact() {
                 <h3 className="font-bold text-lg mb-1">{detail.title}</h3>
                 <p className="text-muted-foreground">{detail.value}</p>
               </div>
+            ))}
+          </div>
+          <div className="flex justify-center space-x-6 mb-16">
+            {socialLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-16 h-16 rounded-full bg-background hover:bg-primary/10 transition-colors"
+              >
+                {link.icon}
+              </a>
             ))}
           </div>
           <div className="max-w-2xl mx-auto">
