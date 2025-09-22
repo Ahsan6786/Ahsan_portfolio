@@ -13,7 +13,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ahsan Thompson - Portfolio",
+  title: "Ahsan Imam Khan",
   description: "A freelance web designer.",
   viewport: {
     width: 'device-width',
