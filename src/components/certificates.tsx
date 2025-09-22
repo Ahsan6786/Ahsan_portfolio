@@ -17,31 +17,31 @@ const certificates = [
     title: "Python Programming",
     description: "This certificate validates my proficiency in Python, covering fundamental to advanced concepts of the language.",
     image: placeholderData.certificate1,
-    pdfLink: "/certificates/certificate1.pdf" 
+    pdfLink: "/certificates/c1.pdf" 
   },
   {
     title: "Advanced React",
     description: "Completed an in-depth course on advanced React patterns, hooks, and state management.",
     image: placeholderData.certificate2,
-    pdfLink: "/certificates/certificate2.pdf"
+    pdfLink: "/certificates/c2.pdf"
   },
   {
     title: "Cloud Fundamentals",
     description: "Certified in cloud computing fundamentals, including core concepts of IaaS, PaaS, and SaaS.",
     image: placeholderData.certificate3,
-    pdfLink: "/certificates/certificate3.pdf"
+    pdfLink: "/certificates/c3.pdf"
   },
   {
     title: "Data Structures & Algorithms",
     description: "Proficiency in fundamental data structures and algorithms, essential for efficient problem-solving.",
     image: placeholderData.certificate4,
-    pdfLink: "/certificates/certificate4.pdf"
+    pdfLink: "/certificates/c4.pdf"
   },
   {
     title: "UI/UX Design Principles",
     description: "A comprehensive certification on user-centered design principles and creating intuitive interfaces.",
     image: placeholderData.certificate5,
-    pdfLink: "/certificates/certificate5.pdf"
+    pdfLink: "/certificates/c5.pdf"
   },
 ];
 
