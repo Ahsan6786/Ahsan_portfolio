@@ -4,6 +4,7 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ScrollToTopButton } from "@/components/scroll-to-top";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,11 +29,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body className={cn("font-display antialiased", poppins.variable)}>
-        {children}
-        <Toaster />
-        <ScrollToTopButton />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+          <Toaster />
+          <ScrollToTopButton />
+        </ThemeProvider>
       </body>
     </html>
   );

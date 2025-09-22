@@ -10,6 +10,7 @@ import {
   SheetClose,
   SheetTitle,
 } from "@/components/ui/sheet";
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const navLinks = [
     { href: "#home", label: "Home" },
@@ -97,8 +98,10 @@ export function Header() {
               {link.icon}
             </a>
           ))}
+          <ThemeToggle />
         </div>
-        <div className="md:hidden mr-4">
+        <div className="md:hidden mr-4 flex items-center gap-2">
+          <ThemeToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">

@@ -8,25 +8,25 @@ html {
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 45 98% 60%;
-    --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 63%;
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62% 40%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 45 98% 60%;
+    --background: 39 77% 96%;
+    --foreground: 25 55% 15%;
+    --card: 30 50% 98%;
+    --card-foreground: 25 55% 15%;
+    --popover: 30 50% 98%;
+    --popover-foreground: 25 55% 15%;
+    --primary: 25 55% 30%;
+    --primary-foreground: 40 50% 98%;
+    --secondary: 30 50% 94%;
+    --secondary-foreground: 25 55% 25%;
+    --muted: 30 50% 90%;
+    --muted-foreground: 25 55% 45%;
+    --accent: 30 50% 92%;
+    --accent-foreground: 25 55% 25%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 50% 88%;
+    --input: 30 50% 88%;
+    --ring: 25 55% 30%;
     --radius: 0.5rem;
   }
 
