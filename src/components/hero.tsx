@@ -74,7 +74,7 @@ export function Hero() {
                 : "bg-gradient-to-t from-black/70 to-black/30"
             )} />
         </div>
-      <div className="container relative mx-auto px-4 md:px-6 z-10">
+      <div className="container relative mx-auto px-4 md:px-12 z-10">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className={cn(
               "text-center md:text-left transition-all duration-500",
