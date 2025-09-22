@@ -30,6 +30,11 @@ const certificates = [
     description: "Showcases my ability to work effectively in a team, emphasizing communication, collaboration, and shared goals.",
     image: placeholderData.certificate5,
   },
+  {
+    title: "New Certificate",
+    description: "A new achievement to showcase my skills and dedication.",
+    image: placeholderData.certificate6,
+  },
 ];
 
 

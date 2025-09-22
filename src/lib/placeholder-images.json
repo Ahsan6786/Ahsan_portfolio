@@ -42,18 +42,22 @@
     },
     "certificate2": {
         "src": "/certificate2.png",
-        "aiHint": "react certificate"
+        "aiHint": "personal finance certificate"
     },
     "certificate3": {
         "src": "/certificate3.png",
-        "aiHint": "cloud certificate"
+        "aiHint": "social learning certificate"
     },
     "certificate4": {
         "src": "/certificate4.png",
-        "aiHint": "data structures certificate"
+        "aiHint": "critical thinking certificate"
     },
     "certificate5": {
         "src": "/certificate5.png",
-        "aiHint": "ui ux certificate"
+        "aiHint": "teamwork certificate"
+    },
+    "certificate6": {
+        "src": "/certificate6.png",
+        "aiHint": "professional certificate"
     }
 }
