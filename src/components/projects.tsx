@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
@@ -28,8 +29,8 @@ const projects = [
     liveDemo: "#"
   },
   {
-    title: "Mitra Ai",
-    description: "A digital mental wellness app, stigma-free.",
+    title: "Mitra AI",
+    description: "An innovative mental wellness application providing accessible, stigma-free support. It offers personalized resources, guided exercises, and a compassionate AI chatbot to help users navigate their mental health journey privately and securely.",
     tags: ["AI", "Mental Health", "Web App"],
     image: placeholderData.project4,
     liveDemo: "https://mitraai.shop/"
@@ -50,10 +51,10 @@ export function Projects() {
               These are some of my recent projects. Check out my GitHub for more.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="bg-card rounded-lg overflow-hidden group">
-                <div className="relative h-52 w-full">
+              <div key={index} className="bg-card rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300">
+                <div className="relative h-60 w-full overflow-hidden">
                   <Image
                     src={project.image.src}
                     alt={project.title}
@@ -64,14 +65,17 @@ export function Projects() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4 text-sm">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <p className="text-muted-foreground mb-4 text-sm min-h-[60px]">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map(tag => (
                       <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
                     ))}
                   </div>
                   <Button variant="outline" size="sm" asChild>
-                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                      Live Demo
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </a>
                   </Button>
                 </div>
               </div>
