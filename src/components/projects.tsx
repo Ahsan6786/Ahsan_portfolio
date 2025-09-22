@@ -14,7 +14,7 @@ const projects = [
     liveDemo: "https://ahsanverse.vercel.app/"
   },
   {
-    title: "BJP News Archive",
+    title: "News Archive",
     description: "A comprehensive news archive system that collects, categorizes, and displays news articles with search functionality and user-friendly interface.",
     tags: ["JavaScript", "React", "API", "Database"],
     image: placeholderData.project2,
