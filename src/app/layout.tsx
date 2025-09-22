@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { ScrollToTopButton } from "@/components/scroll-to-top";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={cn("font-display antialiased", poppins.variable)}>
         {children}
         <Toaster />
+        <ScrollToTopButton />
       </body>
     </html>
   );
