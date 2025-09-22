@@ -41,19 +41,19 @@
         "aiHint": "python programming certificate"
     },
     "certificate2": {
-        "src": "https://picsum.photos/seed/cert2/800/600",
+        "src": "/certificate2.png",
         "aiHint": "react certificate"
     },
     "certificate3": {
-        "src": "https://picsum.photos/seed/cert3/800/600",
+        "src": "/certificate3.png",
         "aiHint": "cloud certificate"
     },
     "certificate4": {
-        "src": "https://picsum.photos/seed/cert4/800/600",
+        "src": "/certificate4.png",
         "aiHint": "data structures certificate"
     },
     "certificate5": {
-        "src": "https://picsum.photos/seed/cert5/800/600",
+        "src": "/certificate5.png",
         "aiHint": "ui ux certificate"
     }
 }
