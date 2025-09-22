@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 
@@ -21,9 +22,11 @@ export function About() {
               <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">I am a B.Tech Computer Science student at MIT-WPU. I am passionate about coding, exploring new technologies, and turning ideas into real-world applications.</p>
               <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">I love collaborating on projects that challenge me to grow and innovate. When I'm not coding, you can find me exploring new technologies and continuously improving my skills.</p>
               <p className="text-2xl text-primary font-bold mb-6">6 Projects complete</p>
-              <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">
-                HIRE ME
-              </Button>
+              <Link href="#contact">
+                <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">
+                  HIRE ME
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
