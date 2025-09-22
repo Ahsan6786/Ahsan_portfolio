@@ -6,6 +6,7 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import {
   Dialog,
   DialogContent,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 
@@ -75,6 +76,7 @@ export function Certificates() {
                   </div>
                 </DialogTrigger>
                 <DialogContent className="p-0 border-0 max-w-4xl bg-transparent">
+                  <DialogTitle className="sr-only">{certificate.title}</DialogTitle>
                   <div className="relative aspect-[4/3]">
                     <Image
                       src={certificate.image.src}
