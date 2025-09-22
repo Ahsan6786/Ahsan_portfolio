@@ -1,10 +1,50 @@
 "use client";
 
 import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 
-const certificateImage = placeholderData.certificate1;
+const certificates = [
+  {
+    title: "Python Programming",
+    description: "This certificate validates my proficiency in Python, covering fundamental to advanced concepts of the language.",
+    image: placeholderData.certificate1,
+    pdfLink: "/certificates/certificate1.pdf" 
+  },
+  {
+    title: "Advanced React",
+    description: "Completed an in-depth course on advanced React patterns, hooks, and state management.",
+    image: placeholderData.certificate2,
+    pdfLink: "/certificates/certificate2.pdf"
+  },
+  {
+    title: "Cloud Fundamentals",
+    description: "Certified in cloud computing fundamentals, including core concepts of IaaS, PaaS, and SaaS.",
+    image: placeholderData.certificate3,
+    pdfLink: "/certificates/certificate3.pdf"
+  },
+  {
+    title: "Data Structures & Algorithms",
+    description: "Proficiency in fundamental data structures and algorithms, essential for efficient problem-solving.",
+    image: placeholderData.certificate4,
+    pdfLink: "/certificates/certificate4.pdf"
+  },
+  {
+    title: "UI/UX Design Principles",
+    description: "A comprehensive certification on user-centered design principles and creating intuitive interfaces.",
+    image: placeholderData.certificate5,
+    pdfLink: "/certificates/certificate5.pdf"
+  },
+];
+
 
 export function Certificates() {
   return (
@@ -20,21 +60,44 @@ export function Certificates() {
               A showcase of my professional certifications and qualifications.
             </p>
           </div>
-          <div className="relative h-[600px] w-full max-w-4xl mx-auto">
-              <Image
-                  src={certificateImage.src}
-                  alt="Python Programming Certificate"
-                  fill
-                  className="object-contain"
-                  data-ai-hint={certificateImage.aiHint}
-              />
-          </div>
-          <div className="text-center mt-8">
-              <h3 className="text-2xl font-bold">Python Programming</h3>
-              <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
-                  This certificate validates my proficiency in Python, covering fundamental to advanced concepts of the language.
-              </p>
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-4xl mx-auto"
+          >
+            <CarouselContent>
+              {certificates.map((certificate, index) => (
+                <CarouselItem key={index}>
+                  <div className="p-1">
+                    <div className="flex flex-col items-center text-center">
+                      <div className="relative h-[400px] md:h-[500px] w-full mb-6">
+                        <Image
+                          src={certificate.image.src}
+                          alt={certificate.title}
+                          fill
+                          className="object-contain rounded-lg"
+                          data-ai-hint={certificate.image.aiHint}
+                        />
+                      </div>
+                      <h3 className="text-2xl font-bold">{certificate.title}</h3>
+                      <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto mb-4">
+                        {certificate.description}
+                      </p>
+                      <Button asChild>
+                        <a href={certificate.pdfLink} target="_blank" rel="noopener noreferrer">
+                          View Certificate
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
       </AnimateOnScroll>
     </section>
