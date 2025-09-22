@@ -11,23 +11,23 @@ const certificates = [
     image: placeholderData.certificate1,
   },
   {
-    title: "Advanced React",
-    description: "Awarded for completing an in-depth course on advanced React, including hooks, context, and performance optimization.",
+    title: "Personal and Financial Planning",
+    description: "Awarded for completing a course on personal and financial planning, covering budgeting, investing, and financial literacy.",
     image: placeholderData.certificate2,
   },
   {
-    title: "Cloud Fundamentals",
-    description: "Demonstrates a strong understanding of cloud computing concepts, services, and architecture.",
+    title: "Social Emotional Learning",
+    description: "Demonstrates a strong understanding of social and emotional intelligence, including self-awareness and relationship skills.",
     image: placeholderData.certificate3,
   },
   {
-    title: "Data Structures & Algorithms",
-    description: "Recognizes my skills in data structures and algorithms, essential for efficient problem-solving.",
+    title: "Critical Thinking and Problem Solving",
+    description: "Recognizes my skills in critical thinking and problem-solving, essential for analyzing complex challenges and finding effective solutions.",
     image: placeholderData.certificate4,
   },
   {
-    title: "UI/UX Design Principles",
-    description: "Showcases my knowledge of UI/UX principles, focusing on creating user-friendly and intuitive interfaces.",
+    title: "Teamwork and Collaboration",
+    description: "Showcases my ability to work effectively in a team, emphasizing communication, collaboration, and shared goals.",
     image: placeholderData.certificate5,
   },
 ];
