@@ -3,6 +3,11 @@
 import Image from "next/image";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const certificates = [
   {
@@ -37,7 +42,6 @@ const certificates = [
   },
 ];
 
-
 export function Certificates() {
   return (
     <section id="certificates" className="py-20 md:py-32 bg-card">
@@ -54,21 +58,33 @@ export function Certificates() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificates.map((certificate, index) => (
-              <div key={index} className="bg-background p-4 rounded-lg shadow-lg group flex flex-col">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md">
-                  <Image
-                    src={certificate.image.src}
-                    alt={certificate.title}
-                    fill
-                    className="object-contain transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={certificate.image.aiHint}
-                  />
-                </div>
-                <div className="mt-4 text-center">
-                  <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{certificate.description}</p>
-                </div>
-              </div>
+              <Dialog key={index}>
+                <DialogTrigger asChild>
+                  <div className="bg-background p-4 rounded-lg shadow-lg group flex flex-col items-center text-center cursor-pointer">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md mb-4">
+                      <Image
+                        src={certificate.image.src}
+                        alt={certificate.title}
+                        fill
+                        className="object-contain transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint={certificate.image.aiHint}
+                      />
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
+                    <p className="text-sm text-muted-foreground mt-1 flex-grow">{certificate.description}</p>
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="p-0 border-0 max-w-4xl bg-transparent">
+                  <div className="relative aspect-[4/3]">
+                    <Image
+                      src={certificate.image.src}
+                      alt={certificate.title}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
             ))}
           </div>
         </div>
