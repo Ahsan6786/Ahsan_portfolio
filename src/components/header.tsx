@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Menu } from 'lucide-react';
+import { Menu, Instagram, Linkedin, Github } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -19,6 +19,21 @@ const navLinks = [
     { href: "#projects", label: "Projects" },
     { href: "#certificates", label: "Certificates" },
     { href: "#contact", label: "Contact" },
+];
+
+const socialLinks = [
+  {
+    href: "https://www.instagram.com/khan_ahsan_8055?igsh=MWhpYnJ1OGo2Y214ZA%3D%3D&utm_source=qr",
+    icon: <Instagram className="w-5 h-5" />,
+  },
+  {
+    href: "https://www.linkedin.com/in/ahsan-imam-khan-9a0443328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    icon: <Linkedin className="w-5 h-5" />,
+  },
+  {
+    href: "https://github.com/Ahsan8055",
+    icon: <Github className="w-5 h-5" />,
+  },
 ];
 
 export function Header() {
@@ -70,6 +85,19 @@ export function Header() {
                 ))}
             </nav>
         </div>
+        <div className="hidden md:flex items-center space-x-4 mr-4">
+          {socialLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              {link.icon}
+            </a>
+          ))}
+        </div>
         <div className="md:hidden mr-4">
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
@@ -94,6 +122,20 @@ export function Header() {
                           </SheetClose>
                       ))}
                   </nav>
+                  <div className="flex justify-start space-x-6 mt-8">
+                    {socialLinks.map((link) => (
+                        <a
+                          key={link.href}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-foreground hover:text-primary transition-colors"
+                          onClick={() => setIsSheetOpen(false)}
+                        >
+                          {React.cloneElement(link.icon, { className: "w-6 h-6"})}
+                        </a>
+                      ))}
+                  </div>
                 </div>
             </SheetContent>
           </Sheet>
