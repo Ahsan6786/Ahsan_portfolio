@@ -65,6 +65,7 @@ export function Hero() {
                     )}
                     data-ai-hint={image.aiHint}
                     priority={index === 0}
+                    loading={index === 0 ? 'eager' : 'lazy'}
                 />
             ))}
             <div className={cn(
@@ -117,6 +118,8 @@ export function Hero() {
                         index === currentIndex ? "opacity-100" : "opacity-0"
                     )}
                     data-ai-hint={image.aiHint}
+                    priority={index === 0}
+                    loading={index === 0 ? 'eager' : 'lazy'}
                 />
             ))}
              <div className={cn(
