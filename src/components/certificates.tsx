@@ -31,8 +31,8 @@ const certificates = [
     image: placeholderData.certificate5,
   },
   {
-    title: "New Certificate",
-    description: "A new achievement to showcase my skills and dedication.",
+    title: "Measuring Sustainable Development",
+    description: "This certificate covers the principles and practices of measuring sustainable development, including key indicators and methodologies.",
     image: placeholderData.certificate6,
   },
 ];
