@@ -17,6 +17,8 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { db } from "@/lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
+import Confetti from 'react-confetti';
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -34,6 +36,7 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
+  const [showConfetti, setShowConfetti] = useState(false);
   const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -56,6 +59,8 @@ export function ContactForm() {
         title: "Message Sent!",
         description: "Thanks for reaching out. Your message has been stored.",
       });
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 5000); // Hide after 5 seconds
       form.reset();
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -68,62 +73,72 @@ export function ContactForm() {
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Your Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Narendra Modi" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
+    <>
+      {showConfetti && (
+        <Confetti
+          recycle={false}
+          numberOfPieces={500}
+          gravity={0.1}
+          colors={['#FFD700', '#FFA500', '#FFC400', '#FFBF00', '#FFB347']}
         />
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Your Email</FormLabel>
-              <FormControl>
-                <Input placeholder="narendramodi@example.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="subject"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Subject</FormLabel>
-              <FormControl>
-                <Input placeholder="Project Proposal" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Textarea placeholder="Tell me more about your project..." {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">Send Message</Button>
-      </form>
-    </Form>
+      )}
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Your Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Narendra Modi" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Your Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="narendramodi@example.com" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="subject"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Subject</FormLabel>
+                <FormControl>
+                  <Input placeholder="Project Proposal" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Message</FormLabel>
+                <FormControl>
+                  <Textarea placeholder="Tell me more about your project..." {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">Send Message</Button>
+        </form>
+      </Form>
+    </>
   );
 }
