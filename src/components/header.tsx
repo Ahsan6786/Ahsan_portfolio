@@ -32,7 +32,7 @@ const socialLinks = [
     icon: <Linkedin className="w-5 h-5" />,
   },
   {
-    href: "https://github.com/Ahsan8055",
+    href: "https://github.com/Ahsan6786",
     icon: <Github className="w-5 h-5" />,
   },
 ];

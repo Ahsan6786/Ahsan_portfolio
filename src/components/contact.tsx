@@ -36,7 +36,7 @@ const socialLinks = [
     icon: <Linkedin className="w-8 h-8 text-primary" />,
   },
   {
-    href: "https://github.com/Ahsan8055",
+    href: "https://github.com/Ahsan6786",
     icon: <Github className="w-8 h-8 text-primary" />,
   },
 ];
