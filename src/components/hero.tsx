@@ -70,9 +70,7 @@ export function Hero() {
             ))}
             <div className={cn(
                 "absolute inset-0",
-                isThirdImage 
-                ? "bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.3)_0%,rgba(0,0,0,0.9)_100%)]" 
-                : "bg-gradient-to-t from-black/70 to-black/30"
+                 "bg-gradient-to-t from-background via-transparent to-transparent"
             )} />
         </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
