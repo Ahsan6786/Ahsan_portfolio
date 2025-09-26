@@ -2,20 +2,17 @@
 
 import React from 'react';
 
-const colors = [
-  '#FFD700', '#FFDE59', '#FFE68A', '#FFECB3', '#FFF2D9',
-  '#FFFFFF', '#FFF2D9', '#FFECB3', '#FFE68A', '#FFDE59',
-  '#FFD700', '#FFC400', '#FFBF00', '#FFB347', '#FFA500',
-  '#FFB347', '#FFBF00', '#FFC400', '#FFD700', '#FFDE59',
-  '#FFE68A', '#FFECB3', '#FFF2D9', '#FFFFFF'
+const barCount = 20;
+const goldPalette = [
+  '#FFD700', '#FFA500', '#FFC400', '#FFB347', '#FFDE59',
+  '#FFECB3', '#DAA520', '#B8860B', '#F0E68C', '#BDB76B'
 ];
 
-const barStyles = colors.map((color, i) => {
-  const rotation = -60 + (i * (120 / (colors.length -1)));
+const barStyles = Array.from({ length: barCount }).map((_, i) => {
+  const color = goldPalette[i % goldPalette.length];
   const delay = i * 0.05;
   return {
     '--bar-color': color,
-    transform: `rotate(${rotation}deg)`,
     animationDelay: `${delay}s`,
   } as React.CSSProperties;
 });

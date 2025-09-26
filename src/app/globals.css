@@ -107,18 +107,15 @@ html {
 }
 
 .intro-bars {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 110vw;
+  height: 120vh;
+  position: absolute;
 }
 
 .intro-bar {
-  position: absolute;
-  height: 120%;
-  width: 2.5vw;
+  width: 5vw;
+  background: #FFD700;
   animation: bar-up 2s cubic-bezier(0.7, 0, 0.25, 1) forwards;
   box-shadow: 0 0 10px 5px var(--bar-color);
 }
