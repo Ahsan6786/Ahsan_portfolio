@@ -43,7 +43,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative flex items-center min-h-[calc(100vh-80px)] py-20 md:py-32 overflow-hidden">
+    <section id="home" className="relative flex items-center min-h-[560px] md:min-h-[calc(100vh-80px)] py-20 md:py-32 overflow-hidden">
       <div className="absolute inset-0 md:hidden">
         {heroImagesData.map((image, index) => (
             <Image
@@ -64,11 +64,11 @@ export function Hero() {
       </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="text-center md:text-left relative min-h-[250px] md:min-h-[280px]">
+          <div className="text-center md:text-left relative min-h-[250px] md:min-h-0">
             {heroContent.map((content, index) => (
               <div key={index} className={cn(
-                "absolute inset-0 transition-opacity duration-1000 ease-in-out",
-                index === currentIndex ? "opacity-100" : "opacity-0"
+                "transition-opacity duration-1000 ease-in-out",
+                index === currentIndex ? "opacity-100" : "opacity-0 absolute inset-0 md:static"
               )}>
                 <p className="text-lg font-medium mb-2">{content.greeting}</p>
                 <h2 className="text-5xl md:text-6xl font-bold leading-tight">
