@@ -1,63 +1,62 @@
-
 {
-    "heroImage": {
-        "src": "/my-image-1.png",
-        "aiHint": "abstract background"
-    },
-    "heroImage2": {
-        "src": "/my-image-2.png",
-        "aiHint": "abstract design"
-    },
-    "heroImage3": {
-        "src": "/my-image-3.png",
-        "aiHint": "modern art"
-    },
-    "aboutImage": {
-        "src": "/about.jpg",
-        "aiHint": "man portrait"
-    },
-    "project1": {
-        "src": "/img1.png",
-        "aiHint": "blockchain technology"
-    },
-    "project2": {
-        "src": "/img2.png",
-        "aiHint": "news archive"
-    },
-    "project3": {
-        "src": "/img3.png",
-        "aiHint": "code editor"
-    },
-    "project4": {
-        "src": "/img4.png",
-        "aiHint": "mental wellness"
-    },
-    "contactImage": {
-        "src": "https://picsum.photos/seed/contact/600/600",
-        "aiHint": "man portrait"
-    },
-    "certificate1": {
-        "src": "/certificate1.png",
-        "aiHint": "python programming certificate"
-    },
-    "certificate2": {
-        "src": "/certificate2.png",
-        "aiHint": "personal finance certificate"
-    },
-    "certificate3": {
-        "src": "/certificate3.png",
-        "aiHint": "social learning certificate"
-    },
-    "certificate4": {
-        "src": "/certificate4.png",
-        "aiHint": "critical thinking certificate"
-    },
-    "certificate5": {
-        "src": "/certificate5.png",
-        "aiHint": "teamwork certificate"
-    },
-    "certificate6": {
-        "src": "/certificate6.png",
-        "aiHint": "professional certificate"
-    }
+  "heroImage": {
+    "src": "/my-image-1.png?v=2",
+    "aiHint": "abstract background"
+  },
+  "heroImage2": {
+    "src": "/my-image-2.png",
+    "aiHint": "abstract design"
+  },
+  "heroImage3": {
+    "src": "/my-image-3.png",
+    "aiHint": "modern art"
+  },
+  "aboutImage": {
+    "src": "/about.jpg",
+    "aiHint": "man portrait"
+  },
+  "project1": {
+    "src": "/img1.png",
+    "aiHint": "blockchain technology"
+  },
+  "project2": {
+    "src": "/img2.png",
+    "aiHint": "news archive"
+  },
+  "project3": {
+    "src": "/img3.png",
+    "aiHint": "code editor"
+  },
+  "project4": {
+    "src": "/img4.png",
+    "aiHint": "mental wellness"
+  },
+  "contactImage": {
+    "src": "https://picsum.photos/seed/contact/600/600",
+    "aiHint": "man portrait"
+  },
+  "certificate1": {
+    "src": "/certificate1.png",
+    "aiHint": "python programming certificate"
+  },
+  "certificate2": {
+    "src": "/certificate2.png",
+    "aiHint": "personal finance certificate"
+  },
+  "certificate3": {
+    "src": "/certificate3.png",
+    "aiHint": "social learning certificate"
+  },
+  "certificate4": {
+    "src": "/certificate4.png",
+    "aiHint": "critical thinking certificate"
+  },
+  "certificate5": {
+    "src": "/certificate5.png",
+    "aiHint": "teamwork certificate"
+  },
+  "certificate6": {
+    "src": "/certificate6.png",
+    "aiHint": "professional certificate"
+  }
 }
