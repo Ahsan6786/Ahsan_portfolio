@@ -60,8 +60,8 @@ export function Hero() {
                 loading={index === 0 ? 'eager' : 'lazy'}
             />
         ))}
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-0 bg-black/40 dark:bg-black/40" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background to-transparent" />
       </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -101,7 +101,7 @@ export function Hero() {
             </div>
           </div>
           <div className="hidden md:flex justify-center items-center">
-            <div className="relative w-[400px] h-[550px] lg:w-[450px] lg:h-[650px] rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative w-[350px] h-[500px] lg:w-[450px] lg:h-[650px] rounded-lg overflow-hidden shadow-2xl">
               {heroImagesData.map((image, index) => (
                   <Image
                       key={index}
