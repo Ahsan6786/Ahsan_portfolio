@@ -43,7 +43,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative flex items-center min-h-[560px] md:min-h-[calc(100vh-80px)] py-20 md:py-32 overflow-hidden">
+    <section id="home" className="relative flex items-center min-h-[560px] md:min-h-[calc(100vh-80px)] py-12 overflow-hidden">
       <div className="absolute inset-0 md:hidden">
         {heroImagesData.map((image, index) => (
             <Image
@@ -98,7 +98,7 @@ export function Hero() {
             ))}
           </div>
           <div className="hidden md:flex justify-center items-center">
-            <div className="relative w-[350px] h-[500px] lg:w-[450px] lg:h-[650px] rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative w-[350px] h-[500px] lg:w-[450px] lg:h-[650px] rounded-lg overflow-hidden dark:shadow-2xl">
               {heroImagesData.map((image, index) => (
                   <Image
                       key={index}
