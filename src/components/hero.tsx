@@ -43,27 +43,27 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative flex items-center justify-center min-h-[calc(100vh-80px)] py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0">
-            {heroImagesData.map((image, index) => (
-                <Image
-                    key={index}
-                    alt="Background"
-                    src={image.src}
-                    fill
-                    className={cn(
-                        "object-cover object-center transition-opacity duration-1000 ease-in-out",
-                        index === currentIndex ? "opacity-100" : "opacity-0"
-                    )}
-                    data-ai-hint={image.aiHint}
-                    priority={index === 0}
-                    loading={index === 0 ? 'eager' : 'lazy'}
-                />
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-        </div>
+    <section id="home" className="relative flex items-center min-h-[calc(100vh-80px)] py-20 md:py-32 overflow-hidden">
+      <div className="absolute inset-0 md:hidden">
+        {heroImagesData.map((image, index) => (
+            <Image
+                key={index}
+                alt="Background"
+                src={image.src}
+                fill
+                className={cn(
+                    "object-cover object-center transition-opacity duration-1000 ease-in-out",
+                    index === currentIndex ? "opacity-100" : "opacity-0"
+                )}
+                data-ai-hint={image.aiHint}
+                priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
+            />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+      </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
-        <div className="grid grid-cols-1 gap-10 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="text-center md:text-left relative h-48 md:h-56">
             {heroContent.map((content, index) => (
               <div key={index} className={cn(
@@ -97,6 +97,26 @@ export function Hero() {
                   <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">MY WORKS</Button>
                 </Link>
               </div>
+            </div>
+          </div>
+          <div className="hidden md:flex justify-center items-center">
+            <div className="relative w-[350px] h-[500px] lg:w-[400px] lg:h-[600px] rounded-lg overflow-hidden shadow-2xl">
+              {heroImagesData.map((image, index) => (
+                  <Image
+                      key={index}
+                      alt="Hero Image"
+                      src={image.src}
+                      fill
+                      className={cn(
+                          "object-cover object-center transition-opacity duration-1000 ease-in-out",
+                          index === currentIndex ? "opacity-100" : "opacity-0"
+                      )}
+                      data-ai-hint={image.aiHint}
+                      priority={index === 0}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+              ))}
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background to-transparent" />
             </div>
           </div>
         </div>
