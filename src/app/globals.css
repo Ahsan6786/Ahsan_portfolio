@@ -86,7 +86,6 @@ html {
     align-items: center;
     background-color: #000;
     overflow: hidden;
-    font-family: sans-serif;
     position: fixed;
     top: 0;
     left: 0;
@@ -100,50 +99,39 @@ html {
   }
 
   #netflixintro {
+    font-family: 'Helvetica Neue', sans-serif;
     font-size: 5rem;
     font-weight: bold;
-    color: #e50914;
-    animation: zoom-in 2s ease forwards, fade-out 1s 2.5s forwards;
+    color: #FFD700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    animation: netflix-intro 3.5s forwards;
+    opacity: 0;
+    transform: scale(1.5);
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #B8860B, 0 0 40px #B8860B;
   }
 
-  @keyframes zoom-in {
+  @keyframes netflix-intro {
     0% {
-      transform: scale(0);
+      transform: scale(3);
       opacity: 0;
+    }
+    10% {
+      transform: scale(1.5);
+      opacity: 1;
     }
     50% {
-      transform: scale(1.2);
-      opacity: 1;
+      transform: scale(1.6);
+    }
+    80% {
+       transform: scale(1.5);
+       opacity: 1;
     }
     100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-
-  @keyframes fade-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
+      transform: scale(1.5);
       opacity: 0;
     }
   }
-
-  #brush {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-    animation: brush-moving 2s linear forwards;
-    pointer-events: none;
-  }
-
-  @keyframes brush-moving {
-    0% { transform: translate(-100%, -100%) rotate(0deg);}
-    100% { transform: translate(100%, 100%) rotate(360deg);}
-  }
-
 
 @keyframes text-pan {
   0% {
