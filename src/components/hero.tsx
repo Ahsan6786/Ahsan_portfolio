@@ -17,7 +17,7 @@ const heroContent = [
     {
         greeting: "HELLO",
         mainText: ["I am ", "Ahsan", "", ""],
-        subText: "a web designer",
+        subText: "a web developer",
     },
     {
         greeting: "YEP!",
