@@ -19,8 +19,7 @@ export function About() {
               </div>
               <p className="text-lg">
                 <span 
-                  className="font-bold text-primary bg-gradient-to-r from-primary to-primary bg-no-repeat bg-clip-text text-pan-animation"
-                  style={{backgroundSize: '0% 100%'}}
+                  className="font-bold text-primary"
                 >
                   Ahsan Imam Khan
                 </span>
