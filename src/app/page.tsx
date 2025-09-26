@@ -18,7 +18,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAnimation(false);
-    }, 3500); // Animation duration is 3.5s
+    }, 4200); // Animation duration is 4.2s
 
     return () => clearTimeout(timer);
   }, []);

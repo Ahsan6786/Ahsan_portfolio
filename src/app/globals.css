@@ -92,46 +92,75 @@ html {
     z-index: 100;
   }
 
-  #container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.intro-logo {
+  position: absolute;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  font-size: 5rem;
+  color: #e50914;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: logo-in 1.5s 2s forwards, logo-out 1s 3.5s forwards;
+}
 
-  #netflixintro {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 5rem;
-    font-weight: bold;
-    color: #FFD700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    animation: netflix-intro 3.5s forwards;
+.intro-bars {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-bar {
+  position: absolute;
+  height: 120%;
+  width: 2.5vw;
+  animation: bar-up 2s cubic-bezier(0.7, 0, 0.25, 1) forwards;
+  box-shadow: 0 0 10px 5px var(--bar-color);
+}
+
+@keyframes bar-up {
+  0% {
+    height: 0%;
+    background-color: #fff;
+    box-shadow: 0 0 0 0 #fff;
+  }
+  50% {
+    height: 120%;
+    background-color: var(--bar-color);
+    box-shadow: 0 0 10px 5px var(--bar-color);
+  }
+  100% {
+    height: 0%;
+    background-color: var(--bar-color);
+    box-shadow: 0 0 10px 5px var(--bar-color);
+  }
+}
+
+@keyframes logo-in {
+  from {
     opacity: 0;
-    transform: scale(1.5);
-    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #B8860B, 0 0 40px #B8860B;
+    transform: scale(0.9);
   }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-  @keyframes netflix-intro {
-    0% {
-      transform: scale(3);
-      opacity: 0;
-    }
-    10% {
-      transform: scale(1.5);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.6);
-    }
-    80% {
-       transform: scale(1.5);
-       opacity: 1;
-    }
-    100% {
-      transform: scale(1.5);
-      opacity: 0;
-    }
+@keyframes logo-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
   }
+  to {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
 
 @keyframes text-pan {
   0% {
