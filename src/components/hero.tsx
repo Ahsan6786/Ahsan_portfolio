@@ -43,7 +43,6 @@ export function Hero() {
   }, []);
 
   const currentContent = heroContent[currentIndex];
-  const isThirdImage = currentIndex === 2;
 
   return (
     <section id="home" className="relative flex items-center justify-center min-h-[calc(100vh-80px)] py-20 md:py-32 overflow-hidden">
@@ -63,6 +62,7 @@ export function Hero() {
                     loading={index === 0 ? 'eager' : 'lazy'}
                 />
             ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
         </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
         <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -117,12 +117,7 @@ export function Hero() {
                     loading={index === 0 ? 'eager' : 'lazy'}
                 />
             ))}
-             <div className={cn(
-                "absolute inset-0 rounded-lg",
-                isThirdImage 
-                ? "bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_0%,hsl(var(--background))_100%)]" 
-                : "bg-gradient-to-t from-background via-transparent to-transparent"
-            )} />
+             <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-background via-background/50 to-transparent" />
           </div>
         </div>
       </div>
