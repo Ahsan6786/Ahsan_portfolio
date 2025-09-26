@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Footer } from "@/components/footer";
@@ -7,8 +10,23 @@ import { Skills } from "@/components/skills";
 import { Projects } from "@/components/projects";
 import { Certificates } from "@/components/certificates";
 import { Contact } from "@/components/contact";
+import { IntroAnimation } from "@/components/intro-animation";
 
 export default function Home() {
+  const [showAnimation, setShowAnimation] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowAnimation(false);
+    }, 3500); // Animation duration is 3.5s
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showAnimation) {
+    return <IntroAnimation />;
+  }
+
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground overflow-hidden">
       <Header />

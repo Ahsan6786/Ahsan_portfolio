@@ -76,6 +76,75 @@ html {
   }
 }
 
+.intro-container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    overflow: hidden;
+    font-family: sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #netflixintro {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #e50914;
+    animation: zoom-in 2s ease forwards, fade-out 1s 2.5s forwards;
+  }
+
+  @keyframes zoom-in {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  #brush {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: brush-moving 2s linear forwards;
+    pointer-events: none;
+  }
+
+  @keyframes brush-moving {
+    0% { transform: translate(-100%, -100%) rotate(0deg);}
+    100% { transform: translate(100%, 100%) rotate(360deg);}
+  }
+
+
 @keyframes text-pan {
   0% {
     color: transparent;
