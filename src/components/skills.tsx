@@ -1,57 +1,24 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { Progress } from "@/components/ui/progress";
+import React from 'react';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { Code, Palette, ToyBrick, FileCode2, Wind, BrainCircuit, Database, Cloud } from "lucide-react";
 
 const skills = [
-  { name: "HTML", value: 95 },
-  { name: "React", value: 90 },
-  { name: "CSS", value: 90 },
-  { name: "Next.js", value: 85 },
-  { name: "JavaScript", value: 85 },
-  { name: "Tailwind CSS", value: 90 },
-  { name: "Python", value: 80 },
-  { name: "MySQL", value: 85 },
-  { name: "AWS", value: 75 },
+  { name: "HTML", icon: <Code className="w-10 h-10 text-primary" /> },
+  { name: "React", icon: <ToyBrick className="w-10 h-10 text-primary" /> },
+  { name: "CSS", icon: <Palette className="w-10 h-10 text-primary" /> },
+  { name: "Next.js", icon: <ToyBrick className="w-10 h-10 text-primary" /> },
+  { name: "JavaScript", icon: <FileCode2 className="w-10 h-10 text-primary" /> },
+  { name: "Tailwind CSS", icon: <Wind className="w-10 h-10 text-primary" /> },
+  { name: "Python", icon: <BrainCircuit className="w-10 h-10 text-primary" /> },
+  { name: "MySQL", icon: <Database className="w-10 h-10 text-primary" /> },
+  { name: "AWS", icon: <Cloud className="w-10 h-10 text-primary" /> },
 ];
 
 export function Skills() {
-  const [progress, setProgress] = useState(skills.map(() => 0));
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          const timers = skills.map((skill, index) =>
-            setTimeout(() => {
-              setProgress((prev) => {
-                const newProgress = [...prev];
-                newProgress[index] = skill.value;
-                return newProgress;
-              });
-            }, index * 100)
-          );
-          return () => timers.forEach(clearTimeout);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   return (
-    <section id="skills" className="py-20 md:py-32" ref={sectionRef}>
+    <section id="skills" className="py-20 md:py-32">
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
@@ -60,18 +27,16 @@ export function Skills() {
               Skills
             </p>
             <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia
+              A showcase of my technical abilities and tools I use to build amazing things.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-5xl mx-auto">
             {skills.map((skill, index) => (
-              <div key={skill.name}>
-                <div className="flex justify-between mb-1">
-                  <span className="font-semibold">{skill.name}</span>
-                  <span className="text-sm text-muted-foreground">{skill.value}%</span>
+              <div key={skill.name} className="bg-card p-6 rounded-lg flex flex-col items-center justify-center text-center border hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div className="mb-4">
+                  {skill.icon}
                 </div>
-                <Progress value={progress[index]} className="h-2" />
+                <h3 className="font-semibold text-lg">{skill.name}</h3>
               </div>
             ))}
           </div>
