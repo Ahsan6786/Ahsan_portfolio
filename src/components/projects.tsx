@@ -8,6 +8,13 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
+    title: "Mitra AI",
+    description: "An innovative mental wellness application providing accessible, stigma-free support. It offers personalized resources, guided exercises, and a compassionate AI chatbot to help users navigate their mental health journey privately and securely.",
+    tags: ["AI", "Mental Health", "Web App"],
+    image: placeholderData.project4,
+    liveDemo: "https://mitraai.shop/"
+  },
+  {
     title: "Ahsanverse - Blockchain Dapp",
     description: "A decentralized application built on blockchain technology, featuring smart contracts and Web3 integration for a seamless user experience.",
     tags: ["React", "Solidity", "Web3.js", "Blockchain"],
@@ -27,13 +34,6 @@ const projects = [
     tags: ["React", "TypeScript", "Monaco Editor", "WebAssembly"],
     image: placeholderData.project3,
     liveDemo: "#"
-  },
-  {
-    title: "Mitra AI",
-    description: "An innovative mental wellness application providing accessible, stigma-free support. It offers personalized resources, guided exercises, and a compassionate AI chatbot to help users navigate their mental health journey privately and securely.",
-    tags: ["AI", "Mental Health", "Web App"],
-    image: placeholderData.project4,
-    liveDemo: "https://mitraai.shop/"
   }
 ];
 
