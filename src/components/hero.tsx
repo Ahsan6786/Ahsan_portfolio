@@ -64,7 +64,7 @@ export function Hero() {
       </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="text-center md:text-left relative h-48 md:h-56">
+          <div className="text-center md:text-left relative min-h-[250px] md:min-h-[280px]">
             {heroContent.map((content, index) => (
               <div key={index} className={cn(
                 "absolute inset-0 transition-opacity duration-1000 ease-in-out",
@@ -86,18 +86,16 @@ export function Hero() {
                   ))}
                 </h2>
                 <p className="text-2xl md:text-3xl font-light mt-2">{content.subText}</p>
+                <div className="mt-8 flex justify-center md:justify-start space-x-4">
+                    <Link href="#contact">
+                    <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
+                    </Link>
+                    <Link href="#projects">
+                    <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">MY WORKS</Button>
+                    </Link>
+                </div>
               </div>
             ))}
-            <div className={cn("absolute -bottom-10 left-0 right-0 mx-auto md:mx-0 transition-opacity duration-1000 ease-in-out", currentIndex > -1 ? "opacity-100" : "opacity-0")}>
-              <div className="mt-8 flex justify-center md:justify-start space-x-4">
-                <Link href="#contact">
-                  <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
-                </Link>
-                <Link href="#projects">
-                  <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">MY WORKS</Button>
-                </Link>
-              </div>
-            </div>
           </div>
           <div className="hidden md:flex justify-center items-center">
             <div className="relative w-[350px] h-[500px] lg:w-[450px] lg:h-[650px] rounded-lg overflow-hidden shadow-2xl">
