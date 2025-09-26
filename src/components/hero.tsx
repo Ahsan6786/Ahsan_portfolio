@@ -60,6 +60,7 @@ export function Hero() {
                 loading={index === 0 ? 'eager' : 'lazy'}
             />
         ))}
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background to-transparent" />
       </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
