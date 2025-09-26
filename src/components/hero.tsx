@@ -42,8 +42,6 @@ export function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  const currentContent = heroContent[currentIndex];
-
   return (
     <section id="home" className="relative flex items-center justify-center min-h-[calc(100vh-80px)] py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
@@ -65,7 +63,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
         </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 gap-10 items-center">
           <div className="text-center md:text-left relative h-48 md:h-56">
             {heroContent.map((content, index) => (
               <div key={index} className={cn(
@@ -100,24 +98,6 @@ export function Hero() {
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="hidden md:block relative h-[600px] w-full">
-            {heroImagesData.map((image, index) => (
-                <Image
-                    key={index}
-                    alt="Hero Image"
-                    src={image.src}
-                    fill
-                    className={cn(
-                        "object-cover object-center rounded-lg transition-opacity duration-1000 ease-in-out",
-                        index === currentIndex ? "opacity-100" : "opacity-0"
-                    )}
-                    data-ai-hint={image.aiHint}
-                    priority={index === 0}
-                    loading={index === 0 ? 'eager' : 'lazy'}
-                />
-            ))}
-             <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-background/70 via-background/20 to-transparent" />
           </div>
         </div>
       </div>
