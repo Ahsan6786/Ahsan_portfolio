@@ -8,7 +8,7 @@
     "aiHint": "abstract design"
   },
   "heroImage3": {
-    "src": "/my-image-3.png?v=2",
+    "src": "https://picsum.photos/seed/hero3/450/650",
     "aiHint": "modern art"
   },
   "aboutImage": {
