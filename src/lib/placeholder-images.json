@@ -4,7 +4,7 @@
     "aiHint": "abstract background"
   },
   "heroImage2": {
-    "src": "/my-image-2.png",
+    "src": "/my-image-2.png?v=1",
     "aiHint": "abstract design"
   },
   "heroImage3": {
