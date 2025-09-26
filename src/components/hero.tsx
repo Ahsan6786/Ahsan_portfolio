@@ -17,7 +17,7 @@ const heroContent = [
     {
         greeting: "HELLO",
         mainText: ["I am ", "Ahsan", "", ""],
-        subText: "or a full stack developer",
+        subText: "Full-Stack Web Developer",
     },
     {
         greeting: "YEP!",
@@ -61,7 +61,6 @@ export function Hero() {
             />
         ))}
         <div className="absolute inset-0 bg-transparent dark:bg-black/40" />
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background to-transparent" />
       </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -117,7 +116,6 @@ export function Hero() {
                       loading={index === 0 ? 'eager' : 'lazy'}
                   />
               ))}
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background to-transparent" />
             </div>
           </div>
         </div>
