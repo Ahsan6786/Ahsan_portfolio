@@ -97,7 +97,8 @@ html {
   font-family: 'Helvetica Neue', sans-serif;
   font-weight: bold;
   font-size: 5rem;
-  color: #e50914;
+  color: #FFD700;
+  text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFA500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   opacity: 0;
