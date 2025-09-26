@@ -140,7 +140,6 @@ html {
   font-size: 5rem;
   font-weight: bold;
   color: #FFD700;
-  text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
   animation: zoom-in-text 2s ease forwards;
 }
 
