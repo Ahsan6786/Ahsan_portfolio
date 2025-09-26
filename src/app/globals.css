@@ -137,6 +137,7 @@ html {
 }
 
 .intro-text {
+  font-family: var(--font-display), sans-serif;
   font-size: 5rem;
   font-weight: bold;
   color: #FFD700;
