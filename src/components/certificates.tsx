@@ -12,6 +12,11 @@ import {
 
 const certificates = [
   {
+    title: "Smart India Hackathon 2025",
+    description: "Cleared 2 rounds of the world's biggest open innovation model, Smart India Hackathon 2025.",
+    image: placeholderData.certificateSIH,
+  },
+  {
     title: "Python Programming",
     description: "This certificate validates my proficiency in Python programming, covering fundamental to advanced concepts.",
     image: placeholderData.certificate1,
