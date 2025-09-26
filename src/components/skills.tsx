@@ -14,6 +14,7 @@ const skills = [
   { name: "Python", icon: <BrainCircuit className="w-10 h-10 text-primary" /> },
   { name: "MySQL", icon: <Database className="w-10 h-10 text-primary" /> },
   { name: "AWS", icon: <Cloud className="w-10 h-10 text-primary" /> },
+  { name: "Firebase", icon: <Database className="w-10 h-10 text-primary" /> },
 ];
 
 export function Skills() {
