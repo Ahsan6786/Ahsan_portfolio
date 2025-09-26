@@ -62,7 +62,7 @@ export function Hero() {
                     loading={index === 0 ? 'eager' : 'lazy'}
                 />
             ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent" />
         </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
         <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -117,7 +117,7 @@ export function Hero() {
                     loading={index === 0 ? 'eager' : 'lazy'}
                 />
             ))}
-             <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-background via-background/50 to-transparent" />
+             <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-background/70 via-background/20 to-transparent" />
           </div>
         </div>
       </div>
