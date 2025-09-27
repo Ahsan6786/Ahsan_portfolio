@@ -30,14 +30,17 @@ const socialLinks = [
   {
     href: "https://www.instagram.com/khan_ahsan_8055?igsh=MWhpYnJ1OGo2Y214ZA%3D%3D&utm_source=qr",
     icon: <Instagram className="w-8 h-8 text-primary" />,
+    label: "Instagram",
   },
   {
     href: "https://www.linkedin.com/in/ahsan-imam-khan-9a0443328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     icon: <Linkedin className="w-8 h-8 text-primary" />,
+    label: "LinkedIn",
   },
   {
     href: "https://github.com/Ahsan6786",
     icon: <Github className="w-8 h-8 text-primary" />,
+    label: "Github",
   },
 ];
 
@@ -74,6 +77,7 @@ export function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-16 h-16 rounded-full bg-background hover:bg-primary/10 transition-colors"
+                aria-label={link.label}
               >
                 {link.icon}
               </a>
