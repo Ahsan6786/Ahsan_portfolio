@@ -72,7 +72,7 @@ export function Header() {
 
   return (
     <header className="p-4 md:p-6 sticky top-0 bg-background/80 backdrop-blur-sm z-50 flex justify-between items-center w-full">
-        <Link href="#" className="text-2xl font-bold ml-4">AHSAN</Link>
+        <Link href="#" className="text-2xl font-bold tracking-wider text-primary ml-4">AHSAN</Link>
         <div className="container mx-auto flex justify-center items-center">
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
                 {navLinks.map((link) => (
@@ -111,7 +111,7 @@ export function Header() {
             <SheetContent side="left">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="p-6">
-                  <Link href="#" className="text-2xl font-bold mb-8 block">AHSAN</Link>
+                  <Link href="#" className="text-2xl font-bold mb-8 block text-primary tracking-wider">AHSAN</Link>
                   <nav className="flex flex-col space-y-4">
                       {navLinks.map((link) => (
                           <SheetClose key={link.label} asChild>
