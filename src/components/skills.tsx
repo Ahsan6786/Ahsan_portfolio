@@ -23,7 +23,7 @@ export function Skills() {
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
-            <h2 className="text-4xl md:text-6xl font-bold">My Skills</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">My Skills</h2>
             <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
               Skills
             </p>
@@ -31,13 +31,13 @@ export function Skills() {
               A showcase of my technical abilities and tools I use to build amazing things.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 max-w-5xl mx-auto">
             {skills.map((skill, index) => (
-              <div key={skill.name} className="bg-card p-6 rounded-lg flex flex-col items-center justify-center text-center border hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <div className="mb-4">
+              <div key={skill.name} className="bg-card p-4 md:p-6 rounded-lg flex flex-col items-center justify-center text-center border hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div className="mb-3 md:mb-4">
                   {skill.icon}
                 </div>
-                <h3 className="font-semibold text-base md:text-lg">{skill.name}</h3>
+                <h3 className="font-semibold text-sm md:text-lg">{skill.name}</h3>
               </div>
             ))}
           </div>
