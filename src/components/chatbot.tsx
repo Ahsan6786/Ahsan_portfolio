@@ -92,7 +92,7 @@ export function Chatbot() {
     setMessages((prev) => [...prev, userMessage]);
 
     const lowerCaseInput = inputValue.toLowerCase();
-    let response: string | string[] = "I'm sorry, I don't have information about that. Please try asking about Ahsan's skills, projects, or how to contact him.";
+    let response: string | string[] = "I'm sorry, I don't have information about that. You can reach out to Ahsan on Instagram: @khan_ahsan_8055 or via email at ahsanimamkhan06@gmail.com.";
 
     const foundQA = predefinedQA.find(qa => qa.keywords.some(keyword => lowerCaseInput.includes(keyword)));
     
@@ -125,7 +125,7 @@ export function Chatbot() {
 
   return (
     <>
-      <div className="fixed bottom-5 right-5 z-50">
+      <div className="fixed bottom-5 left-5 z-40">
         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
           <Button
             onClick={toggleChat}
@@ -146,7 +146,7 @@ export function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed bottom-24 right-5 z-50 w-[calc(100vw-40px)] max-w-sm"
+            className="fixed bottom-24 left-5 z-50 w-[calc(100vw-40px)] max-w-sm"
           >
             <div className="bg-card border rounded-lg shadow-xl flex flex-col h-[60vh] max-h-[500px]">
               <div className="p-4 border-b flex items-center">
