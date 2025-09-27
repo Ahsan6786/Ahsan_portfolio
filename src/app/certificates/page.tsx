@@ -144,11 +144,11 @@ export default function CertificatesPage() {
             </Link>
           </div>
           <div className="text-center mb-12 relative">
-            <h1 className="text-5xl md:text-6xl font-bold">My Certificates</h1>
-            <p className="text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
+            <h1 className="text-4xl md:text-6xl font-bold">My Certificates</h1>
+            <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
               Gallery
             </p>
-            <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
               A complete showcase of my professional certifications and qualifications.
             </p>
           </div>

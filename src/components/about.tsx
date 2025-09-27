@@ -13,7 +13,7 @@ export function About() {
             <div className="relative text-center">
               <div className="relative mb-4">
                 <h2 className="text-4xl md:text-5xl font-bold">About Me</h2>
-                <p className="text-6xl md:text-8xl font-bold absolute -top-4 left-1/2 -translate-x-1/2 text-foreground/5 z-0 w-full text-center">
+                <p className="text-5xl md:text-8xl font-bold absolute -top-4 left-1/2 -translate-x-1/2 text-foreground/5 z-0 w-full text-center">
                   About
                 </p>
               </div>
@@ -24,10 +24,10 @@ export function About() {
                   Ahsan Imam Khan
                 </span>
               </p>
-              <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">Passionate developer crafting digital experiences with precision and creativity</p>
-              <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">I am a B.Tech Computer Science student at MIT-WPU. I am passionate about coding, exploring new technologies, and turning ideas into real-world applications.</p>
-              <p className="text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">I love collaborating on projects that challenge me to grow and innovate. When I'm not coding, you can find me exploring new technologies and continuously improving my skills.</p>
-              <p className="text-2xl text-primary font-bold mb-6">6 Projects completed</p>
+              <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">Passionate developer crafting digital experiences with precision and creativity</p>
+              <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">I am a B.Tech Computer Science student at MIT-WPU. I am passionate about coding, exploring new technologies, and turning ideas into real-world applications.</p>
+              <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">I love collaborating on projects that challenge me to grow and innovate. When I'm not coding, you can find me exploring new technologies and continuously improving my skills.</p>
+              <p className="text-xl md:text-2xl text-primary font-bold mb-6">6 Projects completed</p>
               <Link href="#contact">
                 <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">
                   HIRE ME

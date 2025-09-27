@@ -24,11 +24,11 @@ export function Services() {
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
-            <h2 className="text-5xl md:text-6xl font-bold">Services</h2>
-            <p className="text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
+            <h2 className="text-4xl md:text-6xl font-bold">Services</h2>
+            <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
               Services
             </p>
-            <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
               I build full-stack websites and web applications with a focus on performance and search engine optimization (SEO).
             </p>
           </div>
@@ -41,7 +41,7 @@ export function Services() {
                 <div className="mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-background">
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-bold uppercase tracking-widest">
+                <h3 className="text-base md:text-lg font-bold uppercase tracking-widest">
                   {service.title}
                 </h3>
                 <div className="w-10 h-1 bg-primary mt-3"></div>

@@ -71,7 +71,7 @@ export function Hero() {
                 index === currentIndex ? "opacity-100" : "opacity-0 absolute inset-0 md:static"
               )}>
                 <p className="text-lg font-medium mb-2">{content.greeting}</p>
-                <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+                <h2 className="text-4xl md:text-6xl font-bold leading-tight">
                   {content.mainText.map((text, textIdx) => (
                     <span
                       key={textIdx}
@@ -85,7 +85,7 @@ export function Hero() {
                     </span>
                   ))}
                 </h2>
-                <p className="text-2xl md:text-3xl font-light mt-2">{content.subText}</p>
+                <p className="text-xl md:text-3xl font-light mt-2">{content.subText}</p>
                 <div className="mt-8 flex justify-center md:justify-start space-x-4">
                     <Link href="#contact">
                     <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
