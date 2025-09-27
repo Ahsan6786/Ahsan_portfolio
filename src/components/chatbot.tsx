@@ -13,14 +13,44 @@ type Message = {
 };
 
 const predefinedQA: { keywords: string[]; answer: string | string[] }[] = [
-  { keywords: ["hello", "hi", "hey"], answer: "Hello! How can I help you today? I can answer questions about Ahsan's skills, projects, and more." },
-  { keywords: ["who", "ahsan", "about"], answer: "Ahsan Imam Khan is a passionate B.Tech Computer Science student at MIT-WPU. He loves coding, exploring new technologies, and turning ideas into real-world applications." },
-  { keywords: ["skill", "technologies", "know", "proficient"], answer: "Ahsan is skilled in HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Python, MySQL, AWS, and Firebase." },
-  { keywords: ["project", "work", "portfolio"], answer: ["Ahsan has completed 6 projects. Some of them are:", "1. Mitra AI: A mental wellness app.", "2. Ahsanverse: A Blockchain Dapp.", "3. News Archive: A news aggregation system.", "You can find more details on the projects section!"] },
-  { keywords: ["contact", "email", "phone", "hire"], answer: "You can contact Ahsan via email at ahsanimamkhan06@gmail.com or by phone at +91 9162248786. You can also use the contact form on the website." },
-  { keywords: ["certificate", "qualification"], answer: "Ahsan has several certificates, including for the Smart India Hackathon, Python Programming, Financial Planning, and more. You can see all of them on the certificates page." },
-  { keywords: ["services", "offer", "do"], answer: "Ahsan offers Full-Stack Development, builds Web Applications, and provides SEO & Performance optimization services." },
-  { keywords: ["bye", "thanks", "thank you"], answer: "You're welcome! Feel free to ask if you have more questions. Have a great day!" },
+  {
+    keywords: ["hello", "hi", "hey", "namaste", "नमस्ते", "hola", "yo", "wassup", "hey there", "hello ji", "hi bro", "hi there"],
+    answer: "Hello! How can I help you today? I can answer questions about Ahsan's skills, projects, and more."
+  },
+  {
+    keywords: ["who", "ahsan", "about", "kaun hai", "कौन है", "ahsan kaun", "who is ahsan", "ahsan imam", "ahsan kon", "बायो", "bio", "intro", "introduction"],
+    answer: "Ahsan Imam Khan is a passionate B.Tech Computer Science student at MIT-WPU. He loves coding, exploring new technologies, and turning ideas into real-world applications."
+  },
+  {
+    keywords: ["skill", "technologies", "know", "proficient", "kya aata hai", "क्या आता है", "tech stack", "technology", "skills kya hain", "tools", "languages", "कौन सी टेक्नोलॉजी आती है", "developer stack"],
+    answer: "Ahsan is skilled in HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Python, MySQL, AWS, and Firebase."
+  },
+  {
+    keywords: ["project", "work", "portfolio", "काम", "projects kya hai", "projects dikhaye", "कौन से प्रोजेक्ट्स", "किया क्या है", "apna kaam", "developed", "portfolio batao", "projects showcase"],
+    answer: [
+      "Ahsan has completed 6 projects. Some of them are:",
+      "1. Mitra AI: A mental wellness app.",
+      "2. Ahsanverse: A Blockchain Dapp.",
+      "3. News Archive: A news aggregation system.",
+      "You can find more details on the projects section!"
+    ]
+  },
+  {
+    keywords: ["contact", "email", "phone", "hire", "reach", "get in touch", "संपर्क", "mobile number", "contact info", "contact karo", "kaise contact kare", "बात करना है", "connect", "contact information"],
+    answer: "You can contact Ahsan via email at ahsanimamkhan06@gmail.com or by phone at +91 9162248786. You can also use the contact form on the website."
+  },
+  {
+    keywords: ["certificate", "qualification", "certifications", "achievements", "pramaan patra", "प्रमाण पत्र", "kaun se certificate", "certi", "badges", "degrees", "recognition", "training certificate", "courses done"],
+    answer: "Ahsan has several certificates, including for the Smart India Hackathon, Python Programming, Financial Planning, and more. You can see all of them on the certificates page."
+  },
+  {
+    keywords: ["services", "offer", "do", "kya karte ho", "क्या करते हो", "kya services hain", "service", "help", "provide", "offers", "सेवाएं", "कौन सी सर्विस", "kya provide karte ho"],
+    answer: "Ahsan offers Full-Stack Development, builds Web Applications, and provides SEO & Performance optimization services."
+  },
+  {
+    keywords: ["bye", "thanks", "thank you", "dhanyavaad", "shukriya", "alvida", "goodbye", "see you", "ok thanks", "bye bye", "thanks bro", "thank you so much", "धन्यवाद"],
+    answer: "You're welcome! Feel free to ask if you have more questions. Have a great day!"
+  }
 ];
 
 export function Chatbot() {
