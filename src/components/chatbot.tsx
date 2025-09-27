@@ -19,7 +19,11 @@ const predefinedQA: { keywords: string[]; answer: string | string[] }[] = [
   },
   {
     keywords: ["who", "ahsan", "about", "kaun hai", "कौन है", "ahsan kaun", "who is ahsan", "ahsan imam", "ahsan kon", "बायो", "bio", "intro", "introduction"],
-    answer: "Ahsan Imam Khan is a passionate B.Tech Computer Science student at MIT-WPU. He loves coding, exploring new technologies, and turning ideas into real-world applications."
+    answer: "Ahsan Imam Khan is a passionate B.Tech Computer Science student at MIT-WPU, Pune. He enjoys building tech solutions, coding, and working on impactful real-world projects."
+  },
+  {
+    keywords: ["education", "study", "college", "school", "schooling", "10th", "12th", "padhaai", "कहां पढ़े", "kahaan se padha", "educational background", "college name", "studies", "padhai"],
+    answer: "Ahsan is currently pursuing B.Tech in Computer Science from MIT World Peace University (MIT-WPU), Pune. He completed his schooling up to 10th at St. Paul's High School, Hajipur, and did his 11th–12th at Akshara International School in Wakad, Pune."
   },
   {
     keywords: ["skill", "technologies", "know", "proficient", "kya aata hai", "क्या आता है", "tech stack", "technology", "skills kya hain", "tools", "languages", "कौन सी टेक्नोलॉजी आती है", "developer stack"],
