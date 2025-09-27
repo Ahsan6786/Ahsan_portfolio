@@ -26,14 +26,17 @@ const socialLinks = [
   {
     href: "https://www.instagram.com/khan_ahsan_8055?igsh=MWhpYnJ1OGo2Y214ZA%3D%3D&utm_source=qr",
     icon: <Instagram className="w-5 h-5" />,
+    label: "Instagram"
   },
   {
     href: "https://www.linkedin.com/in/ahsan-imam-khan-9a0443328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
     icon: <Linkedin className="w-5 h-5" />,
+    label: "LinkedIn"
   },
   {
     href: "https://github.com/Ahsan6786",
     icon: <Github className="w-5 h-5" />,
+    label: "Github"
   },
 ];
 
@@ -94,6 +97,7 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground hover:text-primary transition-colors"
+              aria-label={link.label}
             >
               {link.icon}
             </a>
@@ -104,7 +108,7 @@ export function Header() {
           <ThemeToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" aria-label="Open menu">
                   <Menu />
               </Button>
             </SheetTrigger>
@@ -134,6 +138,7 @@ export function Header() {
                           rel="noopener noreferrer"
                           className="text-foreground hover:text-primary transition-colors"
                           onClick={() => setIsSheetOpen(false)}
+                          aria-label={link.label}
                         >
                           {React.cloneElement(link.icon, { className: "w-6 h-6"})}
                         </a>

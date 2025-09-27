@@ -18,7 +18,7 @@ import { useToast } from "@/hooks/use-toast";
 import { db } from "@/lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import Confetti from 'react-confetti';
-import { useState } from "react";
+import { useState, useId } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -47,6 +47,7 @@ export function ContactForm() {
       message: "",
     },
   });
+  const formId = useId();
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
@@ -91,7 +92,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Your Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Narendra Modi" {...field} />
+                  <Input placeholder="Narendra Modi" {...field} aria-label="Your Name"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -104,7 +105,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Your Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="narendramodi@example.com" {...field} />
+                  <Input placeholder="narendramodi@example.com" {...field} aria-label="Your Email" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -117,7 +118,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Subject</FormLabel>
                 <FormControl>
-                  <Input placeholder="Project Proposal" {...field} />
+                  <Input placeholder="Project Proposal" {...field} aria-label="Subject" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -130,7 +131,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Tell me more about your project..." {...field} />
+                  <Textarea placeholder="Tell me more about your project..." {...field} aria-label="Message" />
                 </FormControl>
                 <FormMessage />
               </FormItem>

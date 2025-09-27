@@ -5,7 +5,7 @@ import Link from "next/link";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, PartyPopper } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import Confetti from "react-confetti";
 
@@ -108,6 +108,7 @@ export default function CertificatesPage() {
     handleResize();
     window.addEventListener('resize', handleResize);
     
+    // Auto-play confetti on load
     setShowConfetti(true);
     const timer = setTimeout(() => setShowConfetti(false), 8000);
 
@@ -116,6 +117,15 @@ export default function CertificatesPage() {
       clearTimeout(timer);
     };
   }, []);
+
+  const triggerConfetti = () => {
+    setShowConfetti(false); // Reset first
+    setTimeout(() => {
+      setShowConfetti(true);
+      const timer = setTimeout(() => setShowConfetti(false), 8000);
+      return () => clearTimeout(timer);
+    }, 10);
+  };
 
   const drawShape = (ctx: CanvasRenderingContext2D) => {
     const size = 12; 
@@ -147,12 +157,16 @@ export default function CertificatesPage() {
           </div>
           <div className="text-center mb-12 relative">
             <h1 className="text-4xl md:text-6xl font-bold">My Certificates</h1>
-            <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
+            <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0" aria-hidden="true">
               Gallery
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
               A complete showcase of my professional certifications and qualifications.
             </p>
+            <Button onClick={triggerConfetti} variant="outline" size="sm" className="mt-4" aria-label="Celebrate with confetti">
+              <PartyPopper className="w-4 h-4 mr-2" />
+              Celebrate!
+            </Button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allCertificates.map((certificate, index) => (

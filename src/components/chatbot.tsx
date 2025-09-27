@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MessageSquare, Send, X, Bot, User } from "lucide-react";
@@ -76,18 +76,19 @@ export function Chatbot() {
     setInputValue(e.target.value);
   };
   
-  const scrollToBottom = () => {
-    if (scrollAreaRef.current) {
-        const viewport = scrollAreaRef.current.querySelector('div[data-radix-scroll-area-viewport]');
-        if (viewport) {
-            viewport.scrollTop = viewport.scrollHeight;
-        }
+  const scrollToBottom = useCallback(() => {
+    const viewport = scrollAreaRef.current?.querySelector('div[data-radix-scroll-area-viewport]');
+    if (viewport) {
+      viewport.scrollTo({ top: viewport.scrollHeight, behavior: 'smooth' });
     }
-  };
+  }, []);
 
   useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+    if(isOpen) {
+        const timeout = setTimeout(() => scrollToBottom(), 100);
+        return () => clearTimeout(timeout);
+    }
+  }, [messages, isOpen, scrollToBottom]);
 
   const handleSendMessage = () => {
     if (inputValue.trim() === "") return;
@@ -135,6 +136,7 @@ export function Chatbot() {
             onClick={toggleChat}
             size="icon"
             className="rounded-full bg-primary text-primary-foreground h-14 w-14 shadow-lg"
+            aria-label={isOpen ? "Close chat" : "Open chat"}
           >
             <AnimatePresence>
               {isOpen ? <X /> : <MessageSquare />}
@@ -155,7 +157,7 @@ export function Chatbot() {
             <div className="bg-card border rounded-lg shadow-xl flex flex-col h-[60vh] max-h-[500px]">
               <div className="p-4 border-b flex items-center justify-between">
                 <h3 className="text-lg font-bold">Chat with Ahsan's Assistant</h3>
-                <Button variant="ghost" size="icon" onClick={toggleChat} className="h-8 w-8">
+                <Button variant="ghost" size="icon" onClick={toggleChat} className="h-8 w-8" aria-label="Close chat">
                   <X size={20} />
                 </Button>
               </div>
@@ -170,7 +172,7 @@ export function Chatbot() {
                       }`}
                     >
                       {message.sender === "bot" && (
-                        <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0">
+                        <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center flex-shrink-0" aria-label="Bot avatar">
                           <Bot size={20} />
                         </div>
                       )}
@@ -184,7 +186,7 @@ export function Chatbot() {
                         {message.text}
                       </div>
                        {message.sender === "user" && (
-                        <div className="w-8 h-8 rounded-full bg-muted text-muted-foreground flex items-center justify-center flex-shrink-0">
+                        <div className="w-8 h-8 rounded-full bg-muted text-muted-foreground flex items-center justify-center flex-shrink-0" aria-label="User avatar">
                           <User size={20} />
                         </div>
                       )}
@@ -201,8 +203,9 @@ export function Chatbot() {
                   onChange={handleInputChange}
                   onKeyPress={handleKeyPress}
                   className="flex-grow"
+                  aria-label="Chat input"
                 />
-                <Button onClick={handleSendMessage} size="icon" className="flex-shrink-0">
+                <Button onClick={handleSendMessage} size="icon" className="flex-shrink-0" aria-label="Send message">
                   <Send />
                 </Button>
               </div>

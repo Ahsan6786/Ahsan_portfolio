@@ -57,7 +57,6 @@ export function Hero() {
                 )}
                 data-ai-hint={image.aiHint}
                 priority={index === 0}
-                loading={index === 0 ? 'eager' : 'lazy'}
             />
         ))}
         <div className="absolute inset-0 bg-transparent dark:bg-black/40" />
@@ -71,7 +70,7 @@ export function Hero() {
                 index === currentIndex ? "opacity-100" : "opacity-0 absolute inset-0 md:static"
               )}>
                 <p className="text-lg font-medium mb-2">{content.greeting}</p>
-                <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                   {content.mainText.map((text, textIdx) => (
                     <span
                       key={textIdx}
@@ -84,7 +83,7 @@ export function Hero() {
                       {text}
                     </span>
                   ))}
-                </h2>
+                </h1>
                 <p className="text-xl md:text-3xl font-light mt-2">{content.subText}</p>
                 <div className="mt-8 flex justify-center md:justify-start space-x-4">
                     <Link href="#contact">
@@ -111,7 +110,6 @@ export function Hero() {
                       )}
                       data-ai-hint={image.aiHint}
                       priority={index === 0}
-                      loading={index === 0 ? 'eager' : 'lazy'}
                   />
               ))}
             </div>
