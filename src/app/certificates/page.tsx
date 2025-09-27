@@ -138,10 +138,12 @@ export default function CertificatesPage() {
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
           <div className="mb-12">
-            <Link href="/" className="inline-flex items-center text-primary hover:underline">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Link>
+            <Button asChild variant="outline">
+              <Link href="/" className="inline-flex items-center">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Home
+              </Link>
+            </Button>
           </div>
           <div className="text-center mb-12 relative">
             <h1 className="text-4xl md:text-6xl font-bold">My Certificates</h1>
