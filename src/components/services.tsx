@@ -1,20 +1,20 @@
 "use client";
 
-import { Search, Lightbulb, TrendingUp } from "lucide-react";
+import { Code, Rocket, TrendingUp } from "lucide-react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 
 const services = [
   {
-    icon: <Search className="w-12 h-12 text-primary" />,
-    title: "WEB DESIGN",
+    icon: <Code className="w-12 h-12 text-primary" />,
+    title: "Full-Stack Development",
+  },
+  {
+    icon: <Rocket className="w-12 h-12 text-primary" />,
+    title: "Web Applications",
   },
   {
     icon: <TrendingUp className="w-12 h-12 text-primary" />,
-    title: "SEO",
-  },
-  {
-    icon: <Lightbulb className="w-12 h-12 text-primary" />,
-    title: "WEB DEVELOPER",
+    title: "SEO & Performance",
   },
 ];
 
