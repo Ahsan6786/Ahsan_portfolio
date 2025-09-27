@@ -153,8 +153,11 @@ export function Chatbot() {
             className="fixed bottom-24 left-5 z-50 w-[calc(100vw-40px)] max-w-sm"
           >
             <div className="bg-card border rounded-lg shadow-xl flex flex-col h-[60vh] max-h-[500px]">
-              <div className="p-4 border-b flex items-center">
+              <div className="p-4 border-b flex items-center justify-between">
                 <h3 className="text-lg font-bold">Chat with Ahsan's Assistant</h3>
+                <Button variant="ghost" size="icon" onClick={toggleChat} className="h-8 w-8">
+                  <X size={20} />
+                </Button>
               </div>
 
               <ScrollArea className="flex-grow p-4" ref={scrollAreaRef}>
