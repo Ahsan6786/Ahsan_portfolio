@@ -12,16 +12,6 @@ const certificates = [
     description: "Cleared 2 rounds of the world's biggest open innovation model, Smart India Hackathon 2025.",
     image: placeholderData.certificateSIH,
   },
-  {
-    title: "Python Programming",
-    description: "This certificate validates my proficiency in Python programming, covering fundamental to advanced concepts.",
-    image: placeholderData.certificate1,
-  },
-  {
-    title: "Personal and Financial Planning",
-    description: "Awarded for completing a course on personal and financial planning, covering budgeting, investing, and financial literacy.",
-    image: placeholderData.certificate2,
-  },
 ];
 
 export function Certificates() {
@@ -40,7 +30,7 @@ export function Certificates() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificates.map((certificate, index) => (
-              <div key={index} className="bg-background p-4 rounded-lg shadow-lg group flex flex-col items-center text-center">
+              <div key={index} className="bg-background p-4 rounded-lg shadow-lg group flex flex-col items-center text-center md:col-start-2">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md mb-4">
                   <Image
                     src={certificate.image.src}
