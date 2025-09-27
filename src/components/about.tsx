@@ -6,7 +6,7 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll";
 
 export function About() {
   return (
-    <section id="about" className="py-20 md:py-32">
+    <section id="about" className="py-16 md:py-32">
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-1 gap-10 md:gap-20 items-center">

@@ -50,7 +50,7 @@ const certificates = [
 
 export function Certificates() {
   return (
-    <section id="certificates" className="py-20 md:py-32 bg-card">
+    <section id="certificates" className="py-16 md:py-32 bg-card">
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
