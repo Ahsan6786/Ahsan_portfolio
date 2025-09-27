@@ -118,15 +118,6 @@ export default function CertificatesPage() {
     };
   }, []);
 
-  const triggerConfetti = () => {
-    setShowConfetti(false); // Reset first
-    setTimeout(() => {
-      setShowConfetti(true);
-      const timer = setTimeout(() => setShowConfetti(false), 8000);
-      return () => clearTimeout(timer);
-    }, 10);
-  };
-
   const drawShape = (ctx: CanvasRenderingContext2D) => {
     const size = 12; 
     const shapeFunc = confettiShapes[Math.floor(Math.random() * confettiShapes.length)];
@@ -163,10 +154,6 @@ export default function CertificatesPage() {
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
               A complete showcase of my professional certifications and qualifications.
             </p>
-            <Button onClick={triggerConfetti} variant="outline" size="sm" className="mt-4" aria-label="Celebrate with confetti">
-              <PartyPopper className="w-4 h-4 mr-2" />
-              Celebrate!
-            </Button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allCertificates.map((certificate, index) => (
