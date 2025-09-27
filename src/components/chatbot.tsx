@@ -14,7 +14,7 @@ type Message = {
 
 const predefinedQA: { keywords: string[]; answer: string | string[] }[] = [
   {
-    keywords: ["hello", "hi", "hey", "namaste", "नमस्ते", "hola", "yo", "wassup", "hey there", "hello ji", "hi bro", "hi there"],
+    keywords: ["hello", "hi", "hey", "namaste", "नमस्ते", "hola", "yo", "wassup", "hey there", "hello ji", "hi bro", "hi there", "hy"],
     answer: "Hello! How can I help you today? I can answer questions about Ahsan's skills, projects, and more."
   },
   {
