@@ -5,6 +5,7 @@ import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ScrollToTopButton } from "@/components/scroll-to-top";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Chatbot } from "@/components/chatbot";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
           {children}
           <Toaster />
           <ScrollToTopButton />
+          <Chatbot />
         </ThemeProvider>
       </body>
     </html>
