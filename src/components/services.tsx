@@ -29,8 +29,7 @@ export function Services() {
               Services
             </p>
             <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia
+              I build full-stack websites and web applications with a focus on performance and search engine optimization (SEO).
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
