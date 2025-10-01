@@ -15,7 +15,7 @@ const InfiniteScroller = ({ skills, direction = 'left' }: { skills: string[], di
       direction === 'right' && 'animate-infinite-scroll-reverse'
     )}>
       {skills.map((skill, index) => (
-        <li key={index} className="bg-yellow-400 text-black rounded-lg shadow-md p-4 whitespace-nowrap text-lg font-semibold border border-yellow-500">
+        <li key={index} className="bg-black text-yellow-400 rounded-lg shadow-md p-4 whitespace-nowrap text-lg font-semibold border-2 border-yellow-500">
           {skill}
         </li>
       ))}
@@ -25,7 +25,7 @@ const InfiniteScroller = ({ skills, direction = 'left' }: { skills: string[], di
       direction === 'right' && 'animate-infinite-scroll-reverse'
     )} aria-hidden="true">
       {skills.map((skill, index) => (
-        <li key={index} className="bg-yellow-400 text-black rounded-lg shadow-md p-4 whitespace-nowrap text-lg font-semibold border border-yellow-500">
+        <li key={index} className="bg-black text-yellow-400 rounded-lg shadow-md p-4 whitespace-nowrap text-lg font-semibold border-2 border-yellow-500">
           {skill}
         </li>
       ))}
