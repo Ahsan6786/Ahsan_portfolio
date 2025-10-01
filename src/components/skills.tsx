@@ -8,13 +8,13 @@ import { cn } from '@/lib/utils';
 const skillsList = [
   { name: "HTML", logo: "/html.png" },
   { name: "CSS", logo: "/css.png" },
-  { name: "JavaScript", logo: "/javascript.png" },
+  { name: "JavaScript", logo: "/java-script.png" },
   { name: "React", logo: "/react.png" },
-  { name: "Next.js", logo: "/nextjs.png" },
-  { name: "Tailwind CSS", logo: "/tailwind.png" },
-  { name: "Python", logo: "/python.png" },
+  { name: "Next.js", logo: "/Next-js.png" },
+  { name: "Tailwind CSS", logo: "/tailwind-css.png" },
+  { name: "Python", logo: "/Python.png" },
   { name: "MySQL", logo: "/mysql.png" },
-  { name: "AWS", logo: "/aws.png" },
+  { name: "Firebase", logo: "/firebase.png" },
 ];
 
 export function Skills() {
