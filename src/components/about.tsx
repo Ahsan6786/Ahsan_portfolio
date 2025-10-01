@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { ParallaxText } from "./parallax-text";
 
 export function About() {
   return (
@@ -27,16 +28,22 @@ export function About() {
               <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">Passionate developer crafting digital experiences with precision and creativity</p>
               <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">I am a B.Tech Computer Science student at MIT-WPU. I am passionate about coding, exploring new technologies, and turning ideas into real-world applications.</p>
               <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">I love collaborating on projects that challenge me to grow and innovate. When I'm not coding, you can find me exploring new technologies and continuously improving my skills.</p>
-              <p className="text-xl md:text-2xl text-primary font-bold mb-6">6 Projects completed</p>
-              <Link href="#contact">
-                <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">
-                  HIRE ME
-                </Button>
-              </Link>
             </div>
           </div>
         </div>
       </AnimateOnScroll>
+      <div className="mt-12 space-y-4">
+        <ParallaxText baseVelocity={-5}>Passionate Developer</ParallaxText>
+        <ParallaxText baseVelocity={5}>Creative Problem Solver</ParallaxText>
+      </div>
+      <div className="text-center mt-12">
+        <p className="text-xl md:text-2xl text-primary font-bold mb-6">6 Projects completed</p>
+        <Link href="#contact">
+          <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">
+            HIRE ME
+          </Button>
+        </Link>
+      </div>
     </section>
   );
 }
