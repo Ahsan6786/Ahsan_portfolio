@@ -36,7 +36,6 @@ const InfiniteScroller = ({ skills, direction = 'left' }: { skills: string[], di
 
 export function Skills() {
   const firstRowSkills = [...skillsList];
-  const secondRowSkills = [...skillsList].reverse();
   
   return (
     <section id="skills" className="py-16 md:py-32 overflow-hidden">
@@ -55,7 +54,6 @@ export function Skills() {
       </AnimateOnScroll>
       <div className="space-y-8">
         <InfiniteScroller skills={firstRowSkills} direction="left" />
-        <InfiniteScroller skills={secondRowSkills} direction="right" />
       </div>
     </section>
   );
