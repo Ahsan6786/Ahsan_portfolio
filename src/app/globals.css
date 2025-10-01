@@ -109,6 +109,17 @@ html {
   }
 }
 
+@keyframes infinite-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes infinite-scroll-reverse {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+
 .text-pan-animation {
   animation: text-pan 1s ease-out forwards;
 }
@@ -119,6 +130,14 @@ html {
 
 .fade-in-up-animation {
   animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 40s linear infinite;
+}
+
+.animate-infinite-scroll-reverse {
+  animation: infinite-scroll-reverse 40s linear infinite;
 }
 
 .parallax {

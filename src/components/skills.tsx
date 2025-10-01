@@ -2,21 +2,47 @@
 
 import React from 'react';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { ParallaxText } from './parallax-text';
-import { Code, Palette, ToyBrick, FileCode2, Wind, BrainCircuit, Database, Cloud } from "lucide-react";
+import { cn } from '@/lib/utils';
 
 const skillsList = [
   "HTML", "React", "CSS", "Next.js", "JavaScript", "Tailwind CSS", "Python", "MySQL", "AWS", "Firebase"
 ];
 
-const skillsText = skillsList.join(" • ");
+const InfiniteScroller = ({ skills, direction = 'left' }: { skills: string[], direction?: 'left' | 'right' }) => (
+  <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+    <ul className={cn(
+      "flex items-center justify-center md:justify-start [&_li]:mx-4 animate-infinite-scroll",
+      direction === 'right' && 'animate-infinite-scroll-reverse'
+    )}>
+      {skills.map((skill, index) => (
+        <li key={index} className="bg-card text-card-foreground rounded-lg shadow-md p-4 whitespace-nowrap text-lg font-semibold border">
+          {skill}
+        </li>
+      ))}
+    </ul>
+    <ul className={cn(
+      "flex items-center justify-center md:justify-start [&_li]:mx-4 animate-infinite-scroll",
+      direction === 'right' && 'animate-infinite-scroll-reverse'
+    )} aria-hidden="true">
+      {skills.map((skill, index) => (
+        <li key={index} className="bg-card text-card-foreground rounded-lg shadow-md p-4 whitespace-nowrap text-lg font-semibold border">
+          {skill}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 
 export function Skills() {
+  const firstRowSkills = [...skillsList];
+  const secondRowSkills = [...skillsList].reverse();
+  
   return (
     <section id="skills" className="py-16 md:py-32 overflow-hidden">
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12 relative">
+          <div className="text-center mb-16 relative">
             <h2 className="text-4xl md:text-5xl font-bold">My Skills</h2>
             <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
               Skills
@@ -27,13 +53,9 @@ export function Skills() {
           </div>
         </div>
       </AnimateOnScroll>
-      <div className="space-y-4">
-        <ParallaxText baseVelocity={-2} className="text-2xl md:text-4xl font-semibold text-muted-foreground">
-          {skillsText}
-        </ParallaxText>
-        <ParallaxText baseVelocity={2} className="text-2xl md:text-4xl font-semibold text-primary">
-          {skillsText}
-        </ParallaxText>
+      <div className="space-y-8">
+        <InfiniteScroller skills={firstRowSkills} direction="left" />
+        <InfiniteScroller skills={secondRowSkills} direction="right" />
       </div>
     </section>
   );
