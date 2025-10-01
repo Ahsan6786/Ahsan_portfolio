@@ -38,7 +38,7 @@ export function Skills() {
           {allSkills.map((skill, index) => (
             <div
               key={`skill-1-${index}`}
-              className="flex-shrink-0 w-48 h-32 bg-black border-4 border-yellow-400 rounded-lg flex flex-col items-center justify-center m-4 text-yellow-400"
+              className="flex-shrink-0 w-48 h-32 bg-black rounded-lg flex flex-col items-center justify-center m-4 text-yellow-400"
             >
               <div className="relative w-16 h-16 mb-2">
                 <Image
