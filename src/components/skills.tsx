@@ -2,24 +2,18 @@
 
 import React from 'react';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { ParallaxText } from './parallax-text';
 import { Code, Palette, ToyBrick, FileCode2, Wind, BrainCircuit, Database, Cloud } from "lucide-react";
 
-const skills = [
-  { name: "HTML", icon: <Code className="w-10 h-10 text-primary" /> },
-  { name: "React", icon: <ToyBrick className="w-10 h-10 text-primary" /> },
-  { name: "CSS", icon: <Palette className="w-10 h-10 text-primary" /> },
-  { name: "Next.js", icon: <ToyBrick className="w-10 h-10 text-primary" /> },
-  { name: "JavaScript", icon: <FileCode2 className="w-10 h-10 text-primary" /> },
-  { name: "Tailwind CSS", icon: <Wind className="w-10 h-10 text-primary" /> },
-  { name: "Python", icon: <BrainCircuit className="w-10 h-10 text-primary" /> },
-  { name: "MySQL", icon: <Database className="w-10 h-10 text-primary" /> },
-  { name: "AWS", icon: <Cloud className="w-10 h-10 text-primary" /> },
-  { name: "Firebase", icon: <Database className="w-10 h-10 text-primary" /> },
+const skillsList = [
+  "HTML", "React", "CSS", "Next.js", "JavaScript", "Tailwind CSS", "Python", "MySQL", "AWS", "Firebase"
 ];
+
+const skillsText = skillsList.join(" • ");
 
 export function Skills() {
   return (
-    <section id="skills" className="py-16 md:py-32">
+    <section id="skills" className="py-16 md:py-32 overflow-hidden">
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
@@ -31,18 +25,16 @@ export function Skills() {
               A showcase of my technical abilities and tools I use to build amazing things.
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 max-w-5xl mx-auto">
-            {skills.map((skill, index) => (
-              <div key={skill.name} className="bg-card p-4 md:p-6 rounded-lg flex flex-col items-center justify-center text-center border hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                <div className="mb-3 md:mb-4">
-                  {skill.icon}
-                </div>
-                <h3 className="font-semibold text-sm md:text-lg">{skill.name}</h3>
-              </div>
-            ))}
-          </div>
         </div>
       </AnimateOnScroll>
+      <div className="space-y-4">
+        <ParallaxText baseVelocity={-2} className="text-2xl md:text-4xl font-semibold text-muted-foreground">
+          {skillsText}
+        </ParallaxText>
+        <ParallaxText baseVelocity={2} className="text-2xl md:text-4xl font-semibold text-primary">
+          {skillsText}
+        </ParallaxText>
+      </div>
     </section>
   );
 }

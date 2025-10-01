@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { ParallaxText } from "./parallax-text";
 
 export function About() {
   return (
@@ -32,10 +31,6 @@ export function About() {
           </div>
         </div>
       </AnimateOnScroll>
-      <div className="mt-12 space-y-4">
-        <ParallaxText baseVelocity={-5}>Passionate Developer</ParallaxText>
-        <ParallaxText baseVelocity={5}>Creative Problem Solver</ParallaxText>
-      </div>
       <div className="text-center mt-12">
         <p className="text-xl md:text-2xl text-primary font-bold mb-6">6 Projects completed</p>
         <Link href="#contact">
