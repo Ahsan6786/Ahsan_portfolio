@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import placeholderData from '@/lib/placeholder-images.json';
+import { AnimateOnScroll } from "@/components/animate-on-scroll";
 
 const heroImagesData = [
     placeholderData.heroImage,
@@ -63,7 +64,7 @@ export function Hero() {
       </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="text-center md:text-left relative min-h-[250px] md:min-h-0">
+          <AnimateOnScroll className="text-center md:text-left relative min-h-[250px] md:min-h-0">
             {heroContent.map((content, index) => (
               <div key={index} className={cn(
                 "transition-opacity duration-1000 ease-in-out",
@@ -95,7 +96,7 @@ export function Hero() {
                 </div>
               </div>
             ))}
-          </div>
+          </AnimateOnScroll>
           <div className="hidden md:flex justify-center items-center">
             <div className="relative w-[350px] h-[500px] lg:w-[450px] lg:h-[650px] rounded-lg overflow-hidden dark:shadow-2xl">
               {heroImagesData.map((image, index) => (
