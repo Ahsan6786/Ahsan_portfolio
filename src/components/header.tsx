@@ -53,7 +53,7 @@ export function Header() {
       const sections = validNavLinks.map(link => document.querySelector(link.href));
       const scrollPosition = window.scrollY + 150;
 
-      if (window.scrollY > 0) {
+      if (window.scrollY > 50) { // Trigger when scrolled more than 50px
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -82,10 +82,25 @@ export function Header() {
   }, []);
 
   return (
-    <header className={cn("p-4 md:p-6 sticky top-0 z-50 flex justify-between items-center w-full transition-all duration-300", isScrolled ? "header-scrolled" : "bg-transparent")}>
-        <Link href="#" className="text-2xl font-bold tracking-wider text-primary ml-4">AHSAN</Link>
-        <div className="container mx-auto flex justify-center items-center">
-            <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+    <header className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        "p-4 md:p-6",
+        "grid grid-cols-[1fr_auto] items-center md:flex md:justify-between",
+        isScrolled ? "header-scrolled" : "bg-transparent"
+    )}>
+        <Link 
+            href="#" 
+            className={cn(
+                "text-2xl font-bold tracking-wider text-primary transition-all duration-300",
+                "col-start-1",
+                isScrolled ? "md:ml-4" : "ml-4",
+                isScrolled && "md:justify-self-start justify-self-center col-start-1 col-end-3"
+            )}
+        >
+            AHSAN
+        </Link>
+        <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
+            <nav className="flex items-center space-x-6">
                 {navLinks.map((link) => (
                     <Link
                         key={link.label}
@@ -112,7 +127,7 @@ export function Header() {
           ))}
           <ThemeToggle />
         </div>
-        <div className="md:hidden mr-4 flex items-center gap-2">
+        <div className="md:hidden flex items-center gap-2 col-start-2 justify-self-end">
           <ThemeToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
