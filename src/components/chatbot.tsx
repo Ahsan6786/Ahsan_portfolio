@@ -36,8 +36,24 @@ const predefinedQA: { keywords: string[]; answer: string | string[] }[] = [
       "1. Mitra AI: A mental wellness app.",
       "2. Ahsanverse: A Blockchain Dapp.",
       "3. News Archive: A news aggregation system.",
-      "You can find more details on the projects section!"
+      "You can find more details on the projects section or ask me about a specific project!"
     ]
+  },
+  {
+    keywords: ["mitra", "mitra ai", "mental wellness"],
+    answer: "Mitra AI is an innovative mental wellness application providing accessible, stigma-free support. It offers personalized resources, guided exercises, and a compassionate AI chatbot to help users navigate their mental health journey privately and securely."
+  },
+  {
+    keywords: ["ahsanverse", "blockchain", "dapp"],
+    answer: "Ahsanverse is a decentralized application built on blockchain technology. It features smart contracts and Web3 integration, allowing users to connect a digital wallet, send virtual currency, and view a full history of transactions, demonstrating modern web apps on a secure, decentralized platform."
+  },
+  {
+    keywords: ["news archive", "news aggregation"],
+    answer: "News Archive is a comprehensive news system that collects and displays articles from sources all over the world. It has a clean, fast interface for searching topics, filtering news, and browsing headlines, making it a powerful tool for staying up-to-date."
+  },
+  {
+    keywords: ["portfolio website", "this website", "this project"],
+    answer: "This personal portfolio website is a project itself, built with modern technologies like Next.js and ShadCN UI. It's designed to be fast, responsive, and visually appealing, featuring an interactive chatbot, smooth animations, and a clean design to highlight Ahsan's projects and skills."
   },
   {
     keywords: ["contact", "email", "phone", "hire", "reach", "get in touch", "संपर्क", "mobile number", "contact info", "contact karo", "kaise contact kare", "बात करना है", "connect", "contact information", "social media", "linkedin", "instagram", "github", "how to hire", "freelance"],
