@@ -136,6 +136,12 @@ html {
   animation: infinite-scroll 40s linear infinite;
 }
 
+@media (max-width: 768px) {
+  .animate-infinite-scroll {
+    animation: infinite-scroll 20s linear infinite;
+  }
+}
+
 .animate-infinite-scroll-reverse {
   animation: infinite-scroll-reverse 40s linear infinite;
 }
