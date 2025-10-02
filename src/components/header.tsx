@@ -11,6 +11,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { ThemeToggle } from '@/components/theme-toggle';
+import { LanguageToggle } from '@/components/language-toggle';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
@@ -115,23 +116,25 @@ export function Header() {
                 ))}
             </nav>
         </div>
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-2">
           {socialLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors p-2"
               aria-label={link.label}
             >
               {link.icon}
             </a>
           ))}
           <ThemeToggle />
+          <LanguageToggle />
         </div>
         <div className="md:hidden flex items-center gap-2 ml-auto">
           <ThemeToggle />
+          <LanguageToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open menu">
