@@ -64,11 +64,11 @@ export function Hero() {
       </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <AnimateOnScroll className="text-center md:text-left relative min-h-[250px] md:min-h-0">
+          <AnimateOnScroll className="text-center md:text-left relative min-h-[250px] md:min-h-[300px] flex flex-col justify-center">
             {heroContent.map((content, index) => (
               <div key={index} className={cn(
-                "transition-opacity duration-1000 ease-in-out",
-                index === currentIndex ? "opacity-100" : "opacity-0 absolute inset-0 md:static"
+                "transition-opacity duration-1000 ease-in-out w-full",
+                index === currentIndex ? "opacity-100 relative" : "opacity-0 absolute"
               )}>
                 <p className="text-lg font-medium mb-2">{content.greeting}</p>
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight">
