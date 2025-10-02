@@ -53,7 +53,7 @@ export function Header() {
       const sections = validNavLinks.map(link => document.querySelector(link.href));
       const scrollPosition = window.scrollY + 150;
 
-      if (window.scrollY > 50) { // Trigger when scrolled more than 50px
+      if (window.scrollY > 50) { 
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -85,24 +85,22 @@ export function Header() {
     <header className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         "p-4 md:p-6",
-        "flex justify-between items-center",
-        "md:grid md:grid-cols-[auto_1fr_auto]",
+        "grid grid-cols-3 items-center",
+        "md:flex md:justify-between",
         isScrolled ? "header-scrolled" : "bg-transparent",
-        isScrolled && "md:flex md:justify-between"
     )}>
         <Link 
             href="#" 
             className={cn(
                 "text-2xl font-bold tracking-wider text-primary transition-all duration-500",
                 "md:col-start-1",
-                isScrolled && "md:ml-4"
+                isScrolled ? "md:ml-4 col-start-2 justify-self-center" : "col-start-1 justify-self-start"
             )}
         >
             AHSAN
         </Link>
         <div className={cn(
-          "hidden md:flex items-center space-x-6 text-sm font-medium",
-          isScrolled ? "md:col-start-2 md:justify-self-center" : "md:col-start-2 md:justify-self-center"
+          "hidden md:flex items-center space-x-6 text-sm font-medium justify-self-center",
         )}>
             <nav className="flex items-center space-x-6">
                 {navLinks.map((link) => (
@@ -116,7 +114,7 @@ export function Header() {
                 ))}
             </nav>
         </div>
-        <div className="hidden md:flex items-center space-x-4 md:col-start-3 md:justify-self-end mr-4">
+        <div className="hidden md:flex items-center space-x-4 justify-self-end mr-4">
           {socialLinks.map((link) => (
             <a
               key={link.href}
@@ -131,7 +129,7 @@ export function Header() {
           ))}
           <ThemeToggle />
         </div>
-        <div className="md:hidden flex items-center gap-2">
+        <div className="md:hidden flex items-center gap-2 col-start-3 justify-self-end">
           <ThemeToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
