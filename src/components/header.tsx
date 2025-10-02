@@ -85,23 +85,25 @@ export function Header() {
     <header className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         "p-4 md:p-6",
-        "grid grid-cols-[1fr_auto_1fr] items-center md:flex md:justify-between",
-        isScrolled ? "header-scrolled" : "bg-transparent"
+        "flex justify-between items-center",
+        "md:grid md:grid-cols-[auto_1fr_auto]",
+        isScrolled ? "header-scrolled" : "bg-transparent",
+        isScrolled && "md:flex md:justify-between"
     )}>
-        <div className="md:hidden col-start-1" />
         <Link 
             href="#" 
             className={cn(
                 "text-2xl font-bold tracking-wider text-primary transition-all duration-500",
-                "col-start-2 md:col-start-1",
-                isScrolled ? "md:ml-4" : "ml-4",
-                isScrolled && "justify-self-center",
-                !isScrolled && "md:ml-0 justify-self-start"
+                "md:col-start-1",
+                isScrolled && "md:ml-4"
             )}
         >
             AHSAN
         </Link>
-        <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <div className={cn(
+          "hidden md:flex items-center space-x-6 text-sm font-medium",
+          isScrolled ? "md:col-start-2 md:justify-self-center" : "md:col-start-2 md:justify-self-center"
+        )}>
             <nav className="flex items-center space-x-6">
                 {navLinks.map((link) => (
                     <Link
@@ -114,7 +116,7 @@ export function Header() {
                 ))}
             </nav>
         </div>
-        <div className="hidden md:flex items-center space-x-4 mr-4">
+        <div className="hidden md:flex items-center space-x-4 md:col-start-3 md:justify-self-end mr-4">
           {socialLinks.map((link) => (
             <a
               key={link.href}
@@ -129,7 +131,7 @@ export function Header() {
           ))}
           <ThemeToggle />
         </div>
-        <div className="md:hidden flex items-center gap-2 col-start-3 justify-self-end">
+        <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
