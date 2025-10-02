@@ -14,23 +14,23 @@ type Message = {
 
 const predefinedQA: { keywords: string[]; answer: string | string[] }[] = [
   {
-    keywords: ["hello", "hi", "hey", "namaste", "नमस्ते", "hola", "yo", "wassup", "hey there", "hello ji", "hi bro", "hi there", "hy"],
+    keywords: ["hello", "hi", "hey", "namaste", "नमस्ते", "hola", "yo", "wassup", "hey there", "hello ji", "hi bro", "hi there", "hy", "greetings", "good morning", "good afternoon", "good evening", "howdy", "salam", "bonjour", "ciao", "hallo", "konnichiwa"],
     answer: "Hello! How can I help you today? I can answer questions about Ahsan's skills, projects, and more."
   },
   {
-    keywords: ["who", "ahsan", "about", "kaun hai", "कौन है", "ahsan kaun", "who is ahsan", "ahsan imam", "ahsan kon", "बायो", "bio", "intro", "introduction"],
+    keywords: ["who", "ahsan", "about", "kaun hai", "कौन है", "ahsan kaun", "who is ahsan", "ahsan imam", "ahsan kon", "बायो", "bio", "intro", "introduction", "tell me about ahsan", "who is this portfolio for", "owner of this website", "your creator", "developer profile", "who are you"],
     answer: "Ahsan Imam Khan is a passionate B.Tech Computer Science student at MIT-WPU, Pune. He enjoys building tech solutions, coding, and working on impactful real-world projects."
   },
   {
-    keywords: ["education", "study", "college", "school", "schooling", "10th", "12th", "padhaai", "कहां पढ़े", "kahaan se padha", "educational background", "college name", "studies", "padhai"],
+    keywords: ["education", "study", "college", "school", "schooling", "10th", "12th", "padhaai", "कहां पढ़े", "kahaan se padha", "educational background", "college name", "studies", "padhai", "qualification", "degree", "academic", "academics", "where did he study"],
     answer: "Ahsan is currently pursuing B.Tech in Computer Science from MIT World Peace University (MIT-WPU), Pune. He completed his schooling up to 10th at St. Paul's High School, Hajipur, and did his 11th–12th at Akshara International School in Wakad, Pune."
   },
   {
-    keywords: ["skill", "technologies", "know", "proficient", "kya aata hai", "क्या आता है", "tech stack", "technology", "skills kya hain", "tools", "languages", "कौन सी टेक्नोलॉजी आती है", "developer stack"],
+    keywords: ["skill", "technologies", "know", "proficient", "kya aata hai", "क्या आता है", "tech stack", "technology", "skills kya hain", "tools", "languages", "कौन सी टेक्नोलॉजी आती है", "developer stack", "expertise", "competencies", "programming languages", "frameworks", "what can he do"],
     answer: "Ahsan is skilled in HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Python, MySQL, AWS, and Firebase."
   },
   {
-    keywords: ["project", "work", "portfolio", "काम", "projects kya hai", "projects dikhaye", "कौन से प्रोजेक्ट्स", "किया क्या है", "apna kaam", "developed", "portfolio batao", "projects showcase"],
+    keywords: ["project", "work", "portfolio", "काम", "projects kya hai", "projects dikhaye", "कौन से प्रोजेक्ट्स", "किया क्या है", "apna kaam", "developed", "portfolio batao", "projects showcase", "past work", "previous projects", "examples of work", "what has he built"],
     answer: [
       "Ahsan has completed 6 projects. Some of them are:",
       "1. Mitra AI: A mental wellness app.",
@@ -40,20 +40,28 @@ const predefinedQA: { keywords: string[]; answer: string | string[] }[] = [
     ]
   },
   {
-    keywords: ["contact", "email", "phone", "hire", "reach", "get in touch", "संपर्क", "mobile number", "contact info", "contact karo", "kaise contact kare", "बात करना है", "connect", "contact information"],
-    answer: "You can contact Ahsan via email at ahsanimamkhan06@gmail.com or by phone at +91 9162248786. You can also use the contact form on the website."
+    keywords: ["contact", "email", "phone", "hire", "reach", "get in touch", "संपर्क", "mobile number", "contact info", "contact karo", "kaise contact kare", "बात करना है", "connect", "contact information", "social media", "linkedin", "instagram", "github", "how to hire", "freelance"],
+    answer: "You can contact Ahsan via email at ahsanimamkhan06@gmail.com or by phone at +91 9162248786. You can also find him on LinkedIn, Instagram, and GitHub or use the contact form on the website."
   },
   {
-    keywords: ["certificate", "qualification", "certifications", "achievements", "pramaan patra", "प्रमाण पत्र", "kaun se certificate", "certi", "badges", "degrees", "recognition", "training certificate", "courses done"],
+    keywords: ["certificate", "certifications", "achievements", "pramaan patra", "प्रमाण पत्र", "kaun se certificate", "certi", "badges", "degrees", "recognition", "training certificate", "courses done", "credentials", "accomplishments", "awards"],
     answer: "Ahsan has several certificates, including for the Smart India Hackathon, Python Programming, Financial Planning, and more. You can see all of them on the certificates page."
   },
   {
-    keywords: ["services", "offer", "do", "kya karte ho", "क्या करते हो", "kya services hain", "service", "help", "provide", "offers", "सेवाएं", "कौन सी सर्विस", "kya provide karte ho"],
+    keywords: ["services", "offer", "do", "kya karte ho", "क्या करते हो", "kya services hain", "service", "help", "provide", "offers", "सेवाएं", "कौन सी सर्विस", "kya provide karte ho", "what do you offer", "what services do you provide", "can you build a website", "looking for developer"],
     answer: "Ahsan offers Full-Stack Development, builds Web Applications, and provides SEO & Performance optimization services."
   },
   {
-    keywords: ["bye", "thanks", "thank you", "dhanyavaad", "shukriya", "alvida", "goodbye", "see you", "ok thanks", "bye bye", "thanks bro", "thank you so much", "धन्यवाद"],
+    keywords: ["bye", "thanks", "thank you", "dhanyavaad", "shukriya", "alvida", "goodbye", "see you", "ok thanks", "bye bye", "thanks bro", "thank you so much", "धन्यवाद", "farewell", "take care", "appreciate it", "grateful"],
     answer: "You're welcome! Feel free to ask if you have more questions. Have a great day!"
+  },
+  {
+    keywords: ["hobbies", "interests", "free time", "what does he do for fun", "personal interests", "outside of work", "passion"],
+    answer: "Besides coding, Ahsan is passionate about exploring new technologies, collaborating on innovative projects, and continuously improving his skills."
+  },
+  {
+    keywords: ["location", "where is he from", "address", "city", "country", "based in", "where does he live"],
+    answer: "Ahsan is based in Pune, Maharashtra, India."
   }
 ];
 
@@ -96,14 +104,21 @@ export function Chatbot() {
     const userMessage: Message = { text: inputValue, sender: "user" };
     setMessages((prev) => [...prev, userMessage]);
 
-    const lowerCaseInput = inputValue.toLowerCase();
+    const lowerCaseInput = inputValue.toLowerCase().replace(/[?.,!]/g, '');
     let response: string | string[] = "I'm sorry, I don't have information about that. You can reach out to Ahsan on Instagram: @khan_ahsan_8055 or via email at ahsanimamkhan06@gmail.com.";
 
-    const foundQA = predefinedQA.find(qa => qa.keywords.some(keyword => lowerCaseInput.includes(keyword)));
-    
-    if (foundQA) {
-      response = foundQA.answer;
-    }
+    let bestMatch = { score: 0, answer: response };
+
+    predefinedQA.forEach(qa => {
+      qa.keywords.forEach(keyword => {
+        const score = lowerCaseInput.includes(keyword) ? keyword.length : 0;
+        if (score > bestMatch.score) {
+          bestMatch = { score, answer: qa.answer };
+        }
+      });
+    });
+
+    response = bestMatch.answer;
     
     setTimeout(() => {
       if (Array.isArray(response)) {
