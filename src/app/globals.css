@@ -167,3 +167,7 @@ html {
   display: flex;
   flex-wrap: nowrap;
 }
+
+.header-scrolled {
+  @apply bg-background/80 shadow-md backdrop-blur-sm;
+}

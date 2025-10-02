@@ -11,6 +11,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { ThemeToggle } from '@/components/theme-toggle';
+import { cn } from '@/lib/utils';
 
 const navLinks = [
     { href: "#home", label: "Home" },
@@ -43,6 +44,7 @@ const socialLinks = [
 export function Header() {
   const [activeLink, setActiveLink] = React.useState('Home');
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
 
 
   React.useEffect(() => {
@@ -50,6 +52,12 @@ export function Header() {
       const validNavLinks = navLinks.filter(link => link.href.length > 1 && link.href.startsWith('#'));
       const sections = validNavLinks.map(link => document.querySelector(link.href));
       const scrollPosition = window.scrollY + 150;
+
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
 
       let currentSection = 'Home';
       for (const section of sections) {
@@ -74,7 +82,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="p-4 md:p-6 sticky top-0 bg-background/80 backdrop-blur-sm z-50 flex justify-between items-center w-full">
+    <header className={cn("p-4 md:p-6 sticky top-0 z-50 flex justify-between items-center w-full transition-all duration-300", isScrolled ? "header-scrolled" : "bg-transparent")}>
         <Link href="#" className="text-2xl font-bold tracking-wider text-primary ml-4">AHSAN</Link>
         <div className="container mx-auto flex justify-center items-center">
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
