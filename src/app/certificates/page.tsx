@@ -9,6 +9,7 @@ import { ArrowLeft, Info } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import Confetti from "react-confetti";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/language-context";
 
 const allCertificates = [
   {
@@ -106,6 +107,8 @@ const confettiShapes: ((props: { ctx: CanvasRenderingContext2D; size: number }) 
 
 function CertificateCard({ certificate }: { certificate: (typeof allCertificates)[0] }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const { translations, loading } = useLanguage();
+  if (loading) return null;
 
   const handleTap = () => {
     setIsFlipped(!isFlipped);
@@ -142,7 +145,7 @@ function CertificateCard({ certificate }: { certificate: (typeof allCertificates
         {/* Back Face */}
         <div className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden border p-6 flex flex-col justify-center text-center" style={{ transform: "rotateY(180deg)"}}>
             <div>
-              <h4 className="font-bold text-lg mb-2">More Info</h4>
+              <h4 className="font-bold text-lg mb-2">{translations.certificates.moreInfo}</h4>
               <p className="text-sm text-muted-foreground">{certificate.backDescription}</p>
             </div>
         </div>
@@ -154,6 +157,7 @@ function CertificateCard({ certificate }: { certificate: (typeof allCertificates
 export default function CertificatesPage() {
   const [showConfetti, setShowConfetti] = useState(false);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  const { translations, loading } = useLanguage();
 
   useEffect(() => {
     const handleResize = () => {
@@ -178,6 +182,8 @@ export default function CertificatesPage() {
     const shapeFunc = confettiShapes[Math.floor(Math.random() * confettiShapes.length)];
     shapeFunc({ ctx, size });
   };
+
+  if (loading) return null;
   
   return (
     <div className="bg-background min-h-screen">
@@ -197,17 +203,17 @@ export default function CertificatesPage() {
             <Button asChild variant="outline">
               <Link href="/" className="inline-flex items-center">
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
+                {translations.certificatesPage.backToHome}
               </Link>
             </Button>
           </div>
           <div className="text-center mb-12 relative">
-            <h1 className="text-4xl md:text-6xl font-bold">My Certificates</h1>
+            <h1 className="text-4xl md:text-6xl font-bold">{translations.certificatesPage.title}</h1>
             <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0" aria-hidden="true">
-              Gallery
+              {translations.certificatesPage.gallery}
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              A complete showcase of my professional certifications and qualifications. Tap any certificate to learn more.
+              {translations.certificatesPage.subtitle}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

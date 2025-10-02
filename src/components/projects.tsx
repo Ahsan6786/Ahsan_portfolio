@@ -7,6 +7,7 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { ExternalLink, Info } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/language-context";
 
 const projects = [
   {
@@ -45,6 +46,9 @@ const projects = [
 
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const { translations, loading } = useLanguage();
+
+  if (loading) return null;
 
   const handleTap = (e: React.MouseEvent | React.TouchEvent) => {
     // Prevent flip when clicking on the link
@@ -85,7 +89,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
               <div className="mt-auto flex justify-between items-center">
                  <Button variant="outline" size="sm" asChild>
                     <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                      Live Demo
+                      {translations.projects.liveDemo}
                       <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
@@ -98,12 +102,12 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         {/* Back Face */}
         <div className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden border p-6 flex flex-col justify-between" style={{ transform: "rotateY(180deg)"}}>
             <div>
-              <h4 className="font-bold text-lg mb-2">More Info</h4>
+              <h4 className="font-bold text-lg mb-2">{translations.projects.moreInfo}</h4>
               <p className="text-sm text-muted-foreground">{project.backDescription}</p>
             </div>
             <Button variant="outline" size="sm" asChild>
                 <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                  Live Demo
+                  {translations.projects.liveDemo}
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -115,17 +119,20 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
 
 
 export function Projects() {
+  const { translations, loading } = useLanguage();
+  if (loading) return null;
+
   return (
     <section id="projects" className="py-16 md:py-32">
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
-            <h2 className="text-4xl md:text-5xl font-bold">My Projects</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
             <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
-              Projects
+              {translations.projects.title}
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              These are some of my recent projects. Check out my GitHub for more. Tap any card to see more details.
+              {translations.projects.subtitle}
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">

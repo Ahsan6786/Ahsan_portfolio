@@ -13,16 +13,7 @@ import {
 import { ThemeToggle } from '@/components/theme-toggle';
 import { LanguageToggle } from '@/components/language-toggle';
 import { cn } from '@/lib/utils';
-
-const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#services", label: "Services" },
-    { href: "#skills", label: "Skills" },
-    { href: "#projects", label: "Projects" },
-    { href: "#certificates", label: "Certificates" },
-    { href: "#contact", label: "Contact" },
-];
+import { useLanguage } from '@/contexts/language-context';
 
 const socialLinks = [
   {
@@ -46,7 +37,17 @@ export function Header() {
   const [activeLink, setActiveLink] = React.useState('Home');
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const { translations, loading } = useLanguage();
 
+  const navLinks = loading ? [] : [
+    { href: "#home", label: translations.header.home },
+    { href: "#about", label: translations.header.about },
+    { href: "#services", label: translations.header.services },
+    { href: "#skills", label: translations.header.skills },
+    { href: "#projects", label: translations.header.projects },
+    { href: "#certificates", label: translations.header.certificates },
+    { href: "#contact", label: translations.header.contact },
+  ];
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -61,26 +62,31 @@ export function Header() {
       }
 
       let currentSection = 'Home';
-      for (const section of sections) {
-        if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
-           const matchingLink = validNavLinks.find(link => link.href === `#${section.id}`);
-           if (matchingLink) {
-            currentSection = matchingLink.label;
-           }
-           break;
+      if (!loading) {
+        for (const section of sections) {
+          if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
+             const matchingLink = validNavLinks.find(link => link.href === `#${section.id}`);
+             if (matchingLink) {
+              currentSection = matchingLink.label;
+             }
+             break;
+          }
         }
-      }
-      const homeSection = document.querySelector('#home');
-      if (homeSection && window.scrollY < homeSection.offsetTop) {
-        currentSection = 'Home';
+        const homeSection = document.querySelector('#home');
+        if (homeSection && window.scrollY < homeSection.offsetTop) {
+          currentSection = translations.header.home;
+        }
       }
 
       setActiveLink(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [loading, translations, navLinks]);
+  
+  if (loading) return null;
 
   return (
     <header className={cn(

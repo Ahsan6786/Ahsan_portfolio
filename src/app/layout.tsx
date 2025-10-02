@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { ScrollToTopButton } from "@/components/scroll-to-top";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Chatbot } from "@/components/chatbot";
+import { LanguageProvider } from "@/contexts/language-context";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,17 +33,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("font-display antialiased", poppins.variable)}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
-          <ScrollToTopButton />
-          <Chatbot />
-        </ThemeProvider>
+        <LanguageProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster />
+            <ScrollToTopButton />
+            <Chatbot />
+          </ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -5,26 +5,9 @@ import { ContactForm } from "@/components/contact-form";
 import placeholderData from '@/lib/placeholder-images.json';
 import { MapPin, Mail, Phone, Instagram, Linkedin, Github } from "lucide-react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { useLanguage } from "@/contexts/language-context";
 
 const contactImageData = placeholderData.contactImage;
-
-const contactDetails = [
-  {
-    icon: <MapPin className="w-8 h-8 text-primary" />,
-    title: "Address",
-    value: "Maharashtra Pune, 411046",
-  },
-  {
-    icon: <Phone className="w-8 h-8 text-primary" />,
-    title: "Contact Number",
-    value: "+91 9162248786",
-  },
-  {
-    icon: <Mail className="w-8 h-8 text-primary" />,
-    title: "Email Address",
-    value: "ahsanimamkhan06@gmail.com",
-  },
-];
 
 const socialLinks = [
   {
@@ -45,17 +28,38 @@ const socialLinks = [
 ];
 
 export function Contact() {
+  const { translations, loading } = useLanguage();
+  if (loading) return null;
+
+  const contactDetails = [
+    {
+      icon: <MapPin className="w-8 h-8 text-primary" />,
+      title: translations.contact.address,
+      value: "Maharashtra Pune, 411046",
+    },
+    {
+      icon: <Phone className="w-8 h-8 text-primary" />,
+      title: translations.contact.contactNumber,
+      value: "+91 9162248786",
+    },
+    {
+      icon: <Mail className="w-8 h-8 text-primary" />,
+      title: translations.contact.emailAddress,
+      value: "ahsanimamkhan06@gmail.com",
+    },
+  ];
+
   return (
     <section id="contact" className="py-16 md:py-32 bg-card">
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
-            <h2 className="text-4xl md:text-6xl font-bold">Contact Me</h2>
+            <h2 className="text-4xl md:text-6xl font-bold">{translations.contact.title}</h2>
             <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
-              Contact
+              {translations.contact.title}
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Have a project in mind? Let's talk. I am here to help you.
+              {translations.contact.subtitle}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 mb-12">

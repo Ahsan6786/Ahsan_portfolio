@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Info } from "lucide-react";
+import { useLanguage } from "@/contexts/language-context";
 
 const certificates = [
   {
@@ -20,6 +21,9 @@ const certificates = [
 
 function CertificateCard({ certificate }: { certificate: (typeof certificates)[0] }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const { translations, loading } = useLanguage();
+
+  if (loading) return null;
 
   const handleTap = () => {
     setIsFlipped(!isFlipped);
@@ -56,7 +60,7 @@ function CertificateCard({ certificate }: { certificate: (typeof certificates)[0
         {/* Back Face */}
         <div className="absolute w-full h-full backface-hidden bg-background rounded-lg overflow-hidden border p-6 flex flex-col justify-center text-center" style={{ transform: "rotateY(180deg)"}}>
             <div>
-              <h4 className="font-bold text-lg mb-2">More Info</h4>
+              <h4 className="font-bold text-lg mb-2">{translations.certificates.moreInfo}</h4>
               <p className="text-sm text-muted-foreground">{certificate.backDescription}</p>
             </div>
         </div>
@@ -67,17 +71,20 @@ function CertificateCard({ certificate }: { certificate: (typeof certificates)[0
 
 
 export function Certificates() {
+  const { translations, loading } = useLanguage();
+  if (loading) return null;
+
   return (
     <section id="certificates" className="py-16 md:py-24 bg-card">
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
-            <h2 className="text-4xl md:text-6xl font-bold">My Certificates</h2>
+            <h2 className="text-4xl md:text-6xl font-bold">{translations.certificates.title}</h2>
             <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
-              Certificates
+              {translations.certificates.title}
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              A showcase of my professional certifications and qualifications. Tap to learn more.
+              {translations.certificates.subtitle}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -88,7 +95,7 @@ export function Certificates() {
           <div className="text-center mt-12">
             <Link href="/certificates">
               <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                View All Certificates
+                {translations.certificates.viewAll}
               </Button>
             </Link>
           </div>

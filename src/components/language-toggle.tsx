@@ -10,8 +10,18 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useLanguage } from "@/contexts/language-context"
+
+const languages = [
+    { value: 'en', label: 'English' },
+    { value: 'hi', label: 'Hindi' },
+    { value: 'ur', label: 'Urdu' },
+    { value: 'fr', label: 'French' },
+    { value: 'de', label: 'German' },
+];
 
 export function LanguageToggle() {
+  const { setLanguage } = useLanguage();
 
   return (
     <DropdownMenu>
@@ -22,21 +32,11 @@ export function LanguageToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => console.log("Set language to English")}>
-          English
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => console.log("Set language to Hindi")}>
-          Hindi
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => console.log("Set language to Urdu")}>
-          Urdu
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => console.log("Set language to French")}>
-          French
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => console.log("Set language to German")}>
-          German
-        </DropdownMenuItem>
+        {languages.map((lang) => (
+            <DropdownMenuItem key={lang.value} onClick={() => setLanguage(lang.value)}>
+                {lang.label}
+            </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   )

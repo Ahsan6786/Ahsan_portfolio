@@ -2,34 +2,39 @@
 
 import { Code, Rocket, TrendingUp } from "lucide-react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-
-const services = [
-  {
-    icon: <Code className="w-12 h-12 text-primary" />,
-    title: "Full-Stack Development",
-  },
-  {
-    icon: <Rocket className="w-12 h-12 text-primary" />,
-    title: "Web Applications",
-  },
-  {
-    icon: <TrendingUp className="w-12 h-12 text-primary" />,
-    title: "SEO & Performance",
-  },
-];
+import { useLanguage } from "@/contexts/language-context";
 
 export function Services() {
+  const { translations, loading } = useLanguage();
+
+  if (loading) return null;
+
+  const services = [
+    {
+      icon: <Code className="w-12 h-12 text-primary" />,
+      title: translations.services.service1,
+    },
+    {
+      icon: <Rocket className="w-12 h-12 text-primary" />,
+      title: translations.services.service2,
+    },
+    {
+      icon: <TrendingUp className="w-12 h-12 text-primary" />,
+      title: translations.services.service3,
+    },
+  ];
+
   return (
     <section id="services" className="py-16 md:py-32 bg-background">
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
-            <h2 className="text-4xl md:text-6xl font-bold">Services</h2>
+            <h2 className="text-4xl md:text-6xl font-bold">{translations.services.title}</h2>
             <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
-              Services
+              {translations.services.title}
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              I build full-stack websites and web applications with a focus on performance and search engine optimization (SEO).
+              {translations.services.subtitle}
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">

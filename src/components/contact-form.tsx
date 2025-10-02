@@ -19,6 +19,7 @@ import { db } from "@/lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import Confetti from 'react-confetti';
 import { useState, useId } from "react";
+import { useLanguage } from "@/contexts/language-context";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -38,6 +39,8 @@ const formSchema = z.object({
 export function ContactForm() {
   const [showConfetti, setShowConfetti] = useState(false);
   const { toast } = useToast();
+  const { translations, loading } = useLanguage();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -73,6 +76,8 @@ export function ContactForm() {
     }
   }
 
+  if (loading) return null;
+
   return (
     <>
       {showConfetti && (
@@ -90,9 +95,9 @@ export function ContactForm() {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Your Name</FormLabel>
+                <FormLabel>{translations.contact.form.name}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Narendra Modi" {...field} aria-label="Your Name"/>
+                  <Input placeholder={translations.contact.form.namePlaceholder} {...field} aria-label={translations.contact.form.name}/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -103,9 +108,9 @@ export function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Your Email</FormLabel>
+                <FormLabel>{translations.contact.form.email}</FormLabel>
                 <FormControl>
-                  <Input placeholder="narendramodi@example.com" {...field} aria-label="Your Email" />
+                  <Input placeholder={translations.contact.form.emailPlaceholder} {...field} aria-label={translations.contact.form.email} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -116,9 +121,9 @@ export function ContactForm() {
             name="subject"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Subject</FormLabel>
+                <FormLabel>{translations.contact.form.subject}</FormLabel>
                 <FormControl>
-                  <Input placeholder="Project Proposal" {...field} aria-label="Subject" />
+                  <Input placeholder={translations.contact.form.subjectPlaceholder} {...field} aria-label={translations.contact.form.subject} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -129,15 +134,15 @@ export function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel>{translations.contact.form.message}</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Tell me more about your project..." {...field} aria-label="Message" />
+                  <Textarea placeholder={translations.contact.form.messagePlaceholder} {...field} aria-label={translations.contact.form.message} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">Send Message</Button>
+          <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">{translations.contact.form.sendMessage}</Button>
         </form>
       </Form>
     </>

@@ -1,0 +1,88 @@
+{
+    "header": {
+        "home": "Startseite",
+        "about": "Über mich",
+        "services": "Dienstleistungen",
+        "skills": "Fähigkeiten",
+        "projects": "Projekte",
+        "certificates": "Zertifikate",
+        "contact": "Kontakt"
+    },
+    "hero": {
+        "greeting1": "HALLO",
+        "mainText1": "Ich bin Ahsan",
+        "subText1": "Full-Stack-Webentwickler",
+        "greeting2": "JA!",
+        "mainText2": "Ich bin ein kreativer Kopf, der bereit ist zu bauen",
+        "subText2": "Digitale Erlebnisse gestalten",
+        "greeting3": "LOS!",
+        "mainText3": "Lassen Sie uns gemeinsam etwas Erstaunliches schaffen",
+        "subText3": "Ihre Vision, mein Code",
+        "hireMe": "BEAUFTRAGEN SIE MICH",
+        "myWorks": "MEINE ARBEITEN"
+    },
+    "about": {
+        "title": "Über mich",
+        "name": "Ahsan Imam Khan",
+        "p1": "Leidenschaftlicher Entwickler, der digitale Erlebnisse mit Präzision und Kreativität gestaltet",
+        "p2": "Ich bin B.Tech-Student der Informatik an der MIT-WPU. Ich bin begeistert vom Codieren, dem Erkunden neuer Technologien und dem Umsetzen von Ideen in reale Anwendungen.",
+        "p3": "Ich liebe es, an Projekten mitzuarbeiten, die mich herausfordern, zu wachsen und innovativ zu sein. Wenn ich nicht gerade code, erkunde ich neue Technologien und verbessere kontinuierlich meine Fähigkeiten.",
+        "projectsCompleted": "6 Projekte abgeschlossen",
+        "hireMe": "BEAUFTRAGEN SIE MICH"
+    },
+    "services": {
+        "title": "Dienstleistungen",
+        "subtitle": "Ich erstelle Full-Stack-Websites und Webanwendungen mit Fokus auf Leistung und Suchmaschinenoptimierung (SEO).",
+        "service1": "Full-Stack-Entwicklung",
+        "service2": "Webanwendungen",
+        "service3": "SEO & Leistung"
+    },
+    "skills": {
+        "title": "Meine Fähigkeiten",
+        "subtitle": "Eine Präsentation meiner technischen Fähigkeiten und der von mir verwendeten Werkzeuge."
+    },
+    "projects": {
+        "title": "Meine Projekte",
+        "subtitle": "Dies sind einige meiner letzten Projekte. Schauen Sie sich mein GitHub für mehr an. Tippen Sie auf eine beliebige Karte, um weitere Details zu sehen.",
+        "liveDemo": "Live-Demo",
+        "moreInfo": "Mehr Info"
+    },
+    "certificates": {
+        "title": "Meine Zertifikate",
+        "subtitle": "Eine Präsentation meiner beruflichen Zertifizierungen und Qualifikationen. Tippen Sie, um mehr zu erfahren.",
+        "viewAll": "Alle Zertifikate anzeigen",
+        "moreInfo": "Mehr Info"
+    },
+    "contact": {
+        "title": "Kontaktieren Sie mich",
+        "subtitle": "Haben Sie ein Projekt im Sinn? Lass uns reden. Ich bin hier, um Ihnen zu helfen.",
+        "address": "Adresse",
+        "contactNumber": "Kontaktnummer",
+        "emailAddress": "E-Mail-Addresse",
+        "form": {
+            "name": "Ihr Name",
+            "namePlaceholder": "Narendra Modi",
+            "email": "Deine E-Mail",
+            "emailPlaceholder": "narendramodi@example.com",
+            "subject": "Betreff",
+            "subjectPlaceholder": "Projektvorschlag",
+            "message": "Nachricht",
+            "messagePlaceholder": "Erzählen Sie mir mehr über Ihr Projekt...",
+            "sendMessage": "Nachricht senden"
+        }
+    },
+    "chatbot": {
+        "greeting": "Hallo! Ich bin Ahsans persönlicher Assistent. Wie kann ich Ihnen heute helfen?",
+        "title": "Chatten Sie mit Ahsans Assistent",
+        "inputPlaceholder": "Fragen Sie etwas..."
+    },
+    "certificatesPage": {
+        "backToHome": "Zurück zur Startseite",
+        "title": "Meine Zertifikate",
+        "gallery": "Galerie",
+        "subtitle": "Eine vollständige Präsentation meiner beruflichen Zertifizierungen und Qualifikationen. Tippen Sie auf ein Zertifikat, um mehr zu erfahren."
+    },
+    "footer": {
+        "copyright": "Alle Rechte vorbehalten."
+    }
+}

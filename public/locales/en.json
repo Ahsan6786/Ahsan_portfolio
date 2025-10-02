@@ -1,0 +1,88 @@
+{
+    "header": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "skills": "Skills",
+        "projects": "Projects",
+        "certificates": "Certificates",
+        "contact": "Contact"
+    },
+    "hero": {
+        "greeting1": "HELLO",
+        "mainText1": "I am Ahsan",
+        "subText1": "Full-Stack Web Developer",
+        "greeting2": "YEP!",
+        "mainText2": "I'm a creative mind ready to build",
+        "subText2": "Crafting Digital Experiences",
+        "greeting3": "GO!",
+        "mainText3": "Let's create something amazing together",
+        "subText3": "Your Vision, My Code",
+        "hireMe": "HIRE ME",
+        "myWorks": "MY WORKS"
+    },
+    "about": {
+        "title": "About Me",
+        "name": "Ahsan Imam Khan",
+        "p1": "Passionate developer crafting digital experiences with precision and creativity",
+        "p2": "I am a B.Tech Computer Science student at MIT-WPU. I am passionate about coding, exploring new technologies, and turning ideas into real-world applications.",
+        "p3": "I love collaborating on projects that challenge me to grow and innovate. When I'm not coding, you can find me exploring new technologies and continuously improving my skills.",
+        "projectsCompleted": "6 Projects completed",
+        "hireMe": "HIRE ME"
+    },
+    "services": {
+        "title": "Services",
+        "subtitle": "I build full-stack websites and web applications with a focus on performance and search engine optimization (SEO).",
+        "service1": "Full-Stack Development",
+        "service2": "Web Applications",
+        "service3": "SEO & Performance"
+    },
+    "skills": {
+        "title": "My Skills",
+        "subtitle": "A showcase of my technical abilities and tools I use."
+    },
+    "projects": {
+        "title": "My Projects",
+        "subtitle": "These are some of my recent projects. Check out my GitHub for more. Tap any card to see more details.",
+        "liveDemo": "Live Demo",
+        "moreInfo": "More Info"
+    },
+    "certificates": {
+        "title": "My Certificates",
+        "subtitle": "A showcase of my professional certifications and qualifications. Tap to learn more.",
+        "viewAll": "View All Certificates",
+        "moreInfo": "More Info"
+    },
+    "contact": {
+        "title": "Contact Me",
+        "subtitle": "Have a project in mind? Let's talk. I am here to help you.",
+        "address": "Address",
+        "contactNumber": "Contact Number",
+        "emailAddress": "Email Address",
+        "form": {
+            "name": "Your Name",
+            "namePlaceholder": "Narendra Modi",
+            "email": "Your Email",
+            "emailPlaceholder": "narendramodi@example.com",
+            "subject": "Subject",
+            "subjectPlaceholder": "Project Proposal",
+            "message": "Message",
+            "messagePlaceholder": "Tell me more about your project...",
+            "sendMessage": "Send Message"
+        }
+    },
+    "chatbot": {
+        "greeting": "Hello! I'm Ahsan's personal assistant. How can I help you today?",
+        "title": "Chat with Ahsan's Assistant",
+        "inputPlaceholder": "Ask something..."
+    },
+    "certificatesPage": {
+        "backToHome": "Back to Home",
+        "title": "My Certificates",
+        "gallery": "Gallery",
+        "subtitle": "A complete showcase of my professional certifications and qualifications. Tap any certificate to learn more."
+    },
+    "footer": {
+        "copyright": "All Rights Reserved."
+    }
+}

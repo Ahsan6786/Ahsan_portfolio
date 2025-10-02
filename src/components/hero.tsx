@@ -7,29 +7,12 @@ import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
+import { useLanguage } from "@/contexts/language-context";
 
 const heroImagesData = [
     placeholderData.heroImage,
     placeholderData.heroImage2,
     placeholderData.heroImage3,
-];
-
-const heroContent = [
-    {
-        greeting: "HELLO",
-        mainText: "I am Ahsan",
-        subText: "Full-Stack Web Developer",
-    },
-    {
-        greeting: "YEP!",
-        mainText: "I'm a creative mind ready to build",
-        subText: "Crafting Digital Experiences",
-    },
-    {
-        greeting: "GO!",
-        mainText: "Let's create something amazing together",
-        subText: "Your Vision, My Code",
-    },
 ];
 
 const Typewriter = ({ text, speed = 50 }: { text: string, speed?: number }) => {
@@ -55,8 +38,28 @@ const Typewriter = ({ text, speed = 50 }: { text: string, speed?: number }) => {
 
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { translations, loading } = useLanguage();
+
+  const heroContent = loading ? [] : [
+    {
+        greeting: translations.hero.greeting1,
+        mainText: translations.hero.mainText1,
+        subText: translations.hero.subText1,
+    },
+    {
+        greeting: translations.hero.greeting2,
+        mainText: translations.hero.mainText2,
+        subText: translations.hero.subText2,
+    },
+    {
+        greeting: translations.hero.greeting3,
+        mainText: translations.hero.mainText3,
+        subText: translations.hero.subText3,
+    },
+  ];
 
   useEffect(() => {
+    if (loading) return;
     const content = heroContent[currentIndex];
     const fullText = content.mainText;
     const typeDuration = fullText.length * 50; 
@@ -66,7 +69,9 @@ export function Hero() {
     }, typeDuration + 3000); // 3-second wait
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [currentIndex, loading, heroContent]);
+
+  if (loading) return null;
 
   const currentContent = heroContent[currentIndex];
   const fullText = currentContent.mainText;
@@ -101,10 +106,10 @@ export function Hero() {
                 <p className="text-xl md:text-3xl font-light mt-2">{currentContent.subText}</p>
                 <div className="mt-8 flex justify-center md:justify-start space-x-4">
                     <Link href="#contact">
-                    <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
+                    <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">{translations.hero.hireMe}</Button>
                     </Link>
                     <Link href="#projects">
-                    <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">MY WORKS</Button>
+                    <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">{translations.hero.myWorks}</Button>
                     </Link>
                 </div>
               </div>

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { MessageSquare, Send, X, Bot, User } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ScrollArea } from "./ui/scroll-area";
+import { useLanguage } from "@/contexts/language-context";
 
 type Message = {
   text: string;
@@ -83,14 +84,20 @@ const predefinedQA: { keywords: string[]; answer: string | string[] }[] = [
 
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      sender: "bot",
-      text: "Hello! I'm Ahsan's personal assistant. How can I help you today?",
-    },
-  ]);
+  const { translations, loading } = useLanguage();
+
+  const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!loading) {
+      setMessages([{
+        sender: "bot",
+        text: translations.chatbot.greeting,
+      }]);
+    }
+  }, [loading, translations]);
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -161,6 +168,8 @@ export function Chatbot() {
       handleSendMessage();
     }
   };
+  
+  if (loading) return null;
 
   return (
     <>
@@ -190,7 +199,7 @@ export function Chatbot() {
           >
             <div className="bg-card border rounded-lg shadow-xl flex flex-col h-[60vh] max-h-[500px]">
               <div className="p-4 border-b flex items-center justify-between">
-                <h3 className="text-lg font-bold">Chat with Ahsan's Assistant</h3>
+                <h3 className="text-lg font-bold">{translations.chatbot.title}</h3>
                 <Button variant="ghost" size="icon" onClick={toggleChat} className="h-8 w-8" aria-label="Close chat">
                   <X size={20} />
                 </Button>
@@ -232,7 +241,7 @@ export function Chatbot() {
               <div className="p-4 border-t flex items-center gap-2">
                 <Input
                   type="text"
-                  placeholder="Ask something..."
+                  placeholder={translations.chatbot.inputPlaceholder}
                   value={inputValue}
                   onChange={handleInputChange}
                   onKeyPress={handleKeyPress}
