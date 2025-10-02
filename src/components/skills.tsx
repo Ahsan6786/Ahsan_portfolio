@@ -18,7 +18,6 @@ const skillsList = [
 ];
 
 export function Skills() {
-  const allSkills = [...skillsList, ...skillsList];
 
   return (
     <section id="skills" className="py-16 md:py-32 bg-background overflow-hidden">
@@ -33,11 +32,32 @@ export function Skills() {
           </p>
         </div>
       </AnimateOnScroll>
-      <div className="relative w-full">
+      <div className="relative w-full"
+        style={{
+            maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
+        }}
+      >
         <div className="flex items-center animate-infinite-scroll">
-          {allSkills.map((skill, index) => (
+          {skillsList.map((skill, index) => (
             <div
               key={`skill-1-${index}`}
+              className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center m-4"
+            >
+              <div className="relative w-16 h-16 mb-2">
+                <Image
+                  src={skill.logo}
+                  alt={`${skill.name} logo`}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <p className="font-bold text-lg text-foreground">{skill.name}</p>
+            </div>
+          ))}
+          {/* Duplicate for seamless loop */}
+          {skillsList.map((skill, index) => (
+            <div
+              key={`skill-2-${index}`}
               className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center m-4"
             >
               <div className="relative w-16 h-16 mb-2">
