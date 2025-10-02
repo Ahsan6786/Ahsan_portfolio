@@ -110,7 +110,7 @@ export function Hero() {
               </div>
           </AnimateOnScroll>
           <div className="hidden md:flex justify-center items-center">
-            <div className="relative w-[350px] h-[500px] lg:w-[450px] lg:h-[650px] rounded-lg overflow-hidden dark:shadow-2xl">
+            <div className="relative w-[350px] h-[500px] lg:w-[450px] lg:h-[650px] rounded-lg overflow-hidden dark:shadow-2xl translate-x-8">
               {heroImagesData.map((image, index) => (
                   <Image
                       key={index}
