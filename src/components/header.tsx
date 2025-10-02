@@ -86,14 +86,14 @@ export function Header() {
         "sticky top-0 z-50 w-full transition-all duration-300",
         "p-4 md:p-6",
         "flex md:justify-between items-center",
-        "relative md:static",
+        "relative", // Keep relative for positioning context of the link
         isScrolled ? "header-scrolled" : "bg-transparent",
     )}>
         <Link 
             href="#" 
             className={cn(
                 "text-2xl font-bold tracking-wider text-primary transition-all duration-500",
-                "absolute md:static md:transform-none",
+                "absolute md:static",
                 isScrolled 
                   ? 'left-1/2 -translate-x-1/2'
                   : 'left-4 translate-x-0'
