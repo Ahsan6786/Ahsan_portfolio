@@ -5,9 +5,8 @@ import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { ExternalLink, Info } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
-import { cn } from "@/lib/utils";
-import { motion, useMotionValue, useTransform, useAnimation } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -45,36 +44,18 @@ const projects = [
 ];
 
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
-  const x = useMotionValue(0);
-  const controls = useAnimation();
-  const rotateY = useTransform(x, [-150, 0, 150], [-180, 0, 180]);
   const [isFlipped, setIsFlipped] = useState(false);
-
-  const handleDragEnd = (event: any, info: any) => {
-    if (Math.abs(info.offset.x) > 75) {
-      controls.start({ x: info.offset.x > 0 ? 150 : -150 });
-      setIsFlipped(true);
-    } else {
-      controls.start({ x: 0 });
-      setIsFlipped(false);
-    }
-  };
 
   const handleTap = () => {
     setIsFlipped(!isFlipped);
-    controls.start({ x: isFlipped ? 0 : 150 });
   };
   
   return (
     <div className="md:hidden w-full h-[450px] perspective-1000">
       <motion.div
-        style={{ rotateY, x }}
-        drag="x"
-        dragConstraints={{ left: -150, right: 150 }}
-        onDragEnd={handleDragEnd}
         onTap={handleTap}
-        animate={controls}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6 }}
         className="w-full h-full relative"
         data-style="preserve-3d"
       >
