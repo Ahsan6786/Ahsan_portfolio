@@ -85,7 +85,7 @@ export function Header() {
     <header className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         "p-4 md:p-6",
-        "flex md:justify-between items-center",
+        "flex items-center md:justify-between",
         isScrolled ? "header-scrolled" : "bg-transparent",
     )}>
         <Link 
@@ -94,8 +94,8 @@ export function Header() {
                 "text-2xl font-bold tracking-wider text-primary transition-all duration-500",
                 "absolute md:static",
                 isScrolled 
-                  ? 'left-1/2 -translate-x-1/2'
-                  : 'left-4 translate-x-0'
+                  ? 'left-1/2 -translate-x-1/2 md:left-0 md:transform-none'
+                  : 'left-4 translate-x-0 md:left-0 md:transform-none'
             )}
         >
             AHSAN
