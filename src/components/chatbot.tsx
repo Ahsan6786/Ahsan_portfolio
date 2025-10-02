@@ -110,12 +110,15 @@ export function Chatbot() {
     let bestMatch = { score: 0, answer: response };
 
     predefinedQA.forEach(qa => {
+      let currentScore = 0;
       qa.keywords.forEach(keyword => {
-        const score = lowerCaseInput.includes(keyword) ? keyword.length : 0;
-        if (score > bestMatch.score) {
-          bestMatch = { score, answer: qa.answer };
+        if (lowerCaseInput.includes(keyword)) {
+          currentScore += keyword.length; // Weight keyword by length
         }
       });
+      if (currentScore > bestMatch.score) {
+        bestMatch = { score: currentScore, answer: qa.answer };
+      }
     });
 
     response = bestMatch.answer;
