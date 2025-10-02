@@ -85,7 +85,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
                       <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
-                <div className="text-muted-foreground animate-pulse">
+                <div className="text-yellow-500 animate-pulse">
                   <Info className="h-5 w-5" />
                 </div>
               </div>

@@ -48,7 +48,7 @@ function CertificateCard({ certificate }: { certificate: (typeof certificates)[0
             <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
             <p className="text-sm text-muted-foreground mt-1 flex-grow">{certificate.description}</p>
             <div className="mt-auto flex justify-end items-center w-full">
-              <div className="text-muted-foreground animate-pulse">
+              <div className="text-yellow-500 animate-pulse">
                 <Info className="h-5 w-5" />
               </div>
             </div>
