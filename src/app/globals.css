@@ -118,7 +118,7 @@ html {
 }
 
 .logos-slide {
-  animation: 35s infinite-scroll linear infinite;
+  animation: 60s infinite-scroll linear infinite;
 }
 
 @keyframes infinite-scroll-reverse {
