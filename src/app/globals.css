@@ -118,12 +118,7 @@ html {
 }
 
 .logos-slide {
-  animation: 100s infinite-scroll linear infinite;
-}
-
-@keyframes infinite-scroll-reverse {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(0); }
+  animation: 35s infinite-scroll linear infinite;
 }
 
 .slide-in-animation {
@@ -135,12 +130,12 @@ html {
 }
 
 .animate-infinite-scroll {
-  animation: infinite-scroll 100s linear infinite;
+  animation: infinite-scroll 40s linear infinite;
 }
 
 @media (max-width: 768px) {
   .animate-infinite-scroll {
-    animation: infinite-scroll 40s linear infinite;
+    animation: infinite-scroll 15s linear infinite;
   }
 }
 
