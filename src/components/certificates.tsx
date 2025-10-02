@@ -72,7 +72,7 @@ export function Certificates() {
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
-            <h2 className="text-4xl md:text-6xl font-bold">My Certificates</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-primary">My Certificates</h2>
             <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
               Certificates
             </p>

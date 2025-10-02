@@ -12,7 +12,7 @@ const projects = [
   {
     title: "Mitra AI",
     description: "An innovative mental wellness application providing accessible, stigma-free support. It offers personalized resources, guided exercises, and a compassionate AI chatbot to help users navigate their mental health journey privately and securely.",
-    backDescription: "Mitra AI is designed to be a private and secure companion for mental wellness. It offers immediate support through a friendly AI chatbot, helps users relax with guided meditation exercises, and allows them to track their mood over time. It also includes a rich library of resources to support users on their mental health journey.",
+    backDescription: "Mitra AI is a mental wellness app that provides a safe and private space for users. It features an AI chatbot for immediate support, guided meditation exercises for relaxation, and a mood journal to track emotional well-being. The app also offers a curated library of resources to support users in their mental health journey.",
     tags: ["AI", "Mental Health", "Web App"],
     image: placeholderData.project4,
     liveDemo: "https://mitraai.shop/"
@@ -20,7 +20,7 @@ const projects = [
   {
     title: "Ahsanverse - Blockchain Dapp",
     description: "A decentralized application built on blockchain technology, featuring smart contracts and Web3 integration for a seamless user experience.",
-    backDescription: "Ahsanverse is a decentralized application that brings the power of blockchain to users. You can connect your digital wallet to interact with smart contracts, send virtual currency, and view a transparent history of all transactions. It’s a showcase of how modern web applications can be built on a secure, decentralized foundation.",
+    backDescription: "Ahsanverse is a decentralized app that lets users interact with the blockchain. You can connect a digital wallet, send virtual currency, and see a full history of transactions. It's a demonstration of how modern web apps can be built on a secure, decentralized platform.",
     tags: ["React", "Solidity", "Web3.js", "Blockchain"],
     image: placeholderData.project1,
     liveDemo: "https://ahsanverse.vercel.app/"
@@ -28,7 +28,7 @@ const projects = [
   {
     title: "News Archive",
     description: "A comprehensive news archive system that collects, categorizes, and displays news articles with search functionality and user-friendly interface.",
-    backDescription: "This project provides a live feed of news articles from various sources around the world. It features a clean and fast interface where you can search for specific topics, filter news, and browse headlines. It’s designed to be a simple yet powerful tool for staying informed with up-to-the-minute information.",
+    backDescription: "This project is a live news feed from sources all over the world. It has a clean, fast interface where you can search for topics, filter news, and browse headlines. It’s a simple but powerful tool for staying up-to-date with the latest information.",
     tags: ["JavaScript", "React", "API", "Database"],
     image: placeholderData.project2,
     liveDemo: "https://bjp-news-archive.vercel.app/"
@@ -36,7 +36,7 @@ const projects = [
   {
     title: "Portfolio",
     description: "A feature-rich personal portfolio website to showcase my skills and projects, built with modern web technologies for a great user experience.",
-    backDescription: "This website is a demonstration of modern web development practices, designed to be fast, responsive, and visually engaging. It includes an interactive chatbot for easy navigation, smooth animations that trigger on scroll, and a clean design that puts the projects and skills at the forefront, providing a seamless user experience.",
+    backDescription: "This website demonstrates modern web development. It's designed to be fast, responsive, and visually appealing. It features an interactive chatbot, smooth scroll animations, and a clean design that highlights my projects and skills.",
     tags: ["React", "TypeScript", "Next.js", "ShadCN UI"],
     image: placeholderData.project3,
     liveDemo: "#"
@@ -116,7 +116,7 @@ export function Projects() {
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
-            <h2 className="text-4xl md:text-5xl font-bold">My Projects</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary">My Projects</h2>
             <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
               Projects
             </p>
