@@ -138,7 +138,7 @@ html {
 
 @media (max-width: 768px) {
   .animate-infinite-scroll {
-    animation: infinite-scroll 20s linear infinite;
+    animation: infinite-scroll 15s linear infinite;
   }
 }
 
