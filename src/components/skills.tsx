@@ -38,7 +38,7 @@ export function Skills() {
           {allSkills.map((skill, index) => (
             <div
               key={`skill-1-${index}`}
-              className="flex-shrink-0 w-48 h-32 bg-card text-card-foreground border rounded-lg flex flex-col items-center justify-center m-4"
+              className="flex-shrink-0 w-48 h-32 flex flex-col items-center justify-center m-4"
             >
               <div className="relative w-16 h-16 mb-2">
                 <Image
@@ -48,7 +48,7 @@ export function Skills() {
                   className="object-contain"
                 />
               </div>
-              <p className="font-bold text-lg">{skill.name}</p>
+              <p className="font-bold text-lg text-foreground">{skill.name}</p>
             </div>
           ))}
         </div>
