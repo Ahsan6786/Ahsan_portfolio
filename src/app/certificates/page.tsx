@@ -202,7 +202,7 @@ export default function CertificatesPage() {
             </Button>
           </div>
           <div className="text-center mb-12 relative">
-            <h1 className="text-4xl md:text-6xl font-bold text-primary">My Certificates</h1>
+            <h1 className="text-4xl md:text-6xl font-bold">My Certificates</h1>
             <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0" aria-hidden="true">
               Gallery
             </p>

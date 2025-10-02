@@ -12,7 +12,7 @@ export function About() {
           <div className="grid md:grid-cols-1 gap-10 md:gap-20 items-center">
             <div className="relative text-center">
               <div className="relative mb-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-primary">About Me</h2>
+                <h2 className="text-4xl md:text-5xl font-bold">About Me</h2>
                 <p className="text-5xl md:text-8xl font-bold absolute -top-4 left-1/2 -translate-x-1/2 text-foreground/5 z-0 w-full text-center">
                   About
                 </p>

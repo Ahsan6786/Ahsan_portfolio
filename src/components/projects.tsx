@@ -51,7 +51,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   };
   
   return (
-    <div className="md:hidden w-full h-[450px] perspective-1000">
+    <div className="w-full h-[450px] perspective-1000">
       <motion.div
         onTap={handleTap}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
@@ -116,7 +116,7 @@ export function Projects() {
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary">My Projects</h2>
+            <h2 className="text-4xl md:text-5xl font-bold">My Projects</h2>
             <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
               Projects
             </p>
@@ -126,10 +126,7 @@ export function Projects() {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-             {projects.map((project, index) => (
-              <div key={index} className="bg-card rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300 hidden md:block">
+               <div key={index} className="bg-card rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300">
                 <div className="relative h-60 w-full overflow-hidden">
                   <Image
                     src={project.image.src}

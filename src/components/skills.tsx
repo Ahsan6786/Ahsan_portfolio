@@ -24,7 +24,7 @@ export function Skills() {
     <section id="skills" className="py-16 md:py-32 bg-background overflow-hidden">
       <AnimateOnScroll>
         <div className="text-center mb-12 relative">
-          <h2 className="text-4xl md:text-6xl font-bold text-primary">My Skills</h2>
+          <h2 className="text-4xl md:text-6xl font-bold">My Skills</h2>
           <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
             Skills
           </p>
