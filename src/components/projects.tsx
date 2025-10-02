@@ -12,7 +12,7 @@ const projects = [
   {
     title: "Mitra AI",
     description: "An innovative mental wellness application providing accessible, stigma-free support. It offers personalized resources, guided exercises, and a compassionate AI chatbot to help users navigate their mental health journey privately and securely.",
-    backDescription: "The backend is powered by Node.js and Express, with a MongoDB database for data persistence. The frontend is built with React and Next.js, leveraging Tailwind CSS for a modern, responsive design. It features a conversational AI chatbot for immediate support, guided meditation exercises, mood tracking, and a resource library. The platform is designed to be secure and private, ensuring user data is protected.",
+    backDescription: "Mitra AI is designed to be a private and secure companion for mental wellness. It offers immediate support through a friendly AI chatbot, helps users relax with guided meditation exercises, and allows them to track their mood over time. It also includes a rich library of resources to support users on their mental health journey.",
     tags: ["AI", "Mental Health", "Web App"],
     image: placeholderData.project4,
     liveDemo: "https://mitraai.shop/"
@@ -20,7 +20,7 @@ const projects = [
   {
     title: "Ahsanverse - Blockchain Dapp",
     description: "A decentralized application built on blockchain technology, featuring smart contracts and Web3 integration for a seamless user experience.",
-    backDescription: "Developed using Solidity for smart contracts on the Ethereum blockchain. The frontend uses React and Ethers.js for wallet interaction and transaction signing. This Dapp allows users to connect their crypto wallets, interact with smart contracts, and view transaction history on the blockchain, demonstrating a full-stack Web3 implementation.",
+    backDescription: "Ahsanverse is a decentralized application that brings the power of blockchain to users. You can connect your digital wallet to interact with smart contracts, send virtual currency, and view a transparent history of all transactions. It’s a showcase of how modern web applications can be built on a secure, decentralized foundation.",
     tags: ["React", "Solidity", "Web3.js", "Blockchain"],
     image: placeholderData.project1,
     liveDemo: "https://ahsanverse.vercel.app/"
@@ -28,7 +28,7 @@ const projects = [
   {
     title: "News Archive",
     description: "A comprehensive news archive system that collects, categorizes, and displays news articles with search functionality and user-friendly interface.",
-    backDescription: "This project utilizes a public News API to fetch and display articles in real-time. Built with vanilla JavaScript, HTML, and CSS for a lightweight and fast user experience. It features dynamic content loading, search filters, and a clean, easy-to-navigate layout, making it a powerful tool for browsing news from various sources.",
+    backDescription: "This project provides a live feed of news articles from various sources around the world. It features a clean and fast interface where you can search for specific topics, filter news, and browse headlines. It’s designed to be a simple yet powerful tool for staying informed with up-to-the-minute information.",
     tags: ["JavaScript", "React", "API", "Database"],
     image: placeholderData.project2,
     liveDemo: "https://bjp-news-archive.vercel.app/"
@@ -36,7 +36,7 @@ const projects = [
   {
     title: "Portfolio",
     description: "A feature-rich personal portfolio website to showcase my skills and projects, built with modern web technologies for a great user experience.",
-    backDescription: "This personal portfolio site is built with Next.js for server-side rendering and static site generation, ensuring optimal performance. It features ShadCN UI components and Tailwind CSS for a sleek, modern, and fully responsive design. The site includes an interactive chatbot, smooth animations, and a clean layout to effectively showcase my work.",
+    backDescription: "This website is a demonstration of modern web development practices, designed to be fast, responsive, and visually engaging. It includes an interactive chatbot for easy navigation, smooth animations that trigger on scroll, and a clean design that puts the projects and skills at the forefront, providing a seamless user experience.",
     tags: ["React", "TypeScript", "Next.js", "ShadCN UI"],
     image: placeholderData.project3,
     liveDemo: "#"
