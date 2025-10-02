@@ -32,16 +32,44 @@ const heroContent = [
     },
 ];
 
+const Typewriter = ({ text, speed = 50 }: { text: string, speed?: number }) => {
+    const [displayedText, setDisplayedText] = useState("");
+  
+    useEffect(() => {
+      setDisplayedText(""); 
+      let i = 0;
+      const intervalId = setInterval(() => {
+        setDisplayedText((prev) => prev + text.charAt(i));
+        i++;
+        if (i > text.length) {
+          clearInterval(intervalId);
+        }
+      }, speed);
+  
+      return () => clearInterval(intervalId);
+    }, [text, speed]);
+  
+    return <span>{displayedText}</span>;
+};
+
+
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    const content = heroContent[currentIndex];
+    const fullText = content.mainText.join("");
+    const typeDuration = fullText.length * 50; 
+    
     const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
-    }, 3000); 
+    }, typeDuration + 2000); // 2-second wait
 
     return () => clearInterval(interval);
-  }, []);
+  }, [currentIndex]);
+
+  const currentContent = heroContent[currentIndex];
+  const fullText = currentContent.mainText.join("");
 
   return (
     <section id="home" className="relative flex items-center min-h-[560px] md:min-h-[calc(100vh-80px)] py-12 overflow-hidden">
@@ -65,27 +93,12 @@ export function Hero() {
       <div className="container relative mx-auto px-4 md:px-12 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <AnimateOnScroll className="text-center md:text-left relative min-h-[250px] md:min-h-[300px] flex flex-col justify-center">
-            {heroContent.map((content, index) => (
-              <div key={index} className={cn(
-                "transition-opacity duration-1000 ease-in-out w-full",
-                index === currentIndex ? "opacity-100 relative" : "opacity-0 absolute"
-              )}>
-                <p className="text-lg font-medium mb-2">{content.greeting}</p>
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                  {content.mainText.map((text, textIdx) => (
-                    <span
-                      key={textIdx}
-                      className={cn(
-                        "bg-gradient-to-r from-primary to-primary bg-no-repeat bg-clip-text",
-                        textIdx === 1 && index === currentIndex ? 'text-pan-animation' : 'text-foreground'
-                      )}
-                      style={textIdx === 1 ? { backgroundSize: '0% 100%'} : {}}
-                    >
-                      {text}
-                    </span>
-                  ))}
+              <div className="w-full">
+                <p className="text-lg font-medium mb-2">{currentContent.greeting}</p>
+                <h1 className="text-4xl md:text-6xl font-bold leading-tight text-foreground">
+                  <Typewriter text={fullText} />
                 </h1>
-                <p className="text-xl md:text-3xl font-light mt-2">{content.subText}</p>
+                <p className="text-xl md:text-3xl font-light mt-2">{currentContent.subText}</p>
                 <div className="mt-8 flex justify-center md:justify-start space-x-4">
                     <Link href="#contact">
                     <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">HIRE ME</Button>
@@ -95,7 +108,6 @@ export function Hero() {
                     </Link>
                 </div>
               </div>
-            ))}
           </AnimateOnScroll>
           <div className="hidden md:flex justify-center items-center">
             <div className="relative w-[350px] h-[500px] lg:w-[450px] lg:h-[650px] rounded-lg overflow-hidden dark:shadow-2xl">
