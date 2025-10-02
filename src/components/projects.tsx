@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { ExternalLink } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 const projects = [
@@ -45,9 +45,38 @@ const projects = [
 
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const hasFlipped = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasFlipped.current) {
+          setTimeout(() => {
+            setIsFlipped(true);
+            hasFlipped.current = true;
+          }, 500); 
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
+
 
   return (
-    <div className="md:hidden project-card-container card-wobble-animation" onClick={() => setIsFlipped(!isFlipped)}>
+    <div ref={cardRef} className="md:hidden project-card-container" onClick={() => setIsFlipped(!isFlipped)}>
       <div className={cn("project-card", isFlipped ? "is-flipped" : "")}>
         <div className="project-card-face project-card-front bg-card rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300">
            <div className="relative h-60 w-full overflow-hidden">
