@@ -12,7 +12,7 @@ import { Contact } from "@/components/contact";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground overflow-hidden">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header />
       <main className="flex-grow">
         <Hero />
