@@ -17,17 +17,17 @@ const heroImagesData = [
 const heroContent = [
     {
         greeting: "HELLO",
-        mainText: ["I am ", "Ahsan", "", ""],
+        mainText: "I am Ahsan",
         subText: "Full-Stack Web Developer",
     },
     {
         greeting: "YEP!",
-        mainText: ["I'm a ", "creative mind", " ready to ", "build"],
+        mainText: "I'm a creative mind ready to build",
         subText: "Crafting Digital Experiences",
     },
     {
         greeting: "GO!",
-        mainText: ["Let's create", " something amazing", " together"],
+        mainText: "Let's create something amazing together",
         subText: "Your Vision, My Code",
     },
 ];
@@ -39,7 +39,7 @@ const Typewriter = ({ text, speed = 50 }: { text: string, speed?: number }) => {
       setDisplayedText(""); 
       let i = 0;
       const intervalId = setInterval(() => {
-        setDisplayedText((prev) => prev + text.charAt(i));
+        setDisplayedText((prev) => text.substring(0, i + 1));
         i++;
         if (i > text.length) {
           clearInterval(intervalId);
@@ -58,7 +58,7 @@ export function Hero() {
 
   useEffect(() => {
     const content = heroContent[currentIndex];
-    const fullText = content.mainText.join("");
+    const fullText = content.mainText;
     const typeDuration = fullText.length * 50; 
     
     const interval = setInterval(() => {
@@ -69,7 +69,7 @@ export function Hero() {
   }, [currentIndex]);
 
   const currentContent = heroContent[currentIndex];
-  const fullText = currentContent.mainText.join("");
+  const fullText = currentContent.mainText;
 
   return (
     <section id="home" className="relative flex items-center min-h-[560px] md:min-h-[calc(100vh-80px)] py-12 overflow-hidden">
