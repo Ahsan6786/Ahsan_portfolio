@@ -85,16 +85,18 @@ export function Header() {
     <header className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         "p-4 md:p-6",
-        "grid grid-cols-[1fr_auto] items-center md:flex md:justify-between",
+        "grid grid-cols-[1fr_auto_1fr] items-center md:flex md:justify-between",
         isScrolled ? "header-scrolled" : "bg-transparent"
     )}>
+        <div className="md:hidden col-start-1" />
         <Link 
             href="#" 
             className={cn(
-                "text-2xl font-bold tracking-wider text-primary transition-all duration-300",
-                "col-start-1",
+                "text-2xl font-bold tracking-wider text-primary transition-all duration-500",
+                "col-start-2 md:col-start-1",
                 isScrolled ? "md:ml-4" : "ml-4",
-                isScrolled && "md:justify-self-start justify-self-center col-start-1 col-end-3"
+                isScrolled && "justify-self-center",
+                !isScrolled && "md:ml-0 justify-self-start"
             )}
         >
             AHSAN
@@ -127,7 +129,7 @@ export function Header() {
           ))}
           <ThemeToggle />
         </div>
-        <div className="md:hidden flex items-center gap-2 col-start-2 justify-self-end">
+        <div className="md:hidden flex items-center gap-2 col-start-3 justify-self-end">
           <ThemeToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
