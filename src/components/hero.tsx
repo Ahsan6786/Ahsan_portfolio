@@ -63,7 +63,7 @@ export function Hero() {
     
     const interval = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
-    }, typeDuration + 2000); // 2-second wait
+    }, typeDuration + 3000); // 3-second wait
 
     return () => clearInterval(interval);
   }, [currentIndex]);
