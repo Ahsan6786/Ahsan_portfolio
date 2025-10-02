@@ -5,14 +5,66 @@ import Link from "next/link";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Info } from "lucide-react";
 
 const certificates = [
   {
     title: "Smart India Hackathon 2025",
     description: "Cleared 2 rounds of the world's biggest open innovation model, Smart India Hackathon 2025.",
+    backDescription: "This achievement highlights strong teamwork, creative thinking, and the ability to develop practical solutions under pressure in a high-stakes national competition.",
     image: placeholderData.certificateSIH,
   },
 ];
+
+function CertificateCard({ certificate }: { certificate: (typeof certificates)[0] }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleTap = () => {
+    setIsFlipped(!isFlipped);
+  };
+  
+  return (
+    <div className="w-full h-[480px] perspective-1000 md:col-start-2">
+      <motion.div
+        onTap={handleTap}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6 }}
+        className="w-full h-full relative"
+        data-style="preserve-3d"
+      >
+        {/* Front Face */}
+        <div className="absolute w-full h-full backface-hidden bg-background rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center p-4">
+           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md mb-4">
+              <Image
+                src={certificate.image.src}
+                alt={certificate.title}
+                fill
+                className="object-contain"
+                data-ai-hint={certificate.image.aiHint}
+              />
+            </div>
+            <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
+            <p className="text-sm text-muted-foreground mt-1 flex-grow">{certificate.description}</p>
+            <div className="mt-auto flex justify-end items-center w-full">
+              <div className="text-muted-foreground animate-pulse">
+                <Info className="h-5 w-5" />
+              </div>
+            </div>
+        </div>
+        {/* Back Face */}
+        <div className="absolute w-full h-full backface-hidden bg-background rounded-lg overflow-hidden border p-6 flex flex-col justify-center text-center" style={{ transform: "rotateY(180deg)"}}>
+            <div>
+              <h4 className="font-bold text-lg mb-2">More Info</h4>
+              <p className="text-sm text-muted-foreground">{certificate.backDescription}</p>
+            </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
 
 export function Certificates() {
   return (
@@ -25,24 +77,12 @@ export function Certificates() {
               Certificates
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              A showcase of my professional certifications and qualifications.
+              A showcase of my professional certifications and qualifications. Tap to learn more.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificates.map((certificate, index) => (
-              <div key={index} className="bg-background p-4 rounded-lg shadow-lg group flex flex-col items-center text-center md:col-start-2">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md mb-4">
-                  <Image
-                    src={certificate.image.src}
-                    alt={certificate.title}
-                    fill
-                    className="object-contain transition-transform duration-300 group-hover:scale-105"
-                    data-ai-hint={certificate.image.aiHint}
-                  />
-                </div>
-                <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1 flex-grow">{certificate.description}</p>
-              </div>
+              <CertificateCard key={index} certificate={certificate} />
             ))}
           </div>
           <div className="text-center mt-12">
