@@ -8,9 +8,9 @@ import { cn } from '@/lib/utils';
 const skillsList = [
   { name: "HTML", logo: "/html.png" },
   { name: "CSS", logo: "/css.png" },
-  { name: "JavaScript", logo: "/java-script.png" },
+  { name: "JavaScript", logo: "/java_script.png" },
   { name: "React", logo: "/react.png" },
-  { name: "Next.js", logo: "/Next-js.png" },
+  { name: "Next.js", logo: "/next_js.png" },
   { name: "Tailwind CSS", logo: "/tailwind-css.png" },
   { name: "Python", logo: "/Python.png" },
   { name: "MySQL", logo: "/mysql.png" },
