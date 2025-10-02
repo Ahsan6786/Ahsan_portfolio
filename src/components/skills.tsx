@@ -38,7 +38,7 @@ export function Skills() {
             maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
         }}
       >
-        <div className="flex w-max logos-slide">
+        <div className="flex w-max animate-infinite-scroll">
           {skillsList.map((skill, index) => (
             <div
               key={`skill-1-${index}`}
