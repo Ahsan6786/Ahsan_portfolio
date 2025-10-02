@@ -85,22 +85,24 @@ export function Header() {
     <header className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         "p-4 md:p-6",
-        "grid grid-cols-3 items-center",
-        "md:flex md:justify-between",
+        "flex md:justify-between items-center",
+        "relative md:static",
         isScrolled ? "header-scrolled" : "bg-transparent",
     )}>
         <Link 
             href="#" 
             className={cn(
                 "text-2xl font-bold tracking-wider text-primary transition-all duration-500",
-                "md:col-start-1",
-                isScrolled ? "md:ml-4 col-start-2 justify-self-center" : "col-start-1 justify-self-start"
+                "absolute md:static md:transform-none",
+                isScrolled 
+                  ? 'left-1/2 -translate-x-1/2'
+                  : 'left-4 translate-x-0'
             )}
         >
             AHSAN
         </Link>
         <div className={cn(
-          "hidden md:flex items-center space-x-6 text-sm font-medium justify-self-center",
+          "hidden md:flex items-center space-x-6 text-sm font-medium",
         )}>
             <nav className="flex items-center space-x-6">
                 {navLinks.map((link) => (
@@ -114,7 +116,7 @@ export function Header() {
                 ))}
             </nav>
         </div>
-        <div className="hidden md:flex items-center space-x-4 justify-self-end mr-4">
+        <div className="hidden md:flex items-center space-x-4">
           {socialLinks.map((link) => (
             <a
               key={link.href}
@@ -129,7 +131,7 @@ export function Header() {
           ))}
           <ThemeToggle />
         </div>
-        <div className="md:hidden flex items-center gap-2 col-start-3 justify-self-end">
+        <div className="md:hidden flex items-center gap-2 ml-auto">
           <ThemeToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
