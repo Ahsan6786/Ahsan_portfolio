@@ -86,7 +86,6 @@ export function Header() {
         "sticky top-0 z-50 w-full transition-all duration-300",
         "p-4 md:p-6",
         "flex md:justify-between items-center",
-        "relative", // Keep relative for positioning context of the link
         isScrolled ? "header-scrolled" : "bg-transparent",
     )}>
         <Link 
