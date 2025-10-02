@@ -32,12 +32,13 @@ export function Skills() {
           </p>
         </div>
       </AnimateOnScroll>
-      <div className="relative w-full"
+      <div 
+        className="relative w-full flex overflow-hidden"
         style={{
             maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
         }}
       >
-        <div className="flex items-center animate-infinite-scroll">
+        <div className="flex w-max logos-slide">
           {skillsList.map((skill, index) => (
             <div
               key={`skill-1-${index}`}
