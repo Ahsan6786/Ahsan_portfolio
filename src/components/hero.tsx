@@ -81,7 +81,7 @@ export function Hero() {
                 src={image.src}
                 fill
                 className={cn(
-                    "object-cover object-center transition-opacity duration-1000 ease-in-out",
+                    "object-cover object-right transition-opacity duration-1000 ease-in-out",
                     index === currentIndex ? "opacity-100" : "opacity-0"
                 )}
                 data-ai-hint={image.aiHint}
@@ -110,7 +110,7 @@ export function Hero() {
               </div>
           </AnimateOnScroll>
           <div className="hidden md:flex justify-center items-center">
-            <div className="relative w-[350px] h-[500px] lg:w-[450px] lg:h-[650px] rounded-lg overflow-hidden dark:shadow-2xl translate-x-8">
+            <div className="relative w-[350px] h-[500px] lg:w-[450px] lg:h-[650px] rounded-lg overflow-hidden dark:shadow-2xl translate-x-16">
               {heroImagesData.map((image, index) => (
                   <Image
                       key={index}
