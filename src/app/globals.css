@@ -146,6 +146,20 @@ html {
   to { transform: translateX(0); }
 }
 
+@keyframes card-wobble {
+  0%, 100% {
+    transform: rotateY(0);
+  }
+  25% {
+    transform: rotateY(-5deg);
+  }
+  50% {
+    transform: rotateY(5deg);
+  }
+  75% {
+    transform: rotateY(-2deg);
+  }
+}
 
 .text-pan-animation {
   animation: text-pan 1s ease-out forwards;
@@ -157,6 +171,11 @@ html {
 
 .fade-in-up-animation {
   animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.card-wobble-animation {
+  animation: card-wobble 1.5s ease-in-out;
+  animation-delay: 0.5s;
 }
 
 .animate-infinite-scroll {
