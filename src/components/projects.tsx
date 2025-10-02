@@ -4,9 +4,10 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Info } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
+import { motion, useMotionValue, useTransform, useAnimation } from "framer-motion";
 
 const projects = [
   {
@@ -44,41 +45,41 @@ const projects = [
 ];
 
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
+  const x = useMotionValue(0);
+  const controls = useAnimation();
+  const rotateY = useTransform(x, [-150, 0, 150], [-180, 0, 180]);
   const [isFlipped, setIsFlipped] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const hasFlipped = useRef(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasFlipped.current) {
-          setTimeout(() => {
-            setIsFlipped(true);
-            hasFlipped.current = true;
-          }, 500); 
-        }
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+  const handleDragEnd = (event: any, info: any) => {
+    if (Math.abs(info.offset.x) > 75) {
+      controls.start({ x: info.offset.x > 0 ? 150 : -150 });
+      setIsFlipped(true);
+    } else {
+      controls.start({ x: 0 });
+      setIsFlipped(false);
     }
+  };
 
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
-    };
-  }, []);
-
-
+  const handleTap = () => {
+    setIsFlipped(!isFlipped);
+    controls.start({ x: isFlipped ? 0 : 150 });
+  };
+  
   return (
-    <div ref={cardRef} className="md:hidden project-card-container" onClick={() => setIsFlipped(!isFlipped)}>
-      <div className={cn("project-card", isFlipped ? "is-flipped" : "")}>
-        <div className="project-card-face project-card-front bg-card rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300">
+    <div className="md:hidden w-full h-[450px] perspective-1000">
+      <motion.div
+        style={{ rotateY, x }}
+        drag="x"
+        dragConstraints={{ left: -150, right: 150 }}
+        onDragEnd={handleDragEnd}
+        onTap={handleTap}
+        animate={controls}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="w-full h-full relative"
+        data-style="preserve-3d"
+      >
+        {/* Front Face */}
+        <div className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300">
            <div className="relative h-60 w-full overflow-hidden">
               <Image
                 src={project.image.src}
@@ -96,19 +97,23 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
                   <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
                 ))}
               </div>
+               <div className="absolute bottom-4 right-4 text-muted-foreground animate-pulse">
+                <Info className="h-5 w-5" />
+              </div>
             </div>
         </div>
-        <div className="project-card-face project-card-back bg-card rounded-lg overflow-hidden border p-6 flex flex-col justify-center">
+        {/* Back Face */}
+        <div className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden border p-6 flex flex-col justify-center" style={{ transform: "rotateY(180deg)"}}>
             <h4 className="font-bold text-lg mb-2">More Info</h4>
             <p className="text-sm text-muted-foreground mb-4">{project.backDescription}</p>
             <Button variant="outline" size="sm" asChild>
-                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
                   Live Demo
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
