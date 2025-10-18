@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { useLanguage } from "@/contexts/language-context";
+import { Download } from "lucide-react";
 
 export function About() {
   const { translations, loading } = useLanguage();
@@ -37,11 +38,19 @@ export function About() {
       </AnimateOnScroll>
       <div className="text-center mt-12">
         <p className="text-xl md:text-2xl text-primary font-bold mb-6">{translations.about.projectsCompleted}</p>
-        <Link href="#contact">
-          <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">
-            {translations.about.hireMe}
-          </Button>
-        </Link>
+        <div className="flex justify-center items-center gap-4">
+            <Link href="#contact">
+              <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base">
+                {translations.about.hireMe}
+              </Button>
+            </Link>
+            <a href="/AhsanCV.pdf" download="Ahsan-Imam-Khan-CV.pdf">
+                <Button size="lg" variant="outline" className="font-semibold rounded-full border-foreground/50 hover:bg-foreground/10 px-8 py-6 text-base">
+                    {translations.about.downloadCv}
+                    <Download className="ml-2 h-5 w-5" />
+                </Button>
+            </a>
+        </div>
       </div>
     </section>
   );
