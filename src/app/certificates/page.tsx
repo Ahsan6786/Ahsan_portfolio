@@ -19,6 +19,12 @@ const allCertificates = [
     image: placeholderData.certificateSIH,
   },
   {
+    title: "Deloitte Technology Job Simulation",
+    description: "Completed a job simulation focused on technology consulting, covering key areas of the field.",
+    backDescription: "This simulation provided hands-on experience in technology consulting, including analyzing client needs, developing solutions, and presenting recommendations. It demonstrates practical skills in a real-world business context, reflecting an ability to bridge the gap between technology and business goals.",
+    image: placeholderData.certificateDeloitte,
+  },
+  {
     title: "Python Programming",
     description: "This certificate validates my proficiency in Python programming, covering fundamental to advanced concepts.",
     backDescription: "This certification confirms a comprehensive understanding of Python, from basic syntax to advanced topics like data structures and object-oriented programming. It represents the ability to write clean, efficient, and scalable code to solve complex problems.",

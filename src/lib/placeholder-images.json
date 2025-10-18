@@ -39,6 +39,10 @@
     "src": "/certificate1.1.png",
     "aiHint": "hackathon certificate"
   },
+  "certificateDeloitte": {
+    "src": "/deloitte_certificate.png",
+    "aiHint": "technology certificate"
+  },
   "certificate1": {
     "src": "/certificate1.png",
     "aiHint": "python programming certificate"
