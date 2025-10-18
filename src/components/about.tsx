@@ -46,7 +46,7 @@ export function About() {
             </Link>
             <a href="/AhsanCV.pdf" download="Ahsan-Imam-Khan-CV.pdf">
                 <Button size="lg" variant="outline" className="font-semibold rounded-full border-foreground/50 hover:bg-foreground/10 px-8 py-6 text-base">
-                    {translations.about.downloadCv}
+                    downlopad cv
                     <Download className="ml-2 h-5 w-5" />
                 </Button>
             </a>
