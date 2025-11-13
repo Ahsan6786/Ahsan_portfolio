@@ -12,6 +12,14 @@ import Link from "next/link";
 
 const projects = [
   {
+    title: "FessUp!",
+    description: "A dynamic and anonymous social platform for college students to share confessions, thoughts, and campus happenings without revealing their identity, fostering a unique environment for genuine expression.",
+    backDescription: "FessUp! provides a private, unfiltered space for students within the same college. Built with anonymity and community engagement at its core, it allows for sharing secrets, thoughts, and campus news in a secure and anonymous way.",
+    tags: ["Social Media", "Next.js", "Firebase", "Community"],
+    image: placeholderData.projectFessUp,
+    liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/"
+  },
+  {
     title: "Mitra AI",
     description: "An innovative mental wellness application providing accessible, stigma-free support...",
     backDescription: "Mitra AI is a mental wellness app that provides a safe and private space for users...",
@@ -26,14 +34,6 @@ const projects = [
     tags: ["React", "Solidity", "Web3.js", "Blockchain"],
     image: placeholderData.project1,
     liveDemo: "https://ahsanverse.vercel.app/"
-  },
-  {
-    title: "News Archive",
-    description: "A comprehensive news archive system that collects, categorizes, and displays news articles...",
-    backDescription: "This project is a live news feed from sources all over the world...",
-    tags: ["JavaScript", "React", "API", "Database"],
-    image: placeholderData.project2,
-    liveDemo: "https://bjp-news-archive.vercel.app/"
   },
 ];
 
