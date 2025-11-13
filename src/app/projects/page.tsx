@@ -7,7 +7,7 @@ import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { ExternalLink, Info, ArrowLeft } from "lucide-react";
 import React, { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
 
@@ -59,6 +59,38 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const { translations, loading } = useLanguage();
   const [isHovered, setIsHovered] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-10deg", "10deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+
+    const rect = ref.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    
+    x.set(xPct);
+    y.set(yPct);
+  };
+  
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   if (loading) return null;
   
@@ -71,6 +103,9 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   
   return (
     <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       className="w-full h-[450px]" 
       style={{ perspective: "1000px" }}
       onHoverStart={() => setIsHovered(true)}
@@ -86,8 +121,12 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         {/* Front Face */}
         <motion.div 
             className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden group border transition-all duration-300 flex flex-col"
-            animate={{ 
-              scale: isHovered && !isFlipped ? 1.05 : 1,
+            style={{
+              rotateY,
+              rotateX,
+              transformStyle: "preserve-3d",
+            }}
+            animate={{
               boxShadow: isHovered && !isFlipped ? '0px 20px 40px -10px rgba(0, 0, 0, 0.3)' : '0px 5px 15px rgba(0, 0, 0, 0.1)',
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
@@ -96,9 +135,9 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
               className="relative h-48 w-full overflow-hidden"
               style={{ transformStyle: "preserve-3d" }}
               animate={{
-                transform: isHovered && !isFlipped ? "translateZ(40px)" : "translateZ(0px)",
+                transform: isHovered && !isFlipped ? "translateZ(40px) scale(1.05)" : "translateZ(0px) scale(1)",
               }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={{ type: "spring" }}
            >
               <Image
                 src={project.image.src}
@@ -112,9 +151,9 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
               className="p-4 flex flex-col flex-grow"
               style={{ transformStyle: "preserve-3d" }}
               animate={{
-                transform: isHovered && !isFlipped ? "translateZ(30px)" : "translateZ(0px)",
+                transform: isHovered && !isFlipped ? "translateZ(30px) scale(1.05)" : "translateZ(0px) scale(1)",
               }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={{ type: "spring" }}
             >
               <h3 className="text-xl font-bold mb-2">{project.title}</h3>
               <p className="text-muted-foreground mb-3 text-sm flex-grow">{project.description}</p>
