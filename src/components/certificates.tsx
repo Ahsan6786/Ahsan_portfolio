@@ -100,9 +100,21 @@ export function Certificates() {
           </div>
           <div className="text-center mt-12">
             <Link href="/certificates">
-              <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                {translations.certificates.viewAll}
-              </Button>
+              <motion.div
+                animate={{
+                  scale: [1, 1.05, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatDelay: 0.5,
+                }}
+              >
+                <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                  {translations.certificates.viewAll}
+                </Button>
+              </motion.div>
             </Link>
           </div>
         </div>
