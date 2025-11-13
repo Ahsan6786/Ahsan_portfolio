@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -12,6 +13,14 @@ import Link from "next/link";
 
 
 const projects = [
+  {
+    title: "FessUp!",
+    description: "A dynamic and anonymous social platform for college students to share confessions, thoughts, and campus happenings without revealing their identity, fostering a unique environment for genuine expression.",
+    backDescription: "FessUp! provides a private, unfiltered space for students within the same college. Built with anonymity and community engagement at its core, it allows for sharing secrets, thoughts, and campus news in a secure and anonymous way.",
+    tags: ["Social Media", "Next.js", "Firebase", "Community"],
+    image: placeholderData.projectFessUp,
+    liveDemo: "#"
+  },
   {
     title: "Mitra AI",
     description: "An innovative mental wellness application providing accessible, stigma-free support. It offers personalized resources, guided exercises, and a compassionate AI chatbot to help users navigate their mental health journey privately and securely.",

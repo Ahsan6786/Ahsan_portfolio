@@ -31,6 +31,10 @@
     "src": "/img4.png",
     "aiHint": "mental wellness"
   },
+  "projectFessUp": {
+    "src": "/fess.png",
+    "aiHint": "anonymous social media"
+  },
   "contactImage": {
     "src": "https://picsum.photos/seed/contact/600/600",
     "aiHint": "man portrait"
