@@ -19,7 +19,7 @@ const projects = [
     backDescription: "FessUp! provides a private, unfiltered space for students within the same college. Built with anonymity and community engagement at its core, it allows for sharing secrets, thoughts, and campus news in a secure and anonymous way.",
     tags: ["Social Media", "Next.js", "Firebase", "Community"],
     image: placeholderData.projectFessUp,
-    liveDemo: "#"
+    liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/"
   },
   {
     title: "Mitra AI",
