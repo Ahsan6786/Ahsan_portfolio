@@ -6,8 +6,7 @@ import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Info } from "lucide-react";
-import React, { useState, useEffect } from "react";
-import Confetti from "react-confetti";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
 
@@ -62,54 +61,6 @@ const allCertificates = [
   },
 ];
 
-const Medal = ({ ctx, size }: { ctx: CanvasRenderingContext2D, size: number }) => {
-  const S = size * 0.8;
-  ctx.beginPath();
-  ctx.moveTo(-S / 2, -S / 8);
-  ctx.lineTo(S / 2, -S / 8);
-  ctx.lineTo(0, S / 2.5);
-  ctx.closePath();
-  ctx.fillStyle = '#4A90E2';
-  ctx.fill();
-
-  ctx.beginPath();
-  ctx.arc(0, S / 2.5 + S / 2.5, S / 2.5, 0, Math.PI * 2);
-  ctx.fillStyle = '#FFD700';
-  ctx.fill();
-  
-  ctx.beginPath();
-  ctx.arc(0, S / 2.5 + S / 2.5, S / 4, 0, Math.PI * 2);
-  ctx.fillStyle = '#F5A623';
-  ctx.fill();
-  
-  ctx.font = `${S / 4}px Arial`;
-  ctx.fillStyle = "white";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText("1", 0, S / 2.5 + S / 2.5);
-};
-
-const CertificateShape = ({ ctx, size }: { ctx: CanvasRenderingContext2D, size: number }) => {
-  const S = size;
-  ctx.fillStyle = "white";
-  ctx.strokeStyle = "gold";
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.rect(-S/2, -S/3, S, S * 2/3);
-  ctx.fill();
-  ctx.stroke();
-
-  ctx.fillStyle = "gold";
-  ctx.font = `${S / 5}px Arial`;
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText("CERT", 0, -S/12);
-};
-
-const confettiShapes: ((props: { ctx: CanvasRenderingContext2D; size: number }) => void)[] = [
-  ({ ctx, size }) => Medal({ ctx, size }),
-  ({ ctx, size }) => CertificateShape({ ctx, size }),
-];
 
 function CertificateCard({ certificate }: { certificate: (typeof allCertificates)[0] }) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -161,48 +112,11 @@ function CertificateCard({ certificate }: { certificate: (typeof allCertificates
 }
 
 export default function CertificatesPage() {
-  const [showConfetti, setShowConfetti] = useState(false);
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
   const { translations, loading } = useLanguage();
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    
-    // Auto-play confetti on load
-    setShowConfetti(true);
-    const timer = setTimeout(() => setShowConfetti(false), 8000);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      clearTimeout(timer);
-    };
-  }, []);
-
-  const drawShape = (ctx: CanvasRenderingContext2D) => {
-    const size = 12; 
-    const shapeFunc = confettiShapes[Math.floor(Math.random() * confettiShapes.length)];
-    shapeFunc({ ctx, size });
-  };
-
   if (loading) return null;
   
   return (
     <div className="bg-background min-h-screen">
-       {showConfetti && windowSize.width > 0 && (
-        <Confetti
-          width={windowSize.width}
-          height={windowSize.height}
-          recycle={false}
-          numberOfPieces={300}
-          gravity={0.08}
-          drawShape={drawShape}
-        />
-      )}
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
           <div className="mb-12">
