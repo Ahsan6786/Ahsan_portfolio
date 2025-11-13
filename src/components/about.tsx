@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { useLanguage } from "@/contexts/language-context";
-import { Download } from "lucide-react";
 
 export function About() {
   const { translations, loading } = useLanguage();

@@ -17,6 +17,12 @@ const certificates = [
     backDescription: "Successfully advanced through two rigorous stages of the Smart India Hackathon, a national competition that promotes innovation and problem-solving. This achievement highlights strong teamwork, creative thinking, and the ability to develop practical solutions under pressure.",
     image: placeholderData.certificateSIH,
   },
+  {
+    title: "Deloitte Technology Job Simulation",
+    description: "Completed a job simulation focused on technology consulting, covering key areas of the field.",
+    backDescription: "This simulation provided hands-on experience in technology consulting, including analyzing client needs, developing solutions, and presenting recommendations. It demonstrates practical skills in a real-world business context, reflecting an ability to bridge the gap between technology and business goals.",
+    image: placeholderData.certificateDeloitte,
+  },
 ];
 
 function CertificateCard({ certificate }: { certificate: (typeof certificates)[0] }) {
@@ -30,7 +36,7 @@ function CertificateCard({ certificate }: { certificate: (typeof certificates)[0
   };
   
   return (
-    <div className="w-full h-[480px] perspective-1000 md:col-start-2">
+    <div className="w-full h-[480px] perspective-1000">
       <motion.div
         onTap={handleTap}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
@@ -87,7 +93,7 @@ export function Certificates() {
               {translations.certificates.subtitle}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {certificates.map((certificate, index) => (
               <CertificateCard key={index} certificate={certificate} />
             ))}

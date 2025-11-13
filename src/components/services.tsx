@@ -3,6 +3,8 @@
 import { Code, Rocket, TrendingUp } from "lucide-react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { useLanguage } from "@/contexts/language-context";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 export function Services() {
   const { translations, loading } = useLanguage();
@@ -52,6 +54,13 @@ export function Services() {
                 <div className="w-10 h-1 bg-primary mt-3"></div>
               </div>
             ))}
+          </div>
+           <div className="text-center mt-12">
+            <Link href="/services">
+              <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                Explore Services
+              </Button>
+            </Link>
           </div>
         </div>
       </AnimateOnScroll>

@@ -1,53 +1,15 @@
 "use client";
 
-import Image from "next/image";
-import { ContactForm } from "@/components/contact-form";
-import placeholderData from '@/lib/placeholder-images.json';
-import { MapPin, Mail, Phone, Instagram, Linkedin, Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { useLanguage } from "@/contexts/language-context";
+import Link from "next/link";
+import { Mail } from "lucide-react";
 
-const contactImageData = placeholderData.contactImage;
-
-const socialLinks = [
-  {
-    href: "https://www.instagram.com/khan_ahsan_8055?igsh=MWhpYnJ1OGo2Y214ZA%3D%3D&utm_source=qr",
-    icon: <Instagram className="w-8 h-8 text-primary" />,
-    label: "Instagram",
-  },
-  {
-    href: "https://www.linkedin.com/in/ahsan-imam-khan-9a0443328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    icon: <Linkedin className="w-8 h-8 text-primary" />,
-    label: "LinkedIn",
-  },
-  {
-    href: "https://github.com/Ahsan6786",
-    icon: <Github className="w-8 h-8 text-primary" />,
-    label: "Github",
-  },
-];
 
 export function Contact() {
   const { translations, loading } = useLanguage();
   if (loading) return null;
-
-  const contactDetails = [
-    {
-      icon: <MapPin className="w-8 h-8 text-primary" />,
-      title: translations.contact.address,
-      value: "Maharashtra Pune, 411046",
-    },
-    {
-      icon: <Phone className="w-8 h-8 text-primary" />,
-      title: translations.contact.contactNumber,
-      value: "+91 9162248786",
-    },
-    {
-      icon: <Mail className="w-8 h-8 text-primary" />,
-      title: translations.contact.emailAddress,
-      value: "ahsanimamkhan06@gmail.com",
-    },
-  ];
 
   return (
     <section id="contact" className="py-16 md:py-32 bg-card">
@@ -62,33 +24,16 @@ export function Contact() {
               {translations.contact.subtitle}
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {contactDetails.map((detail) => (
-              <div key={detail.title} className="text-center">
-                <div className="flex items-center justify-center w-20 h-20 rounded-full bg-background mx-auto mb-4">
-                    {detail.icon}
-                </div>
-                <h3 className="font-bold text-lg mb-1">{detail.title}</h3>
-                <p className="text-muted-foreground">{detail.value}</p>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-center space-x-6 mb-16">
-            {socialLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-16 h-16 rounded-full bg-background hover:bg-primary/10 transition-colors"
-                aria-label={link.label}
-              >
-                {link.icon}
-              </a>
-            ))}
-          </div>
-          <div className="max-w-2xl mx-auto">
-              <ContactForm />
+          <div className="max-w-2xl mx-auto text-center">
+              <p className="text-lg text-muted-foreground mb-8">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+              </p>
+              <Link href="/contact">
+                <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                  <Mail className="mr-2 h-5 w-5" />
+                  Get in Touch
+                </Button>
+            </Link>
           </div>
         </div>
       </AnimateOnScroll>

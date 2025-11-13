@@ -16,14 +16,17 @@ export default function ServicesPage() {
     {
       icon: <Code className="w-12 h-12 text-primary" />,
       title: translations.services.service1,
+      description: "I build responsive, high-performance websites from the ground up, ensuring they are scalable, secure, and tailored to your unique business needs, from simple landing pages to complex web applications."
     },
     {
       icon: <Rocket className="w-12 h-12 text-primary" />,
       title: translations.services.service2,
+      description: "Specializing in dynamic and interactive web applications, I use modern frameworks to create engaging user experiences that are both functional and intuitive, delivering real value to your users."
     },
     {
       icon: <TrendingUp className="w-12 h-12 text-primary" />,
       title: translations.services.service3,
+      description: "I optimize websites to improve their search engine ranking and load times. Through technical SEO and performance tuning, I help increase your visibility and provide a faster, smoother experience for your audience."
     },
   ];
 
@@ -53,7 +56,7 @@ export default function ServicesPage() {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="bg-card p-8 text-center rounded-lg flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
+                  className="bg-card p-8 text-center rounded-lg flex flex-col items-center justify-start hover:shadow-lg transition-shadow h-full"
                 >
                   <div className="mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-background">
                     {service.icon}
@@ -61,7 +64,8 @@ export default function ServicesPage() {
                   <h3 className="text-base md:text-lg font-bold uppercase tracking-widest">
                     {service.title}
                   </h3>
-                  <div className="w-10 h-1 bg-primary mt-3"></div>
+                  <div className="w-10 h-1 bg-primary mt-3 mb-4"></div>
+                  <p className="text-sm text-muted-foreground">{service.description}</p>
                 </div>
               ))}
             </div>
