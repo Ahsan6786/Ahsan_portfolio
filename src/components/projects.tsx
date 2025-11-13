@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -5,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { ExternalLink, Info } from "lucide-react";
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
@@ -40,25 +41,53 @@ const projects = [
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const { translations, loading } = useLanguage();
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
+  const cardRef = useRef<HTMLDivElement>(null);
+
 
   if (loading) return null;
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current || isFlipped) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const width = rect.width;
+    const height = rect.height;
+
+    const rotateY = 20 * ((x - width / 2) / (width / 2));
+    const rotateX = -20 * ((y - height / 2) / (height / 2));
+    setRotate({ x: rotateX, y: rotateY });
+
+    const glareX = (x / width) * 100;
+    const glareY = (y / height) * 100;
+    setGlare({ x: glareX, y: glareY, opacity: 1 });
+  };
+
+  const handleMouseLeave = () => {
+    setRotate({ x: 0, y: 0 });
+    setGlare({ x: 50, y: 50, opacity: 0 });
+  };
+
   const handleTap = (e: React.MouseEvent | React.TouchEvent) => {
-    // Prevent flip when clicking on the link
     if ((e.target as HTMLElement).closest('a')) {
       return;
     }
     setIsFlipped(!isFlipped);
+    handleMouseLeave();
   };
   
   return (
-    <div className="w-full h-[450px] perspective-1000">
+    <div className="w-full h-[450px] perspective-1000" ref={cardRef}>
       <motion.div
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
         onTap={handleTap}
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.6 }}
+        animate={{ rotateY: isFlipped ? 180 : rotate.y, rotateX: isFlipped ? 0 : rotate.x }}
+        transition={{ duration: isFlipped ? 0.6 : 0.1, ease: "easeOut" }}
         className="w-full h-full relative"
-        data-style="preserve-3d"
+        style={{ transformStyle: "preserve-3d" }}
       >
         {/* Front Face */}
         <div className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300 flex flex-col">
@@ -69,6 +98,14 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
                 fill
                 className="object-contain"
                 data-ai-hint={project.image.aiHint}
+              />
+              <motion.div 
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255, 255, 255, 0.2), transparent 40%)`,
+                  opacity: glare.opacity,
+                  transition: 'opacity 0.2s'
+                }}
               />
             </div>
             <div className="p-4 flex flex-col flex-grow">
