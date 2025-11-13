@@ -17,8 +17,7 @@ import {
 import { useToast } from "@/hooks/use-toast";
 import { db } from "@/lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import Confetti from 'react-confetti';
-import { useState, useId } from "react";
+import { useState } from "react";
 import { useLanguage } from "@/contexts/language-context";
 
 const formSchema = z.object({
@@ -37,7 +36,6 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
-  const [showConfetti, setShowConfetti] = useState(false);
   const { toast } = useToast();
   const { translations, loading } = useLanguage();
 
@@ -50,7 +48,6 @@ export function ContactForm() {
       message: "",
     },
   });
-  const formId = useId();
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
@@ -63,8 +60,6 @@ export function ContactForm() {
         title: "Message Sent!",
         description: "Thanks for reaching out. Your message has been stored.",
       });
-      setShowConfetti(true);
-      setTimeout(() => setShowConfetti(false), 5000); // Hide after 5 seconds
       form.reset();
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -79,72 +74,62 @@ export function ContactForm() {
   if (loading) return null;
 
   return (
-    <>
-      {showConfetti && (
-        <Confetti
-          recycle={false}
-          numberOfPieces={500}
-          gravity={0.1}
-          colors={['#FFD700', '#FFA500', '#FFC400', '#FFBF00', '#FFB347']}
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{translations.contact.form.name}</FormLabel>
+              <FormControl>
+                <Input placeholder={translations.contact.form.namePlaceholder} {...field} aria-label={translations.contact.form.name}/>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      )}
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{translations.contact.form.name}</FormLabel>
-                <FormControl>
-                  <Input placeholder={translations.contact.form.namePlaceholder} {...field} aria-label={translations.contact.form.name}/>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{translations.contact.form.email}</FormLabel>
-                <FormControl>
-                  <Input placeholder={translations.contact.form.emailPlaceholder} {...field} aria-label={translations.contact.form.email} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="subject"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{translations.contact.form.subject}</FormLabel>
-                <FormControl>
-                  <Input placeholder={translations.contact.form.subjectPlaceholder} {...field} aria-label={translations.contact.form.subject} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>{translations.contact.form.message}</FormLabel>
-                <FormControl>
-                  <Textarea placeholder={translations.contact.form.messagePlaceholder} {...field} aria-label={translations.contact.form.message} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">{translations.contact.form.sendMessage}</Button>
-        </form>
-      </Form>
-    </>
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{translations.contact.form.email}</FormLabel>
+              <FormControl>
+                <Input placeholder={translations.contact.form.emailPlaceholder} {...field} aria-label={translations.contact.form.email} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="subject"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{translations.contact.form.subject}</FormLabel>
+              <FormControl>
+                <Input placeholder={translations.contact.form.subjectPlaceholder} {...field} aria-label={translations.contact.form.subject} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{translations.contact.form.message}</FormLabel>
+              <FormControl>
+                <Textarea placeholder={translations.contact.form.messagePlaceholder} {...field} aria-label={translations.contact.form.message} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">{translations.contact.form.sendMessage}</Button>
+      </form>
+    </Form>
   );
 }

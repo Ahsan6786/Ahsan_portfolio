@@ -5,8 +5,6 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { motion } from "framer-motion";
-
 
 export function Contact() {
   const { translations, loading } = useLanguage();
@@ -30,22 +28,10 @@ export function Contact() {
                 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
               </p>
               <Link href="/contact">
-                <motion.div
-                  animate={{
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatDelay: 0.5,
-                  }}
-                >
-                  <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                  <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-pulse">
                     <Mail className="mr-2 h-5 w-5" />
                     Get in Touch
                   </Button>
-                </motion.div>
             </Link>
           </div>
         </div>
