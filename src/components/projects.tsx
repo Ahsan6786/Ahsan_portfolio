@@ -47,8 +47,8 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 20 });
 
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
@@ -134,7 +134,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
               className="p-4 flex flex-col flex-grow"
               style={{ transformStyle: "preserve-3d" }}
               animate={{
-                transform: isHovered && !isFlipped ? "translateZ(30px) scale(1.05)" : "translateZ(0px) scale(1)",
+                transform: isHovered && !isFlipped ? "translateZ(30px)" : "translateZ(0px)",
               }}
               transition={{ type: "spring" }}
             >
