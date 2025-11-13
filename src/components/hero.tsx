@@ -8,11 +8,30 @@ import { cn } from "@/lib/utils";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { useLanguage } from "@/contexts/language-context";
+import { Instagram, Linkedin, Github } from "lucide-react";
 
 const heroImagesData = [
     placeholderData.heroImage,
     placeholderData.heroImage2,
     placeholderData.heroImage3,
+];
+
+const socialLinks = [
+  {
+    href: "https://www.instagram.com/khan_ahsan_8055?igsh=MWhpYnJ1OGo2Y214ZA%3D%3D&utm_source=qr",
+    icon: <Instagram className="w-6 h-6" />,
+    label: "Instagram",
+  },
+  {
+    href: "https://www.linkedin.com/in/ahsan-imam-khan-9a0443328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    icon: <Linkedin className="w-6 h-6" />,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://github.com/Ahsan6786",
+    icon: <Github className="w-6 h-6" />,
+    label: "Github",
+  },
 ];
 
 const Typewriter = ({ text, speed = 50 }: { text: string, speed?: number }) => {
@@ -111,6 +130,20 @@ export function Hero() {
                     <Link href="#projects">
                     <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10">{translations.hero.myWorks}</Button>
                     </Link>
+                </div>
+                <div className="mt-8 flex justify-center md:justify-start space-x-6">
+                    {socialLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-foreground hover:text-primary transition-colors"
+                            aria-label={link.label}
+                        >
+                            {link.icon}
+                        </a>
+                    ))}
                 </div>
               </div>
           </AnimateOnScroll>
