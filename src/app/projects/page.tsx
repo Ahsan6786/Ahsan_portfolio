@@ -4,37 +4,46 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { ExternalLink, Info } from "lucide-react";
+import { ExternalLink, Info, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
 
+
 const projects = [
   {
     title: "Mitra AI",
-    description: "An innovative mental wellness application providing accessible, stigma-free support...",
-    backDescription: "Mitra AI is a mental wellness app that provides a safe and private space for users...",
+    description: "An innovative mental wellness application providing accessible, stigma-free support. It offers personalized resources, guided exercises, and a compassionate AI chatbot to help users navigate their mental health journey privately and securely.",
+    backDescription: "Mitra AI is a mental wellness app that provides a safe and private space for users. It features an AI chatbot for immediate support, guided meditation exercises for relaxation, and a mood journal to track emotional well-being. The app also offers a curated library of resources to support users in their mental health journey.",
     tags: ["AI", "Mental Health", "Web App"],
     image: placeholderData.project4,
     liveDemo: "https://mitraai.shop/"
   },
   {
     title: "Ahsanverse - Blockchain Dapp",
-    description: "A decentralized application built on blockchain technology, featuring smart contracts...",
-    backDescription: "Ahsanverse is a decentralized app that lets users interact with the blockchain...",
+    description: "A decentralized application built on blockchain technology, featuring smart contracts and Web3 integration for a seamless user experience.",
+    backDescription: "Ahsanverse is a decentralized app that lets users interact with the blockchain. You can connect a digital wallet, send virtual currency, and see a full history of transactions. It's a demonstration of how modern web apps can be built on a secure, decentralized platform.",
     tags: ["React", "Solidity", "Web3.js", "Blockchain"],
     image: placeholderData.project1,
     liveDemo: "https://ahsanverse.vercel.app/"
   },
   {
     title: "News Archive",
-    description: "A comprehensive news archive system that collects, categorizes, and displays news articles...",
-    backDescription: "This project is a live news feed from sources all over the world...",
+    description: "A comprehensive news archive system that collects, categorizes, and displays news articles with search functionality and user-friendly interface.",
+    backDescription: "This project is a live news feed from sources all over the world. It has a clean, fast interface where you can search for topics, filter news, and browse headlines. It’s a simple but powerful tool for staying up-to-date with the latest information.",
     tags: ["JavaScript", "React", "API", "Database"],
     image: placeholderData.project2,
     liveDemo: "https://bjp-news-archive.vercel.app/"
   },
+  {
+    title: "Portfolio",
+    description: "A feature-rich personal portfolio website to showcase my skills and projects, built with modern web technologies for a great user experience.",
+    backDescription: "This website demonstrates modern web development. It's designed to be fast, responsive, and visually appealing. It features an interactive chatbot, smooth scroll animations, and a clean design that highlights my projects and skills.",
+    tags: ["React", "TypeScript", "Next.js", "ShadCN UI"],
+    image: placeholderData.project3,
+    liveDemo: "#"
+  }
 ];
 
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
@@ -111,37 +120,40 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
 }
 
 
-export function Projects() {
+export default function ProjectsPage() {
   const { translations, loading } = useLanguage();
   if (loading) return null;
 
   return (
-    <section id="projects" className="py-16 md:py-32">
+    <div className="bg-background min-h-screen">
       <AnimateOnScroll>
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12 relative">
-            <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
-            <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
-              {translations.projects.title}
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              {translations.projects.subtitle}
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-          <div className="text-center mt-12">
-            <Link href="/projects">
-              <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                View All Projects
+        <section id="projects" className="py-16 md:py-32">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="mb-12">
+              <Button asChild variant="outline">
+                <Link href="/" className="inline-flex items-center">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  {translations.certificatesPage.backToHome}
+                </Link>
               </Button>
-            </Link>
+            </div>
+            <div className="text-center mb-12 relative">
+              <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
+              <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
+                {translations.projects.title}
+              </p>
+              <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+                {translations.projects.subtitle}
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {projects.map((project, index) => (
+                <ProjectCard key={index} project={project} />
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
       </AnimateOnScroll>
-    </section>
+    </div>
   );
 }

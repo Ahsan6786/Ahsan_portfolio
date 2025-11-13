@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import { Menu, Instagram, Linkedin, Github } from 'lucide-react';
 import {
@@ -34,57 +35,33 @@ const socialLinks = [
 ];
 
 export function Header() {
-  const [activeLink, setActiveLink] = React.useState('Home');
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
   const { translations, loading } = useLanguage();
+  const pathname = usePathname();
 
   const navLinks = loading ? [] : [
-    { href: "#home", label: translations.header.home },
-    { href: "#about", label: translations.header.about },
-    { href: "#services", label: translations.header.services },
-    { href: "#skills", label: translations.header.skills },
-    { href: "#projects", label: translations.header.projects },
-    { href: "#certificates", label: translations.header.certificates },
-    { href: "#contact", label: translations.header.contact },
+    { href: "/", label: translations.header.home },
+    { href: "/about", label: translations.header.about },
+    { href: "/services", label: translations.header.services },
+    { href: "/projects", label: translations.header.projects },
+    { href: "/certificates", label: translations.header.certificates },
+    { href: "/contact", label: translations.header.contact },
   ];
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const validNavLinks = navLinks.filter(link => link.href.length > 1 && link.href.startsWith('#'));
-      const sections = validNavLinks.map(link => document.querySelector(link.href));
-      const scrollPosition = window.scrollY + 150;
-
       if (window.scrollY > 50) { 
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
-
-      let currentSection = 'Home';
-      if (!loading) {
-        for (const section of sections) {
-          if (section && section.offsetTop <= scrollPosition && section.offsetTop + section.offsetHeight > scrollPosition) {
-             const matchingLink = validNavLinks.find(link => link.href === `#${section.id}`);
-             if (matchingLink) {
-              currentSection = matchingLink.label;
-             }
-             break;
-          }
-        }
-        const homeSection = document.querySelector('#home');
-        if (homeSection && window.scrollY < homeSection.offsetTop) {
-          currentSection = translations.header.home;
-        }
-      }
-
-      setActiveLink(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [loading, translations, navLinks]);
+  }, []);
   
   if (loading) return null;
 
@@ -96,7 +73,7 @@ export function Header() {
         isScrolled ? "header-scrolled" : "bg-transparent",
     )}>
         <Link 
-            href="#" 
+            href="/" 
             className={cn(
                 "text-2xl font-bold tracking-wider text-primary transition-all duration-500",
                 "absolute md:static",
@@ -115,7 +92,7 @@ export function Header() {
                     <Link
                         key={link.label}
                         href={link.href}
-                        className={`hover:text-primary transition-colors ${activeLink === link.label ? 'text-primary border-b-2 border-primary pb-1' : ''}`}
+                        className={cn('hover:text-primary transition-colors', pathname === link.href ? 'text-primary border-b-2 border-primary pb-1' : '')}
                     >
                         {link.label}
                     </Link>
@@ -150,13 +127,13 @@ export function Header() {
             <SheetContent side="left">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="p-6">
-                  <Link href="#" className="text-2xl font-bold mb-8 block text-primary tracking-wider">AHSAN</Link>
+                  <Link href="/" className="text-2xl font-bold mb-8 block text-primary tracking-wider">AHSAN</Link>
                   <nav className="flex flex-col space-y-4">
                       {navLinks.map((link) => (
                           <SheetClose key={link.label} asChild>
                             <Link
                                 href={link.href}
-                                className={`text-lg hover:text-primary transition-colors ${activeLink === link.label ? 'text-primary' : ''}`}
+                                className={cn('text-lg hover:text-primary transition-colors', pathname === link.href ? 'text-primary' : '')}
                                 onClick={() => setIsSheetOpen(false)}
                             >
                                 {link.label}
