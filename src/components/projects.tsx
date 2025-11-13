@@ -42,9 +42,8 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const { translations, loading } = useLanguage();
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
-  const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
   const cardRef = useRef<HTMLDivElement>(null);
-
+  const [isHovering, setIsHovering] = useState(false);
 
   if (loading) return null;
 
@@ -56,18 +55,16 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
     const width = rect.width;
     const height = rect.height;
 
-    const rotateY = 20 * ((x - width / 2) / (width / 2));
-    const rotateX = -20 * ((y - height / 2) / (height / 2));
+    const rotateY = 25 * ((x - width / 2) / (width / 2));
+    const rotateX = -25 * ((y - height / 2) / (height / 2));
     setRotate({ x: rotateX, y: rotateY });
-
-    const glareX = (x / width) * 100;
-    const glareY = (y / height) * 100;
-    setGlare({ x: glareX, y: glareY, opacity: 1 });
   };
 
+  const handleMouseEnter = () => setIsHovering(true);
+
   const handleMouseLeave = () => {
+    setIsHovering(false);
     setRotate({ x: 0, y: 0 });
-    setGlare({ x: 50, y: 50, opacity: 0 });
   };
 
   const handleTap = (e: React.MouseEvent | React.TouchEvent) => {
@@ -79,18 +76,32 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   };
   
   return (
-    <div className="w-full h-[450px] perspective-1000" ref={cardRef}>
+    <div 
+      className="w-full h-[450px]" 
+      ref={cardRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ perspective: "1000px" }}
+    >
       <motion.div
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
         onTap={handleTap}
-        animate={{ rotateY: isFlipped ? 180 : rotate.y, rotateX: isFlipped ? 0 : rotate.x }}
+        animate={{ 
+          rotateY: isFlipped ? 180 : rotate.y, 
+          rotateX: isFlipped ? 0 : rotate.x,
+          scale: isHovering && !isFlipped ? 1.05 : 1,
+        }}
         transition={{ duration: isFlipped ? 0.6 : 0.1, ease: "easeOut" }}
         className="w-full h-full relative"
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* Front Face */}
-        <div className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300 flex flex-col">
+        <div className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden group border transition-all duration-300 flex flex-col"
+            style={{ 
+                boxShadow: isHovering && !isFlipped ? '0px 15px 30px -5px rgba(0, 0, 0, 0.3)' : '0px 5px 15px rgba(0, 0, 0, 0.1)',
+                transform: `rotateY(${rotate.y}deg) rotateX(${rotate.x}deg)`
+            }}
+        >
            <div className="relative h-48 w-full overflow-hidden">
               <Image
                 src={project.image.src}
@@ -98,14 +109,6 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
                 fill
                 className="object-contain"
                 data-ai-hint={project.image.aiHint}
-              />
-              <motion.div 
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255, 255, 255, 0.2), transparent 40%)`,
-                  opacity: glare.opacity,
-                  transition: 'opacity 0.2s'
-                }}
               />
             </div>
             <div className="p-4 flex flex-col flex-grow">
@@ -118,7 +121,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
               </div>
               <div className="mt-auto flex justify-between items-center">
                  <Button variant="outline" size="sm" asChild>
-                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                       {translations.projects.liveDemo}
                       <ExternalLink className="ml-2 h-4 w-4" />
                     </a>
@@ -136,7 +139,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
               <p className="text-sm text-muted-foreground">{project.backDescription}</p>
             </div>
             <Button variant="outline" size="sm" asChild>
-                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                   {translations.projects.liveDemo}
                   <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
