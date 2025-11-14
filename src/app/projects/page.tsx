@@ -61,7 +61,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
     <motion.div 
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="bg-card rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
+      className="bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
     >
       <div className="relative aspect-video w-full overflow-hidden">
         <Image
