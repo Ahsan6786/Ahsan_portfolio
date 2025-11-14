@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { ExternalLink, Github, Code } from "lucide-react";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
 
@@ -40,57 +40,91 @@ const projects = [
 
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const { translations, loading } = useLanguage();
+  const ref = useRef<HTMLDivElement>(null);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 20, stiffness: 150 };
+  const mouseXSpring = useSpring(mouseX, springConfig);
+  const mouseYSpring = useSpring(mouseY, springConfig);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["12.5deg", "-12.5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-12.5deg", "12.5deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!ref.current) return;
+    const { left, top, width, height } = ref.current.getBoundingClientRect();
+    const x = (e.clientX - left - width / 2) / (width / 2);
+    const y = (e.clientY - top - height / 2) / (height / 2);
+    mouseX.set(x);
+    mouseY.set(y);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+  
   if (loading) return null;
   
   return (
-    <motion.div 
-      whileHover={{ y: -8, scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
-    >
-      <div className="relative aspect-video w-full overflow-hidden">
-        <Image
-          src={project.image.src}
-          alt={project.title}
-          fill
-          className="object-cover"
-          data-ai-hint={project.image.aiHint}
-        />
-      </div>
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-        <p className="text-muted-foreground mb-4 text-sm flex-grow">{project.description}</p>
-        
-        <div className="mb-4">
-            <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
-                <Code className="w-4 h-4"/>
-                <span>Tech Stack</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-            {project.tags.map(tag => (
-                <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
-            ))}
-            </div>
+    <div className="w-full h-full perspective-1000">
+      <motion.div 
+        ref={ref}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+            rotateX,
+            rotateY,
+            transformStyle: "preserve-3d",
+        }}
+        className="bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
+      >
+        <div className="relative aspect-video w-full overflow-hidden">
+          <Image
+            src={project.image.src}
+            alt={project.title}
+            fill
+            className="object-cover"
+            data-ai-hint={project.image.aiHint}
+          />
         </div>
-        
-        <div className="mt-auto flex justify-start items-center gap-4">
-          {project.github && (
-            <Button variant="outline" asChild>
-              <a href={project.github} target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-4 w-4" />
-                Code
+        <div className="p-6 flex flex-col flex-grow">
+          <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+          <p className="text-muted-foreground mb-4 text-sm flex-grow">{project.description}</p>
+          
+          <div className="mb-4">
+              <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
+                  <Code className="w-4 h-4"/>
+                  <span>Tech Stack</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                  <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
+              ))}
+              </div>
+          </div>
+          
+          <div className="mt-auto flex justify-start items-center gap-4">
+            {project.github && (
+              <Button variant="outline" asChild className="rounded-full">
+                <a href={project.github} target="_blank" rel="noopener noreferrer">
+                  <Github className="mr-2 h-4 w-4" />
+                  Code
+                </a>
+              </Button>
+            )}
+            <Button asChild className="rounded-full">
+              <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Demo
               </a>
             </Button>
-          )}
-          <Button asChild>
-            <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Demo
-            </a>
-          </Button>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
 
@@ -118,17 +152,11 @@ export function Projects() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <motion.div
-              initial={{ scale: 1 }}
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Button size="lg" asChild className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+            <Button size="lg" asChild className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                 <Link href="/projects">
                     View All Projects
                 </Link>
-              </Button>
-            </motion.div>
+            </Button>
           </div>
         </div>
       </AnimateOnScroll>
