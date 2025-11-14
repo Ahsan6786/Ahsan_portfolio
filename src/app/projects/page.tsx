@@ -83,7 +83,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
             </div>
             <div className="flex flex-wrap gap-2">
             {project.tags.map(tag => (
-                <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded">{tag}</span>
+                <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
             ))}
             </div>
         </div>
@@ -116,33 +116,35 @@ export default function ProjectsPage() {
 
   return (
     <div className="bg-background min-h-screen">
-      <div className="container mx-auto px-4 md:px-6 pt-16 md:pt-24">
-        <AnimateOnScroll>
-          <div className="mb-8">
-            <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-              <Link href="/" className="inline-flex items-center">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                {translations.certificatesPage.backToHome}
-              </Link>
-            </Button>
-          </div>
-          <section id="projects" className="pb-16 md:pb-32">
-            <div className="text-center mb-12 relative">
-              <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
-              <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
-                {translations.projects.title}
-              </p>
-              <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                {translations.projects.subtitle}
-              </p>
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="pt-16 md:pt-24">
+          <AnimateOnScroll>
+            <div className="mb-8">
+              <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                <Link href="/" className="inline-flex items-center">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  {translations.certificatesPage.backToHome}
+                </Link>
+              </Button>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              {projects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
-              ))}
-            </div>
-          </section>
-        </AnimateOnScroll>
+            <section id="projects" className="pb-16 md:pb-32">
+              <div className="text-center mb-12 relative">
+                <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
+                <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
+                  {translations.projects.title}
+                </p>
+                <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+                  {translations.projects.subtitle}
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                {projects.map((project, index) => (
+                  <ProjectCard key={index} project={project} />
+                ))}
+              </div>
+            </section>
+          </AnimateOnScroll>
+        </div>
       </div>
     </div>
   );

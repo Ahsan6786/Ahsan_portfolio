@@ -32,45 +32,47 @@ export default function ServicesPage() {
 
   return (
     <div className="bg-background min-h-screen">
-      <div className="container mx-auto px-4 md:px-6 pt-16 md:pt-24">
-        <AnimateOnScroll>
-          <div className="mb-8">
-            <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-              <Link href="/" className="inline-flex items-center">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                {translations.certificatesPage.backToHome}
-              </Link>
-            </Button>
-          </div>
-          <section id="services" className="pb-16 md:pb-32">
-            <div className="text-center mb-12 relative">
-              <h2 className="text-4xl md:text-6xl font-bold">{translations.services.title}</h2>
-              <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
-                {translations.services.title}
-              </p>
-              <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                {translations.services.subtitle}
-              </p>
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="pt-16 md:pt-24">
+          <AnimateOnScroll>
+            <div className="mb-8">
+              <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                <Link href="/" className="inline-flex items-center">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  {translations.certificatesPage.backToHome}
+                </Link>
+              </Button>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="bg-card p-8 text-center rounded-lg flex flex-col items-center justify-start hover:shadow-lg transition-shadow h-full"
-                >
-                  <div className="mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-background">
-                    {service.icon}
+            <section id="services" className="pb-16 md:pb-32">
+              <div className="text-center mb-12 relative">
+                <h2 className="text-4xl md:text-6xl font-bold">{translations.services.title}</h2>
+                <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
+                  {translations.services.title}
+                </p>
+                <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+                  {translations.services.subtitle}
+                </p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-8">
+                {services.map((service, index) => (
+                  <div
+                    key={index}
+                    className="bg-card p-8 text-center rounded-lg flex flex-col items-center justify-start hover:shadow-lg transition-shadow h-full"
+                  >
+                    <div className="mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-background">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-base md:text-lg font-bold uppercase tracking-widest">
+                      {service.title}
+                    </h3>
+                    <div className="w-10 h-1 bg-primary mt-3 mb-4"></div>
+                    <p className="text-sm text-muted-foreground">{service.description}</p>
                   </div>
-                  <h3 className="text-base md:text-lg font-bold uppercase tracking-widest">
-                    {service.title}
-                  </h3>
-                  <div className="w-10 h-1 bg-primary mt-3 mb-4"></div>
-                  <p className="text-sm text-muted-foreground">{service.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </AnimateOnScroll>
+                ))}
+              </div>
+            </section>
+          </AnimateOnScroll>
+        </div>
       </div>
     </div>
   );

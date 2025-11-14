@@ -51,56 +51,58 @@ export default function ContactPage() {
 
   return (
     <div className="bg-card min-h-screen">
-      <div className="container mx-auto px-4 md:px-6 pt-16 md:pt-24">
-        <AnimateOnScroll>
-          <div className="mb-8">
-            <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-              <Link href="/" className="inline-flex items-center">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                {translations.certificatesPage.backToHome}
-              </Link>
-            </Button>
-          </div>
-          <section id="contact" className="pb-16 md:pb-32">
-            <div className="text-center mb-12 relative">
-              <h2 className="text-4xl md:text-6xl font-bold">{translations.contact.title}</h2>
-              <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
-                {translations.contact.title}
-              </p>
-              <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                {translations.contact.subtitle}
-              </p>
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="pt-16 md:pt-24">
+          <AnimateOnScroll>
+            <div className="mb-8">
+              <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                <Link href="/" className="inline-flex items-center">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  {translations.certificatesPage.backToHome}
+                </Link>
+              </Button>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              {contactDetails.map((detail) => (
-                <div key={detail.title} className="text-center">
-                  <div className="flex items-center justify-center w-20 h-20 rounded-full bg-background mx-auto mb-4">
-                      {detail.icon}
+            <section id="contact" className="pb-16 md:pb-32">
+              <div className="text-center mb-12 relative">
+                <h2 className="text-4xl md:text-6xl font-bold">{translations.contact.title}</h2>
+                <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
+                  {translations.contact.title}
+                </p>
+                <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+                  {translations.contact.subtitle}
+                </p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                {contactDetails.map((detail) => (
+                  <div key={detail.title} className="text-center">
+                    <div className="flex items-center justify-center w-20 h-20 rounded-full bg-background mx-auto mb-4">
+                        {detail.icon}
+                    </div>
+                    <h3 className="font-bold text-lg mb-1">{detail.title}</h3>
+                    <p className="text-muted-foreground">{detail.value}</p>
                   </div>
-                  <h3 className="font-bold text-lg mb-1">{detail.title}</h3>
-                  <p className="text-muted-foreground">{detail.value}</p>
-                </div>
-              ))}
-            </div>
-            <div className="flex justify-center space-x-6 mb-16">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-16 h-16 rounded-full bg-background hover:bg-primary/10 transition-colors"
-                  aria-label={link.label}
-                >
-                  {link.icon}
-                </a>
-              ))}
-            </div>
-            <div className="max-w-2xl mx-auto">
-                <ContactForm />
-            </div>
-          </section>
-        </AnimateOnScroll>
+                ))}
+              </div>
+              <div className="flex justify-center space-x-6 mb-16">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-16 h-16 rounded-full bg-background hover:bg-primary/10 transition-colors"
+                    aria-label={link.label}
+                  >
+                    {link.icon}
+                  </a>
+                ))}
+              </div>
+              <div className="max-w-2xl mx-auto">
+                  <ContactForm />
+              </div>
+            </section>
+          </AnimateOnScroll>
+        </div>
       </div>
     </div>
   );

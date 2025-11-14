@@ -68,7 +68,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
             </div>
             <div className="flex flex-wrap gap-2">
             {project.tags.map(tag => (
-                <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded">{tag}</span>
+                <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
             ))}
             </div>
         </div>

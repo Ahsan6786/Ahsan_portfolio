@@ -77,33 +77,35 @@ export default function TestimonialsPage() {
   
   return (
     <div className="bg-background min-h-screen">
-      <div className="container mx-auto px-4 md:px-6 pt-16 md:pt-24">
-        <AnimateOnScroll>
-          <div className="mb-8">
-            <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-              <Link href="/" className="inline-flex items-center">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                {translations.certificatesPage.backToHome}
-              </Link>
-            </Button>
-          </div>
-          <div className="pb-16 md:pb-24">
-            <div className="text-center mb-12 relative">
-              <h1 className="text-4xl md:text-6xl font-bold">Testimonials</h1>
-              <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0" aria-hidden="true">
-                Feedback
-              </p>
-              <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                What my clients say about my work.
-              </p>
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="pt-16 md:pt-24">
+          <AnimateOnScroll>
+            <div className="mb-8">
+              <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                <Link href="/" className="inline-flex items-center">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  {translations.certificatesPage.backToHome}
+                </Link>
+              </Button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {allTestimonials.map((testimonial, index) => (
-                <TestimonialCard key={index} testimonial={testimonial} />
-              ))}
+            <div className="pb-16 md:pb-24">
+              <div className="text-center mb-12 relative">
+                <h1 className="text-4xl md:text-6xl font-bold">Testimonials</h1>
+                <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0" aria-hidden="true">
+                  Feedback
+                </p>
+                <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+                  What my clients say about my work.
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                {allTestimonials.map((testimonial, index) => (
+                  <TestimonialCard key={index} testimonial={testimonial} />
+                ))}
+              </div>
             </div>
-          </div>
-        </AnimateOnScroll>
+          </AnimateOnScroll>
+        </div>
       </div>
     </div>
   );
