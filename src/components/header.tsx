@@ -122,7 +122,7 @@ export function Header() {
           <LanguageToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu">
+              <Button variant="ghost" size="icon" aria-label="Open menu" onClick={() => setIsSheetOpen(!isSheetOpen)}>
                 <AnimatePresence initial={false} mode="wait">
                   <motion.div
                     key={isSheetOpen ? "x" : "menu"}
