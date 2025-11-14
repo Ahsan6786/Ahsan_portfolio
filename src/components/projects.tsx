@@ -5,9 +5,9 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { ExternalLink, Github, Code, Info } from "lucide-react";
+import { ExternalLink, Github, Code, Info, X } from "lucide-react";
 import React, { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
 
@@ -38,23 +38,83 @@ const projects = [
   },
 ];
 
-function ProjectCard({ project }: { project: (typeof projects)[0] }) {
-  const { translations, loading } = useLanguage();
+type Project = (typeof projects)[0];
+
+function ProjectModal({ project, onClose }: { project: Project; onClose: () => void; }) {
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ scale: 0.9, y: 20 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.9, y: 20 }}
+        transition={{ duration: 0.3 }}
+        className="bg-card rounded-lg overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="relative w-full h-64 md:h-96">
+            <Image
+                src={project.image.src}
+                alt={project.title}
+                fill
+                className="object-cover"
+                data-ai-hint={project.image.aiHint}
+            />
+        </div>
+        <div className="p-8 overflow-y-auto">
+            <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
+            <p className="text-muted-foreground mb-6">{project.description}</p>
+            <div className="flex flex-wrap gap-2 mb-8">
+                {project.tags.map(tag => (
+                    <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
+                ))}
+            </div>
+            <div className="flex items-center gap-4">
+              {project.github && (
+                <Button variant="outline" asChild className="rounded-full">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2 h-4 w-4" />
+                    Code
+                  </a>
+                </Button>
+              )}
+              <Button asChild className="rounded-full">
+                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Demo
+                </a>
+              </Button>
+            </div>
+        </div>
+        <Button size="icon" variant="ghost" className="absolute top-4 right-4 rounded-full bg-black/30 hover:bg-black/50 text-white" onClick={onClose}>
+            <X className="w-5 h-5"/>
+        </Button>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+
+function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isFlipped, setIsFlipped] = useState(false);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { damping: 25, stiffness: 200 };
+  const springConfig = { damping: 15, stiffness: 100 };
   const mouseXSpring = useSpring(mouseX, springConfig);
   const mouseYSpring = useSpring(mouseY, springConfig);
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7.5deg", "-7.5deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7.5deg", "7.5deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["3.5deg", "-3.5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-3.5deg", "3.5deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!ref.current || isFlipped) return;
+    if (!ref.current) return;
     const { left, top, width, height } = ref.current.getBoundingClientRect();
     const x = (e.clientX - left - width / 2) / (width / 2);
     const y = (e.clientY - top - height / 2) / (height / 2);
@@ -67,24 +127,20 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
     mouseY.set(0);
   };
   
-  if (loading) return null;
-  
   return (
-    <div className="w-full h-[500px] perspective-1000">
+    <div className="w-full h-auto perspective-1000">
       <motion.div 
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{
-            rotateX: isFlipped ? 0 : rotateX,
-            rotateY: isFlipped ? 180 : rotateY,
+            rotateX,
+            rotateY,
             transformStyle: "preserve-3d",
         }}
-        transition={{ duration: 0.6 }}
         className="relative w-full h-full"
       >
-        {/* Front Face */}
-        <div className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+        <div className="bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
           <div className="relative">
             <div className="relative aspect-video w-full overflow-hidden">
               <Image
@@ -95,7 +151,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
                 data-ai-hint={project.image.aiHint}
               />
             </div>
-            <Button size="icon" variant="ghost" className="absolute top-2 right-2 rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" onClick={() => setIsFlipped(true)}>
+            <Button size="icon" variant="ghost" className="absolute top-2 right-2 rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" onClick={onInfoClick}>
               <Info className="w-4 h-4"/>
             </Button>
           </div>
@@ -133,18 +189,6 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
             </div>
           </div>
         </div>
-
-        {/* Back Face */}
-        <div 
-            className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden border p-6 flex flex-col justify-center text-center" 
-            style={{ transform: "rotateY(180deg)"}}
-            onClick={() => setIsFlipped(false)}
-        >
-            <div>
-              <h4 className="font-bold text-lg mb-2">{project.title}</h4>
-              <p className="text-sm text-muted-foreground">{project.description}</p>
-            </div>
-        </div>
       </motion.div>
     </div>
   );
@@ -153,6 +197,8 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
 
 export function Projects() {
   const { translations, loading } = useLanguage();
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   if (loading) return null;
 
   return (
@@ -170,7 +216,7 @@ export function Projects() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
+              <ProjectCard key={index} project={project} onInfoClick={() => setSelectedProject(project)} />
             ))}
           </div>
           <div className="text-center mt-12">
@@ -182,6 +228,11 @@ export function Projects() {
           </div>
         </div>
       </AnimateOnScroll>
+       <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+        )}
+      </AnimatePresence>
     </section>
   );
 }
