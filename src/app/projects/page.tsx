@@ -70,10 +70,10 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
       onClick={onClose}
     >
       <motion.div
-        initial={{ scale: 0.9, y: 20 }}
-        animate={{ scale: 1, y: 0 }}
-        exit={{ scale: 0.9, y: 20 }}
-        transition={{ duration: 0.3 }}
+        initial={{ scale: 0.95, rotateY: 90 }}
+        animate={{ scale: 1, rotateY: 0 }}
+        exit={{ scale: 0.95, rotateY: 90 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
         className="bg-card rounded-lg overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col relative"
         onClick={(e) => e.stopPropagation()}
       >
@@ -126,7 +126,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { damping: 15, stiffness: 100 };
+  const springConfig = { damping: 20, stiffness: 150 };
   const mouseXSpring = useSpring(mouseX, springConfig);
   const mouseYSpring = useSpring(mouseY, springConfig);
 
@@ -158,7 +158,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
             rotateY,
             transformStyle: "preserve-3d",
         }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
         className="relative w-full h-full"
       >
         <div className="bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
@@ -224,35 +224,33 @@ export default function ProjectsPage() {
 
   return (
     <div className="bg-background min-h-screen">
-       <div className="container mx-auto px-4 md:px-6">
-       <div className="pt-16 md:pt-24">
-            <div className="mb-8">
-              <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-                <Link href="/" className="inline-flex items-center">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  {translations.certificatesPage.backToHome}
-                </Link>
-              </Button>
-            </div>
-          <AnimateOnScroll>
-            <section id="projects" className="pb-16 md:pb-32">
-              <div className="text-center mb-12 relative">
-                <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
-                <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
-                  {translations.projects.title}
-                </p>
-                <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                  {translations.projects.subtitle}
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 gap-8">
-                {projects.map((project, index) => (
-                  <ProjectCard key={index} project={project} onInfoClick={() => setSelectedProject(project)} />
-                ))}
-              </div>
-            </section>
-          </AnimateOnScroll>
+      <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
+        <div className="mb-8">
+          <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+            <Link href="/" className="inline-flex items-center">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              {translations.certificatesPage.backToHome}
+            </Link>
+          </Button>
         </div>
+        <AnimateOnScroll>
+          <section id="projects" className="pb-16 md:pb-32">
+            <div className="text-center mb-12 relative">
+              <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
+              <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
+                {translations.projects.title}
+              </p>
+              <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+                {translations.projects.subtitle}
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {projects.map((project, index) => (
+                <ProjectCard key={index} project={project} onInfoClick={() => setSelectedProject(project)} />
+              ))}
+            </div>
+          </section>
+        </AnimateOnScroll>
       </div>
       <AnimatePresence>
         {selectedProject && (

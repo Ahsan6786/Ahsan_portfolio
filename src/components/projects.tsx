@@ -53,10 +53,10 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
       onClick={onClose}
     >
       <motion.div
-        initial={{ scale: 0.9, y: 20 }}
-        animate={{ scale: 1, y: 0 }}
-        exit={{ scale: 0.9, y: 20 }}
-        transition={{ duration: 0.3 }}
+        initial={{ scale: 0.95, rotateY: 90 }}
+        animate={{ scale: 1, rotateY: 0 }}
+        exit={{ scale: 0.95, rotateY: 90 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
         className="bg-card rounded-lg overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col relative"
         onClick={(e) => e.stopPropagation()}
       >
@@ -109,7 +109,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { damping: 15, stiffness: 100 };
+  const springConfig = { damping: 20, stiffness: 150 };
   const mouseXSpring = useSpring(mouseX, springConfig);
   const mouseYSpring = useSpring(mouseY, springConfig);
 
