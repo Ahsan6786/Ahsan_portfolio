@@ -70,5 +70,9 @@
   "certificate6": {
     "src": "/certificate6.png",
     "aiHint": "professional certificate"
+  },
+  "testimonialUmme": {
+    "src": "https://picsum.photos/seed/umme/100/100",
+    "aiHint": "woman portrait"
   }
 }

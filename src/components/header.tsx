@@ -45,6 +45,7 @@ export function Header() {
     { href: "/about", label: translations.header.about },
     { href: "/services", label: translations.header.services },
     { href: "/projects", label: translations.header.projects },
+    { href: "/testimonials", label: "Testimonials" },
     { href: "/certificates", label: translations.header.certificates },
     { href: "/contact", label: translations.header.contact },
   ];
