@@ -125,16 +125,15 @@ export function Header() {
                   <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="top" className="p-0">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                <div className="p-6">
-                  <Link href="/" className="text-2xl font-bold mb-8 block text-primary tracking-wider">AHSAN</Link>
-                  <nav className="flex flex-col space-y-4">
+                <div className="p-6 pt-16 text-center">
+                  <nav className="flex flex-col items-center space-y-6">
                       {navLinks.map((link) => (
                           <SheetClose key={link.label} asChild>
                             <Link
                                 href={link.href}
-                                className={cn('text-lg hover:text-primary transition-colors', pathname === link.href ? 'text-primary' : '')}
+                                className={cn('text-xl hover:text-primary transition-colors', pathname === link.href ? 'text-primary' : '')}
                                 onClick={() => setIsSheetOpen(false)}
                             >
                                 {link.label}
@@ -142,7 +141,7 @@ export function Header() {
                           </SheetClose>
                       ))}
                   </nav>
-                  <div className="flex justify-start space-x-6 mt-8">
+                  <div className="flex justify-center space-x-6 mt-8">
                     {socialLinks.map((link) => (
                         <a
                           key={link.href}
