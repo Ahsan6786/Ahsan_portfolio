@@ -14,6 +14,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
+import React from "react";
 
 const testimonials = [
   {
@@ -75,6 +77,10 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
 }
 
 export function Testimonials() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true })
+  )
+
   return (
     <section id="testimonials" className="py-16 md:py-24 bg-background">
       <AnimateOnScroll>
@@ -90,11 +96,14 @@ export function Testimonials() {
           </div>
 
           <Carousel
+            plugins={[plugin.current]}
             opts={{
               align: "start",
               loop: true,
             }}
             className="w-full max-w-4xl mx-auto"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
           >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
