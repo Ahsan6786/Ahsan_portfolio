@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { ExternalLink, Info } from "lucide-react";
+import { ExternalLink, Info, Github } from "lucide-react";
 import React, { useState, useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
@@ -18,7 +18,8 @@ const projects = [
     backDescription: "FessUp! provides a private, unfiltered space for students within the same college. Built with anonymity and community engagement at its core, it allows for sharing secrets, thoughts, and campus news in a secure and anonymous way.",
     tags: ["Social Media", "Next.js", "Firebase", "Community"],
     image: placeholderData.projectFessUp,
-    liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/"
+    liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
+    github: "https://github.com/Ahsan6786/FessUP-"
   },
   {
     title: "Mitra AI",
@@ -26,7 +27,8 @@ const projects = [
     backDescription: "Mitra AI is a mental wellness app that provides a safe and private space for users...",
     tags: ["AI", "Mental Health", "Web App"],
     image: placeholderData.project4,
-    liveDemo: "https://mitraai.shop/"
+    liveDemo: "https://mitraai.shop/",
+    github: "https://github.com/Ahsan6786/MitraAi"
   },
   {
     title: "Ahsanverse - Blockchain Dapp",
@@ -34,7 +36,8 @@ const projects = [
     backDescription: "Ahsanverse is a decentralized app that lets users interact with the blockchain...",
     tags: ["React", "Solidity", "Web3.js", "Blockchain"],
     image: placeholderData.project1,
-    liveDemo: "https://ahsanverse.vercel.app/"
+    liveDemo: "https://ahsanverse.vercel.app/",
+    github: "https://github.com/Ahsan6786/ahsan_verse_final_"
   },
 ];
 
@@ -116,11 +119,11 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
         >
            <motion.div 
               className="relative h-48 w-full overflow-hidden"
-              style={{ transformStyle: "preserve-3d" }}
+              style={{ transformStyle: "preserve-3d", transform: "translateZ(20px)" }}
               animate={{
-                transform: isHovered && !isFlipped ? "translateZ(40px) scale(1.05)" : "translateZ(0px) scale(1)",
+                transform: isHovered && !isFlipped ? "translateZ(40px) scale(1.05)" : "translateZ(20px) scale(1)",
               }}
-              transition={{ type: "spring" }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
            >
               <Image
                 src={project.image.src}
@@ -132,11 +135,11 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
             </motion.div>
             <motion.div 
               className="p-4 flex flex-col flex-grow"
-              style={{ transformStyle: "preserve-3d" }}
+              style={{ transformStyle: "preserve-3d", transform: "translateZ(20px)" }}
               animate={{
-                transform: isHovered && !isFlipped ? "translateZ(30px)" : "translateZ(0px)",
+                transform: isHovered && !isFlipped ? "translateZ(30px)" : "translateZ(20px)",
               }}
-              transition={{ type: "spring" }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
               <h3 className="text-xl font-bold mb-2">{project.title}</h3>
               <p className="text-muted-foreground mb-3 text-sm flex-grow">{project.description}</p>
@@ -146,12 +149,22 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
                 ))}
               </div>
               <div className="mt-auto flex justify-between items-center">
-                 <Button variant="outline" size="sm" asChild className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                      {translations.projects.liveDemo}
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
+                 <div className="flex gap-2">
+                    <Button variant="outline" size="sm" asChild className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                      <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                        {translations.projects.liveDemo}
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                    {project.github && (
+                      <Button variant="outline" size="sm" asChild className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                          GitHub
+                          <Github className="ml-2 h-4 w-4" />
+                        </a>
+                      </Button>
+                    )}
+                  </div>
                 <div className="text-yellow-500 animate-pulse">
                   <Info className="h-5 w-5" />
                 </div>
@@ -164,12 +177,22 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
               <h4 className="font-bold text-lg mb-2">{translations.projects.moreInfo}</h4>
               <p className="text-sm text-muted-foreground">{project.backDescription}</p>
             </div>
-            <Button variant="outline" size="sm" asChild className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                  {translations.projects.liveDemo}
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
+            <div className="flex gap-2">
+              <Button variant="outline" size="sm" asChild className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                  <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                    {translations.projects.liveDemo}
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
               </Button>
+              {project.github && (
+                <Button variant="outline" size="sm" asChild className="shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                    GitHub
+                    <Github className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              )}
+            </div>
         </div>
       </motion.div>
     </motion.div>
@@ -200,11 +223,17 @@ export function Projects() {
             ))}
           </div>
           <div className="text-center mt-12">
+          <motion.div
+              initial={{ scale: 1 }}
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
             <Link href="/projects">
-                <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-pulse">
+                <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                   View All Projects
                 </Button>
             </Link>
+            </motion.div>
           </div>
         </div>
       </AnimateOnScroll>
