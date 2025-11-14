@@ -50,7 +50,7 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="bg-card min-h-screen">
+    <div className="bg-background min-h-screen">
       <div className="container mx-auto px-4 md:px-6">
         <div className="pt-16 md:pt-24">
           <AnimateOnScroll>
