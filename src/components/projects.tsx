@@ -214,7 +214,7 @@ export function Projects() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button size="lg" asChild className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+            <Button size="lg" asChild className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-pulse">
                 <Link href="/projects">
                     View All Projects
                 </Link>
