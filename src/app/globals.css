@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden !important;
+}
+
 header {
   position: sticky !important;
   top: 0 !important;
