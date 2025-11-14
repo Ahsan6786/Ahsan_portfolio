@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Ahsan Imam Khan Portfolio",
     images: [
       {
-        url: "/about.jpg",
+        url: "/my-image-1.png?v=3",
         width: 800,
         height: 600,
         alt: "Ahsan Imam Khan",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Ahsan Imam Khan - Freelance Web Developer",
     description: "A freelance web designer and full-stack developer.",
     creator: "@ahsanimamkhan",
-    images: ["/about.jpg"],
+    images: ["/my-image-1.png?v=3"],
   },
   viewport: {
     width: 'device-width',
