@@ -121,12 +121,12 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { damping: 15, stiffness: 100 };
+  const springConfig = { damping: 20, stiffness: 150 };
   const mouseXSpring = useSpring(mouseX, springConfig);
   const mouseYSpring = useSpring(mouseY, springConfig);
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["3.5deg", "-3.5deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-3.5deg", "3.5deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["2deg", "-2deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-2deg", "2deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!ref.current) return;
@@ -220,8 +220,8 @@ export default function ProjectsPage() {
   return (
     <div className="bg-background min-h-screen">
        <div className="container mx-auto px-4 md:px-6">
-        <div className="pt-8">
-            <div className="py-8">
+       <div className="pt-16 md:pt-24">
+            <div className="mb-8">
               <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
                 <Link href="/" className="inline-flex items-center">
                   <ArrowLeft className="w-4 h-4 mr-2" />
