@@ -14,6 +14,15 @@ import Link from "next/link";
 
 const projects = [
   {
+    title: "MIT WPU Chat Assist",
+    description: "An intelligent web portal for MIT-WPU students, powered by Gemini AI, with a central chatbot and specialized tools.",
+    detailedDescription: "MIT Chat Assist is an intelligent web portal designed for students of MIT World Peace University. Powered by Google's Gemini AI, it features a central chatbot for instant answers on admissions, courses, and campus life. The platform also includes specialized tools like a personalized Course Recommender, an Internship Assistant, and a powerful AI Admin Dashboard for easy management of the chatbot's knowledge base. Built with Next.js and Firebase, it offers a seamless and reliable experience for users.",
+    tags: ["Next.js", "Firebase", "Gemini AI"],
+    image: placeholderData.projectMitChatAssist,
+    liveDemo: "https://studio--studio-4013308653-b04c2.us-central1.hosted.app/",
+    github: "https://github.com/Ahsan6786/studio"
+  },
+  {
     title: "FessUp!",
     description: "A dynamic and anonymous social platform for college students to share confessions, thoughts, and campus happenings.",
     detailedDescription: "FessUp! is a dynamic and anonymous social platform designed specifically for college students. It provides a safe and open space for users to share confessions, thoughts, and campus happenings without revealing their identity, fostering a unique environment for genuine and unfiltered expression. The platform is built with Next.js for a fast, server-rendered frontend, Firebase for real-time data and authentication, and styled with Tailwind CSS for a modern, responsive design.",

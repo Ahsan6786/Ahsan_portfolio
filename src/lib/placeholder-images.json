@@ -35,6 +35,10 @@
     "src": "/fess.png",
     "aiHint": "anonymous social media"
   },
+  "projectMitChatAssist": {
+    "src": "https://picsum.photos/seed/mit-chat/800/600",
+    "aiHint": "AI chatbot interface"
+  },
   "contactImage": {
     "src": "https://picsum.photos/seed/contact/600/600",
     "aiHint": "man portrait"
