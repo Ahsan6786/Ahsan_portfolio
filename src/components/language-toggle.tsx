@@ -17,7 +17,6 @@ const languages = [
     { value: 'hi', label: 'Hindi' },
     { value: 'ur', label: 'Urdu' },
     { value: 'fr', label: 'French' },
-    { value: 'de', label: 'German' },
 ];
 
 export function LanguageToggle() {
