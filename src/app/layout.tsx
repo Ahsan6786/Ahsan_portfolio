@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Ahsan Imam Khan Portfolio",
     images: [
       {
-        url: "/my-image-1.png?v=3",
+        url: "/my-image-1.png?v=4",
         width: 800,
         height: 600,
         alt: "Ahsan Imam Khan",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Ahsan Imam Khan - Freelance Web Developer",
     description: "A freelance web designer and full-stack developer.",
     creator: "@ahsanimamkhan",
-    images: ["/my-image-1.png?v=3"],
+    images: ["/my-image-1.png?v=4"],
   },
   viewport: {
     width: 'device-width',
@@ -56,7 +56,7 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Ahsan Imam Khan',
   url: 'https://studio--studio-7268024832-f911c.us-central1.hosted.app/',
-  image: '/my-image-1.png?v=3',
+  image: '/my-image-1.png?v=4',
   sameAs: [
     'https://www.linkedin.com/in/ahsan-imam-khan-9a0443328',
     'https://github.com/Ahsan6786',
