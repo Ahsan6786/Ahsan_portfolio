@@ -117,32 +117,34 @@ export default function CertificatesPage() {
   
   return (
     <div className="bg-background min-h-screen">
-      <AnimateOnScroll>
-        <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
-          <div className="mb-12">
-            <Button asChild variant="ghost" className="hover:bg-accent">
+      <div className="container mx-auto px-4 md:px-6 pt-16 md:pt-24">
+        <AnimateOnScroll>
+          <div className="mb-8">
+            <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
               <Link href="/" className="inline-flex items-center">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 {translations.certificatesPage.backToHome}
               </Link>
             </Button>
           </div>
-          <div className="text-center mb-12 relative">
-            <h1 className="text-4xl md:text-6xl font-bold">{translations.certificatesPage.title}</h1>
-            <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0" aria-hidden="true">
-              {translations.certificatesPage.gallery}
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              {translations.certificatesPage.subtitle}
-            </p>
+          <div className="pb-16 md:pb-24">
+            <div className="text-center mb-12 relative">
+              <h1 className="text-4xl md:text-6xl font-bold">{translations.certificatesPage.title}</h1>
+              <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0" aria-hidden="true">
+                {translations.certificatesPage.gallery}
+              </p>
+              <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+                {translations.certificatesPage.subtitle}
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {allCertificates.map((certificate, index) => (
+                <CertificateCard key={index} certificate={certificate} />
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {allCertificates.map((certificate, index) => (
-              <CertificateCard key={index} certificate={certificate} />
-            ))}
-          </div>
-        </div>
-      </AnimateOnScroll>
+        </AnimateOnScroll>
+      </div>
     </div>
   );
 }

@@ -12,17 +12,17 @@ export default function AboutPage() {
 
   return (
     <div className="bg-background min-h-screen">
-      <AnimateOnScroll>
-        <section id="about" className="py-16 md:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="mb-12">
-              <Button asChild variant="ghost" className="hover:bg-accent">
-                <Link href="/" className="inline-flex items-center">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  {translations.certificatesPage.backToHome}
-                </Link>
-              </Button>
-            </div>
+      <div className="container mx-auto px-4 md:px-6 pt-16 md:pt-24">
+        <AnimateOnScroll>
+          <div className="mb-8">
+            <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+              <Link href="/" className="inline-flex items-center">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                {translations.certificatesPage.backToHome}
+              </Link>
+            </Button>
+          </div>
+          <section id="about" className="pb-16 md:pb-32">
             <div className="grid md:grid-cols-1 gap-10 md:gap-20 items-center">
               <div className="relative text-center">
                 <div className="relative mb-4">
@@ -43,25 +43,25 @@ export default function AboutPage() {
                 <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">{translations.about.p3}</p>
               </div>
             </div>
-          </div>
-          <div className="text-center mt-12">
-            <p className="text-xl md:text-2xl text-primary font-bold mb-6">{translations.about.projectsCompleted}</p>
-            <div className="flex justify-center items-center gap-4">
-                <Link href="/contact">
-                  <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                    {translations.about.hireMe}
-                  </Button>
-                </Link>
-                <a href="/AhsanCV.pdf" download="Ahsan-Imam-Khan-CV.pdf">
-                    <Button size="lg" variant="outline" className="font-semibold rounded-full border-foreground/50 hover:bg-foreground/10 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                        Download CV
-                        <Download className="ml-2 h-5 w-5" />
+            <div className="text-center mt-12">
+              <p className="text-xl md:text-2xl text-primary font-bold mb-6">{translations.about.projectsCompleted}</p>
+              <div className="flex justify-center items-center gap-4">
+                  <Link href="/contact">
+                    <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                      {translations.about.hireMe}
                     </Button>
-                </a>
+                  </Link>
+                  <a href="/AhsanCV.pdf" download="Ahsan-Imam-Khan-CV.pdf">
+                      <Button size="lg" variant="outline" className="font-semibold rounded-full border-foreground/50 hover:bg-foreground/10 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                          Download CV
+                          <Download className="ml-2 h-5 w-5" />
+                      </Button>
+                  </a>
+              </div>
             </div>
-          </div>
-        </section>
-      </AnimateOnScroll>
+          </section>
+        </AnimateOnScroll>
+      </div>
     </div>
   );
 }

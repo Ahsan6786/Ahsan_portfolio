@@ -51,17 +51,17 @@ export default function ContactPage() {
 
   return (
     <div className="bg-card min-h-screen">
-      <AnimateOnScroll>
-        <section id="contact" className="py-16 md:py-32">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="mb-12">
-              <Button asChild variant="ghost" className="hover:bg-accent">
-                <Link href="/" className="inline-flex items-center">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  {translations.certificatesPage.backToHome}
-                </Link>
-              </Button>
-            </div>
+      <div className="container mx-auto px-4 md:px-6 pt-16 md:pt-24">
+        <AnimateOnScroll>
+          <div className="mb-8">
+            <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+              <Link href="/" className="inline-flex items-center">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                {translations.certificatesPage.backToHome}
+              </Link>
+            </Button>
+          </div>
+          <section id="contact" className="pb-16 md:pb-32">
             <div className="text-center mb-12 relative">
               <h2 className="text-4xl md:text-6xl font-bold">{translations.contact.title}</h2>
               <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
@@ -99,9 +99,9 @@ export default function ContactPage() {
             <div className="max-w-2xl mx-auto">
                 <ContactForm />
             </div>
-          </div>
-        </section>
-      </AnimateOnScroll>
+          </section>
+        </AnimateOnScroll>
+      </div>
     </div>
   );
 }
