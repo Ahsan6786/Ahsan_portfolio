@@ -6,6 +6,22 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden !important;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
 @layer base {
   :root {
     --background: 39 77% 96%;
@@ -49,16 +65,6 @@ html {
     --border: 0 0% 15%;
     --input: 0 0% 15%;
     --ring: 45 98% 60%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    overflow-x: hidden;
   }
 }
 
