@@ -18,6 +18,14 @@ const allTestimonials = [
     projectUrl: "https://ummehabiba-ten.vercel.app/",
     projectGithub: "https://github.com/Ahsan6786/ummehabiba"
   },
+  {
+    name: "Ziya Murad Khan",
+    comment: "Ahsan understood what I needed with very little conversation and delivered exactly the website I had in mind.",
+    image: placeholderData.testimonialZiya,
+    linkedin: "https://www.linkedin.com/in/ziyamkhan/",
+    projectUrl: "https://ziyamuradkhan.vercel.app/",
+    projectGithub: "https://github.com/Ahsan6786/ziyamuradkhan"
+  },
 ];
 
 
@@ -49,9 +57,11 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof allTestimonials
                 <a href={testimonial.projectUrl} target="_blank" rel="noopener noreferrer" aria-label="Project Website" className="text-muted-foreground hover:text-primary transition-colors">
                   <ExternalLink className="w-5 h-5" />
                 </a>
-                <a href={testimonial.projectGithub} target="_blank" rel="noopener noreferrer" aria-label="Project GitHub" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Github className="w-5 h-5" />
-                </a>
+                {testimonial.projectGithub && (
+                    <a href={testimonial.projectGithub} target="_blank" rel="noopener noreferrer" aria-label="Project GitHub" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Github className="w-5 h-5" />
+                    </a>
+                )}
               </div>
             </div>
           </div>
@@ -70,7 +80,7 @@ export default function TestimonialsPage() {
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
           <div className="mb-12">
-            <Button asChild variant="ghost" className="hover:bg-accent">
+            <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
               <Link href="/" className="inline-flex items-center">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 {translations.certificatesPage.backToHome}

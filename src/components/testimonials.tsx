@@ -24,6 +24,14 @@ const testimonials = [
     projectUrl: "https://ummehabiba-ten.vercel.app/",
     projectGithub: "https://github.com/Ahsan6786/ummehabiba"
   },
+  {
+    name: "Ziya Murad Khan",
+    comment: "Ahsan understood what I needed with very little conversation and delivered exactly the website I had in mind.",
+    image: placeholderData.testimonialZiya,
+    linkedin: "https://www.linkedin.com/in/ziyamkhan/",
+    projectUrl: "https://ziyamuradkhan.vercel.app/",
+    projectGithub: "https://github.com/Ahsan6786/ziyamuradkhan"
+  },
 ];
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
@@ -84,6 +92,7 @@ export function Testimonials() {
           <Carousel
             opts={{
               align: "start",
+              loop: true,
             }}
             className="w-full max-w-4xl mx-auto"
           >
