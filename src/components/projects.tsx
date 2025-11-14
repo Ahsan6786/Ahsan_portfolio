@@ -14,7 +14,8 @@ import Link from "next/link";
 const projects = [
   {
     title: "FessUp!",
-    description: "A dynamic and anonymous social platform for college students to share confessions, thoughts, and campus happenings without revealing their identity, fostering a unique environment for genuine expression.",
+    description: "A dynamic and anonymous social platform for college students to share confessions, thoughts, and campus happenings.",
+    detailedDescription: "FessUp! is a dynamic and anonymous social platform designed specifically for college students. It provides a safe and open space for users to share confessions, thoughts, and campus happenings without revealing their identity, fostering a unique environment for genuine and unfiltered expression. The platform is built with Next.js for a fast, server-rendered frontend, Firebase for real-time data and authentication, and styled with Tailwind CSS for a modern, responsive design.",
     tags: ["Next.js", "Firebase", "Tailwind CSS"],
     image: placeholderData.projectFessUp,
     liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
@@ -22,7 +23,8 @@ const projects = [
   },
   {
     title: "Mitra AI",
-    description: "An innovative mental wellness application providing accessible, stigma-free support...",
+    description: "An innovative mental wellness application providing accessible, stigma-free support.",
+    detailedDescription: "Mitra AI is an innovative mental wellness application providing accessible, stigma-free support. It offers personalized resources, guided exercises, and a compassionate AI chatbot to help users navigate their mental health journey privately and securely. The app aims to make mental wellness a proactive and manageable part of daily life.",
     tags: ["AI", "Next.js", "Web App"],
     image: placeholderData.project4,
     liveDemo: "https://mitraai.shop/",
@@ -30,7 +32,8 @@ const projects = [
   },
   {
     title: "Ahsanverse - Blockchain Dapp",
-    description: "A decentralized application built on blockchain technology, featuring smart contracts...",
+    description: "A decentralized application built on blockchain technology, featuring smart contracts.",
+    detailedDescription: "Ahsanverse is a decentralized application (Dapp) built on modern blockchain technology. It showcases the potential of Web3 by integrating smart contracts for secure, transparent transactions. Users can connect their digital wallets, interact with the blockchain, and experience a truly decentralized web application, all within a seamless and user-friendly interface built with React.",
     tags: ["React", "Solidity", "Web3.js"],
     image: placeholderData.project1,
     liveDemo: "https://ahsanverse.vercel.app/",
@@ -68,7 +71,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         </div>
         <div className="p-8 overflow-y-auto">
             <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
-            <p className="text-muted-foreground mb-6">{project.description}</p>
+            <p className="text-muted-foreground mb-6">{project.detailedDescription}</p>
             <div className="flex flex-wrap gap-2 mb-8">
                 {project.tags.map(tag => (
                     <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
@@ -106,12 +109,12 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const springConfig = { damping: 20, stiffness: 150 };
+  const springConfig = { damping: 15, stiffness: 100 };
   const mouseXSpring = useSpring(mouseX, springConfig);
   const mouseYSpring = useSpring(mouseY, springConfig);
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["2deg", "-2deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-2deg", "2deg"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["1.5deg", "-1.5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-1.5deg", "1.5deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (!ref.current) return;
