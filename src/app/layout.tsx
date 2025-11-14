@@ -56,7 +56,7 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Ahsan Imam Khan',
   url: 'https://studio--studio-7268024832-f911c.us-central1.hosted.app/',
-  image: '/about.jpg',
+  image: '/my-image-1.png?v=3',
   sameAs: [
     'https://www.linkedin.com/in/ahsan-imam-khan-9a0443328',
     'https://github.com/Ahsan6786',
