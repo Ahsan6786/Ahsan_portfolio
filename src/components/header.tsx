@@ -3,7 +3,7 @@ import React from 'react';
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { Button } from "@/components/ui/button";
-import { Menu, Instagram, Linkedin, Github } from 'lucide-react';
+import { Menu, Instagram, Linkedin, Github, X } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -15,6 +15,7 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { LanguageToggle } from '@/components/language-toggle';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/language-context';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const socialLinks = [
   {
@@ -122,7 +123,17 @@ export function Header() {
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open menu">
-                  <Menu />
+                <AnimatePresence initial={false} mode="wait">
+                  <motion.div
+                    key={isSheetOpen ? "x" : "menu"}
+                    initial={{ rotate: isSheetOpen ? -90 : 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: isSheetOpen ? -90 : 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {isSheetOpen ? <X /> : <Menu />}
+                  </motion.div>
+                </AnimatePresence>
               </Button>
             </SheetTrigger>
             <SheetContent side="top" className="p-0">
