@@ -72,11 +72,11 @@
     "aiHint": "professional certificate"
   },
   "testimonialUmme": {
-    "src": "https://picsum.photos/seed/umme/100/100",
+    "src": "/umme.png",
     "aiHint": "woman portrait"
   },
   "testimonialZiya": {
-    "src": "https://picsum.photos/seed/ziya/100/100",
+    "src": "/ziya.png",
     "aiHint": "man portrait"
   }
 }
