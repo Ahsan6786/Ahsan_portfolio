@@ -5,8 +5,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { ExternalLink, Github, Code } from "lucide-react";
-import React, { useRef } from "react";
+import { ExternalLink, Github, Code, Info } from "lucide-react";
+import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
@@ -41,6 +41,7 @@ const projects = [
 function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const { translations, loading } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -53,7 +54,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-12.5deg", "12.5deg"]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!ref.current) return;
+    if (!ref.current || isFlipped) return;
     const { left, top, width, height } = ref.current.getBoundingClientRect();
     const x = (e.clientX - left - width / 2) / (width / 2);
     const y = (e.clientY - top - height / 2) / (height / 2);
@@ -69,59 +70,80 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
   if (loading) return null;
   
   return (
-    <div className="w-full h-full perspective-1000">
+    <div className="w-full h-[500px] perspective-1000">
       <motion.div 
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{
-            rotateX,
-            rotateY,
+            rotateX: isFlipped ? 0 : rotateX,
+            rotateY: isFlipped ? 180 : rotateY,
             transformStyle: "preserve-3d",
         }}
-        className="bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
+        transition={{ duration: 0.6 }}
+        className="relative w-full h-full"
       >
-        <div className="relative aspect-video w-full overflow-hidden">
-          <Image
-            src={project.image.src}
-            alt={project.title}
-            fill
-            className="object-cover"
-            data-ai-hint={project.image.aiHint}
-          />
-        </div>
-        <div className="p-6 flex flex-col flex-grow">
-          <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-          <p className="text-muted-foreground mb-4 text-sm flex-grow">{project.description}</p>
-          
-          <div className="mb-4">
-              <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
-                  <Code className="w-4 h-4"/>
-                  <span>Tech Stack</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-              {project.tags.map(tag => (
-                  <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
-              ))}
-              </div>
-          </div>
-          
-          <div className="mt-auto flex justify-start items-center gap-4">
-            {project.github && (
-              <Button variant="outline" asChild className="rounded-full">
-                <a href={project.github} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" />
-                  Code
-                </a>
-              </Button>
-            )}
-            <Button asChild className="rounded-full">
-              <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Demo
-              </a>
+        {/* Front Face */}
+        <div className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col">
+          <div className="relative">
+            <div className="relative aspect-video w-full overflow-hidden">
+              <Image
+                src={project.image.src}
+                alt={project.title}
+                fill
+                className="object-cover"
+                data-ai-hint={project.image.aiHint}
+              />
+            </div>
+            <Button size="icon" variant="ghost" className="absolute top-2 right-2 rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" onClick={() => setIsFlipped(true)}>
+              <Info className="w-4 h-4"/>
             </Button>
           </div>
+          <div className="p-6 flex flex-col flex-grow">
+            <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+            <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
+            
+            <div className="mb-4">
+                <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
+                    <Code className="w-4 h-4"/>
+                    <span>Tech Stack</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                {project.tags.map(tag => (
+                    <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
+                ))}
+                </div>
+            </div>
+            
+            <div className="mt-auto flex justify-start items-center gap-4">
+              {project.github && (
+                <Button variant="outline" asChild className="rounded-full">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2 h-4 w-4" />
+                    Code
+                  </a>
+                </Button>
+              )}
+              <Button asChild className="rounded-full">
+                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Demo
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Back Face */}
+        <div 
+            className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden border p-6 flex flex-col justify-center text-center" 
+            style={{ transform: "rotateY(180deg)"}}
+            onClick={() => setIsFlipped(false)}
+        >
+            <div>
+              <h4 className="font-bold text-lg mb-2">{project.title}</h4>
+              <p className="text-sm text-muted-foreground">{project.description}</p>
+            </div>
         </div>
       </motion.div>
     </div>
