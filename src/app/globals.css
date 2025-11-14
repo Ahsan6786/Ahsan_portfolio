@@ -10,6 +10,12 @@ html, body {
   overflow-x: hidden !important;
 }
 
+header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 9999 !important;
+}
+
 @layer base {
   * {
     @apply border-border;
