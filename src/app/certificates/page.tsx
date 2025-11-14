@@ -5,9 +5,9 @@ import Link from "next/link";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Info } from "lucide-react";
+import { ArrowLeft, X } from "lucide-react";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
 
 const allCertificates = [
@@ -61,58 +61,75 @@ const allCertificates = [
   },
 ];
 
+type Certificate = (typeof allCertificates)[0];
 
-function CertificateCard({ certificate }: { certificate: (typeof allCertificates)[0] }) {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const { translations, loading } = useLanguage();
-  if (loading) return null;
-
-  const handleTap = () => {
-    setIsFlipped(!isFlipped);
-  };
-  
+function CertificateModal({ certificate, onClose }: { certificate: Certificate; onClose: () => void; }) {
   return (
-    <div className="w-full h-[480px] perspective-1000">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4"
+      onClick={onClose}
+    >
       <motion.div
-        onTap={handleTap}
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.6 }}
-        className="w-full h-full relative"
-        data-style="preserve-3d"
+        initial={{ scale: 0.95, rotateY: 90 }}
+        animate={{ scale: 1, rotateY: 0 }}
+        exit={{ scale: 0.95, rotateY: 90 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="bg-card rounded-lg overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col relative"
+        onClick={(e) => e.stopPropagation()}
       >
-        {/* Front Face */}
-        <div className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center p-4">
-           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md mb-4">
-              <Image
+        <div className="relative w-full h-64 md:h-96">
+            <Image
                 src={certificate.image.src}
                 alt={certificate.title}
                 fill
                 className="object-contain"
                 data-ai-hint={certificate.image.aiHint}
-              />
-            </div>
-            <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
-            <p className="text-sm text-muted-foreground mt-1 flex-grow">{certificate.description}</p>
-            <div className="mt-auto flex justify-end items-center w-full">
-              <div className="text-yellow-500 animate-pulse">
-                <Info className="h-5 w-5" />
-              </div>
-            </div>
+            />
         </div>
-        {/* Back Face */}
-        <div className="absolute w-full h-full backface-hidden bg-card rounded-lg overflow-hidden border p-6 flex flex-col justify-center text-center" style={{ transform: "rotateY(180deg)"}}>
-            <div>
-              <h4 className="font-bold text-lg mb-2">{translations.certificates.moreInfo}</h4>
-              <p className="text-sm text-muted-foreground">{certificate.backDescription}</p>
-            </div>
+        <div className="p-8 overflow-y-auto">
+            <h2 className="text-3xl font-bold mb-4">{certificate.title}</h2>
+            <p className="text-muted-foreground mb-6">{certificate.backDescription}</p>
         </div>
+        <Button size="icon" variant="ghost" className="absolute top-4 right-4 rounded-full bg-black/30 hover:bg-black/50 text-white" onClick={onClose}>
+            <X className="w-5 h-5"/>
+        </Button>
       </motion.div>
+    </motion.div>
+  );
+}
+
+
+function CertificateCard({ certificate, onClick }: { certificate: Certificate, onClick: () => void }) {
+  return (
+    <div className="w-full h-auto cursor-pointer" onClick={onClick}>
+      <div className="bg-card rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center p-4 h-[480px]">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md mb-4 flex-shrink-0">
+            <Image
+              src={certificate.image.src}
+              alt={certificate.title}
+              fill
+              className="object-contain"
+              data-ai-hint={certificate.image.aiHint}
+            />
+          </div>
+          <div className="flex flex-col flex-grow justify-between">
+            <div>
+              <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
+              <p className="text-sm text-muted-foreground mt-1">{certificate.description}</p>
+            </div>
+          </div>
+      </div>
     </div>
   );
 }
 
 export default function CertificatesPage() {
   const { translations, loading } = useLanguage();
+  const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
+
   if (loading) return null;
   
   return (
@@ -140,13 +157,18 @@ export default function CertificatesPage() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {allCertificates.map((certificate, index) => (
-                  <CertificateCard key={index} certificate={certificate} />
+                   <CertificateCard key={index} certificate={certificate} onClick={() => setSelectedCertificate(certificate)} />
                 ))}
               </div>
             </div>
           </AnimateOnScroll>
         </div>
       </div>
+      <AnimatePresence>
+        {selectedCertificate && (
+          <CertificateModal certificate={selectedCertificate} onClose={() => setSelectedCertificate(null)} />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
