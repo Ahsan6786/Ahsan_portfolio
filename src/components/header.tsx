@@ -52,7 +52,7 @@ export function Header() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) { 
+      if (window.scrollY > 10) { 
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -71,7 +71,7 @@ export function Header() {
         "sticky top-0 z-50 w-full transition-all duration-300",
         "p-4 md:p-6",
         "flex items-center md:justify-between",
-        isScrolled ? "header-scrolled" : "bg-transparent",
+        isScrolled ? "header-scrolled" : "bg-background/80 md:bg-transparent",
     )}>
         <Link 
             href="/" 
