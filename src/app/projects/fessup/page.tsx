@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, 'useState, useEffect';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Github, ExternalLink, ShieldOff, Activity, ThumbsUp, KeyRound, MessageCircle, TabletSmartphone, CalendarDays, Rocket, BrainCircuit, PencilRuler } from 'lucide-react';
@@ -30,8 +30,8 @@ const projectDetails = {
         { name: "Responsive Design", icon: <TabletSmartphone className="w-8 h-8 mb-2 text-primary" /> }
     ],
     timeline: {
-        startDate: "October 2023",
-        endDate: "November 2023",
+        startDate: "September 2025",
+        endDate: "October 2025",
         duration: "7 Weeks",
         phases: [
             { name: "Planning & Design", duration: "1 Week", icon: <PencilRuler className="w-6 h-6" />, color: "bg-blue-500", percentage: (1/7)*100 },
@@ -187,13 +187,3 @@ export default function FessUpProjectPage() {
         </div>
     );
 }
-
-    
-
-    
-
-    
-
-
-
-    
