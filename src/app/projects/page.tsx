@@ -42,6 +42,33 @@ const projects = [
     github: "https://github.com/Ahsan6786/MitraAi",
     detailsPage: "/projects/mitra-ai"
   },
+  {
+    title: "Ahsanverse",
+    description: "A Blockchain Dapp with smart contracts and Web3 integration for secure virtual transactions.",
+    detailedDescription: "Ahsanverse is a decentralized application built on blockchain technology. It features smart contracts and Web3 integration, allowing users to connect a digital wallet, send virtual currency, and view a full history of transactions, demonstrating modern web apps on a secure, decentralized platform.",
+    tags: ["Blockchain", "Web3", "Solidity"],
+    image: placeholderData.project1,
+    liveDemo: "https://ahsanverse.netlify.app/",
+    github: "https://github.com/Ahsan6786/AhsanVerse",
+  },
+  {
+    title: "News Archive",
+    description: "A comprehensive news system that collects and displays articles from sources worldwide.",
+    detailedDescription: "News Archive is a comprehensive news system that collects and displays articles from sources all over the world. It has a clean, fast interface for searching topics, filtering news, and browsing headlines, making it a powerful tool for staying up-to-date.",
+    tags: ["Web App", "API", "JavaScript"],
+    image: placeholderData.project2,
+    liveDemo: "https://github.com/Ahsan6786/NEWSARCHIVE",
+    github: "https://github.com/Ahsan6786/NEWSARCHIVE",
+  },
+  {
+    title: "Portfolio Website",
+    description: "My personal portfolio, built with Next.js and ShadCN UI to showcase my skills and projects.",
+    detailedDescription: "This personal portfolio website is a project itself, built with modern technologies like Next.js and ShadCN UI. It's designed to be fast, responsive, and visually appealing, featuring an interactive chatbot, smooth animations, and a clean design to highlight my projects and skills.",
+    tags: ["Next.js", "ShadCN UI", "Tailwind CSS"],
+    image: placeholderData.project3,
+    liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
+    github: "https://github.com/Ahsan6786",
+  },
 ];
 
 type Project = (typeof projects)[0] & { detailsPage?: string };
