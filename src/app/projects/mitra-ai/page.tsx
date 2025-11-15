@@ -42,8 +42,8 @@ const projectDetails = {
         { name: "Responsive Design", icon: <TabletSmartphone className="w-8 h-8 mb-2 text-primary" /> }
     ],
     timeline: {
-        startDate: "January 2024",
-        endDate: "March 2024",
+        startDate: "2025",
+        endDate: "",
         duration: "8 Weeks",
         phases: [
             { name: "Concept & Design", duration: "2 Weeks", icon: <PencilRuler className="w-6 h-6" />, color: "bg-blue-500", percentage: (2/8)*100 },
@@ -157,7 +157,7 @@ export default function MitraAiProjectPage() {
                                     <CalendarDays className="w-6 h-6 text-primary" />
                                     <span className="font-bold text-lg">Total Duration: {projectDetails.timeline.duration}</span>
                                 </div>
-                                <span className="text-sm text-muted-foreground">{projectDetails.timeline.startDate} - {projectDetails.timeline.endDate}</span>
+                                <span className="text-sm text-muted-foreground">{projectDetails.timeline.startDate}{projectDetails.timeline.endDate && ` - ${projectDetails.timeline.endDate}`}</span>
                             </div>
                             <div className="flex space-x-1 w-full h-4 rounded-full overflow-hidden">
                                 {projectDetails.timeline.phases.map((phase, index) => (
@@ -205,3 +205,5 @@ export default function MitraAiProjectPage() {
         </div>
     );
 }
+
+    
