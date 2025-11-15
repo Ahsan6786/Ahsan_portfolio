@@ -66,70 +66,74 @@ export default function FessUpProjectPage() {
             </div>
 
             {/* Laptop Hero Section */}
-            <div className="w-full h-[50vh] md:h-[80vh] flex items-center justify-center perspective-[1200px] mb-12 md:mb-0">
-                <div 
-                    className="relative w-[80%] md:w-[60%] lg:w-[50%] max-w-4xl"
-                    style={{ 
-                        transform: 'perspective(1200px) rotateX(10deg) scale(0.9)',
-                        transformStyle: 'preserve-3d' 
-                    }}
-                >
-                    {/* Laptop Screen Slideshow */}
-                    <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden">
-                        {screenshots.map((img, index) => (
-                             <Image
-                                key={img.src}
-                                src={img.src}
-                                alt={`FessUp! Screenshot ${index + 1}`}
-                                fill
-                                className={`object-contain w-full h-full transition-opacity duration-1000 ${index === currentScreenshotIndex ? 'opacity-100' : 'opacity-0'}`}
-                                data-ai-hint={img.aiHint}
-                            />
-                        ))}
+            <AnimateOnScroll>
+                <div className="w-full h-[50vh] md:h-[80vh] flex items-center justify-center perspective-[1200px] mb-12 md:mb-0">
+                    <div 
+                        className="relative w-[80%] md:w-[60%] lg:w-[50%] max-w-4xl"
+                        style={{ 
+                            transform: 'perspective(1200px) rotateX(10deg) scale(0.9)',
+                            transformStyle: 'preserve-3d' 
+                        }}
+                    >
+                        {/* Laptop Screen Slideshow */}
+                        <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden">
+                            {screenshots.map((img, index) => (
+                                <Image
+                                    key={img.src}
+                                    src={img.src}
+                                    alt={`FessUp! Screenshot ${index + 1}`}
+                                    fill
+                                    className={`object-contain w-full h-full transition-opacity duration-1000 ${index === currentScreenshotIndex ? 'opacity-100' : 'opacity-0'}`}
+                                    data-ai-hint={img.aiHint}
+                                />
+                            ))}
+                        </div>
+                        {/* Laptop Frame */}
+                        <Image
+                            src={placeholderData.laptop_frame.src}
+                            alt="Laptop Frame"
+                            width={1000}
+                            height={600}
+                            className="relative w-full h-auto"
+                            data-ai-hint={placeholderData.laptop_frame.aiHint}
+                        />
                     </div>
-                    {/* Laptop Frame */}
-                    <Image
-                        src={placeholderData.laptop_frame.src}
-                        alt="Laptop Frame"
-                        width={1000}
-                        height={600}
-                        className="relative w-full h-auto"
-                        data-ai-hint={placeholderData.laptop_frame.aiHint}
-                    />
                 </div>
-            </div>
+            </AnimateOnScroll>
 
             {/* Project Details Section */}
             <div className="container mx-auto px-4 md:px-6 pb-16 md:pb-32 -mt-12 md:-mt-24">
                 <AnimateOnScroll className="max-w-4xl mx-auto bg-card/50 backdrop-blur-lg border border-border/20 rounded-2xl p-6 md:p-12 shadow-2xl">
                     {/* Header */}
-                    <div className="text-center mb-10">
+                    <AnimateOnScroll className="text-center mb-10" delay="0.1s">
                         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-2">{projectDetails.title}</h1>
                         <p className="text-lg md:text-xl text-muted-foreground">{projectDetails.subtitle}</p>
-                    </div>
+                    </AnimateOnScroll>
 
                     {/* Description */}
-                    <div className="prose prose-lg dark:prose-invert max-w-none mx-auto text-muted-foreground space-y-6 mb-12">
+                    <AnimateOnScroll className="prose prose-lg dark:prose-invert max-w-none mx-auto text-muted-foreground space-y-6 mb-12" delay="0.2s">
                         {projectDetails.description.map((paragraph, index) => (
                             <p key={index}>{paragraph}</p>
                         ))}
-                    </div>
+                    </AnimateOnScroll>
 
                     {/* Features */}
-                    <div className="mb-12">
+                    <AnimateOnScroll className="mb-12" delay="0.3s">
                         <h3 className="text-2xl font-bold mb-8 text-center">Key Features</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-                            {projectDetails.features.map(feature => (
-                                <div key={feature.name} className="bg-background/50 border border-border/20 rounded-lg p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                                    {feature.icon}
-                                    <p className="font-semibold text-foreground text-sm">{feature.name}</p>
-                                </div>
+                            {projectDetails.features.map((feature, i) => (
+                                <AnimateOnScroll key={feature.name} delay={`${0.3 + i * 0.1}s`}>
+                                    <div className="bg-background/50 border border-border/20 rounded-lg p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 h-full">
+                                        {feature.icon}
+                                        <p className="font-semibold text-foreground text-sm mt-2">{feature.name}</p>
+                                    </div>
+                                </AnimateOnScroll>
                             ))}
                         </div>
-                    </div>
+                    </AnimateOnScroll>
 
                      {/* Project Timeline */}
-                     <div className="mb-12">
+                     <AnimateOnScroll className="mb-12" delay="0.4s">
                         <h3 className="text-2xl font-bold mb-8 text-center">Project Timeline</h3>
                         <div className="bg-background/50 border border-border/20 rounded-lg p-6 md:p-8">
                             <div className="flex items-center justify-between mb-6">
@@ -139,28 +143,26 @@ export default function FessUpProjectPage() {
                                 </div>
                                 <span className="text-sm text-muted-foreground">{projectDetails.timeline.startDate} - {projectDetails.timeline.endDate}</span>
                             </div>
-                            <div className="space-y-4">
+                            <div className="flex space-x-1 w-full h-4 rounded-full overflow-hidden">
                                 {projectDetails.timeline.phases.map((phase, index) => (
-                                    <div key={index}>
-                                        <div className="flex justify-between items-center mb-1">
-                                            <div className="flex items-center gap-2">
-                                                {React.cloneElement(phase.icon, { className: "w-5 h-5" })}
-                                                <span className="font-semibold text-sm">{phase.name}</span>
-                                            </div>
-                                            <span className="text-xs text-muted-foreground">{phase.duration}</span>
-                                        </div>
-                                        <div className="w-full bg-muted rounded-full h-2.5">
-                                            <div className={`${phase.color} h-2.5 rounded-full`} style={{ width: `${phase.percentage}%` }}></div>
-                                        </div>
+                                    <div key={index} className={`${phase.color} h-full`} style={{ width: `${phase.percentage}%` }} title={`${phase.name} (${phase.duration})`}></div>
+                                ))}
+                            </div>
+                            <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                                {projectDetails.timeline.phases.map((phase, index) => (
+                                    <div key={index} className="flex items-center gap-2">
+                                        <div className={`w-3 h-3 rounded-full ${phase.color}`}></div>
+                                        <span className="font-semibold">{phase.name}</span>
+                                        <span className="text-muted-foreground ml-auto">{phase.duration}</span>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                    </div>
+                    </AnimateOnScroll>
 
 
                     {/* Tech Stack & Buttons */}
-                    <div className="text-center">
+                    <AnimateOnScroll className="text-center" delay="0.5s">
                         <h3 className="text-2xl font-bold mb-4">Tech Stack</h3>
                         <div className="flex flex-wrap justify-center gap-2 mb-8">
                             {projectDetails.techStack.map(tech => (
@@ -181,7 +183,7 @@ export default function FessUpProjectPage() {
                                 </button>
                             </a>
                         </div>
-                    </div>
+                    </AnimateOnScroll>
                 </AnimateOnScroll>
             </div>
         </div>
