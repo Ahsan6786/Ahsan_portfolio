@@ -150,12 +150,10 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
               />
             </div>
             {project.detailsPage ? (
-              <Link href={project.detailsPage} passHref legacyBehavior>
-                <a className="absolute top-2 right-2">
-                  <Button size="icon" variant="ghost" className="rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" aria-label="View Project Details">
-                    <Info className="w-4 h-4"/>
-                  </Button>
-                </a>
+              <Link href={project.detailsPage} className="absolute top-2 right-2">
+                <Button size="icon" variant="ghost" className="rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" aria-label="View Project Details">
+                  <Info className="w-4 h-4"/>
+                </Button>
               </Link>
             ) : (
               <Button size="icon" variant="ghost" className="absolute top-2 right-2 rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" onClick={onInfoClick} aria-label="View Project Info">
