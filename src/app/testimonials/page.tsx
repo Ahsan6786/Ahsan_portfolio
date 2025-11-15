@@ -90,7 +90,7 @@ export default function TestimonialsPage() {
   return (
     <div className="bg-background min-h-screen">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="pt-16 md:pt-24">
+        <div className="pt-8 md:pt-16">
           <AnimateOnScroll>
             <div className="mb-8">
               <Button onClick={() => router.back()} variant="ghost" size="icon" className="hover:bg-accent border border-transparent hover:border-border rounded-full">

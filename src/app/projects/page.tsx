@@ -1,6 +1,5 @@
 
 
-
 "use client";
 
 import Image from "next/image";
@@ -258,7 +257,7 @@ export default function ProjectsPage() {
   return (
     <div className="bg-background min-h-screen">
       <div className="container mx-auto px-4 md:px-6">
-        <section id="projects" className="py-16 md:py-32">
+        <section id="projects" className="py-8 md:py-16">
           <AnimateOnScroll>
             <div className="mb-8">
                 <Button onClick={() => router.back()} variant="ghost" size="icon" className="hover:bg-accent border border-transparent hover:border-border rounded-full">

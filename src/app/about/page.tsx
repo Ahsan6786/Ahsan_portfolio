@@ -15,7 +15,7 @@ export default function AboutPage() {
   return (
     <div className="bg-background min-h-screen">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="pt-16 md:pt-24">
+        <div className="pt-8 md:pt-16">
           <AnimateOnScroll>
             <div className="mb-8">
               <Button onClick={() => router.back()} variant="ghost" size="icon" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
@@ -24,7 +24,7 @@ export default function AboutPage() {
               </Button>
             </div>
             </AnimateOnScroll>
-            <section id="about" className="pb-16 md:pb-32 overflow-hidden">
+            <section id="about" className="pb-16 md:pb-24 overflow-hidden">
              <AnimateOnScroll>
               <div className="grid md:grid-cols-1 gap-10 md:gap-20 items-center">
                 <div className="relative text-center">
