@@ -48,68 +48,6 @@ const projects = [
 
 type Project = (typeof projects)[0] & { detailsPage?: string };
 
-function ProjectModal({ project, onClose }: { project: Project; onClose: () => void; }) {
-  return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4"
-      onClick={onClose}
-    >
-      <motion.div
-        initial={{ scale: 0.95, rotateY: 90 }}
-        animate={{ scale: 1, rotateY: 0 }}
-        exit={{ scale: 0.95, rotateY: 90 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="bg-card rounded-lg overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col relative"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="relative w-full h-64 md:h-96">
-            <Image
-                src={project.image.src}
-                alt={project.title}
-                fill
-                className="object-cover"
-                data-ai-hint={project.image.aiHint}
-            />
-        </div>
-        <div className="p-8 overflow-y-auto">
-            <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
-            <p className="text-muted-foreground mb-6">{project.detailedDescription}</p>
-            <div className="flex flex-wrap gap-2 mb-8">
-                {project.tags.map(tag => (
-                    <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
-                ))}
-            </div>
-            <div className="flex items-center gap-4">
-              {project.github && (
-                <Button variant="outline" asChild className="rounded-full" size="sm">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </a>
-                </Button>
-              )}
-              {project.liveDemo && (
-                <Button asChild className="rounded-full" size="sm">
-                  <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </a>
-                </Button>
-              )}
-            </div>
-        </div>
-        <Button size="icon" variant="ghost" className="absolute top-4 right-4 rounded-full bg-black/30 hover:bg-black/50 text-white" onClick={onClose}>
-            <X className="w-5 h-5"/>
-        </Button>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-
 function ProjectCard({ project }: { project: Project }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -168,6 +106,22 @@ function ProjectCard({ project }: { project: Project }) {
             <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
             
             <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
+              {project.github && (
+                <Button variant="outline" asChild className="rounded-full" size="sm">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2 h-4 w-4" />
+                    Code
+                  </a>
+                </Button>
+              )}
+              {project.liveDemo && (
+                <Button asChild className="rounded-full" size="sm">
+                  <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Demo
+                  </a>
+                </Button>
+              )}
                {project.detailsPage && (
                  <Button
                   asChild
@@ -191,8 +145,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export function Projects() {
   const { translations, loading } = useLanguage();
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
+  
   if (loading) return null;
 
   return (
@@ -220,11 +173,6 @@ export function Projects() {
           </div>
         </div>
       </AnimateOnScroll>
-      <AnimatePresence>
-        {selectedProject && (
-          <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
-        )}
-      </AnimatePresence>
     </section>
   );
 }

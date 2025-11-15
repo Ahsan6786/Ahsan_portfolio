@@ -91,6 +91,10 @@
     "src": "/laptop-frame-transparent.png",
     "aiHint": "laptop mockup frame"
   },
+  "laptop_frame_bjp": {
+    "src": "/bjp.png",
+    "aiHint": "news website mockup"
+  },
   "fessup_screen1": {
     "src": "/fessup-screen1.png",
     "aiHint": "social media feed"

@@ -61,6 +61,7 @@ const projects = [
     image: placeholderData.project2,
     liveDemo: "https://bjp-news-archive.vercel.app/",
     github: "https://github.com/Ahsan6786/NEWSARCHIVE",
+    detailsPage: "/projects/news-archive",
   },
   {
     title: "Portfolio Website",
