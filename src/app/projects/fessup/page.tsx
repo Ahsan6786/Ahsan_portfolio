@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ArrowLeft, Github, ExternalLink, ShieldOff, Activity, ThumbsUp, KeyRound, MessageCircle, TabletSmartphone, CalendarDays, Rocket, BrainCircuit, PencilRuler } from 'lucide-react';
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
+import { Button } from '@/components/ui/button';
 
 const screenshots = [
     placeholderData.fessup_screen1,
@@ -45,23 +46,16 @@ const projectDetails = {
 
 
 export default function FessUpProjectPage() {
-    const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentScreenshotIndex((prevIndex) => (prevIndex + 1) % screenshots.length);
-        }, 2000);
-        return () => clearInterval(interval);
-    }, []);
-    
 
     return (
         <div className="bg-background text-foreground min-h-screen">
             <div className="container mx-auto px-4 md:px-6 py-8 md:py-16">
-                 <Link href="/projects" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-8">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Back to Projects
-                </Link>
+                 <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                    <Link href="/projects" className="inline-flex items-center">
+                        <ArrowLeft className="w-4 h-4 mr-2" />
+                        Back to Projects
+                    </Link>
+                </Button>
             </div>
 
             {/* Laptop Hero Section */}
@@ -74,18 +68,16 @@ export default function FessUpProjectPage() {
                             transformStyle: 'preserve-3d' 
                         }}
                     >
-                        {/* Laptop Screen Slideshow */}
+                        {/* Laptop Screen Video */}
                         <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden">
-                            {screenshots.map((img, index) => (
-                                <Image
-                                    key={img.src}
-                                    src={img.src}
-                                    alt={`FessUp! Screenshot ${index + 1}`}
-                                    fill
-                                    className={`object-contain w-full h-full transition-opacity duration-1000 ${index === currentScreenshotIndex ? 'opacity-100' : 'opacity-0'}`}
-                                    data-ai-hint={img.aiHint}
-                                />
-                            ))}
+                           <video
+                                src="/fessup.mov"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="object-contain w-full h-full"
+                           />
                         </div>
                         {/* Laptop Frame */}
                         <Image
@@ -101,7 +93,7 @@ export default function FessUpProjectPage() {
             </div>
 
             {/* Project Details Section */}
-            <div className="container mx-auto px-4 md:px-6 pb-16 md:pb-32 -mt-12 md:-mt-24">
+            <div className="container mx-auto px-4 md:px-6 pb-16 md:pb-32">
                 <AnimateOnScroll className="max-w-4xl mx-auto bg-card/50 backdrop-blur-lg border border-border/20 rounded-2xl p-6 md:p-12 shadow-2xl">
                     {/* Header */}
                     <AnimateOnScroll className="text-center mb-10" delay="0.1s">

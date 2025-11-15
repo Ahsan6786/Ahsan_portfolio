@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ArrowLeft, Github, ExternalLink, HeartPulse, Brain, UserCheck, KeyRound, MessageCircle, TabletSmartphone, CalendarDays, Rocket, BrainCircuit, PencilRuler } from 'lucide-react';
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
+import { Button } from '@/components/ui/button';
 
 const screenshots = [
     placeholderData.mitra_screen1,
@@ -70,10 +71,12 @@ export default function MitraAiProjectPage() {
     return (
         <div className="bg-background text-foreground min-h-screen">
             <div className="container mx-auto px-4 md:px-6 py-8 md:py-16">
-                 <Link href="/projects" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-8">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Back to Projects
-                </Link>
+                 <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                    <Link href="/projects" className="inline-flex items-center">
+                        <ArrowLeft className="w-4 h-4 mr-2" />
+                        Back to Projects
+                    </Link>
+                </Button>
             </div>
 
             {/* Laptop Hero Section */}
@@ -121,7 +124,7 @@ export default function MitraAiProjectPage() {
             </div>
 
             {/* Project Details Section */}
-            <div className="container mx-auto px-4 md:px-6 pb-16 md:pb-32 -mt-12 md:-mt-24">
+            <div className="container mx-auto px-4 md:px-6 pb-16 md:pb-32">
                 <AnimateOnScroll className="max-w-4xl mx-auto bg-card/50 backdrop-blur-lg border border-border/20 rounded-2xl p-6 md:p-12 shadow-2xl">
                     {/* Header */}
                     <AnimateOnScroll className="text-center mb-10" delay="0.1s">
