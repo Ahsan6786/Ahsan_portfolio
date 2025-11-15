@@ -150,11 +150,11 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
               />
             </div>
             {project.detailsPage ? (
-              <Link href={project.detailsPage} className="absolute top-2 right-2">
-                <Button size="icon" variant="ghost" className="rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" aria-label="View Project Details">
+              <Button asChild size="icon" variant="ghost" className="absolute top-2 right-2 rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" aria-label="View Project Details">
+                <Link href={project.detailsPage}>
                   <Info className="w-4 h-4"/>
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             ) : (
               <Button size="icon" variant="ghost" className="absolute top-2 right-2 rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" onClick={onInfoClick} aria-label="View Project Info">
                 <Info className="w-4 h-4"/>
@@ -194,7 +194,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
                   </a>
                 </Button>
               )}
-              {project.title === 'FessUp!' && project.detailsPage && (
+              {project.detailsPage && (
                  <Button
                   asChild
                   className="rounded-full bg-pink-500 text-white font-semibold hover:bg-pink-600 shadow-md"
