@@ -10,6 +10,7 @@ import Link from "next/link";
 export default function AboutPage() {
   const { translations, loading } = useLanguage();
   const router = useRouter();
+  
   if (loading) return null;
 
   return (
