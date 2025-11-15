@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Image from "next/image";
@@ -242,7 +243,7 @@ export function Projects() {
               {translations.projects.subtitle}
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <ProjectCard key={index} project={project} onInfoClick={() => setSelectedProject(project)} />
             ))}
