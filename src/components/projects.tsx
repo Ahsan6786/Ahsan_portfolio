@@ -110,7 +110,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 }
 
 
-function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: () => void }) {
+function ProjectCard({ project }: { project: Project }) {
   const ref = useRef<HTMLDivElement>(null);
 
   const mouseX = useMotionValue(0);
@@ -138,7 +138,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
   };
   
   return (
-    <div className="w-full h-auto perspective-1000">
+    <Link href={project.detailsPage || '#'} className="w-full h-full block perspective-1000 group">
       <motion.div 
         ref={ref}
         onMouseMove={handleMouseMove}
@@ -151,7 +151,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
         transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
         className="relative w-full h-full"
       >
-        <div className="bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+        <div className="bg-card rounded-lg overflow-hidden border shadow-sm group-hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
           <div className="relative">
             <div className="relative aspect-video w-full overflow-hidden">
               <Image
@@ -166,34 +166,10 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
           <div className="p-6 flex flex-col flex-grow">
             <h3 className="text-xl font-bold mb-2">{project.title}</h3>
             <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
-            
-            <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
-              {project.liveDemo && (
-                <Button asChild className="rounded-full" size="sm">
-                  <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </a>
-                </Button>
-              )}
-              {project.detailsPage && (
-                 <Button
-                  asChild
-                  variant="secondary"
-                  size="sm"
-                  className="rounded-full"
-                >
-                  <Link href={project.detailsPage}>
-                    <Info className="mr-2 h-4 w-4" />
-                    Description
-                  </Link>
-                </Button>
-              )}
-            </div>
           </div>
         </div>
       </motion.div>
-    </div>
+    </Link>
   );
 }
 
@@ -219,7 +195,7 @@ export function Projects() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} onInfoClick={() => setSelectedProject(project)} />
+              <ProjectCard key={index} project={project} />
             ))}
           </div>
           <div className="text-center mt-12">
@@ -237,4 +213,3 @@ export function Projects() {
     </section>
   );
 }
-
