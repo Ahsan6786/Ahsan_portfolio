@@ -75,7 +75,7 @@ export default function MITProjectPage() {
                     }}
                 >
                     {/* Laptop Screen Slideshow */}
-                    <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden p-2">
+                    <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden">
                         {screenshots.map((img, index) => (
                              <Image
                                 key={img.src}
@@ -193,5 +193,3 @@ export default function MITProjectPage() {
         </div>
     );
 }
-
-    
