@@ -131,25 +131,29 @@ export default function FessUpProjectPage() {
                      {/* Project Timeline */}
                     <div className="mb-12">
                         <h3 className="text-2xl font-bold mb-8 text-center">Project Timeline</h3>
-                        <div className="bg-background/50 border border-border/20 rounded-lg p-6">
-                            <div className="flex items-center justify-between mb-4">
+                        <div className="bg-background/50 border border-border/20 rounded-lg p-6 md:p-8">
+                            <div className="flex items-center justify-between mb-6">
                                 <div className="flex items-center gap-3">
                                     <CalendarDays className="w-6 h-6 text-primary" />
                                     <span className="font-bold text-lg">Total Duration: {projectDetails.timeline.duration}</span>
                                 </div>
                                 <span className="text-sm text-muted-foreground">{projectDetails.timeline.startDate} - {projectDetails.timeline.endDate}</span>
                             </div>
-                            <div className="relative w-full h-8 bg-muted rounded-full overflow-hidden">
-                                <div className="flex h-full">
-                                    <div className="h-full bg-primary/30" style={{ width: `${(1/7)*100}%` }} title="Planning & Design (1 Week)"></div>
-                                    <div className="h-full bg-primary/60" style={{ width: `${(5/7)*100}%` }} title="Development (5 Weeks)"></div>
-                                    <div className="h-full bg-primary" style={{ width: `${(1/7)*100}%` }} title="Testing & Launch (1 Week)"></div>
-                                </div>
-                            </div>
-                            <div className="flex justify-between mt-2 text-xs text-muted-foreground">
-                                <span>Planning</span>
-                                <span>Development</span>
-                                <span>Launch</span>
+                            <div className="relative">
+                                {/* Vertical line */}
+                                <div className="absolute left-9 h-full w-0.5 bg-border/50"></div>
+
+                                {projectDetails.timeline.phases.map((phase, index) => (
+                                    <div key={index} className="relative flex items-start mb-8 last:mb-0">
+                                        <div className="flex-shrink-0 w-18 h-18 bg-background rounded-full border-2 border-border flex items-center justify-center z-10">
+                                            {phase.icon}
+                                        </div>
+                                        <div className="ml-6">
+                                            <h4 className="font-bold text-lg text-foreground">{phase.name}</h4>
+                                            <p className="text-sm text-muted-foreground">{phase.duration}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -190,3 +194,6 @@ export default function FessUpProjectPage() {
 
     
 
+
+
+    
