@@ -239,7 +239,7 @@ export default function ProjectsPage() {
           </Button>
         </div>
         <AnimateOnScroll>
-          <section id="projects" className="pb-16 md:pb-32">
+          <section id="projects" className="pb-16 md:pb-32 overflow-hidden">
             <div className="text-center mb-12 relative">
               <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
               <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">

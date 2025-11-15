@@ -82,7 +82,7 @@ export function Testimonials() {
   )
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-background">
+    <section id="testimonials" className="py-16 md:py-24 bg-background overflow-hidden">
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
