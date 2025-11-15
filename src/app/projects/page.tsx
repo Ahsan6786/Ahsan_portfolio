@@ -179,7 +179,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
         transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
         className="relative w-full h-full"
       >
-        <div className="bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+        <div className="bg-card rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full">
           <div className="relative">
             <div className="relative aspect-video w-full overflow-hidden">
               <Image
