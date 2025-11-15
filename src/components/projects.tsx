@@ -168,10 +168,11 @@ function ProjectCard({ project, onInfoClick }: { project: Project; onInfoClick: 
                 alt={project.title}
                 fill
                 className="object-cover"
+                data-ai-hint={project.image.aiHint}
               />
             </div>
-            {project.title === 'FessUp!' ? (
-                <Link href={project.detailsPage || '#'} legacyBehavior>
+            {project.detailsPage ? (
+                <Link href={project.detailsPage} passHref legacyBehavior>
                     <a className="absolute top-2 right-2">
                         <Button
                             size="icon"
