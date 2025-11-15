@@ -36,8 +36,6 @@ const projectDetails = {
 
 export default function FessUpProjectPage() {
     const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);
-    const [transformStyle, setTransformStyle] = useState({});
-    const laptopRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -46,35 +44,6 @@ export default function FessUpProjectPage() {
         return () => clearInterval(interval);
     }, []);
     
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            const rotateX = Math.min(90, scrollY * 0.05);
-            const rotateY = scrollY * 0.01;
-            const translateY = Math.max(-100, -scrollY * 0.1);
-            const scale = 1 + Math.min(0.1, scrollY * 0.0001);
-
-            setTransformStyle({
-                transform: `
-                    perspective(1200px) 
-                    translateY(${translateY}px) 
-                    rotateX(${rotateX}deg) 
-                    rotateY(${rotateY}deg) 
-                    scale(${scale})
-                `
-            });
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        
-        // Initial call to set position
-        handleScroll();
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
 
     return (
         <div className="bg-background text-foreground min-h-screen">
@@ -85,12 +54,14 @@ export default function FessUpProjectPage() {
                 </Link>
             </div>
 
-            {/* 3D Laptop Hero Section */}
-            <div className="w-full h-[50vh] md:h-[120vh] flex items-start justify-center perspective-[1200px] mb-12 md:mb-0">
+            {/* Laptop Hero Section */}
+            <div className="w-full h-[50vh] md:h-[80vh] flex items-center justify-center perspective-[1200px] mb-12 md:mb-0">
                 <div 
-                    ref={laptopRef}
                     className="relative w-[80%] md:w-[60%] lg:w-[50%] max-w-4xl"
-                    style={{ ...transformStyle, transformStyle: 'preserve-3d' }}
+                    style={{ 
+                        transform: 'perspective(1200px) rotateX(10deg) scale(0.9)',
+                        transformStyle: 'preserve-3d' 
+                    }}
                 >
                     {/* Laptop Screen Slideshow */}
                     <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden p-2">
@@ -118,7 +89,7 @@ export default function FessUpProjectPage() {
             </div>
 
             {/* Project Details Section */}
-            <div className="container mx-auto px-4 md:px-6 pb-16 md:pb-32 -mt-12 md:-mt-48">
+            <div className="container mx-auto px-4 md:px-6 pb-16 md:pb-32 -mt-12 md:-mt-24">
                 <AnimateOnScroll className="max-w-4xl mx-auto bg-card/50 backdrop-blur-lg border border-border/20 rounded-2xl p-6 md:p-12 shadow-2xl">
                     {/* Header */}
                     <div className="text-center mb-10">
