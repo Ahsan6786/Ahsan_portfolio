@@ -139,35 +139,25 @@ export default function MITProjectPage() {
                      {/* Project Timeline */}
                     <div className="mb-12">
                         <h3 className="text-2xl font-bold mb-8 text-center">Project Timeline</h3>
-                        <div className="relative max-w-2xl mx-auto">
-                            {/* Timeline Line */}
-                            <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-border top-0"></div>
-                            
-                            {/* Overall Duration */}
-                             <div className="relative flex items-center justify-center mb-8">
-                                <div className="z-10 bg-background p-3 rounded-full border-2 border-primary shadow-md">
-                                    <CalendarDays className="w-8 h-8 text-primary" />
+                        <div className="bg-background/50 border border-border/20 rounded-lg p-6">
+                            <div className="flex items-center justify-between mb-4">
+                                <div className="flex items-center gap-3">
+                                    <CalendarDays className="w-6 h-6 text-primary" />
+                                    <span className="font-bold text-lg">Total Duration: {projectDetails.timeline.duration}</span>
                                 </div>
-                                <div className="absolute left-1/2 ml-10">
-                                    <p className="text-lg font-bold text-foreground">Total Duration: {projectDetails.timeline.duration}</p>
-                                    <p className="text-sm text-muted-foreground">{projectDetails.timeline.startDate} - {projectDetails.timeline.endDate}</p>
+                                <span className="text-sm text-muted-foreground">{projectDetails.timeline.startDate} - {projectDetails.timeline.endDate}</span>
+                            </div>
+                            <div className="relative w-full h-8 bg-muted rounded-full overflow-hidden">
+                                <div className="flex h-full">
+                                    <div className="h-full bg-primary/30" style={{ width: `${(0.5/3)*100}%` }} title="Concept & Planning (0.5 Weeks)"></div>
+                                    <div className="h-full bg-primary/60" style={{ width: `${(2/3)*100}%` }} title="Development & AI Integration (2 Weeks)"></div>
+                                    <div className="h-full bg-primary" style={{ width: `${(0.5/3)*100}%` }} title="Testing & Deployment (0.5 Weeks)"></div>
                                 </div>
                             </div>
-                            
-                            {/* Timeline Phases */}
-                            <div className="space-y-12">
-                                {projectDetails.timeline.phases.map((phase, index) => (
-                                     <div key={phase.name} className="relative flex items-center">
-                                        <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left order-2'}`}>
-                                            <p className="font-bold text-lg text-foreground">{phase.name}</p>
-                                            <p className="text-sm text-muted-foreground">{phase.duration}</p>
-                                        </div>
-                                        <div className="absolute left-1/2 -translate-x-1/2 z-10 bg-background p-3 rounded-full border-2 border-primary/50 shadow-sm">
-                                            {phase.icon}
-                                        </div>
-                                        <div className="w-1/2"></div>
-                                    </div>
-                                ))}
+                            <div className="flex justify-between mt-2 text-xs text-muted-foreground">
+                                <span>Planning</span>
+                                <span>Development</span>
+                                <span>Deployment</span>
                             </div>
                         </div>
                     </div>
@@ -204,3 +194,4 @@ export default function MITProjectPage() {
     
 
     
+
