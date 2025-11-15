@@ -267,7 +267,7 @@ export default function ProjectsPage() {
           <section id="projects" className="pb-16 md:pb-32">
             <div className="text-center mb-12 relative">
               <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
-              <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
+              <p className="text-5xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
                 {translations.projects.title}
               </p>
               <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
