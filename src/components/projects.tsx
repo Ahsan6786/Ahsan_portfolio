@@ -167,27 +167,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
             <h3 className="text-xl font-bold mb-2">{project.title}</h3>
             <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
             
-            <div className="mb-4">
-                <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
-                    <Code className="w-4 h-4"/>
-                    <span>Tech Stack</span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                {project.tags.map(tag => (
-                    <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
-                ))}
-                </div>
-            </div>
-            
             <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
-              {project.github && (
-                <Button variant="outline" asChild className="rounded-full" size="sm">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </a>
-                </Button>
-              )}
               {project.liveDemo && (
                 <Button asChild className="rounded-full" size="sm">
                   <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
@@ -199,8 +179,9 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
               {project.detailsPage && (
                  <Button
                   asChild
+                  variant="secondary"
                   size="sm"
-                  className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white"
+                  className="rounded-full"
                 >
                   <Link href={project.detailsPage}>
                     <Info className="mr-2 h-4 w-4" />
@@ -256,3 +237,4 @@ export function Projects() {
     </section>
   );
 }
+
