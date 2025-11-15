@@ -24,7 +24,7 @@
     "aiHint": "news archive"
   },
   "project3": {
-    "src": "/img3.png",
+    "src": "/img3.png?v=2",
     "aiHint": "code editor"
   },
   "project4": {
