@@ -28,29 +28,37 @@ const predefinedQA: { keywords: string[]; answer: string | string[] }[] = [
   },
   {
     keywords: ["skill", "technologies", "know", "proficient", "kya aata hai", "क्या आता है", "tech stack", "technology", "skills kya hain", "tools", "languages", "कौन सी टेक्नोलॉजी आती है", "developer stack", "expertise", "competencies", "programming languages", "frameworks", "what can he do"],
-    answer: "Ahsan is skilled in HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Python, MySQL, AWS, and Firebase."
+    answer: "Ahsan is skilled in HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Python, MySQL, C++, and Firebase."
   },
   {
     keywords: ["project", "work", "portfolio", "काम", "projects kya hai", "projects dikhaye", "कौन से प्रोजेक्ट्स", "किया क्या है", "apna kaam", "developed", "portfolio batao", "projects showcase", "past work", "previous projects", "examples of work", "what has he built"],
     answer: [
-      "Ahsan has completed 6 projects. Some of them are:",
-      "1. Mitra AI: A mental wellness app.",
-      "2. Ahsanverse: A Blockchain Dapp.",
-      "3. News Archive: A news aggregation system.",
+      "Ahsan has completed several projects. Some of them are:",
+      "1. FessUp!: An anonymous social platform for college students.",
+      "2. Mitra AI: A mental wellness application.",
+      "3. MIT WPU Chat Assist: An AI-powered portal for students.",
       "You can find more details on the projects section or ask me about a specific project!"
     ]
+  },
+  {
+    keywords: ["fessup", "fess up"],
+    answer: "FessUp! is a dynamic and anonymous social platform for college students. It provides a safe space to share confessions and thoughts without revealing identity, built with Next.js and Firebase."
   },
   {
     keywords: ["mitra", "mitra ai", "mental wellness"],
     answer: "Mitra AI is an innovative mental wellness application providing accessible, stigma-free support. It offers personalized resources, guided exercises, and a compassionate AI chatbot to help users navigate their mental health journey privately and securely."
   },
   {
+    keywords: ["mit wpu chat assist", "mit chat assist", "mit bot"],
+    answer: "MIT Chat Assist is an intelligent web portal for students of MIT-WPU, powered by Gemini AI. It features a chatbot for instant answers on admissions, courses, and campus life, along with tools like a Course Recommender and Internship Assistant."
+  },
+  {
     keywords: ["ahsanverse", "blockchain", "dapp"],
-    answer: "Ahsanverse is a decentralized application built on blockchain technology. It features smart contracts and Web3 integration, allowing users to connect a digital wallet, send virtual currency, and view a full history of transactions, demonstrating modern web apps on a secure, decentralized platform."
+    answer: "Ahsanverse is a decentralized application built on blockchain technology. It features smart contracts and Web3 integration, allowing users to connect a digital wallet, send virtual currency, and view a full history of transactions."
   },
   {
     keywords: ["news archive", "news aggregation"],
-    answer: "News Archive is a comprehensive news system that collects and displays articles from sources all over the world. It has a clean, fast interface for searching topics, filtering news, and browsing headlines, making it a powerful tool for staying up-to-date."
+    answer: "News Archive is a comprehensive news system that collects and displays articles from sources all over the world. It has a clean, fast interface for searching topics, filtering news, and browsing headlines."
   },
   {
     keywords: ["portfolio website", "this website", "this project"],
@@ -62,7 +70,7 @@ const predefinedQA: { keywords: string[]; answer: string | string[] }[] = [
   },
   {
     keywords: ["certificate", "certifications", "achievements", "pramaan patra", "प्रमाण पत्र", "kaun se certificate", "certi", "badges", "degrees", "recognition", "training certificate", "courses done", "credentials", "accomplishments", "awards"],
-    answer: "Ahsan has several certificates, including for the Smart India Hackathon, Python Programming, Financial Planning, and more. You can see all of them on the certificates page."
+    answer: "Ahsan has several certificates, including for the Smart India Hackathon, Deloitte Job Simulation, Python Programming, and more. You can see all of them on the certificates page."
   },
   {
     keywords: ["services", "offer", "do", "kya karte ho", "क्या करते हो", "kya services hain", "service", "help", "provide", "offers", "सेवाएं", "कौन सी सर्विस", "kya provide karte ho", "what do you offer", "what services do you provide", "can you build a website", "looking for developer"],
@@ -128,7 +136,7 @@ export function Chatbot() {
     setMessages((prev) => [...prev, userMessage]);
 
     const lowerCaseInput = inputValue.toLowerCase().replace(/[?.,!]/g, '');
-    let response: string | string[] = "I'm sorry, I don't have information about that. You can reach out to Ahsan on Instagram: @khan_ahsan_8055 or via email at ahsanimamkhan06@gmail.com.";
+    let response: string | string[] = "I'm sorry, I don't have information about that. You can explore the website or rephrase your question. For specific queries, reach out to Ahsan via the contact page.";
 
     let bestMatch = { score: 0, answer: response };
 
