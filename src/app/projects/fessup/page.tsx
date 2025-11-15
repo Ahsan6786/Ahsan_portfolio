@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -36,8 +35,8 @@ const projectDetails = {
 
 export default function FessUpProjectPage() {
     const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);
+    const [transformStyle, setTransformStyle] = useState({});
     const laptopRef = useRef<HTMLDivElement>(null);
-    const scrollYRef = useRef(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -45,33 +44,30 @@ export default function FessUpProjectPage() {
         }, 2000);
         return () => clearInterval(interval);
     }, []);
-
+    
     useEffect(() => {
         const handleScroll = () => {
-            scrollYRef.current = window.scrollY;
-        };
+            const scrollY = window.scrollY;
+            const rotateX = Math.min(90, scrollY * 0.05);
+            const rotateY = scrollY * 0.01;
+            const translateY = Math.max(-100, -scrollY * 0.1);
+            const scale = 1 + Math.min(0.1, scrollY * 0.0001);
 
-        const animate = () => {
-            if (laptopRef.current) {
-                const scrollY = scrollYRef.current;
-                const rotateX = Math.min(90, scrollY * 0.05);
-                const rotateY = scrollY * 0.01;
-                const translateY = Math.max(-100, -scrollY * 0.1);
-                const scale = 1 + Math.min(0.1, scrollY * 0.0001);
-
-                laptopRef.current.style.transform = `
+            setTransformStyle({
+                transform: `
                     perspective(1200px) 
                     translateY(${translateY}px) 
                     rotateX(${rotateX}deg) 
                     rotateY(${rotateY}deg) 
                     scale(${scale})
-                `;
-            }
-            requestAnimationFrame(animate);
+                `
+            });
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        requestAnimationFrame(animate);
+        
+        // Initial call to set position
+        handleScroll();
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -93,7 +89,7 @@ export default function FessUpProjectPage() {
                 <div 
                     ref={laptopRef}
                     className="relative w-[80%] md:w-[60%] lg:w-[50%] max-w-4xl"
-                    style={{ transformStyle: 'preserve-3d' }}
+                    style={{ ...transformStyle, transformStyle: 'preserve-3d' }}
                 >
                     {/* Laptop Screen Slideshow */}
                     <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden">
@@ -176,4 +172,3 @@ export default function FessUpProjectPage() {
         </div>
     );
 }
-
