@@ -29,7 +29,8 @@ const projects = [
     tags: ["Next.js", "Firebase", "Tailwind CSS"],
     image: placeholderData.projectFessUp,
     liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
-    github: "https://github.com/Ahsan6786/FessUP-"
+    github: "https://github.com/Ahsan6786/FessUP-",
+    detailsPage: "/projects/fessup"
   },
   {
     title: "Mitra AI",
@@ -67,7 +68,7 @@ const projects = [
   }
 ];
 
-type Project = (typeof projects)[0];
+type Project = (typeof projects)[0] & { detailsPage?: string };
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void; }) {
   return (
@@ -181,9 +182,17 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
                 data-ai-hint={project.image.aiHint}
               />
             </div>
-            <Button size="icon" variant="ghost" className="absolute top-2 right-2 rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" onClick={onInfoClick}>
-              <Info className="w-4 h-4"/>
-            </Button>
+            {project.detailsPage ? (
+              <Button asChild size="icon" variant="ghost" className="absolute top-2 right-2 rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" aria-label="View Project Details">
+                <Link href={project.detailsPage}>
+                  <Info className="w-4 h-4"/>
+                </Link>
+              </Button>
+            ) : (
+              <Button size="icon" variant="ghost" className="absolute top-2 right-2 rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" onClick={onInfoClick} aria-label="View Project Info">
+                <Info className="w-4 h-4"/>
+              </Button>
+            )}
           </div>
           <div className="p-6 flex flex-col flex-grow">
             <h3 className="text-xl font-bold mb-2">{project.title}</h3>
@@ -210,12 +219,22 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
                   </a>
                 </Button>
               )}
-              <Button asChild className="rounded-full">
-                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Demo
-                </a>
-              </Button>
+              {project.liveDemo && (
+                <Button asChild className="rounded-full">
+                  <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Demo
+                  </a>
+                </Button>
+              )}
+               {project.detailsPage && (
+                 <Button
+                  asChild
+                  className="rounded-full bg-pink-500 text-white font-semibold hover:bg-pink-600 shadow-md"
+                >
+                  <Link href={project.detailsPage}>Description</Link>
+                </Button>
+              )}
             </div>
           </div>
         </div>
