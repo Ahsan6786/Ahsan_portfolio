@@ -43,31 +43,6 @@ const projects = [
     github: "https://github.com/Ahsan6786/MitraAi",
     detailsPage: "/projects/mitra-ai"
   },
-  {
-    title: "Ahsanverse - Blockchain Dapp",
-    description: "A decentralized application built on blockchain technology, featuring smart contracts and Web3 integration.",
-    detailedDescription: "Ahsanverse is a decentralized application (Dapp) built on modern blockchain technology. It showcases the potential of Web3 by integrating smart contracts for secure, transparent transactions. Users can connect their digital wallets, interact with the blockchain, and experience a truly decentralized web application, all within a seamless and user-friendly interface built with React.",
-    tags: ["React", "Solidity", "Web3.js"],
-    image: placeholderData.project1,
-    liveDemo: "https://ahsanverse.vercel.app/",
-    github: "https://github.com/Ahsan6786/ahsan_verse_final_"
-  },
-  {
-    title: "News Archive",
-    description: "A comprehensive news archive system that collects, categorizes, and displays news articles with search functionality.",
-    detailedDescription: "A comprehensive news archive system that collects, categorizes, and displays news articles from various sources. It features a powerful search functionality and a clean, user-friendly interface, allowing users to easily find and read news on topics that matter to them. The application is built with React and leverages external APIs for up-to-date news content.",
-    tags: ["JavaScript", "React", "API"],
-    image: placeholderData.project2,
-    liveDemo: "https://bjp-news-archive.vercel.app/"
-  },
-  {
-    title: "Portfolio",
-    description: "A feature-rich personal portfolio website to showcase my skills and projects, built with modern web technologies.",
-    detailedDescription: "This portfolio itself is a testament to my skills in modern web development. Built with Next.js for optimal performance, TypeScript for robust code, and ShadCN UI for a sleek and responsive design, it's a feature-rich platform to showcase my projects and capabilities. It includes interactive elements and a clean aesthetic to provide an engaging user experience.",
-    tags: ["Next.js", "TypeScript", "ShadCN UI"],
-    image: placeholderData.project3,
-    liveDemo: "#"
-  }
 ];
 
 type Project = (typeof projects)[0] & { detailsPage?: string };
@@ -267,11 +242,11 @@ export default function ProjectsPage() {
           <section id="projects" className="pb-16 md:pb-32">
             <div className="text-center mb-12 relative">
               <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
-              <p className="text-5xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0">
+              <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
                 {translations.projects.title}
               </p>
               <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                {translations.projects.subtitle}
+                These are some of my recent projects. Check out my GitHub for more. Tap any card to see more details.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
@@ -290,3 +265,5 @@ export default function ProjectsPage() {
     </div>
   );
 }
+
+    
