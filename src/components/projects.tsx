@@ -84,7 +84,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             </div>
             <div className="flex items-center gap-4">
               {project.github && (
-                <Button variant="outline" asChild className="rounded-full">
+                <Button variant="outline" asChild className="rounded-full" size="sm">
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
                     Code
@@ -92,7 +92,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                 </Button>
               )}
               {project.liveDemo && (
-                <Button asChild className="rounded-full">
+                <Button asChild className="rounded-full" size="sm">
                   <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Demo
@@ -162,17 +162,6 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
                 data-ai-hint={project.image.aiHint}
               />
             </div>
-            {project.detailsPage ? (
-              <Button asChild size="icon" variant="ghost" className="absolute top-2 right-2 rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" aria-label="View Project Details">
-                <Link href={project.detailsPage}>
-                  <Info className="w-4 h-4"/>
-                </Link>
-              </Button>
-            ) : (
-              <Button size="icon" variant="ghost" className="absolute top-2 right-2 rounded-full w-8 h-8 bg-black/30 hover:bg-black/50 text-white" onClick={onInfoClick} aria-label="View Project Info">
-                <Info className="w-4 h-4"/>
-              </Button>
-            )}
           </div>
           <div className="p-6 flex flex-col flex-grow">
             <h3 className="text-xl font-bold mb-2">{project.title}</h3>
@@ -190,9 +179,9 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
                 </div>
             </div>
             
-            <div className="mt-auto flex justify-start items-center gap-4">
+            <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
               {project.github && (
-                <Button variant="outline" asChild className="rounded-full">
+                <Button variant="outline" asChild className="rounded-full" size="sm">
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
                     Code
@@ -200,7 +189,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
                 </Button>
               )}
               {project.liveDemo && (
-                <Button asChild className="rounded-full">
+                <Button asChild className="rounded-full" size="sm">
                   <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Demo
@@ -210,9 +199,14 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
               {project.detailsPage && (
                  <Button
                   asChild
-                  className="rounded-full bg-pink-500 text-white font-semibold hover:bg-pink-600 shadow-md"
+                  variant="secondary"
+                  size="sm"
+                  className="rounded-full"
                 >
-                  <Link href={project.detailsPage}>Description</Link>
+                  <Link href={project.detailsPage}>
+                    <Info className="mr-2 h-4 w-4" />
+                    Description
+                  </Link>
                 </Button>
               )}
             </div>
@@ -243,7 +237,7 @@ export function Projects() {
               {translations.projects.subtitle}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <ProjectCard key={index} project={project} onInfoClick={() => setSelectedProject(project)} />
             ))}
