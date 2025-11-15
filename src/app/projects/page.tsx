@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Image from "next/image";
@@ -67,12 +68,11 @@ const projects = [
     detailedDescription: "This personal portfolio website is a project itself, built with modern technologies like Next.js and ShadCN UI. It's designed to be fast, responsive, and visually appealing, featuring an interactive chatbot, smooth animations, and a clean design to highlight my projects and skills.",
     tags: ["Next.js", "ShadCN UI", "Tailwind CSS"],
     image: placeholderData.project3,
-    liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
     github: "https://github.com/Ahsan6786",
   },
 ];
 
-type Project = (typeof projects)[0] & { detailsPage?: string };
+type Project = (typeof projects)[0] & { detailsPage?: string; liveDemo?: string };
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void; }) {
   return (
@@ -117,12 +117,14 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                   </a>
                 </Button>
               )}
-              <Button asChild className="rounded-full" size="sm">
-                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Demo
-                </a>
-              </Button>
+              {project.liveDemo && (
+                <Button asChild className="rounded-full" size="sm">
+                  <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Demo
+                  </a>
+                </Button>
+              )}
             </div>
         </div>
         <Button size="icon" variant="ghost" className="absolute top-4 right-4 rounded-full bg-black/30 hover:bg-black/50 text-white" onClick={onClose}>
