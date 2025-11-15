@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -46,6 +47,14 @@ const projectDetails = {
 
 
 export default function FessUpProjectPage() {
+    const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentScreenshotIndex((prevIndex) => (prevIndex + 1) % screenshots.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className="bg-background text-foreground min-h-screen">
@@ -68,16 +77,26 @@ export default function FessUpProjectPage() {
                             transformStyle: 'preserve-3d' 
                         }}
                     >
-                        {/* Laptop Screen Video */}
-                        <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden">
-                           <video
-                                src="/fessup.mov"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="object-contain w-full h-full"
-                           />
+                        {/* Laptop Screen Slideshow */}
+                        <div 
+                            className="absolute overflow-hidden"
+                            style={{
+                                top: '5.5%',
+                                left: '11.2%',
+                                width: '77.6%',
+                                height: '86.5%'
+                            }}
+                        >
+                            {screenshots.map((img, index) => (
+                                <Image
+                                    key={img.src}
+                                    src={img.src}
+                                    alt={`FessUp Screenshot ${index + 1}`}
+                                    fill
+                                    className={`object-contain w-full h-full transition-opacity duration-1000 ${index === currentScreenshotIndex ? 'opacity-100' : 'opacity-0'}`}
+                                    data-ai-hint={img.aiHint}
+                                />
+                            ))}
                         </div>
                         {/* Laptop Frame */}
                         <Image
@@ -180,3 +199,6 @@ export default function FessUpProjectPage() {
         </div>
     );
 }
+
+
+    
