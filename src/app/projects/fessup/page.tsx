@@ -4,13 +4,9 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Github, ExternalLink, ShieldOff, Activity, ThumbsUp, KeyRound, MessageCircle, TabletSmartphone, Users, FileText } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, ShieldOff, Activity, ThumbsUp, KeyRound, MessageCircle, TabletSmartphone, CalendarDays } from 'lucide-react';
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
-import { Bar, BarChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
-
 
 const screenshots = [
     placeholderData.fessup_screen1,
@@ -33,30 +29,15 @@ const projectDetails = {
         { name: "Commenting", icon: <MessageCircle className="w-8 h-8 mb-2 text-primary" /> },
         { name: "Responsive Design", icon: <TabletSmartphone className="w-8 h-8 mb-2 text-primary" /> }
     ],
+    timeline: {
+        startDate: "October 2023",
+        endDate: "November 2023",
+        duration: "3 Weeks",
+    },
     techStack: ["Next.js", "Firebase", "Tailwind CSS", "TypeScript", "Recharts"],
     liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
     github: "https://github.com/Ahsan6786/FessUP-",
 };
-
-const weeklyActiveUsersData = [
-  { day: 'Mon', users: 150 },
-  { day: 'Tue', users: 210 },
-  { day: 'Wed', users: 250 },
-  { day: 'Thu', users: 180 },
-  { day: 'Fri', users: 300 },
-  { day: 'Sat', users: 450 },
-  { day: 'Sun', users: 400 },
-];
-
-const dailyPostsData = [
-  { date: 'Day 1', posts: 20 },
-  { date: 'Day 2', posts: 35 },
-  { date: 'Day 3', posts: 45 },
-  { date: 'Day 4', posts: 40 },
-  { date: 'Day 5', posts: 60 },
-  { date: 'Day 6', posts: 80 },
-  { date: 'Day 7', posts: 95 },
-];
 
 
 export default function FessUpProjectPage() {
@@ -142,88 +123,25 @@ export default function FessUpProjectPage() {
                         </div>
                     </div>
 
-                    {/* Engagement Metrics */}
+                    {/* Project Timeline */}
                     <div className="mb-12">
-                        <h3 className="text-2xl font-bold mb-8 text-center">User Engagement Metrics</h3>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                            <Card>
-                                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                                    <CardTitle className="text-base font-medium">Weekly Active Users</CardTitle>
-                                    <Users className="w-5 h-5 text-muted-foreground" />
-                                </CardHeader>
-                                <CardContent>
-                                    <div className="text-2xl font-bold">+450</div>
-                                    <p className="text-xs text-muted-foreground">+25% from last week</p>
-                                    <div className="h-[120px] mt-4">
-                                        <ResponsiveContainer width="100%" height="100%">
-                                            <BarChart data={weeklyActiveUsersData}>
-                                                <XAxis dataKey="day" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
-                                                <Tooltip
-                                                    content={({ active, payload }) => {
-                                                        if (active && payload && payload.length) {
-                                                            return (
-                                                                <div className="rounded-lg border bg-background p-2 shadow-sm">
-                                                                    <div className="grid grid-cols-2 gap-2">
-                                                                        <div className="flex flex-col">
-                                                                            <span className="text-[0.70rem] uppercase text-muted-foreground">Day</span>
-                                                                            <span className="font-bold text-muted-foreground">{payload[0].payload.day}</span>
-                                                                        </div>
-                                                                        <div className="flex flex-col">
-                                                                            <span className="text-[0.70rem] uppercase text-muted-foreground">Users</span>
-                                                                            <span className="font-bold">{payload[0].value}</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            )
-                                                        }
-                                                        return null
-                                                    }}
-                                                />
-                                                <Bar dataKey="users" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
-                                            </BarChart>
-                                        </ResponsiveContainer>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                             <Card>
-                                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                                    <CardTitle className="text-base font-medium">Daily New Posts</CardTitle>
-                                    <FileText className="w-5 h-5 text-muted-foreground" />
-                                </CardHeader>
-                                <CardContent>
-                                    <div className="text-2xl font-bold">+95</div>
-                                    <p className="text-xs text-muted-foreground">+15% from yesterday</p>
-                                    <div className="h-[120px] mt-4">
-                                        <ResponsiveContainer width="100%" height="100%">
-                                            <LineChart data={dailyPostsData}>
-                                                <XAxis dataKey="date" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
-                                                <Tooltip
-                                                    content={({ active, payload }) => {
-                                                        if (active && payload && payload.length) {
-                                                            return (
-                                                                <div className="rounded-lg border bg-background p-2 shadow-sm">
-                                                                    <div className="grid grid-cols-2 gap-2">
-                                                                        <div className="flex flex-col">
-                                                                            <span className="text-[0.70rem] uppercase text-muted-foreground">Date</span>
-                                                                            <span className="font-bold text-muted-foreground">{payload[0].payload.date}</span>
-                                                                        </div>
-                                                                        <div className="flex flex-col">
-                                                                            <span className="text-[0.70rem] uppercase text-muted-foreground">Posts</span>
-                                                                            <span className="font-bold">{payload[0].value}</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            )
-                                                        }
-                                                        return null
-                                                    }}
-                                                />
-                                                <Line type="monotone" dataKey="posts" stroke="hsl(var(--primary))" strokeWidth={2} dot={{ r: 4, fill: 'hsl(var(--primary))' }} />
-                                            </LineChart>
-                                        </ResponsiveContainer>
-                                    </div>
-                                </CardContent>
-                            </Card>
+                        <h3 className="text-2xl font-bold mb-8 text-center">Project Timeline</h3>
+                        <div className="flex justify-center items-center bg-background/50 border border-border/20 rounded-lg p-6 max-w-2xl mx-auto">
+                            <CalendarDays className="w-12 h-12 text-primary mr-6" />
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left w-full">
+                                <div>
+                                    <h4 className="text-sm text-muted-foreground font-semibold">Start Date</h4>
+                                    <p className="text-lg font-bold text-foreground">{projectDetails.timeline.startDate}</p>
+                                </div>
+                                <div className="sm:text-center">
+                                    <h4 className="text-sm text-muted-foreground font-semibold">End Date</h4>
+                                    <p className="text-lg font-bold text-foreground">{projectDetails.timeline.endDate}</p>
+                                </div>
+                                <div className="sm:text-right">
+                                    <h4 className="text-sm text-muted-foreground font-semibold">Duration</h4>
+                                    <p className="text-lg font-bold text-foreground">{projectDetails.timeline.duration}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
