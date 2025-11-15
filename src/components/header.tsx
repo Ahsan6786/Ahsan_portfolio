@@ -1,3 +1,4 @@
+
 "use client";
 import React from 'react';
 import Link from "next/link";
@@ -122,22 +123,16 @@ export function Header() {
           <LanguageToggle />
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu" onClick={() => setIsSheetOpen(!isSheetOpen)}>
-                <AnimatePresence initial={false} mode="wait">
-                  <motion.div
-                    key={isSheetOpen ? "x" : "menu"}
-                    initial={{ rotate: isSheetOpen ? -90 : 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: isSheetOpen ? -90 : 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {isSheetOpen ? <X /> : <Menu />}
-                  </motion.div>
-                </AnimatePresence>
+              <Button variant="ghost" size="icon" aria-label="Open menu">
+                <Menu />
               </Button>
             </SheetTrigger>
             <SheetContent side="top" className="p-0">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+              <SheetClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+                  <X className="h-6 w-6" />
+                  <span className="sr-only">Close</span>
+                </SheetClose>
                 <div className="p-6 pt-16 text-center">
                   <nav className="flex flex-col items-center space-y-6">
                       {navLinks.map((link) => (
@@ -145,7 +140,6 @@ export function Header() {
                             <Link
                                 href={link.href}
                                 className={cn('text-xl hover:text-primary transition-colors', pathname === link.href ? 'text-primary' : '')}
-                                onClick={() => setIsSheetOpen(false)}
                             >
                                 {link.label}
                             </Link>
@@ -154,17 +148,17 @@ export function Header() {
                   </nav>
                   <div className="flex justify-center space-x-6 mt-8">
                     {socialLinks.map((link) => (
-                        <a
-                          key={link.href}
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-foreground hover:text-primary transition-colors"
-                          onClick={() => setIsSheetOpen(false)}
-                          aria-label={link.label}
-                        >
-                          {React.cloneElement(link.icon, { className: "w-6 h-6"})}
-                        </a>
+                        <SheetClose asChild key={link.href}>
+                            <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-foreground hover:text-primary transition-colors"
+                            aria-label={link.label}
+                            >
+                            {React.cloneElement(link.icon, { className: "w-6 h-6"})}
+                            </a>
+                        </SheetClose>
                       ))}
                   </div>
                 </div>
