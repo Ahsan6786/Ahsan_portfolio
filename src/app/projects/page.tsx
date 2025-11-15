@@ -90,7 +90,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         animate={{ scale: 1, rotateY: 0 }}
         exit={{ scale: 0.95, rotateY: 90 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="bg-card rounded-lg overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col relative"
+        className="bg-card rounded-2xl overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col relative"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative w-full h-64 md:h-96">
@@ -179,7 +179,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
         transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
         className="relative w-full h-full"
       >
-        <div className="bg-card rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+        <div className="bg-card rounded-2xl overflow-hidden border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full">
           <div className="relative">
             <div className="relative aspect-video w-full overflow-hidden">
               <Image

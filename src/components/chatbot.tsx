@@ -205,10 +205,10 @@ export function Chatbot() {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="fixed bottom-24 left-5 z-50 w-[calc(100vw-40px)] max-w-sm"
           >
-            <div className="bg-card border rounded-lg shadow-xl flex flex-col h-[60vh] max-h-[500px]">
+            <div className="bg-card border rounded-2xl shadow-xl flex flex-col h-[60vh] max-h-[500px]">
               <div className="p-4 border-b flex items-center justify-between">
                 <h3 className="text-lg font-bold">{translations.chatbot.title}</h3>
-                <Button variant="ghost" size="icon" onClick={toggleChat} className="h-8 w-8" aria-label="Close chat">
+                <Button variant="ghost" size="icon" onClick={toggleChat} className="h-8 w-8 rounded-full" aria-label="Close chat">
                   <X size={20} />
                 </Button>
               </div>
@@ -256,7 +256,7 @@ export function Chatbot() {
                   className="flex-grow"
                   aria-label="Chat input"
                 />
-                <Button onClick={handleSendMessage} size="icon" className="flex-shrink-0" aria-label="Send message">
+                <Button onClick={handleSendMessage} size="icon" className="flex-shrink-0 rounded-full" aria-label="Send message">
                   <Send />
                 </Button>
               </div>

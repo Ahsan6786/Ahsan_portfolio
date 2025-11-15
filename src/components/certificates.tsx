@@ -44,7 +44,7 @@ function CertificateModal({ certificate, onClose }: { certificate: Certificate; 
         animate={{ scale: 1, rotateY: 0 }}
         exit={{ scale: 0.95, rotateY: 90 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="bg-card rounded-lg overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col relative"
+        className="bg-card rounded-2xl overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col relative"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative w-full h-64 md:h-96">
@@ -72,8 +72,8 @@ function CertificateModal({ certificate, onClose }: { certificate: Certificate; 
 function CertificateCard({ certificate, onClick }: { certificate: Certificate, onClick: () => void }) {
   return (
     <div className="w-full h-auto cursor-pointer" onClick={onClick}>
-      <div className="bg-background rounded-lg overflow-hidden group border hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center p-4 h-[480px]">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-md mb-4 flex-shrink-0">
+      <div className="bg-card rounded-2xl overflow-hidden group border hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center p-4 h-[480px]">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg mb-4 flex-shrink-0">
             <Image
               src={certificate.image.src}
               alt={certificate.title}

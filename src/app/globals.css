@@ -45,6 +45,7 @@ header {
     --border: 30 50% 88%;
     --input: 30 50% 88%;
     --ring: 25 55% 30%;
+    --radius: 1rem;
   }
 
   .dark {
@@ -67,6 +68,7 @@ header {
     --border: 0 0% 15%;
     --input: 0 0% 15%;
     --ring: 45 98% 60%;
+    --radius: 1rem;
   }
 }
 

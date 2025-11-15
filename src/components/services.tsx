@@ -43,7 +43,7 @@ export function Services() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-card p-8 text-center rounded-lg flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
+                className="bg-card p-8 text-center rounded-2xl flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
               >
                 <div className="mb-6 flex items-center justify-center w-20 h-20 rounded-full bg-background">
                   {service.icon}

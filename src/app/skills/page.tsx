@@ -52,7 +52,7 @@ export default function SkillsPage() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                 {allSkills.map((skill, index) => (
-                    <div key={index} className="bg-card p-6 rounded-lg flex flex-col items-center justify-center hover:shadow-lg transition-shadow border-2 border-primary/20 hover:border-primary/50">
+                    <div key={index} className="bg-card p-6 rounded-2xl flex flex-col items-center justify-center hover:shadow-lg transition-shadow border-2 border-primary/20 hover:border-primary/50">
                         <div className="relative w-20 h-20 mb-4">
                             <Image
                             src={skill.logo}

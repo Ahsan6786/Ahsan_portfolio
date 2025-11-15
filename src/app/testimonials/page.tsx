@@ -37,7 +37,7 @@ const allTestimonials = [
 
 function TestimonialCard({ testimonial }: { testimonial: (typeof allTestimonials)[0] }) {
   return (
-    <Card className="h-full border-2 border-primary/20 bg-card shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+    <Card className="h-full border-2 border-primary/20 bg-card shadow-lg hover:shadow-primary/20 transition-shadow duration-300 rounded-2xl">
       <CardContent className="p-6 h-full flex flex-col justify-between">
         <div>
           <Quote className="w-8 h-8 text-primary mb-4" />
