@@ -93,7 +93,7 @@ export default function FessUpProjectPage() {
                     style={{ ...transformStyle, transformStyle: 'preserve-3d' }}
                 >
                     {/* Laptop Screen Slideshow */}
-                    <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden">
+                    <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden p-2">
                         {screenshots.map((img, index) => (
                              <Image
                                 key={img.src}
@@ -173,5 +173,7 @@ export default function FessUpProjectPage() {
         </div>
     );
 }
+
+    
 
     
