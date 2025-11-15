@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Image from "next/image";
@@ -18,7 +19,7 @@ const projects = [
     detailedDescription: "FessUp! is a dynamic and anonymous social platform designed specifically for college students. It provides a safe and open space for users to share confessions, thoughts, and campus happenings without revealing their identity, fostering a unique environment for genuine and unfiltered expression. The platform is built with Next.js for a fast, server-rendered frontend, Firebase for real-time data and authentication, and styled with Tailwind CSS for a modern, responsive design.",
     tags: ["Next.js", "Firebase", "Tailwind CSS"],
     image: placeholderData.projectFessUp,
-    liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
+    liveDemo: "/projects/fessup",
     github: "https://github.com/Ahsan6786/FessUP-"
   },
   {
@@ -174,12 +175,20 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
                   </a>
                 </Button>
               )}
-              <Button asChild className="rounded-full">
-                <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Demo
-                </a>
-              </Button>
+              {project.title === 'FessUp!' ? (
+                 <Button asChild className="rounded-full">
+                    <Link href={project.liveDemo}>
+                      Read More
+                    </Link>
+                  </Button>
+              ) : (
+                <Button asChild className="rounded-full">
+                  <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Demo
+                  </a>
+                </Button>
+              )}
             </div>
           </div>
         </div>
