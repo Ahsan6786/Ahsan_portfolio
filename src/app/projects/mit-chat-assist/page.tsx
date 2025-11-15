@@ -78,10 +78,10 @@ export default function MITProjectPage() {
                     <div 
                         className="absolute overflow-hidden"
                         style={{
-                            top: '4.5%',
-                            left: '10.5%',
-                            width: '79%',
-                            height: '84%',
+                            top: "6.4%",
+                            left: "11.2%",
+                            width: "77.6%",
+                            height: "81.8%",
                         }}
                     >
                         {screenshots.map((img, index) => (
