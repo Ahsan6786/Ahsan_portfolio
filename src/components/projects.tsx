@@ -33,6 +33,16 @@ const projects = [
     github: "https://github.com/Ahsan6786/studio",
     detailsPage: "/projects/mit-chat-assist",
   },
+  {
+    title: "Mitra AI",
+    description: "An innovative mental wellness application providing accessible, stigma-free support.",
+    detailedDescription: "Mitra AI is an innovative mental wellness application providing accessible, stigma-free support. It offers personalized resources, guided exercises, and a compassionate AI chatbot to help users navigate their mental health journey privately and securely. The app aims to make mental wellness a proactive and manageable part of daily life.",
+    tags: ["AI", "Next.js", "Web App"],
+    image: placeholderData.project4,
+    liveDemo: "https://mitraai.shop/",
+    github: "https://github.com/Ahsan6786/MitraAi",
+    detailsPage: "/projects/mitra-ai",
+  },
 ];
 
 type Project = (typeof projects)[0] & { detailsPage?: string };

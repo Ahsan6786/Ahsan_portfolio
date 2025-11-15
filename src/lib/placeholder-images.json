@@ -110,5 +110,13 @@
   "mit_screen3": {
     "src": "/mit3.png",
     "aiHint": "AI admin dashboard"
+  },
+  "mitra_screen1": {
+    "src": "/mitra1.png",
+    "aiHint": "mental wellness app interface"
+  },
+  "mitra_screen2": {
+    "src": "/mitra2.png",
+    "aiHint": "AI chatbot for wellness"
   }
 }

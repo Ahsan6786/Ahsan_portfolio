@@ -40,7 +40,8 @@ const projects = [
     tags: ["AI", "Next.js", "Web App"],
     image: placeholderData.project4,
     liveDemo: "https://mitraai.shop/",
-    github: "https://github.com/Ahsan6786/MitraAi"
+    github: "https://github.com/Ahsan6786/MitraAi",
+    detailsPage: "/projects/mitra-ai"
   },
   {
     title: "Ahsanverse - Blockchain Dapp",
