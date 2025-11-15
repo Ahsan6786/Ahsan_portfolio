@@ -1,13 +1,15 @@
 "use client";
 
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { useLanguage } from "@/contexts/language-context";
 import { Download, ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutPage() {
   const { translations, loading } = useLanguage();
+  const router = useRouter();
   if (loading) return null;
 
   return (
@@ -16,11 +18,9 @@ export default function AboutPage() {
         <div className="pt-16 md:pt-24">
           <AnimateOnScroll>
             <div className="mb-8">
-              <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-                <Link href="/" className="inline-flex items-center">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  {translations.certificatesPage.backToHome}
-                </Link>
+              <Button onClick={() => router.back()} variant="ghost" size="icon" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                  <ArrowLeft className="w-4 h-4" />
+                  <span className="sr-only">Back</span>
               </Button>
             </div>
             </AnimateOnScroll>

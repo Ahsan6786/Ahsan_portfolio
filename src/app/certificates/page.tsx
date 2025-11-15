@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
@@ -129,6 +129,7 @@ function CertificateCard({ certificate, onClick }: { certificate: Certificate, o
 export default function CertificatesPage() {
   const { translations, loading } = useLanguage();
   const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
+  const router = useRouter();
 
   if (loading) return null;
   
@@ -138,11 +139,9 @@ export default function CertificatesPage() {
         <div className="pt-16 md:pt-24">
           <AnimateOnScroll>
             <div className="mb-8">
-              <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-                <Link href="/" className="inline-flex items-center">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  {translations.certificatesPage.backToHome}
-                </Link>
+              <Button onClick={() => router.back()} variant="ghost" size="icon" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                  <ArrowLeft className="w-4 h-4" />
+                  <span className="sr-only">Back</span>
               </Button>
             </div>
             </AnimateOnScroll>

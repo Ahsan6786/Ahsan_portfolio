@@ -1,5 +1,6 @@
 
 
+
 "use client";
 
 import Image from "next/image";
@@ -11,6 +12,7 @@ import React, { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 const projects = [
@@ -249,6 +251,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
 export default function ProjectsPage() {
   const { translations, loading } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const router = useRouter();
 
   if (loading) return null;
 
@@ -258,11 +261,9 @@ export default function ProjectsPage() {
         <section id="projects" className="py-16 md:py-32">
           <AnimateOnScroll>
             <div className="mb-8">
-                <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-                    <Link href="/" className="inline-flex items-center">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    {translations.certificatesPage.backToHome}
-                    </Link>
+                <Button onClick={() => router.back()} variant="ghost" size="icon" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                    <ArrowLeft className="w-4 h-4" />
+                    <span className="sr-only">Back</span>
                 </Button>
             </div>
             <div className="text-center mb-12 relative">

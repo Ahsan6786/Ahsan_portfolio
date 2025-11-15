@@ -5,7 +5,7 @@ import { MapPin, Mail, Phone, Instagram, Linkedin, Github } from "lucide-react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { useLanguage } from "@/contexts/language-context";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 
 
@@ -29,6 +29,8 @@ const socialLinks = [
 
 export default function ContactPage() {
   const { translations, loading } = useLanguage();
+  const router = useRouter();
+
   if (loading) return null;
 
   const contactDetails = [
@@ -55,11 +57,9 @@ export default function ContactPage() {
         <div className="pt-16 md:pt-24">
           <AnimateOnScroll>
             <div className="mb-8">
-              <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-                <Link href="/" className="inline-flex items-center">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  {translations.certificatesPage.backToHome}
-                </Link>
+              <Button onClick={() => router.back()} variant="ghost" size="icon" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                <ArrowLeft className="w-4 h-4" />
+                <span className="sr-only">Back</span>
               </Button>
             </div>
             </AnimateOnScroll>

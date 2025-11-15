@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
@@ -83,6 +83,8 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof allTestimonials
 
 export default function TestimonialsPage() {
   const { translations, loading } = useLanguage();
+  const router = useRouter();
+
   if (loading) return null;
   
   return (
@@ -91,11 +93,9 @@ export default function TestimonialsPage() {
         <div className="pt-16 md:pt-24">
           <AnimateOnScroll>
             <div className="mb-8">
-              <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-                <Link href="/" className="inline-flex items-center">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  {translations.certificatesPage.backToHome}
-                </Link>
+              <Button onClick={() => router.back()} variant="ghost" size="icon" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                  <ArrowLeft className="w-4 h-4" />
+                  <span className="sr-only">Back</span>
               </Button>
             </div>
             </AnimateOnScroll>

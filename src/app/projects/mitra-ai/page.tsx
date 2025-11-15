@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ArrowLeft, Github, ExternalLink, HeartPulse, Brain, UserCheck, KeyRound, MessageCircle, TabletSmartphone, CalendarDays, Rocket, BrainCircuit, PencilRuler } from 'lucide-react';
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
@@ -59,6 +59,7 @@ const projectDetails = {
 
 export default function MitraAiProjectPage() {
     const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);
+    const router = useRouter();
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -71,11 +72,9 @@ export default function MitraAiProjectPage() {
     return (
         <div className="bg-background text-foreground min-h-screen">
             <div className="container mx-auto px-4 md:px-6 py-8 md:py-16">
-                 <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-                    <Link href="/projects" className="inline-flex items-center">
-                        <ArrowLeft className="w-4 h-4 mr-2" />
-                        Back to Projects
-                    </Link>
+                 <Button onClick={() => router.back()} variant="ghost" size="icon" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+                    <ArrowLeft className="w-4 h-4" />
+                    <span className="sr-only">Back</span>
                 </Button>
             </div>
 
