@@ -76,7 +76,7 @@ function ProjectCard({ project }: { project: Project }) {
   };
   
   return (
-    <div className="w-full h-auto perspective-1000">
+    <div className="w-full h-auto perspective-1000 group">
       <motion.div 
         ref={ref}
         onMouseMove={handleMouseMove}
@@ -102,38 +102,40 @@ function ProjectCard({ project }: { project: Project }) {
             </div>
           </div>
           <div className="p-6 flex flex-col flex-grow">
-            <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-            <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
-            
-            <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
-              {project.github && (
-                <Button variant="outline" asChild className="rounded-full" size="sm">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </a>
-                </Button>
-              )}
-              {project.liveDemo && (
-                <Button asChild className="rounded-full" size="sm">
-                  <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </a>
-                </Button>
-              )}
-               {project.detailsPage && (
-                 <Button
-                  asChild
-                  size="sm"
-                  className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white"
-                >
-                  <Link href={project.detailsPage}>
-                    <Info className="mr-2 h-4 w-4"/>
-                    Description
-                  </Link>
-                </Button>
-              )}
+            <div className="transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg">
+              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+              <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
+              
+              <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
+                {project.github && (
+                  <Button variant="outline" asChild className="rounded-full" size="sm">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-4 w-4" />
+                      Code
+                    </a>
+                  </Button>
+                )}
+                {project.liveDemo && (
+                  <Button asChild className="rounded-full" size="sm">
+                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Demo
+                    </a>
+                  </Button>
+                )}
+                 {project.detailsPage && (
+                   <Button
+                    asChild
+                    size="sm"
+                    className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white"
+                  >
+                    <Link href={project.detailsPage}>
+                      <Info className="mr-2 h-4 w-4"/>
+                      Description
+                    </Link>
+                  </Button>
+                )}
+              </div>
             </div>
           </div>
         </div>
