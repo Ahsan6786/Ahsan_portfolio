@@ -81,9 +81,9 @@ export default function MitraAiProjectPage() {
             <AnimateOnScroll>
                 <div className="w-full h-[50vh] md:h-[80vh] flex items-center justify-center perspective-[1200px] mb-12 md:mb-0">
                     <div 
-                        className="relative w-[80%] md:w-[60%] lg:w-[50%] max-w-4xl"
+                        className="relative w-[90%] scale-[0.8] md:w-[80%] md:scale-[0.9] lg:w-[60%] lg:scale-100 max-w-4xl"
                         style={{ 
-                            transform: 'perspective(1200px) rotateX(10deg) scale(0.9)',
+                            transform: 'perspective(1200px) rotateX(10deg)',
                             transformStyle: 'preserve-3d' 
                         }}
                     >
@@ -122,7 +122,7 @@ export default function MitraAiProjectPage() {
             </AnimateOnScroll>
 
             {/* Project Details Section */}
-            <div className="container mx-auto px-4 md:px-6 pb-16 md:pb-32 -mt-12 md:-mt-24">
+            <div className="container mx-auto px-4 md:px-6 pb-16 md:pb-32 -mt-24 md:-mt-24">
                 <AnimateOnScroll className="max-w-4xl mx-auto bg-card/50 backdrop-blur-lg border border-border/20 rounded-2xl p-6 md:p-12 shadow-2xl">
                     {/* Header */}
                     <AnimateOnScroll className="text-center mb-10" delay="0.1s">
