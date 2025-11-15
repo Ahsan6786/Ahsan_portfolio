@@ -62,7 +62,9 @@ export default function ContactPage() {
                 </Link>
               </Button>
             </div>
+            </AnimateOnScroll>
             <section id="contact" className="pb-16 md:pb-32 overflow-hidden">
+            <AnimateOnScroll>
               <div className="text-center mb-12 relative">
                 <h2 className="text-4xl md:text-6xl font-bold">{translations.contact.title}</h2>
                 <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
@@ -100,8 +102,8 @@ export default function ContactPage() {
               <div className="max-w-2xl mx-auto">
                   <ContactForm />
               </div>
-            </section>
-          </AnimateOnScroll>
+            </AnimateOnScroll>
+          </section>
         </div>
       </div>
     </div>

@@ -145,7 +145,9 @@ export default function CertificatesPage() {
                 </Link>
               </Button>
             </div>
-            <div className="pb-16 md:pb-24 overflow-hidden">
+            </AnimateOnScroll>
+            <section className="pb-16 md:pb-24 overflow-hidden">
+             <AnimateOnScroll>
               <div className="text-center mb-12 relative">
                 <h1 className="text-4xl md:text-6xl font-bold">{translations.certificatesPage.title}</h1>
                 <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words" aria-hidden="true">
@@ -160,8 +162,8 @@ export default function CertificatesPage() {
                    <CertificateCard key={index} certificate={certificate} onClick={() => setSelectedCertificate(certificate)} />
                 ))}
               </div>
-            </div>
-          </AnimateOnScroll>
+            </AnimateOnScroll>
+          </section>
         </div>
       </div>
       <AnimatePresence>

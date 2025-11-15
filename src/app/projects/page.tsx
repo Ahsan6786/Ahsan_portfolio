@@ -231,16 +231,18 @@ export default function ProjectsPage() {
   return (
     <div className="bg-background min-h-screen">
       <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
-        <div className="mb-8">
-          <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-            <Link href="/" className="inline-flex items-center">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              {translations.certificatesPage.backToHome}
-            </Link>
-          </Button>
-        </div>
         <AnimateOnScroll>
-          <section id="projects" className="pb-16 md:pb-32 overflow-hidden">
+          <div className="mb-8">
+            <Button asChild variant="ghost" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
+              <Link href="/" className="inline-flex items-center">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                {translations.certificatesPage.backToHome}
+              </Link>
+            </Button>
+          </div>
+        </AnimateOnScroll>
+        <section id="projects" className="pb-16 md:pb-32 overflow-hidden">
+          <AnimateOnScroll>
             <div className="text-center mb-12 relative">
               <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
               <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
@@ -255,8 +257,8 @@ export default function ProjectsPage() {
                 <ProjectCard key={index} project={project} onInfoClick={() => setSelectedProject(project)} />
               ))}
             </div>
-          </section>
-        </AnimateOnScroll>
+          </AnimateOnScroll>
+        </section>
       </div>
       <AnimatePresence>
         {selectedProject && (

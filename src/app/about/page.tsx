@@ -23,7 +23,9 @@ export default function AboutPage() {
                 </Link>
               </Button>
             </div>
+            </AnimateOnScroll>
             <section id="about" className="pb-16 md:pb-32 overflow-hidden">
+             <AnimateOnScroll>
               <div className="grid md:grid-cols-1 gap-10 md:gap-20 items-center">
                 <div className="relative text-center">
                   <div className="relative mb-4">
