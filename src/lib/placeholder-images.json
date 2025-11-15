@@ -98,5 +98,17 @@
   "fessup_screen3": {
     "src": "/fessup-screen3.png",
     "aiHint": "anonymous post creation"
+  },
+  "mit_screen1": {
+    "src": "/mit1.png",
+    "aiHint": "AI chatbot conversation"
+  },
+  "mit_screen2": {
+    "src": "/mit2.png",
+    "aiHint": "course recommender interface"
+  },
+  "mit_screen3": {
+    "src": "/mit3.png",
+    "aiHint": "AI admin dashboard"
   }
 }

@@ -20,7 +20,8 @@ const projects = [
     tags: ["Next.js", "Firebase", "Gemini AI"],
     image: placeholderData.projectMitChatAssist,
     liveDemo: "https://studio--studio-4013308653-b04c2.us-central1.hosted.app/",
-    github: "https://github.com/Ahsan6786/studio"
+    github: "https://github.com/Ahsan6786/studio",
+    detailsPage: "/projects/mit-chat-assist"
   },
   {
     title: "FessUp!",
