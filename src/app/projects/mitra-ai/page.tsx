@@ -11,6 +11,19 @@ import { AnimateOnScroll } from '@/components/animate-on-scroll';
 const screenshots = [
     placeholderData.mitra_screen1,
     placeholderData.mitra_screen2,
+    placeholderData.mitra_screen3,
+    placeholderData.mitra_screen4,
+    placeholderData.mitra_screen5,
+    placeholderData.mitra_screen6,
+    placeholderData.mitra_screen7,
+    placeholderData.mitra_screen8,
+    placeholderData.mitra_screen9,
+    placeholderData.mitra_screen10,
+    placeholderData.mitra_screen11,
+    placeholderData.mitra_screen12,
+    placeholderData.mitra_screen13,
+    placeholderData.mitra_screen14,
+    placeholderData.mitra_screen15,
 ];
 
 const projectDetails = {

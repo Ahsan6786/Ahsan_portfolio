@@ -118,5 +118,57 @@
   "mitra_screen2": {
     "src": "/mitra2.png",
     "aiHint": "AI chatbot for wellness"
+  },
+  "mitra_screen3": {
+    "src": "/mitra3.png",
+    "aiHint": "wellness app dashboard"
+  },
+  "mitra_screen4": {
+    "src": "/mitra4.png",
+    "aiHint": "guided meditation feature"
+  },
+  "mitra_screen5": {
+    "src": "/mitra5.png",
+    "aiHint": "mood tracking journal"
+  },
+  "mitra_screen6": {
+    "src": "/mitra6.png",
+    "aiHint": "community support forum"
+  },
+  "mitra_screen7": {
+    "src": "/mitra7.png",
+    "aiHint": "user profile settings"
+  },
+  "mitra_screen8": {
+    "src": "/mitra8.png",
+    "aiHint": "resource library"
+  },
+  "mitra_screen9": {
+    "src": "/mitra9.png",
+    "aiHint": "chatbot conversation example"
+  },
+  "mitra_screen10": {
+    "src": "/mitra10.png",
+    "aiHint": "daily check-in prompt"
+  },
+  "mitra_screen11": {
+    "src": "/mitra11.png",
+    "aiHint": "progress analytics"
+  },
+  "mitra_screen12": {
+    "src": "/mitra12.png",
+    "aiHint": "breathing exercise interface"
+  },
+  "mitra_screen13": {
+    "src": "/mitra13.png",
+    "aiHint": "app onboarding screen"
+  },
+  "mitra_screen14": {
+    "src": "/mitra14.png",
+    "aiHint": "notification settings"
+  },
+  "mitra_screen15": {
+    "src": "/mitra15.png",
+    "aiHint": "login page"
   }
 }
