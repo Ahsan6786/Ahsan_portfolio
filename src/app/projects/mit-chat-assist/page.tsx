@@ -34,9 +34,9 @@ const projectDetails = {
         endDate: "January 2024",
         duration: "3 Weeks",
         phases: [
-            { name: "Concept & Planning", duration: "0.5 Weeks", icon: <PencilRuler className="w-6 h-6 text-primary" /> },
-            { name: "Development & AI Integration", duration: "2 Weeks", icon: <BrainCircuit className="w-6 h-6 text-primary" /> },
-            { name: "Testing & Deployment", duration: "0.5 Weeks", icon: <Rocket className="w-6 h-6 text-primary" /> },
+            { name: "Concept & Planning", duration: "0.5 Weeks", icon: <PencilRuler className="w-6 h-6" />, color: "bg-blue-500", percentage: (0.5/3)*100 },
+            { name: "Development & AI Integration", duration: "2 Weeks", icon: <BrainCircuit className="w-6 h-6" />, color: "bg-green-500", percentage: (2/3)*100 },
+            { name: "Testing & Deployment", duration: "0.5 Weeks", icon: <Rocket className="w-6 h-6" />, color: "bg-purple-500", percentage: (0.5/3)*100 },
         ]
     },
     techStack: ["Next.js", "Firebase", "Gemini AI", "Tailwind CSS", "TypeScript"],
@@ -137,7 +137,7 @@ export default function MITProjectPage() {
                     </div>
 
                      {/* Project Timeline */}
-                    <div className="mb-12">
+                     <div className="mb-12">
                         <h3 className="text-2xl font-bold mb-8 text-center">Project Timeline</h3>
                         <div className="bg-background/50 border border-border/20 rounded-lg p-6 md:p-8">
                             <div className="flex items-center justify-between mb-6">
@@ -147,18 +147,18 @@ export default function MITProjectPage() {
                                 </div>
                                 <span className="text-sm text-muted-foreground">{projectDetails.timeline.startDate} - {projectDetails.timeline.endDate}</span>
                             </div>
-                            <div className="relative">
-                                {/* Vertical line */}
-                                <div className="absolute left-9 h-full w-0.5 bg-border/50"></div>
-
+                            <div className="space-y-4">
                                 {projectDetails.timeline.phases.map((phase, index) => (
-                                    <div key={index} className="relative flex items-start mb-8 last:mb-0">
-                                        <div className="flex-shrink-0 w-18 h-18 bg-background rounded-full border-2 border-border flex items-center justify-center z-10">
-                                            {phase.icon}
+                                    <div key={index}>
+                                        <div className="flex justify-between items-center mb-1">
+                                            <div className="flex items-center gap-2">
+                                                {React.cloneElement(phase.icon, { className: "w-5 h-5" })}
+                                                <span className="font-semibold text-sm">{phase.name}</span>
+                                            </div>
+                                            <span className="text-xs text-muted-foreground">{phase.duration}</span>
                                         </div>
-                                        <div className="ml-6">
-                                            <h4 className="font-bold text-lg text-foreground">{phase.name}</h4>
-                                            <p className="text-sm text-muted-foreground">{phase.duration}</p>
+                                        <div className="w-full bg-muted rounded-full h-2.5">
+                                            <div className={`${phase.color} h-2.5 rounded-full`} style={{ width: `${phase.percentage}%` }}></div>
                                         </div>
                                     </div>
                                 ))}
