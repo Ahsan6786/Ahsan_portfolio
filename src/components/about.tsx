@@ -17,7 +17,7 @@ export function About() {
             <div className="relative text-center">
               <div className="relative mb-4">
                 <h2 className="text-4xl md:text-5xl font-bold">{translations.about.title}</h2>
-                <p className="text-5xl md:text-8xl font-bold absolute -top-4 left-1/2 -translate-x-1/2 text-foreground/5 z-0 w-full text-center">
+                <p className="text-5xl sm:text-7xl md:text-8xl font-bold absolute -top-4 left-1/2 -translate-x-1/2 text-foreground/5 z-0 w-full text-center break-words">
                   {translations.about.title}
                 </p>
               </div>

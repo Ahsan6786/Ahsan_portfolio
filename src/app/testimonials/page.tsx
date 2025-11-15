@@ -91,7 +91,7 @@ export default function TestimonialsPage() {
             <div className="pb-16 md:pb-24">
               <div className="text-center mb-12 relative">
                 <h1 className="text-4xl md:text-6xl font-bold">Testimonials</h1>
-                <p className="text-6xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0" aria-hidden="true">
+                <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words" aria-hidden="true">
                   Feedback
                 </p>
                 <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
