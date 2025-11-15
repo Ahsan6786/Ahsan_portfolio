@@ -26,6 +26,11 @@ const allTestimonials = [
     projectUrl: "https://ziyamuradkhan.vercel.app/",
     projectGithub: "https://github.com/Ahsan6786/ziyamuradkhan"
   },
+  {
+    name: "Taniya Sana",
+    comment: "Ahsan did an exceptional job in bringing my vision to life. He built the website exactly the way I wanted clean, modern, and highly functional. His attention to detail, quick response time, and willingness to accommodate every request truly set him apart. I’m extremely satisfied with the final result and highly recommend Ahsan for anyone looking for a reliable and talented website developer.",
+    image: placeholderData.testimonialTaniya,
+  },
 ];
 
 
@@ -51,12 +56,16 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof allTestimonials
             <div>
               <h4 className="font-bold text-lg">{testimonial.name}</h4>
               <div className="flex items-center gap-3 mt-1">
-                <a href={testimonial.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href={testimonial.projectUrl} target="_blank" rel="noopener noreferrer" aria-label="Project Website" className="text-muted-foreground hover:text-primary transition-colors">
-                  <ExternalLink className="w-5 h-5" />
-                </a>
+                {testimonial.linkedin && (
+                  <a href={testimonial.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                )}
+                {testimonial.projectUrl && (
+                  <a href={testimonial.projectUrl} target="_blank" rel="noopener noreferrer" aria-label="Project Website" className="text-muted-foreground hover:text-primary transition-colors">
+                    <ExternalLink className="w-5 h-5" />
+                  </a>
+                )}
                 {testimonial.projectGithub && (
                     <a href={testimonial.projectGithub} target="_blank" rel="noopener noreferrer" aria-label="Project GitHub" className="text-muted-foreground hover:text-primary transition-colors">
                     <Github className="w-5 h-5" />

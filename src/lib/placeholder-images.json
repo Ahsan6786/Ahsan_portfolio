@@ -83,6 +83,10 @@
     "src": "/ziya.png",
     "aiHint": "man portrait"
   },
+  "testimonialTaniya": {
+    "src": "/taniya.png",
+    "aiHint": "woman portrait"
+  },
   "laptop_frame": {
     "src": "/laptop-frame-transparent.png",
     "aiHint": "laptop mockup frame"
