@@ -30,6 +30,7 @@ const allTestimonials = [
     name: "Taniya Sana",
     comment: "Ahsan did an exceptional job in bringing my vision to life. He built the website exactly the way I wanted clean, modern, and highly functional. His attention to detail, quick response time, and willingness to accommodate every request truly set him apart. I’m extremely satisfied with the final result and highly recommend Ahsan for anyone looking for a reliable and talented website developer.",
     image: placeholderData.testimonialTaniya,
+    linkedin: "https://www.linkedin.com/in/taniyasana/",
   },
 ];
 
