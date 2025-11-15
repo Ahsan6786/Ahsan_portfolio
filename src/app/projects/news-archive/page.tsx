@@ -72,7 +72,7 @@ export default function NewsArchiveProjectPage() {
                         }}
                     >
                         {/* Laptop Screen Slideshow */}
-                        <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden">
+                        <div className="absolute top-[5.5%] left-[11.2%] w-[77.6%] h-[86.5%] overflow-hidden">
                             {screenshots.map((img, index) => (
                                 <Image
                                     key={img.src}
@@ -86,12 +86,12 @@ export default function NewsArchiveProjectPage() {
                         </div>
                         {/* Laptop Frame */}
                         <Image
-                            src={placeholderData.laptop_frame_bjp.src}
+                            src={placeholderData.laptop_frame.src}
                             alt="Laptop Frame"
                             width={1000}
                             height={600}
                             className="relative w-full h-auto"
-                            data-ai-hint={placeholderData.laptop_frame_bjp.aiHint}
+                            data-ai-hint={placeholderData.laptop_frame.aiHint}
                         />
                     </div>
                 </AnimateOnScroll>
