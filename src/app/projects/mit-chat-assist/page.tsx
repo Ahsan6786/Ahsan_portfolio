@@ -30,8 +30,8 @@ const projectDetails = {
         { name: "Responsive Design", icon: <TabletSmartphone className="w-8 h-8 mb-2 text-primary" /> }
     ],
     timeline: {
-        startDate: "December 2023",
-        endDate: "January 2024",
+        startDate: "October 2025",
+        endDate: "November 2025",
         duration: "3 Weeks",
         phases: [
             { name: "Concept & Planning", duration: "0.5 Weeks", icon: <PencilRuler className="w-6 h-6" />, color: "bg-blue-500", percentage: (0.5/3)*100 },
