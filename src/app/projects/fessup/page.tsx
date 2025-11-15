@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -99,7 +100,7 @@ export default function FessUpProjectPage() {
                                 src={img.src}
                                 alt={`FessUp! Screenshot ${index + 1}`}
                                 fill
-                                className={`object-cover w-full h-full transition-opacity duration-1000 ${index === currentScreenshotIndex ? 'opacity-100' : 'opacity-0'}`}
+                                className={`object-contain w-full h-full transition-opacity duration-1000 ${index === currentScreenshotIndex ? 'opacity-100' : 'opacity-0'}`}
                                 data-ai-hint={img.aiHint}
                             />
                         ))}
@@ -172,3 +173,5 @@ export default function FessUpProjectPage() {
         </div>
     );
 }
+
+    
