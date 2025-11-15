@@ -18,12 +18,6 @@ const allSkills = [
     { name: "MySQL", logo: "/mysql.png" },
     { name: "Firebase", logo: "/firebase.png" },
     { name: "C++", logo: "/c-plus-plus.png" },
-    { name: "Java", logo: "/java.png" },
-    { name: "Solidity", logo: "/solidity.png" },
-    { name: "AWS", logo: "/aws.png" },
-    { name: "Git", logo: "/git.png" },
-    { name: "Figma", logo: "/figma.png" },
-    { name: "Canva", logo: "/canva.png" },
 ];
 
 export default function SkillsPage() {
