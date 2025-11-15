@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -57,7 +58,7 @@ const projects = [
     detailedDescription: "News Archive is a comprehensive news system that collects and displays articles from sources all over the world. It has a clean, fast interface for searching topics, filtering news, and browsing headlines, making it a powerful tool for staying up-to-date.",
     tags: ["Web App", "API", "JavaScript"],
     image: placeholderData.project2,
-    liveDemo: "https://github.com/Ahsan6786/NEWSARCHIVE",
+    liveDemo: "https://bjp-news-archive.vercel.app/",
     github: "https://github.com/Ahsan6786/NEWSARCHIVE",
   },
   {
