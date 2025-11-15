@@ -185,7 +185,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
                 </Button>
               )}
               {project.detailsPage && (
-                 <Button asChild className="rounded-full bg-white text-black hover:bg-white/90">
+                 <Button asChild className="rounded-full bg-pink-500 text-white hover:bg-pink-600">
                     <Link href={project.detailsPage}>
                       Description
                     </Link>
