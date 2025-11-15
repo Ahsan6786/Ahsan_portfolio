@@ -180,7 +180,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
                 <Button asChild className="rounded-full">
                   <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
-                    Live Demo
+                    Demo
                   </a>
                 </Button>
               )}
