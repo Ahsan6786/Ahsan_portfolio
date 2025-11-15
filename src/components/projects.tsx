@@ -13,16 +13,6 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "MIT WPU Chat Assist",
-    description: "An intelligent web portal for MIT-WPU students, powered by Gemini AI.",
-    detailedDescription: "MIT Chat Assist is an intelligent web portal designed for students of MIT World Peace University. Powered by Google's Gemini AI, it features a central chatbot for instant answers on admissions, courses, and campus life. The platform also includes specialized tools like a personalized Course Recommender, an Internship Assistant, and a powerful AI Admin Dashboard for easy management of the chatbot's knowledge base.",
-    tags: ["Next.js", "Firebase", "Gemini AI"],
-    image: placeholderData.projectMitChatAssist,
-    liveDemo: "https://studio--studio-4013308653-b04c2.us-central1.hosted.app/",
-    github: "https://github.com/Ahsan6786/studio",
-    detailsPage: "/projects/mit-chat-assist",
-  },
-  {
     title: "FessUp!",
     description: "A dynamic and anonymous social platform for college students.",
     detailedDescription:
@@ -32,6 +22,16 @@ const projects = [
     liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
     github: "https://github.com/Ahsan6786/FessUP-",
     detailsPage: "/projects/fessup",
+  },
+  {
+    title: "MIT WPU Chat Assist",
+    description: "An intelligent web portal for MIT-WPU students, powered by Gemini AI.",
+    detailedDescription: "MIT Chat Assist is an intelligent web portal designed for students of MIT World Peace University. Powered by Google's Gemini AI, it features a central chatbot for instant answers on admissions, courses, and campus life. The platform also includes specialized tools like a personalized Course Recommender, an Internship Assistant, and a powerful AI Admin Dashboard for easy management of the chatbot's knowledge base.",
+    tags: ["Next.js", "Firebase", "Gemini AI"],
+    image: placeholderData.projectMitChatAssist,
+    liveDemo: "https://studio--studio-4013308653-b04c2.us-central1.hosted.app/",
+    github: "https://github.com/Ahsan6786/studio",
+    detailsPage: "/projects/mit-chat-assist",
   },
 ];
 
