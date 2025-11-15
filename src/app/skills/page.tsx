@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -17,7 +18,7 @@ const allSkills = [
     { name: "Python", logo: "/Python.png" },
     { name: "MySQL", logo: "/mysql.png" },
     { name: "Firebase", logo: "/firebase.png" },
-    { name: "C++", logo: "/c-plus-plus.png" },
+    { name: "C++", logo: "/cplus.png" },
 ];
 
 export default function SkillsPage() {
