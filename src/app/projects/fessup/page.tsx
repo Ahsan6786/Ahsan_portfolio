@@ -32,11 +32,11 @@ const projectDetails = {
     timeline: {
         startDate: "October 2023",
         endDate: "November 2023",
-        duration: "3 Weeks",
+        duration: "7 Weeks",
         phases: [
             { name: "Planning & Design", duration: "1 Week", icon: <PencilRuler className="w-6 h-6 text-primary" /> },
-            { name: "Development", duration: "1.5 Weeks", icon: <BrainCircuit className="w-6 h-6 text-primary" /> },
-            { name: "Testing & Launch", duration: "0.5 Weeks", icon: <Rocket className="w-6 h-6 text-primary" /> },
+            { name: "Development", duration: "5 Weeks", icon: <BrainCircuit className="w-6 h-6 text-primary" /> },
+            { name: "Testing & Launch", duration: "1 Week", icon: <Rocket className="w-6 h-6 text-primary" /> },
         ]
     },
     techStack: ["Next.js", "Firebase", "Tailwind CSS", "TypeScript", "Recharts"],
@@ -75,7 +75,7 @@ export default function FessUpProjectPage() {
                     }}
                 >
                     {/* Laptop Screen Slideshow */}
-                    <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden p-2">
+                    <div className="absolute top-[5%] left-[10.5%] w-[79%] h-[82%] overflow-hidden">
                         {screenshots.map((img, index) => (
                              <Image
                                 key={img.src}

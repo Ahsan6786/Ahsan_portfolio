@@ -32,11 +32,11 @@ const projectDetails = {
     timeline: {
         startDate: "December 2023",
         endDate: "January 2024",
-        duration: "1.5 Months",
+        duration: "3 Weeks",
         phases: [
-            { name: "Concept & Planning", duration: "1 Week", icon: <PencilRuler className="w-6 h-6 text-primary" /> },
-            { name: "Development & AI Integration", duration: "4 Weeks", icon: <BrainCircuit className="w-6 h-6 text-primary" /> },
-            { name: "Testing & Deployment", duration: "1 Week", icon: <Rocket className="w-6 h-6 text-primary" /> },
+            { name: "Concept & Planning", duration: "0.5 Weeks", icon: <PencilRuler className="w-6 h-6 text-primary" /> },
+            { name: "Development & AI Integration", duration: "2 Weeks", icon: <BrainCircuit className="w-6 h-6 text-primary" /> },
+            { name: "Testing & Deployment", duration: "0.5 Weeks", icon: <Rocket className="w-6 h-6 text-primary" /> },
         ]
     },
     techStack: ["Next.js", "Firebase", "Gemini AI", "Tailwind CSS", "TypeScript"],
@@ -78,10 +78,10 @@ export default function MITProjectPage() {
                     <div 
                         className="absolute overflow-hidden"
                         style={{
-                            top: "6.4%",
-                            left: "11.2%",
-                            width: "77.6%",
-                            height: "81.8%",
+                            top: '6.0%',
+                            left: '11.2%',
+                            width: '77.6%',
+                            height: '85.7%'
                         }}
                     >
                         {screenshots.map((img, index) => (
