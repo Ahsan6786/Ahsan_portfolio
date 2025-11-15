@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Github, ExternalLink, ShieldOff, Activity, ThumbsUp, KeyRound, MessageCircle, TabletSmartphone, CalendarDays } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, ShieldOff, Activity, ThumbsUp, KeyRound, MessageCircle, TabletSmartphone, CalendarDays, Rocket, BrainCircuit, PencilRuler } from 'lucide-react';
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
 
@@ -33,6 +33,11 @@ const projectDetails = {
         startDate: "October 2023",
         endDate: "November 2023",
         duration: "3 Weeks",
+        phases: [
+            { name: "Planning & Design", duration: "1 Week", icon: <PencilRuler className="w-6 h-6 text-primary" /> },
+            { name: "Development", duration: "1.5 Weeks", icon: <BrainCircuit className="w-6 h-6 text-primary" /> },
+            { name: "Testing & Launch", duration: "0.5 Weeks", icon: <Rocket className="w-6 h-6 text-primary" /> },
+        ]
     },
     techStack: ["Next.js", "Firebase", "Tailwind CSS", "TypeScript", "Recharts"],
     liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
@@ -123,24 +128,38 @@ export default function FessUpProjectPage() {
                         </div>
                     </div>
 
-                    {/* Project Timeline */}
+                     {/* Project Timeline */}
                     <div className="mb-12">
                         <h3 className="text-2xl font-bold mb-8 text-center">Project Timeline</h3>
-                        <div className="flex justify-center items-center bg-background/50 border border-border/20 rounded-lg p-6 max-w-2xl mx-auto">
-                            <CalendarDays className="w-12 h-12 text-primary mr-6" />
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center sm:text-left w-full">
-                                <div>
-                                    <h4 className="text-sm text-muted-foreground font-semibold">Start Date</h4>
-                                    <p className="text-lg font-bold text-foreground">{projectDetails.timeline.startDate}</p>
+                        <div className="relative max-w-2xl mx-auto">
+                            {/* Timeline Line */}
+                            <div className="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-border top-0"></div>
+                            
+                            {/* Overall Duration */}
+                             <div className="relative flex items-center justify-center mb-8">
+                                <div className="z-10 bg-background p-3 rounded-full border-2 border-primary shadow-md">
+                                    <CalendarDays className="w-8 h-8 text-primary" />
                                 </div>
-                                <div className="sm:text-center">
-                                    <h4 className="text-sm text-muted-foreground font-semibold">End Date</h4>
-                                    <p className="text-lg font-bold text-foreground">{projectDetails.timeline.endDate}</p>
+                                <div className="absolute left-1/2 ml-10">
+                                    <p className="text-lg font-bold text-foreground">Total Duration: {projectDetails.timeline.duration}</p>
+                                    <p className="text-sm text-muted-foreground">{projectDetails.timeline.startDate} - {projectDetails.timeline.endDate}</p>
                                 </div>
-                                <div className="sm:text-right">
-                                    <h4 className="text-sm text-muted-foreground font-semibold">Duration</h4>
-                                    <p className="text-lg font-bold text-foreground">{projectDetails.timeline.duration}</p>
-                                </div>
+                            </div>
+                            
+                            {/* Timeline Phases */}
+                            <div className="space-y-12">
+                                {projectDetails.timeline.phases.map((phase, index) => (
+                                     <div key={phase.name} className="relative flex items-center">
+                                        <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left order-2'}`}>
+                                            <p className="font-bold text-lg text-foreground">{phase.name}</p>
+                                            <p className="text-sm text-muted-foreground">{phase.duration}</p>
+                                        </div>
+                                        <div className="absolute left-1/2 -translate-x-1/2 z-10 bg-background p-3 rounded-full border-2 border-primary/50 shadow-sm">
+                                            {phase.icon}
+                                        </div>
+                                        <div className="w-1/2"></div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -174,6 +193,8 @@ export default function FessUpProjectPage() {
         </div>
     );
 }
+
+    
 
     
 
