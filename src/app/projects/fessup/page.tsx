@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Github, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, ShieldOff, Activity, ThumbsUp, KeyRound, MessageCircle, TabletSmartphone } from 'lucide-react';
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from '@/components/animate-on-scroll';
 
@@ -22,12 +22,12 @@ const projectDetails = {
         "The platform is built with Next.js for a fast, server-rendered frontend, Firebase for real-time data and authentication, and styled with Tailwind CSS for a modern, responsive design. The user experience is at the core of FessUp!, with a focus on simplicity, privacy, and engagement. Users can post anonymously, comment on others' posts, and see what's trending on their campus, all in real-time."
     ],
     features: [
-        "Anonymous Posting",
-        "Real-time Feed",
-        "Upvote/Downvote System",
-        "Firebase Authentication",
-        "Comment on Posts",
-        "Responsive Design"
+        { name: "Anonymous Posting", icon: <ShieldOff className="w-8 h-8 mb-2 text-primary" /> },
+        { name: "Real-time Feed", icon: <Activity className="w-8 h-8 mb-2 text-primary" /> },
+        { name: "Upvote/Downvote System", icon: <ThumbsUp className="w-8 h-8 mb-2 text-primary" /> },
+        { name: "Firebase Authentication", icon: <KeyRound className="w-8 h-8 mb-2 text-primary" /> },
+        { name: "Comment on Posts", icon: <MessageCircle className="w-8 h-8 mb-2 text-primary" /> },
+        { name: "Responsive Design", icon: <TabletSmartphone className="w-8 h-8 mb-2 text-primary" /> }
     ],
     techStack: ["Next.js", "Firebase", "Tailwind CSS", "TypeScript"],
     liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
@@ -135,11 +135,12 @@ export default function FessUpProjectPage() {
 
                     {/* Features */}
                     <div className="mb-12">
-                        <h3 className="text-2xl font-bold mb-6 text-center">Key Features</h3>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+                        <h3 className="text-2xl font-bold mb-8 text-center">Key Features</h3>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
                             {projectDetails.features.map(feature => (
-                                <div key={feature} className="bg-background/50 border border-border/20 rounded-lg p-4">
-                                    <p className="font-medium text-foreground">{feature}</p>
+                                <div key={feature.name} className="bg-background/50 border border-border/20 rounded-lg p-4 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                    {feature.icon}
+                                    <p className="font-semibold text-foreground text-sm">{feature.name}</p>
                                 </div>
                             ))}
                         </div>
@@ -173,7 +174,3 @@ export default function FessUpProjectPage() {
         </div>
     );
 }
-
-    
-
-    
