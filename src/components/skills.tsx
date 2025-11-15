@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { useLanguage } from "@/contexts/language-context";
 import { cn } from '@/lib/utils';
+import { Button } from './ui/button';
+import Link from 'next/link';
 
 const skillsList = [
   { name: "HTML", logo: "/html.png" },
@@ -77,6 +79,13 @@ export function Skills() {
             </div>
           ))}
         </div>
+      </div>
+      <div className="text-center mt-12">
+        <Link href="/skills">
+            <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-pulse">
+              View All Skills
+            </Button>
+        </Link>
       </div>
     </section>
   );
