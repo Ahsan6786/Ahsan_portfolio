@@ -19,8 +19,9 @@ const projects = [
     detailedDescription: "FessUp! is a dynamic and anonymous social platform designed specifically for college students. It provides a safe and open space for users to share confessions, thoughts, and campus happenings without revealing their identity, fostering a unique environment for genuine and unfiltered expression. The platform is built with Next.js for a fast, server-rendered frontend, Firebase for real-time data and authentication, and styled with Tailwind CSS for a modern, responsive design.",
     tags: ["Next.js", "Firebase", "Tailwind CSS"],
     image: placeholderData.projectFessUp,
-    liveDemo: "/projects/fessup",
-    github: "https://github.com/Ahsan6786/FessUP-"
+    liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
+    github: "https://github.com/Ahsan6786/FessUP-",
+    detailsPage: "/projects/fessup"
   },
   {
     title: "Mitra AI",
@@ -175,19 +176,20 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
                   </a>
                 </Button>
               )}
-              {project.title === 'FessUp!' ? (
-                 <Button asChild className="rounded-full">
-                    <Link href={project.liveDemo}>
-                      Read More
-                    </Link>
-                  </Button>
-              ) : (
+              {project.liveDemo && (
                 <Button asChild className="rounded-full">
                   <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
+                    Live Demo
                   </a>
                 </Button>
+              )}
+              {project.detailsPage && (
+                 <Button asChild className="rounded-full" variant="secondary">
+                    <Link href={project.detailsPage}>
+                      View Details
+                    </Link>
+                  </Button>
               )}
             </div>
           </div>
