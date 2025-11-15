@@ -138,7 +138,7 @@ function ProjectCard({ project }: { project: Project }) {
   };
   
   return (
-    <Link href={project.detailsPage || '#'} className="w-full h-full block perspective-1000 group">
+    <div className="w-full h-auto perspective-1000">
       <motion.div 
         ref={ref}
         onMouseMove={handleMouseMove}
@@ -151,7 +151,7 @@ function ProjectCard({ project }: { project: Project }) {
         transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
         className="relative w-full h-full"
       >
-        <div className="bg-card rounded-lg overflow-hidden border shadow-sm group-hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
+        <div className="bg-card rounded-lg overflow-hidden border shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
           <div className="relative">
             <div className="relative aspect-video w-full overflow-hidden">
               <Image
@@ -166,10 +166,25 @@ function ProjectCard({ project }: { project: Project }) {
           <div className="p-6 flex flex-col flex-grow">
             <h3 className="text-xl font-bold mb-2">{project.title}</h3>
             <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
+            
+            <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
+               {project.detailsPage && (
+                 <Button
+                  asChild
+                  size="sm"
+                  className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white"
+                >
+                  <Link href={project.detailsPage}>
+                    <Info className="mr-2 h-4 w-4"/>
+                    Description
+                  </Link>
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </motion.div>
-    </Link>
+    </div>
   );
 }
 
