@@ -42,12 +42,9 @@ export default function SkillsPage() {
             <section className="pb-16 md:pb-24 overflow-hidden">
              <AnimateOnScroll>
               <div className="text-center mb-12 relative">
-                <h1 className="text-4xl md:text-6xl font-bold">{translations.skills.title}</h1>
-                <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words" aria-hidden="true">
+                <h1 className="text-4xl md:text-5xl font-bold">{translations.skills.title}</h1>
+                <p className="text-5xl sm:text-7xl md:text-8xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words" aria-hidden="true">
                   Expertise
-                </p>
-                <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                  {translations.skills.subtitle}
                 </p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
