@@ -37,23 +37,23 @@ const allTestimonials = [
 
 function TestimonialCard({ testimonial }: { testimonial: (typeof allTestimonials)[0] }) {
   return (
-    <Card className="h-full border-2 border-primary/20 bg-card shadow-lg hover:shadow-primary/20 transition-shadow duration-300 rounded-2xl">
-      <CardContent className="p-6 h-full flex flex-col justify-between">
-        <div>
-          <Quote className="w-8 h-8 text-primary mb-4" />
-          <p className="text-muted-foreground mb-6 italic">&quot;{testimonial.comment}&quot;</p>
+    <Card className="h-full border bg-card shadow-lg hover:shadow-primary/20 transition-shadow duration-300 rounded-2xl overflow-visible relative mt-8">
+      <CardContent className="p-8 h-full flex flex-col justify-between">
+        <div className="relative">
+            <Quote className="w-16 h-16 text-primary/10 absolute -top-12 -left-8" />
+            <div className="w-20 h-20 relative rounded-full overflow-hidden border-4 border-background absolute -top-16 right-0">
+                <Image
+                    src={testimonial.image.src}
+                    alt={testimonial.name}
+                    fill
+                    className="object-cover"
+                    data-ai-hint={testimonial.image.aiHint}
+                />
+            </div>
+            <p className="text-muted-foreground mb-6 italic pt-8">"{testimonial.comment}"</p>
         </div>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 relative">
-              <Image
-                src={testimonial.image.src}
-                alt={testimonial.name}
-                fill
-                className="rounded-full object-cover"
-                data-ai-hint={testimonial.image.aiHint}
-              />
-            </div>
             <div>
               <h4 className="font-bold text-lg">{testimonial.name}</h4>
               <div className="flex items-center gap-3 mt-1">
