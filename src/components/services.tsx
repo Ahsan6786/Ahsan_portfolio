@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Code, Rocket, TrendingUp } from "lucide-react";
@@ -27,12 +28,12 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className="py-16 md:py-32 bg-background overflow-hidden">
+    <section id="services" className="py-16 md:py-24 bg-background overflow-hidden">
       <AnimateOnScroll>
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12 relative">
-            <h2 className="text-4xl md:text-6xl font-bold">{translations.services.title}</h2>
-            <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
+            <h2 className="text-4xl md:text-5xl font-bold">{translations.services.title}</h2>
+            <p className="text-5xl sm:text-7xl md:text-8xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
               {translations.services.title}
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
