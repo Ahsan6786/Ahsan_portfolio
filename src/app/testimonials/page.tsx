@@ -37,26 +37,20 @@ const allTestimonials = [
 
 function TestimonialCard({ testimonial }: { testimonial: (typeof allTestimonials)[0] }) {
   return (
-    <Card className="h-full border bg-card shadow-lg hover:shadow-primary/20 transition-shadow duration-300 rounded-2xl overflow-visible relative mt-8">
-      <CardContent className="p-8 h-full flex flex-col justify-between">
-        <div className="relative">
-            <Quote className="w-16 h-16 text-primary/10 absolute -top-12 -left-8" />
-            <div className="w-20 h-20 relative rounded-full overflow-hidden border-4 border-background absolute -top-16 right-0">
-                <Image
-                    src={testimonial.image.src}
-                    alt={testimonial.name}
-                    fill
-                    className="object-cover"
-                    data-ai-hint={testimonial.image.aiHint}
-                />
-            </div>
-            <p className="text-muted-foreground mb-6 italic pt-8">"{testimonial.comment}"</p>
+    <Card className="h-full border bg-card shadow-lg hover:shadow-primary/20 transition-shadow duration-300 rounded-2xl overflow-visible">
+      <CardContent className="p-8 h-full flex flex-col justify-between relative pt-16">
+        <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full overflow-hidden border-4 border-background shadow-lg">
+          <Image
+            src={testimonial.image.src}
+            alt={testimonial.name}
+            fill
+            className="object-cover"
+            data-ai-hint={testimonial.image.aiHint}
+          />
         </div>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div>
-              <h4 className="font-bold text-lg">{testimonial.name}</h4>
-              <div className="flex items-center gap-3 mt-1">
+        <div className="text-center">
+            <h4 className="font-bold text-xl">{testimonial.name}</h4>
+            <div className="flex items-center justify-center gap-3 mt-2">
                 {testimonial.linkedin && (
                   <a href={testimonial.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
                     <Linkedin className="w-5 h-5" />
@@ -72,10 +66,9 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof allTestimonials
                     <Github className="w-5 h-5" />
                     </a>
                 )}
-              </div>
             </div>
-          </div>
         </div>
+        <p className="text-muted-foreground text-center my-6 italic">"{testimonial.comment}"</p>
       </CardContent>
     </Card>
   );
@@ -110,7 +103,7 @@ export default function TestimonialsPage() {
                   What my clients say about my work.
                 </p>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto pt-12">
                 {allTestimonials.map((testimonial, index) => (
                   <TestimonialCard key={index} testimonial={testimonial} />
                 ))}

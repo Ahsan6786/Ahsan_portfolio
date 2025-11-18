@@ -6,7 +6,7 @@ import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Linkedin, Github, ExternalLink, Quote } from "lucide-react";
+import { Linkedin, Github, ExternalLink } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -44,26 +44,20 @@ const testimonials = [
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
     return (
-      <Card className="h-full border bg-card shadow-lg hover:shadow-primary/20 transition-shadow duration-300 rounded-2xl overflow-visible relative mt-8">
-        <CardContent className="p-8 h-full flex flex-col justify-between">
-          <div className="relative">
-              <Quote className="w-16 h-16 text-primary/10 absolute -top-12 -left-8" />
-              <div className="w-20 h-20 relative rounded-full overflow-hidden border-4 border-background absolute -top-16 right-0">
-                  <Image
-                      src={testimonial.image.src}
-                      alt={testimonial.name}
-                      fill
-                      className="object-cover"
-                      data-ai-hint={testimonial.image.aiHint}
-                  />
-              </div>
-              <p className="text-muted-foreground mb-6 italic pt-8">"{testimonial.comment}"</p>
+      <Card className="h-full border bg-card shadow-lg hover:shadow-primary/20 transition-shadow duration-300 rounded-2xl overflow-visible">
+        <CardContent className="p-8 h-full flex flex-col justify-between relative pt-16">
+          <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full overflow-hidden border-4 border-background shadow-lg">
+            <Image
+              src={testimonial.image.src}
+              alt={testimonial.name}
+              fill
+              className="object-cover"
+              data-ai-hint={testimonial.image.aiHint}
+            />
           </div>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div>
-                <h4 className="font-bold text-lg">{testimonial.name}</h4>
-                <div className="flex items-center gap-3 mt-1">
+          <div className="text-center">
+              <h4 className="font-bold text-xl">{testimonial.name}</h4>
+              <div className="flex items-center justify-center gap-3 mt-2">
                   {testimonial.linkedin && (
                     <a href={testimonial.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
                       <Linkedin className="w-5 h-5" />
@@ -79,10 +73,9 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
                       <Github className="w-5 h-5" />
                     </a>
                   )}
-                </div>
               </div>
-            </div>
           </div>
+          <p className="text-muted-foreground text-center my-6 italic">"{testimonial.comment}"</p>
         </CardContent>
       </Card>
     );
@@ -113,14 +106,14 @@ export function Testimonials() {
               align: "start",
               loop: true,
             }}
-            className="w-full max-w-4xl mx-auto"
+            className="w-full max-w-2xl mx-auto"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/1">
-                  <div className="p-1 h-full pt-8">
+                <CarouselItem key={index}>
+                  <div className="p-1 h-full pt-12">
                     <TestimonialCard testimonial={testimonial} />
                   </div>
                 </CarouselItem>
