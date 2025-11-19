@@ -67,7 +67,7 @@ function SkillCard({ skill }: { skill: { name: string; logo: string } }) {
                     transform: "translateZ(20px)",
                     transformStyle: "preserve-3d",
                 }}
-                className="bg-card/60 backdrop-blur-sm p-6 rounded-2xl flex flex-col items-center justify-center border border-primary/20 transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20"
+                className="bg-card/60 backdrop-blur-sm p-6 rounded-2xl flex flex-col items-center justify-center shadow-lg shadow-primary/10 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20"
             >
                 <div className="relative w-20 h-20 mb-4 transform-gpu" style={{ transform: "translateZ(40px)" }}>
                     <Image
