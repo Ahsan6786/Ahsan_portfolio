@@ -7,6 +7,8 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
+import React, { useRef } from "react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const allSkills = [
     { name: "HTML", logo: "/html.png" },
@@ -20,6 +22,68 @@ const allSkills = [
     { name: "Firebase", logo: "/firebase.png" },
     { name: "C++", logo: "/cplus.png" },
 ];
+
+function SkillCard({ skill }: { skill: { name: string; logo: string } }) {
+    const ref = useRef<HTMLDivElement>(null);
+
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    const springConfig = { damping: 15, stiffness: 100 };
+    const mouseXSpring = useSpring(mouseX, springConfig);
+    const mouseYSpring = useSpring(mouseY, springConfig);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7.5deg", "-7.5deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7.5deg", "7.5deg"]);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!ref.current) return;
+        const { left, top, width, height } = ref.current.getBoundingClientRect();
+        const x = (e.clientX - left - width / 2) / (width / 2);
+        const y = (e.clientY - top - height / 2) / (height / 2);
+        mouseX.set(x);
+        mouseY.set(y);
+    };
+
+    const handleMouseLeave = () => {
+        mouseX.set(0);
+        mouseY.set(0);
+    };
+
+    return (
+        <motion.div
+            ref={ref}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{
+                transformStyle: "preserve-3d",
+                rotateX,
+                rotateY,
+            }}
+            className="perspective-1000 relative"
+        >
+            <div
+                style={{
+                    transform: "translateZ(20px)",
+                    transformStyle: "preserve-3d",
+                }}
+                className="bg-card/60 backdrop-blur-sm p-6 rounded-2xl flex flex-col items-center justify-center border border-primary/20 transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20"
+            >
+                <div className="relative w-20 h-20 mb-4 transform-gpu" style={{ transform: "translateZ(40px)" }}>
+                    <Image
+                        src={skill.logo}
+                        alt={`${skill.name} logo`}
+                        fill
+                        className="object-contain"
+                    />
+                </div>
+                <h3 className="text-lg font-bold text-foreground" style={{ transform: "translateZ(30px)" }}>
+                    {skill.name}
+                </h3>
+            </div>
+        </motion.div>
+    );
+}
 
 export default function SkillsPage() {
   const { translations, loading } = useLanguage();
@@ -41,25 +105,17 @@ export default function SkillsPage() {
             </AnimateOnScroll>
             <section className="pb-16 md:pb-24 overflow-hidden">
              <AnimateOnScroll>
-              <div className="text-center mb-12 relative">
+              <div className="text-center mb-16 relative">
                 <h1 className="text-4xl md:text-5xl font-bold">{translations.skills.title}</h1>
                 <p className="text-5xl sm:text-7xl md:text-8xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words" aria-hidden="true">
                   Expertise
                 </p>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-12">
                 {allSkills.map((skill, index) => (
-                    <div key={index} className="bg-card p-6 rounded-2xl flex flex-col items-center justify-center hover:shadow-lg transition-shadow border-2 border-primary/20 hover:border-primary/50">
-                        <div className="relative w-20 h-20 mb-4">
-                            <Image
-                            src={skill.logo}
-                            alt={`${skill.name} logo`}
-                            fill
-                            className="object-contain"
-                            />
-                        </div>
-                        <h3 className="text-lg font-bold text-foreground">{skill.name}</h3>
-                    </div>
+                    <AnimateOnScroll key={index} delay={`${index * 0.05}s`}>
+                        <SkillCard skill={skill} />
+                    </AnimateOnScroll>
                 ))}
               </div>
             </AnimateOnScroll>
