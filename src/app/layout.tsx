@@ -5,7 +5,6 @@ import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { ScrollToTopButton } from "@/components/scroll-to-top";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Chatbot } from "@/components/chatbot";
 import { LanguageProvider } from "@/contexts/language-context";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -102,7 +101,6 @@ export default function RootLayout({
             </div>
             <Toaster />
             <ScrollToTopButton />
-            <Chatbot />
           </ThemeProvider>
         </LanguageProvider>
       </body>
