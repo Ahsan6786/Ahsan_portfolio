@@ -20,13 +20,10 @@ export function Contact() {
               {translations.contact.title}
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              {translations.contact.subtitle}
+              Have a project in mind? Let's talk. I am here to help you.
             </p>
           </div>
           <div className="max-w-2xl mx-auto text-center">
-              <p className="text-lg text-muted-foreground mb-8">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-              </p>
               <Link href="/contact">
                   <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-pulse">
                     <Mail className="mr-2 h-5 w-5" />
