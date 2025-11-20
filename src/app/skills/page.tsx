@@ -56,7 +56,7 @@ const allSkillsWithLogos = [
     { name: "Firebase", logo: "/firebase.png" },
     { name: "Python", logo: "/Python.png" },
     { name: "MySQL", logo: "/mysql.png" },
-    { name: "Solidity", logo: "/solidity.png" },
+    { name: "Solidity", logo: "/download.png" },
 ];
 
 const getProjectsForSkill = (skill: string) => {
