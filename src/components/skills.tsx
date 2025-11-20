@@ -7,7 +7,6 @@ import { useLanguage } from "@/contexts/language-context";
 import { cn } from '@/lib/utils';
 import { Button } from './ui/button';
 import Link from 'next/link';
-import { ParallaxText } from './parallax-text';
 
 const skillsList = [
   { name: "HTML", logo: "/html.png" },
@@ -29,9 +28,14 @@ export function Skills() {
   return (
     <section id="skills" className="py-16 md:py-32 bg-background overflow-hidden">
         <AnimateOnScroll>
-            <ParallaxText baseVelocity={-5} className="text-5xl md:text-8xl font-bold text-foreground/5 mb-8">
-                {translations.skills.title} - Expertise -
-            </ParallaxText>
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="text-center mb-12 relative">
+                    <h2 className="text-4xl md:text-5xl font-bold">{translations.skills.title}</h2>
+                    <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
+                        Expertise
+                    </p>
+                </div>
+            </div>
         </AnimateOnScroll>
         <div 
             className="relative w-full flex overflow-hidden"
