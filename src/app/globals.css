@@ -124,11 +124,7 @@ header {
 
 @keyframes infinite-scroll {
   from { transform: translateX(0); }
-  to { transform: translateX(-100%); }
-}
-
-.logos-slide {
-  animation: 35s infinite-scroll linear infinite;
+  to { transform: translateX(-50%); }
 }
 
 .slide-in-animation {
@@ -141,16 +137,6 @@ header {
 
 .animate-infinite-scroll {
   animation: infinite-scroll 40s linear infinite;
-}
-
-@media (max-width: 768px) {
-  .animate-infinite-scroll {
-    animation: infinite-scroll 25s linear infinite;
-  }
-}
-
-.animate-infinite-scroll-reverse {
-  animation: infinite-scroll-reverse 40s linear infinite;
 }
 
 .parallax {
