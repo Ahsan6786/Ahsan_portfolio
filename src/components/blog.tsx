@@ -55,10 +55,10 @@ export function Blog() {
                     <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{post.title}</h3>
                     <p className="text-muted-foreground text-sm flex-grow mb-4">{post.description}</p>
                     <div className="mt-auto">
-                        <span className="font-semibold text-primary group-hover:underline">
-                          {translations.blog?.readMore || "Read More"}
-                          <ArrowRight className="inline-block ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                        </span>
+                      <Button variant="default" className="rounded-full group-hover:bg-primary/90">
+                        {translations.blog?.readMore || "Read More"}
+                        <ArrowRight className="inline-block ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </Button>
                     </div>
                   </div>
                 </div>
