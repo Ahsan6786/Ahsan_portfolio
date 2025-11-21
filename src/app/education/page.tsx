@@ -76,7 +76,7 @@ export default function EducationPage() {
             
             <div className="max-w-4xl mx-auto space-y-8">
                 {educationHistory.map((edu, index) => (
-                    <div key={index} className="bg-accent/50 backdrop-blur-sm border border-border/20 p-6 md:p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-primary/20 hover:border-primary/30">
+                    <div key={index} className="bg-accent/50 backdrop-blur-sm border border-primary/30 p-6 md:p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-primary/20">
                         <div className="flex flex-col sm:flex-row items-start gap-6">
                             <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 bg-background rounded-lg p-2 border border-border">
                                 <Image 
