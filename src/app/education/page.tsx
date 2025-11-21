@@ -15,7 +15,7 @@ const educationHistory = [
         duration: "July 2023 – Present",
         score: "CGPA: 8.2",
         description: "Studying core areas of computer science including algorithms, data structures, operating systems, software engineering, and web technologies. Built multiple academic and personal projects in web development and programming.",
-        image: "/mit.png"
+        image: "/wpu.png"
     },
     {
         degree: "Higher Secondary Education (Class 11–12)",
@@ -29,7 +29,7 @@ const educationHistory = [
         degree: "Matriculation (Class 10)",
         institution: "St. Paul’s High School, Hajipur",
         duration: "Completed in 2020",
-        score: null,
+        score: "Percentage: 87.4%",
         description: "Completed secondary education with strong performance and active participation in school activities.",
         image: "/st.png"
     }
