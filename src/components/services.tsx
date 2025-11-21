@@ -37,7 +37,7 @@ export function Services() {
               {translations.services.title}
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              {translations.services.subtitle}
+              I build high-performance websites and web applications focused on great user experiences.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
