@@ -150,7 +150,7 @@ export function Projects() {
               {translations.projects.title}
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              {translations.projects.subtitle}
+              tap any card to see more details
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
