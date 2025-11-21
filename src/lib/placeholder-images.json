@@ -176,7 +176,7 @@
     "aiHint": "login page"
   },
   "biharBackground": {
-    "src": "/bihar.png",
-    "aiHint": "Bihar map"
+    "src": "/b.png",
+    "aiHint": "abstract texture"
   }
 }
