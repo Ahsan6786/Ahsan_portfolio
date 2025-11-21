@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { CinematicImageTransition } from "@/components/cinematic-image-transition";
 
 export default function BlogPostPage() {
   const router = useRouter();
@@ -57,8 +56,6 @@ export default function BlogPostPage() {
               </header>
             </AnimateOnScroll>
             
-            <CinematicImageTransition />
-
             <AnimateOnScroll delay="0.2s">
               <div
                 className="max-w-none mx-auto text-foreground/90 space-y-6"
