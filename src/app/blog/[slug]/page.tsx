@@ -83,10 +83,3 @@ export default function BlogPostPage({ params }: Props) {
     </div>
   );
 }
-
-// Optional: To improve SEO by pre-building static pages for each blog post
-export async function generateStaticParams() {
-    return blogPosts.map((post) => ({
-        slug: post.slug,
-    }));
-}
