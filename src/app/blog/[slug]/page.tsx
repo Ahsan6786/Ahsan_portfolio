@@ -129,6 +129,19 @@ export default function BlogPostPage() {
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </AnimateOnScroll>
+
+            <AnimateOnScroll delay="0.3s" className="mt-8 md:mt-12 text-center">
+                <h3 className="text-lg font-semibold mb-4">Enjoyed this story? Share it with your friends!</h3>
+                <Button
+                    onClick={handleShare}
+                    size="default"
+                    className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-6 py-5 text-sm md:px-8 md:py-6 md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                >
+                    <Share2 className="mr-2 h-5 w-5" />
+                    Share Post
+                </Button>
+            </AnimateOnScroll>
+
           </article>
         </div>
       </div>
