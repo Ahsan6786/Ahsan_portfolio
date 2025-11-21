@@ -3,16 +3,35 @@
 import { useRouter } from "next/navigation";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, GraduationCap } from "lucide-react";
+import { ArrowLeft, Calendar, GraduationCap, School } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 
-const educationDetails = {
-  degree: "Bachelor of Technology (B.Tech) – Computer Science & Engineering",
-  university: "MIT-WPU (MIT World Peace University)",
-  department: "Computer Science & Engineering Department",
-  duration: "July 2023 – Present",
-  cgpa: "8.2",
-};
+const educationHistory = [
+    {
+        degree: "Bachelor of Technology (B.Tech) – Computer Science & Engineering",
+        institution: "MIT-WPU (MIT World Peace University), Pune",
+        duration: "July 2023 – Present",
+        score: "CGPA: 8.2",
+        description: "Studying core areas of computer science including algorithms, data structures, operating systems, software engineering, and web technologies. Built multiple academic and personal projects in web development and programming.",
+        icon: <GraduationCap className="w-8 h-8" />
+    },
+    {
+        degree: "Higher Secondary Education (Class 11–12)",
+        institution: "Akshara International School, Wakad, Pune",
+        duration: "Completed in 2022",
+        score: "Percentage: 73%",
+        description: "Focused on PCM (Physics, Chemistry, Mathematics) with computer science. Built strong academic foundation before entering engineering.",
+        icon: <School className="w-8 h-8" />
+    },
+    {
+        degree: "Matriculation (Class 10)",
+        institution: "St. Paul’s High School, Hajipur",
+        duration: "Completed in 2020",
+        score: null,
+        description: "Completed secondary education with strong performance and active participation in school activities.",
+        icon: <School className="w-8 h-8" />
+    }
+];
 
 export default function EducationPage() {
   const { translations, loading } = useLanguage();
@@ -53,32 +72,32 @@ export default function EducationPage() {
                 </p>
             </div>
             
-            <div className="max-w-2xl mx-auto bg-card p-8 rounded-2xl shadow-lg border border-border/20">
-                <div className="flex flex-col items-center text-center">
-                    <GraduationCap className="w-16 h-16 text-primary mb-4" />
-                    <h3 className="text-2xl font-bold text-foreground">{educationDetails.degree}</h3>
-                    <p className="text-lg text-primary mt-1">{educationDetails.university}</p>
-                    <p className="text-md text-muted-foreground">{educationDetails.department}</p>
-                    
-                    <div className="w-full h-[1px] bg-border my-6"></div>
-
-                    <div className="flex flex-col sm:flex-row justify-between w-full text-left space-y-4 sm:space-y-0">
-                        <div className="flex items-center gap-3">
-                            <Calendar className="w-5 h-5 text-muted-foreground"/>
-                            <div>
-                                <p className="text-sm text-muted-foreground">Duration</p>
-                                <p className="font-semibold">{educationDetails.duration}</p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <GraduationCap className="w-5 h-5 text-muted-foreground"/>
-                            <div>
-                                <p className="text-sm text-muted-foreground">CGPA</p>
-                                <p className="font-semibold">{educationDetails.cgpa}</p>
-                            </div>
+            <div className="max-w-3xl mx-auto">
+              <div className="relative">
+                <div className="absolute left-9 top-0 h-full w-0.5 bg-border/50" aria-hidden="true"></div>
+                
+                {educationHistory.map((edu, index) => (
+                  <div key={index} className="relative pl-20 pb-12 last:pb-0">
+                    <div className="absolute left-0 top-0">
+                        <div className="w-18 h-18 bg-card border-2 border-primary/50 text-primary rounded-full flex items-center justify-center p-2 shadow-md">
+                            {edu.icon}
                         </div>
                     </div>
-                </div>
+
+                    <div className="bg-card/80 backdrop-blur-sm border border-border/20 p-6 rounded-xl shadow-lg">
+                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+                        <h3 className="text-xl font-bold text-foreground">{edu.degree}</h3>
+                        {edu.score && (
+                          <span className="text-sm font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full mt-2 sm:mt-0">{edu.score}</span>
+                        )}
+                      </div>
+                      <p className="text-md text-primary font-medium">{edu.institution}</p>
+                      <p className="text-sm text-muted-foreground my-2">{edu.duration}</p>
+                      <p className="text-sm text-muted-foreground mt-4">{edu.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
           </AnimateOnScroll>

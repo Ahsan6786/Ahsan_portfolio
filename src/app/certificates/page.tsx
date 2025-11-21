@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import Image from "next/image";
@@ -7,7 +5,7 @@ import { useRouter } from "next/navigation";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Award, Download, CheckCircle } from "lucide-react";
+import { ArrowLeft, Award, Download, CheckCircle, Star } from "lucide-react";
 import React from "react";
 import { useLanguage } from "@/contexts/language-context";
 
@@ -85,31 +83,33 @@ function CertificateCard({ certificate }: { certificate: Certificate }) {
   }
 
   return (
-    <div className="bg-card rounded-2xl border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col p-6 h-full">
-        <div className="flex items-start justify-between mb-4">
-            <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <Award className="w-6 h-6" />
-                </div>
-                <div>
-                    <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
-                </div>
-            </div>
-             <div className="flex-shrink-0 flex items-center gap-1 text-emerald-500">
-                <CheckCircle className="w-4 h-4" />
-                <span className="text-xs font-semibold">Verified</span>
-            </div>
-        </div>
-
-        <p className="text-muted-foreground text-sm my-4 flex-grow">{certificate.description}</p>
+    <div className="relative bg-card rounded-2xl shadow-lg hover:shadow-primary/20 transition-all duration-300 p-1 group overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-2 border-2 border-dashed border-primary/20 rounded-lg"></div>
         
-        <Button 
-            onClick={handleDownload}
-            className="w-full mt-auto bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90"
-        >
-            <Download className="mr-2 h-4 w-4" />
-            Download Certificate
-        </Button>
+        <div className="relative flex flex-col p-8 h-full text-center items-center justify-between">
+            <div className="flex-shrink-0 flex items-center gap-1 text-emerald-500 absolute top-4 right-4 text-xs font-semibold">
+                <CheckCircle className="w-4 h-4" />
+                <span>Verified</span>
+            </div>
+
+            <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center flex-shrink-0 mb-4">
+                <Award className="w-8 h-8" />
+            </div>
+            
+            <div className='flex-grow'>
+                <h3 className="text-xl font-bold text-foreground">{certificate.title}</h3>
+                <p className="text-muted-foreground text-sm my-4 flex-grow">{certificate.description}</p>
+            </div>
+            
+            <Button 
+                onClick={handleDownload}
+                className="w-full mt-auto bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90"
+            >
+                <Download className="mr-2 h-4 w-4" />
+                Download Certificate
+            </Button>
+        </div>
     </div>
   );
 }
