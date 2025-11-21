@@ -125,7 +125,7 @@ function CertificateCard({ certificate, onClick }: { certificate: Certificate, o
             <div className="flex flex-col flex-grow justify-between">
               <div>
                 <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1">{certificate.description}</p>
+                <p className="text-sm text-muted-foreground mt-1 hidden md:block">{certificate.description}</p>
               </div>
             </div>
         </div>
