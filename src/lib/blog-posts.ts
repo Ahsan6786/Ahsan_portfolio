@@ -1,16 +1,19 @@
 
 import placeholderData from '@/lib/placeholder-images.json';
 
+type ImageType = {
+    src: string;
+    aiHint: string;
+};
+
 export type BlogPost = {
     slug: string;
     title: string;
     description: string;
     date: string;
     author: string;
-    image: {
-        src: string;
-        aiHint: string;
-    };
+    image: ImageType;
+    backgroundImage?: ImageType;
     content: string;
 };
 
@@ -22,6 +25,7 @@ export const blogPosts: BlogPost[] = [
         date: "September 16, 2025",
         author: "Ahsan Imam Khan",
         image: placeholderData.heroImage,
+        backgroundImage: placeholderData.biharBackground,
         content: `
             <p class="text-gray-400">I was born in 2005, in a tiny village called Chaksikandar in Bihar. A place where mornings smelled of mitti, and evenings ended with the same old stories repeated under dim yellow bulbs.</p>
             <p class="text-gray-400">My childhood was simple… maybe too simple.</p>

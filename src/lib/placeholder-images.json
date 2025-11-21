@@ -174,5 +174,9 @@
   "mitra_screen15": {
     "src": "/mitra15.png",
     "aiHint": "login page"
+  },
+  "biharBackground": {
+    "src": "/bihar.png",
+    "aiHint": "Bihar map"
   }
 }
