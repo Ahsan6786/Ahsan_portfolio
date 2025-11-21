@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/contexts/language-context";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { Chatbot } from "@/components/chatbot";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -101,6 +102,7 @@ export default function RootLayout({
             </div>
             <Toaster />
             <ScrollToTopButton />
+            <Chatbot />
           </ThemeProvider>
         </LanguageProvider>
         <script
@@ -110,7 +112,7 @@ export default function RootLayout({
             (function(){
             var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
             s1.async=true;
-            s1.src='https://embed.tawk.to/692085f2c32ff219649a97d3/default';
+            s1.src='https://embed.tawk.to/66a932ff32dca6db2cb7534c/1i4252do5';
             s1.charset='UTF-8';
             s1.setAttribute('crossorigin','*');
             s0.parentNode.insertBefore(s1,s0);

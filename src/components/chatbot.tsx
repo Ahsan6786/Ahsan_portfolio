@@ -98,6 +98,12 @@ export function Chatbot() {
   const [inputValue, setInputValue] = useState("");
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
+  const [isMounted, setIsMounted] = useState(false);
+  
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   useEffect(() => {
     if (!loading) {
       setMessages([{
@@ -177,7 +183,7 @@ export function Chatbot() {
     }
   };
   
-  if (loading) return null;
+  if (!isMounted || loading) return null;
 
   return (
     <>
