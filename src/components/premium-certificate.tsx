@@ -1,6 +1,9 @@
 "use client";
 
 import { ShieldCheck } from "lucide-react";
+import React, { useRef, useState } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { cn } from "@/lib/utils";
 
 type PremiumCertificateProps = {
   recipientName: string;
@@ -40,6 +43,32 @@ export function PremiumCertificate({
   skills,
   verifyUrl,
 }: PremiumCertificateProps) {
+    const ref = useRef<HTMLDivElement>(null);
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    const springConfig = { damping: 20, stiffness: 150 };
+    const mouseXSpring = useSpring(mouseX, springConfig);
+    const mouseYSpring = useSpring(mouseY, springConfig);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["3deg", "-3deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-3deg", "3deg"]);
+    const glareX = useTransform(mouseX, [-1, 1], [-100, 200]);
+    const glareY = useTransform(mouseY, [-1, 1], [-100, 200]);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        if (!ref.current) return;
+        const { left, top, width, height } = ref.current.getBoundingClientRect();
+        const x = (e.clientX - left - width / 2) / (width / 2);
+        const y = (e.clientY - top - height / 2) / (height / 2);
+        mouseX.set(x);
+        mouseY.set(y);
+    };
+
+    const handleMouseLeave = () => {
+        mouseX.set(0);
+        mouseY.set(0);
+    };
 
     const handleDownload = () => {
         const link = document.createElement('a');
@@ -52,8 +81,14 @@ export function PremiumCertificate({
 
 
   return (
-    <div className="flex flex-col items-center gap-4">
-        <div className="relative w-full aspect-[4/3] bg-[#1a1a1a] rounded-2xl shadow-2xl shadow-black/50 overflow-hidden p-2 group transition-all duration-500 hover:shadow-yellow-400/20">
+    <div className="flex flex-col items-center gap-4 perspective-1000">
+        <motion.div 
+            ref={ref}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+            className="relative w-full aspect-[4/3] bg-[#1a1a1a] rounded-2xl shadow-2xl shadow-black/50 overflow-hidden p-2 group transition-all duration-500 hover:shadow-yellow-400/20"
+        >
         
         {/* Background Gradient & Pattern */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#222] to-black"></div>
@@ -64,6 +99,19 @@ export function PremiumCertificate({
                 backgroundSize: '20px 20px',
             }}
         ></div>
+
+        {/* Shiny Glare Effect */}
+        <motion.div
+            className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            style={{
+                x: glareX,
+                y: glareY,
+                background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 60%)',
+                width: '200%',
+                height: '200%',
+                transform: 'translate(-50%, -50%)'
+            }}
+        />
 
         {/* Gold Border with Glow */}
         <div className="relative w-full h-full rounded-lg border-2 border-transparent p-6 flex flex-col justify-between"
@@ -87,45 +135,35 @@ export function PremiumCertificate({
 
 
             {/* Main Content */}
-            <div className="text-center z-10">
-            <h3 className="text-sm font-light uppercase tracking-[0.2em] text-yellow-400/80">
-                Certificate of Excellence
-            </h3>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mt-2 mb-4"
-                style={{textShadow: '0 2px 10px rgba(255,255,255,0.1)'}}
-            >
-                {certificateTitle}
-            </h1>
-            <p className="text-base text-gray-400">
-                Awarded to <span className="font-semibold text-gray-200">{recipientName}</span>
-            </p>
+            <div className="text-center z-10 flex-grow flex flex-col justify-center">
+                <h3 className="text-sm font-light uppercase tracking-[0.2em] text-yellow-400/80">
+                    Certificate of Excellence
+                </h3>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mt-2 mb-4"
+                    style={{textShadow: '0 2px 10px rgba(255,255,255,0.1)'}}
+                >
+                    {certificateTitle}
+                </h1>
+                <p className="text-base text-gray-400">
+                    Awarded to <span className="font-semibold text-gray-200">{recipientName}</span>
+                </p>
+                <p className="text-sm text-gray-400 max-w-md mx-auto mt-4">
+                    {certificateDescription}
+                </p>
             </div>
-
-            <div className="text-center z-10 my-4">
-            <p className="text-sm text-gray-400 max-w-md mx-auto">
-                {certificateDescription}
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 mt-4">
-                {skills.map(skill => (
-                    <span key={skill} className="text-xs bg-yellow-900/50 text-yellow-300 px-3 py-1 rounded-full border border-yellow-700/50">
-                        {skill}
-                    </span>
-                ))}
-            </div>
-            </div>
-
-            <div className="flex justify-between items-end mt-6 z-10">
-                <div className="text-left text-xs">
-                    <p className="text-gray-500">Date Issued</p>
-                    <p className="font-mono text-gray-300">{date}</p>
-                </div>
-                <div className="text-right text-xs">
-                    <p className="text-gray-500">Credential ID</p>
-                    <p className="font-mono text-gray-300">{credentialId}</p>
+            
+            <div className="z-10 mt-auto">
+                <div className="flex flex-wrap justify-center gap-2 mt-4">
+                    {skills.map(skill => (
+                        <span key={skill} className="text-xs bg-yellow-900/50 text-yellow-300 px-3 py-1 rounded-full border border-yellow-700/50">
+                            {skill}
+                        </span>
+                    ))}
                 </div>
             </div>
+
         </div>
-        </div>
+        </motion.div>
         
         {/* Verify Button */}
         <div className="z-20">
