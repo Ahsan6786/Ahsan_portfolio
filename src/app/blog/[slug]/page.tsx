@@ -73,7 +73,7 @@ export default function BlogPostPage() {
                             alt={post.title}
                             width={500}
                             height={300}
-                            className="object-contain mix-blend-luminosity"
+                            className="object-contain"
                             data-ai-hint={post.image.aiHint}
                             priority
                         />
