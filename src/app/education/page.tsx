@@ -23,7 +23,7 @@ const educationHistory = [
         duration: "Completed in 2022",
         score: "Percentage: 73%",
         description: "Focused on PCM (Physics, Chemistry, Mathematics) with computer science. Built strong academic foundation before entering engineering.",
-        image: "/akshara.png"
+        image: "/akshara.jpg"
     },
     {
         degree: "Matriculation (Class 10)",
@@ -31,7 +31,7 @@ const educationHistory = [
         duration: "Completed in 2020",
         score: "Percentage: 87.4%",
         description: "Completed secondary education with strong performance and active participation in school activities.",
-        image: "/st.png"
+        image: "/st.jpg"
     }
 ];
 
