@@ -21,13 +21,6 @@ export function About() {
                   {translations.about.title}
                 </p>
               </div>
-              <p className="text-lg">
-                <span 
-                  className="font-bold text-primary"
-                >
-                  {translations.about.name}
-                </span>
-              </p>
               <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">{translations.about.p1}</p>
               <div className="text-center mt-8">
                 <Link href="/about">
