@@ -27,28 +27,95 @@ export const blogPosts: BlogPost[] = [
         image: placeholderData.heroImage,
         backgroundImage: placeholderData.biharBackground,
         content: `
-            <p class="text-gray-400">I was born on September 16, 2005, in Chaksikandar Mansurpur, Bihar — a place that wasn’t a village struggle story, but a quiet beginning.</p>
-            <p class="text-gray-400">Soon after, we moved to Hajipur, and that’s where I actually grew up. A proper town life — schools, friends, normal routines, and parents who always made sure my wishes were fulfilled. Not rich, not poor — just a simple, comfortable middle-class family where dreams were never denied.</p>
-            <p class="text-gray-400">My father worked in Saudi Arabia, not because we were struggling, but because he wanted to give us stability and opportunities. And he did.</p>
+            <p class="text-gray-400">I was born on September 16, 2005, in Chaksikandar Mansurpur, Bihar — not a dusty old village story, not a poverty-driven beginning, but a childhood filled with comfort, family warmth, and every wish my parents could fulfill.</p>
+            <p class="text-gray-400">My father worked in Saudi Arabia, and though he wasn’t always home, he made sure I never felt a lack of anything — not dreams, not support, not possibilities.</p>
+            <p class="text-gray-400">I didn’t grow up struggling for basics. I grew up learning the value of what I already had.</p>
+            
+            <hr class="my-8 border-border/50">
+
+            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">A Move, A New Rhythm of Life</h3>
+            <p class="text-gray-400">We later shifted to Hajipur, a town with more pace, more people, more exposure. I studied a year at Ideal Public School under Shahzad Sir — the first person who made me feel the weight and wonder of education.</p>
+            <p class="text-gray-400">But my academic path was not linear.</p>
+            <p class="text-gray-400">I switched schools, restarted chapters, and eventually landed in St. Paul’s, the place that shaped a very raw version of me.</p>
 
             <hr class="my-8 border-border/50">
 
-            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">A Move, A New Chance, and a Normal Childhood</h3>
-            <p class="text-gray-400">I studied one year at Ideal Public School under Shahzad Sir — the teacher who gave me my first real sense of discipline and confidence.</p>
-            <p class="text-gray-400">My path wasn’t straight, but it wasn’t tragic either. I switched schools, landed in St. Paul’s, and lived the kind of school life every normal kid relates to — friends, jokes, mischief, attitude, drama… everything.</p>
+            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">The Phase When I Chose Excitement Over Direction</h3>
+            <p class="text-gray-400">Around Class 8, I drifted — not because of circumstances, but because of curiosity… and honestly, wrong choices.</p>
+            <p class="text-gray-400">I surrounded myself with the wrong kind of crowd. Drama looked cooler than discipline. Fights felt more powerful than focus. Ego felt like identity.</p>
+            <p class="text-gray-400">Suspensions came. More than five times.</p>
+            <p class="text-gray-400">I wasn’t a bad kid. Just a kid who didn’t know where he was heading.</p>
+            <p class="text-gray-400">Life didn’t stop me. It simply waited for me to outgrow that version of myself.</p>
 
             <hr class="my-8 border-border/50">
 
-            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">The Phase When I Chose the Wrong People, Not the Wrong Life</h3>
-            <p class="text-gray-400">Around Class 8, I got influenced by the wrong circle — not criminals or anything extreme — just the typical school-age “cool crowd” where fights, attitude, and ego felt like identity.</p>
-            <p class="text-gray-400">I wasn’t a bad kid. I was just a kid trying to act bigger than he was.</p>
-            <p class="text-gray-400">I got suspended multiple times. Not because my upbringing was bad, but because my ego was louder than my sense.</p>
-            <p class="text-gray-400 mt-4">But that phase taught me the difference between:</p>
-            <p class="text-center text-lg italic my-2 text-primary">who you are</p>
-            <p class="text-center text-lg italic my-2 text-primary">and</p>
-            <p class="text-center text-lg italic my-2 text-primary">who you pretend to be.</p>
-            <p class="text-gray-400 mt-4">And that changed everything later.</p>
+            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">10th Grade — The Quiet Reset</h3>
+            <p class="text-gray-400">By Class 10, the noise inside me slowed down. I became calmer, quieter, a little lost… but more aware.</p>
+            <p class="text-gray-400">I scored 87.4% — not a reflection of my confusion, but of my potential.</p>
+            <p class="text-gray-400">My family suggested moving to Pune, not out of necessity, but because they believed exposure brings clarity.</p>
+            <p class="text-gray-400">And they were right.</p>
+
+            <hr class="my-8 border-border/50">
+
+            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">Pune — A New City, A Strange Pause</h3>
+            <p class="text-gray-400">I joined Akshara International for 11th and 12th. But then lockdown hit.</p>
+            <p class="text-gray-400">Classrooms turned into screens. Friends became icons. Life shrank into a room.</p>
+            <p class="text-gray-400">My performance dipped. Not due to lack of resources, but because online life disconnects you from real learning.</p>
+            <p class="text-gray-400">Teachers gave extra classes, I tried catching up, and somehow passed 12th with 72%.</p>
+            <p class="text-gray-400">The marks didn’t bother me. The confusion of “What now?” did.</p>
+
+            <hr class="my-8 border-border/50">
+
+            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">Kota — Not Struggle, But Intensity</h3>
+            <p class="text-gray-400">With no clear direction, I took a drop year and moved to Kota for JEE preparation.</p>
+            <p class="text-gray-400">Kota wasn’t about poverty or pressure from life — it was about intensity, competition, and the feeling of swimming among thousands of dreamers at once.</p>
+            <p class="text-gray-400">I studied honestly. But results didn’t align with effort.</p>
+            <p class="text-gray-400">After 8 months, my first attempt brought 66 percentile.</p>
+            <p class="text-gray-400">And at the same time, I lost my grandfather.</p>
+            <p class="text-gray-400">I couldn’t attend his last rituals — not because we couldn’t afford to, but because flights weren’t operational and trains were delayed.</p>
+            <p class="text-gray-400">The timing was cruel. The guilt stayed.</p>
+
+            <hr class="my-8 border-border/50">
+
+            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">Second Attempt — A Controlled Comeback</h3>
+            <p class="text-gray-400">I returned to Bihar, grounded and calmer. Studied again. Gave my second attempt.</p>
+            <p class="text-gray-400">86 percentile.</p>
+            <p class="text-gray-400">Better. Still not enough.</p>
+            <p class="text-gray-400">But I didn’t feel broken. I felt patient.</p>
+            <p class="text-gray-400">Some journeys aren’t meant to be shortcuts.</p>
+
+            <hr class="my-8 border-border/50">
+
+            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">One More Door — And Finally, It Opened</h3>
+            <p class="text-gray-400">I appeared for MHT-CET, and this time scored 93 percentile.</p>
+            <p class="text-gray-400">That number changed everything.</p>
+            <p class="text-gray-400">It opened the doors of MIT-WPU Pune, and suddenly my life had direction, clarity, and a path worth walking.</p>
+            <p class="text-gray-400">The boy who once chased noise started walking toward purpose.</p>
+
+            <hr class="my-8 border-border/50">
+
+            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">What My Journey Really Means</h3>
+            <p class="text-gray-400">My life is not a struggle-for-survival story. It’s a story of self-awareness, of learning to choose better paths, of understanding how environment shapes you, and how mindset transforms you.</p>
+            <p class="text-gray-400 mt-4">Here’s what I learned:</p>
+            <ul class="list-disc list-inside text-gray-400 mt-2 space-y-2">
+                <li>Not every story needs pain. Some need growth.</li>
+                <li>Comfort doesn’t make you weak; confusion does.</li>
+                <li>Changing your circle can change your entire direction.</li>
+                <li>You don’t need to be perfect — just honest with yourself.</li>
+            </ul>
+            <p class="text-gray-400 mt-4">And most importantly,</p>
+            <p class="text-center text-lg italic my-2 text-primary">Where you come from matters less than who you choose to become.</p>
+
+            <hr class="my-8 border-border/50">
+
+            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">I’m Not at My Peak. I’m at My Beginning.</h3>
+            <p class="text-gray-400">Today, I’m in Pune, studying engineering, building skills, and becoming the version of myself I always sensed but never understood.</p>
+            <p class="text-gray-400">My story isn’t about struggle. It’s about evolution.</p>
+            <p class="text-gray-400">Not about survival. But becoming.</p>
+            <p class="text-gray-400">Not about lack. But learning.</p>
+            <p class="text-gray-400">It’s real. It’s mine. And it’s still being written.</p>
         `
     }
 ];
 
+    
