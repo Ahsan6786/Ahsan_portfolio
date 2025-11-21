@@ -1,88 +1,86 @@
 {
     "header": {
         "home": "Home",
-        "about": "About",
+        "about": "About Me",
         "services": "Services",
-        "skills": "Skills",
         "projects": "Projects",
         "certificates": "Certificates",
-        "contact": "Contact"
+        "contact": "Contact",
+        "education": "Education"
     },
     "hero": {
-        "greeting1": "HELLO",
-        "mainText1": "I am Ahsan",
-        "subText1": "Full-Stack Web Developer",
-        "greeting2": "YEP!",
-        "mainText2": "I'm a creative mind ready to build",
-        "subText2": "Crafting Digital Experiences",
-        "greeting3": "GO!",
-        "mainText3": "Let's create something amazing together",
-        "subText3": "Your Vision, My Code",
-        "hireMe": "HIRE ME",
-        "myWorks": "MY WORKS"
+        "greeting1": "Hello, I'm Ahsan,",
+        "mainText1": "A Full-Stack Developer",
+        "subText1": "I design and build websites and applications.",
+        "greeting2": "Welcome To My World,",
+        "mainText2": "Where Ideas Come to Life",
+        "subText2": "Let's build something amazing together.",
+        "greeting3": "Need a Developer?",
+        "mainText3": "Let's Create Together",
+        "subText3": "Turning your vision into a stunning reality.",
+        "hireMe": "Hire Me",
+        "myWorks": "My Works"
     },
     "about": {
         "title": "About Me",
-        "name": "Ahsan Imam Khan",
-        "p1": "Passionate developer crafting digital experiences with precision and creativity",
-        "p2": "I am a B.Tech Computer Science student at MIT-WPU. I am passionate about coding, exploring new technologies, and turning ideas into real-world applications.",
-        "p3": "I love collaborating on projects that challenge me to grow and innovate. When I'm not coding, you can find me exploring new technologies and continuously improving my skills.",
-        "projectsCompleted": "6 Projects completed",
-        "hireMe": "HIRE ME"
+        "name": "I'm Ahsan Imam Khan,",
+        "p1": "a passionate B.Tech Computer Science student at MIT-WPU, Pune. My journey in the world of technology is driven by a deep-seated curiosity and a desire to solve real-world problems. I enjoy the process of turning complex ideas into simple, beautiful, and intuitive software solutions. Whether it's building a responsive website or developing a full-fledged web application, I'm always up for a challenge.",
+        "p2": "Beyond the code, I am a firm believer in continuous learning. The tech landscape is ever-evolving, and I make it a point to stay updated with the latest trends and technologies. This constant pursuit of knowledge not only sharpens my skills but also allows me to bring fresh and innovative perspectives to the projects I work on. I thrive in collaborative environments and am always eager to team up with like-minded individuals to create something truly impactful.",
+        "p3": "When I'm not glued to my screen, you might find me exploring new coding tutorials, contributing to open-source projects, or brainstorming my next big idea. I am driven by the belief that technology can make a meaningful difference, and I am excited to be a part of that change.",
+        "projectsCompleted": "20+ Projects Completed",
+        "hireMe": "Hire Me",
+        "downloadCV": "Download CV"
     },
     "services": {
-        "title": "Services",
-        "subtitle": "I build full-stack websites and web applications with a focus on performance and search engine optimization (SEO).",
-        "service1": "Full-Stack Development",
+        "title": "My Services",
+        "service1": "Web Development",
         "service2": "Web Applications",
         "service3": "SEO & Performance"
     },
     "skills": {
-        "title": "My Skills",
-        "subtitle": "A showcase of my technical abilities and tools I use."
+        "title": "My Skills"
     },
     "projects": {
-        "title": "My Projects",
-        "subtitle": "These are some of my recent projects. Check out my GitHub for more. Tap any card to see more details.",
-        "liveDemo": "Live Demo",
-        "moreInfo": "More Info"
+        "title": "My Projects"
     },
     "certificates": {
         "title": "My Certificates",
-        "subtitle": "A showcase of my professional certifications and qualifications. Tap to learn more.",
-        "viewAll": "View All Certificates",
-        "moreInfo": "More Info"
+        "subtitle": "Here are some of my achievements.",
+        "viewAll": "View All Certificates"
+    },
+    "certificatesPage": {
+        "title": "Certificates",
+        "gallery": "Gallery",
+        "subtitle": "A collection of my certifications and achievements."
     },
     "contact": {
         "title": "Contact Me",
-        "subtitle": "Have a project in mind? Let's talk. I am here to help you.",
+        "subtitle": "I'm open to discussing new projects and freelance opportunities. Feel free to get in touch!",
         "address": "Address",
         "contactNumber": "Contact Number",
         "emailAddress": "Email Address",
         "form": {
             "name": "Your Name",
-            "namePlaceholder": "Narendra Modi",
+            "namePlaceholder": "Enter your name",
             "email": "Your Email",
-            "emailPlaceholder": "narendramodi@example.com",
+            "emailPlaceholder": "Enter your email",
             "subject": "Subject",
-            "subjectPlaceholder": "Project Proposal",
+            "subjectPlaceholder": "Enter the subject",
             "message": "Message",
-            "messagePlaceholder": "Tell me more about your project...",
+            "messagePlaceholder": "Enter your message",
             "sendMessage": "Send Message"
         }
     },
-    "chatbot": {
-        "greeting": "Hello! I'm Ahsan's personal assistant. How can I help you today?",
-        "title": "Chat with Ahsan's Assistant",
-        "inputPlaceholder": "Ask something..."
-    },
-    "certificatesPage": {
-        "backToHome": "Back to Home",
-        "title": "My Certificates",
-        "gallery": "Gallery",
-        "subtitle": "A complete showcase of my professional certifications and qualifications. Tap any certificate to learn more."
-    },
     "footer": {
-        "copyright": "All Rights Reserved."
+        "copyright": "All rights reserved."
+    },
+    "chatbot": {
+        "title": "Ahsan's AI Assistant",
+        "greeting": "Hi! I'm Ahsan's AI assistant. Ask me anything about his skills, projects, or how to get in touch. How can I help you?",
+        "inputPlaceholder": "Ask me anything..."
+    },
+    "education": {
+        "title": "Education",
+        "viewMore": "View Details"
     }
 }

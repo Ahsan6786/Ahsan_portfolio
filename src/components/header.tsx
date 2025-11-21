@@ -45,6 +45,7 @@ export function Header() {
   const navLinks = loading ? [] : [
     { href: "/", label: translations.header.home },
     { href: "/about", label: translations.header.about },
+    { href: "/education", label: translations.header.education },
     { href: "/services", label: translations.header.services },
     { href: "/skills", label: "Skills" },
     { href: "/projects", label: translations.header.projects },
@@ -94,7 +95,7 @@ export function Header() {
             <nav className="flex items-center space-x-6">
                 {navLinks.map((link) => (
                     <Link
-                        key={link.label}
+                        key={link.href}
                         href={link.href}
                         className={cn('hover:text-primary transition-colors', pathname === link.href ? 'text-primary border-b-2 border-primary pb-1' : '')}
                     >

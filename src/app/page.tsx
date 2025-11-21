@@ -8,12 +8,14 @@ import { Certificates } from "@/components/certificates";
 import { Testimonials } from "@/components/testimonials";
 import { Contact } from "@/components/contact";
 import { Skills } from "@/components/skills";
+import { Education } from "@/components/education";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <About />
+      <Education />
       <Services />
       <Skills />
       <Projects />

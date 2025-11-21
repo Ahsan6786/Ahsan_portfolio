@@ -1,88 +1,86 @@
 {
     "header": {
         "home": "Accueil",
-        "about": "À propos",
+        "about": "À propos de moi",
         "services": "Services",
-        "skills": "Compétences",
         "projects": "Projets",
         "certificates": "Certificats",
-        "contact": "Contact"
+        "contact": "Contact",
+        "education": "Éducation"
     },
     "hero": {
-        "greeting1": "BONJOUR",
-        "mainText1": "Je suis Ahsan",
-        "subText1": "Développeur Web Full-Stack",
-        "greeting2": "OUI!",
-        "mainText2": "Je suis un esprit créatif prêt à construire",
-        "subText2": "Créer des expériences numériques",
-        "greeting3": "ALLEZ!",
-        "mainText3": "Créons quelque chose d'incroyable ensemble",
-        "subText3": "Votre Vision, Mon Code",
-        "hireMe": "ENGAGEZ-MOI",
-        "myWorks": "MES TRAVAUX"
+        "greeting1": "Bonjour, je suis Ahsan,",
+        "mainText1": "Un développeur Full-Stack",
+        "subText1": "Je conçois et construis des sites web et des applications.",
+        "greeting2": "Bienvenue dans mon monde,",
+        "mainText2": "Où les idées prennent vie",
+        "subText2": "Construisons quelque chose d'incroyable ensemble.",
+        "greeting3": "Besoin d'un développeur?",
+        "mainText3": "Créons ensemble",
+        "subText3": "Transformer votre vision en une réalité éblouissante.",
+        "hireMe": "Engagez-moi",
+        "myWorks": "Mes travaux"
     },
     "about": {
         "title": "À propos de moi",
-        "name": "Ahsan Imam Khan",
-        "p1": "Développeur passionné créant des expériences numériques avec précision et créativité",
-        "p2": "Je suis étudiant en B.Tech Informatique à MIT-WPU. Je suis passionné par le codage, l'exploration de nouvelles technologies et la transformation d'idées en applications concrètes.",
-        "p3": "J'adore collaborer sur des projets qui me mettent au défi de grandir et d'innover. Quand je ne code pas, vous pouvez me trouver en train d'explorer de nouvelles technologies et d'améliorer continuellement mes compétences.",
-        "projectsCompleted": "6 projets terminés",
-        "hireMe": "ENGAGEZ-MOI"
+        "name": "Je suis Ahsan Imam Khan,",
+        "p1": "un étudiant passionné en B.Tech Informatique à MIT-WPU, Pune. Mon parcours dans le monde de la technologie est motivé par une curiosité profonde et un désir de résoudre des problèmes du monde réel. J'aime le processus de transformer des idées complexes en solutions logicielles simples, belles et intuitives. Qu'il s'agisse de construire un site web réactif ou de développer une application web complète, je suis toujours prêt à relever un défi.",
+        "p2": "Au-delà du code, je crois fermement en l'apprentissage continu. Le paysage technologique est en constante évolution, et je mets un point d'honneur à rester à jour avec les dernières tendances et technologies. Cette quête constante de connaissances non seulement aiguise mes compétences, mais me permet également d'apporter des perspectives nouvelles et innovantes aux projets sur lesquels je travaille. Je m'épanouis dans les environnements collaboratifs et je suis toujours impatient de faire équipe avec des personnes partageant les mêmes idées pour créer quelque chose de vraiment percutant.",
+        "p3": "Quand je ne suis pas collé à mon écran, vous pourriez me trouver en train d'explorer de nouveaux tutoriels de codage, de contribuer à des projets open-source ou de réfléchir à ma prochaine grande idée. Je suis animé par la conviction que la technologie peut faire une différence significative, et je suis ravi de faire partie de ce changement.",
+        "projectsCompleted": "20+ Projets terminés",
+        "hireMe": "Engagez-moi",
+        "downloadCV": "Télécharger le CV"
     },
     "services": {
-        "title": "Services",
-        "subtitle": "Je construis des sites web et des applications web full-stack en mettant l'accent sur la performance et l'optimisation pour les moteurs de recherche (SEO).",
-        "service1": "Développement Full-Stack",
+        "title": "Mes Services",
+        "service1": "Développement Web",
         "service2": "Applications Web",
         "service3": "SEO & Performance"
     },
     "skills": {
-        "title": "Mes Compétences",
-        "subtitle": "Une vitrine de mes capacités techniques et des outils que j'utilise."
+        "title": "Mes Compétences"
     },
     "projects": {
-        "title": "Mes Projets",
-        "subtitle": "Voici quelques-uns de mes projets récents. Consultez mon GitHub pour en savoir plus. Appuyez sur n'importe quelle carte pour voir plus de détails.",
-        "liveDemo": "Démo en direct",
-        "moreInfo": "Plus d'infos"
+        "title": "Mes Projets"
     },
     "certificates": {
         "title": "Mes Certificats",
-        "subtitle": "Une vitrine de mes certifications et qualifications professionnelles. Appuyez pour en savoir plus.",
-        "viewAll": "Voir tous les certificats",
-        "moreInfo": "Plus d'infos"
+        "subtitle": "Voici quelques-unes de mes réalisations.",
+        "viewAll": "Voir tous les certificats"
+    },
+    "certificatesPage": {
+        "title": "Certificats",
+        "gallery": "Galerie",
+        "subtitle": "Une collection de mes certifications et réalisations."
     },
     "contact": {
         "title": "Contactez-moi",
-        "subtitle": "Vous avez un projet en tête ? Parlons-en. Je suis là pour vous aider.",
+        "subtitle": "Je suis ouvert à la discussion de nouveaux projets et d'opportunités de freelance. N'hésitez pas à me contacter!",
         "address": "Adresse",
         "contactNumber": "Numéro de contact",
         "emailAddress": "Adresse e-mail",
         "form": {
-            "name": "Votre Nom",
-            "namePlaceholder": "Narendra Modi",
-            "email": "Votre E-mail",
-            "emailPlaceholder": "narendramodi@example.com",
+            "name": "Votre nom",
+            "namePlaceholder": "Entrez votre nom",
+            "email": "Votre e-mail",
+            "emailPlaceholder": "Entrez votre e-mail",
             "subject": "Sujet",
-            "subjectPlaceholder": "Proposition de projet",
+            "subjectPlaceholder": "Entrez le sujet",
             "message": "Message",
-            "messagePlaceholder": "Dites-m'en plus sur votre projet...",
+            "messagePlaceholder": "Entrez votre message",
             "sendMessage": "Envoyer le message"
         }
     },
-    "chatbot": {
-        "greeting": "Bonjour! Je suis l'assistant personnel d'Ahsan. Comment puis-je vous aider aujourd'hui?",
-        "title": "Discuter avec l'assistant d'Ahsan",
-        "inputPlaceholder": "Demandez quelque chose..."
-    },
-    "certificatesPage": {
-        "backToHome": "Retour à l'accueil",
-        "title": "Mes Certificats",
-        "gallery": "Galerie",
-        "subtitle": "Une vitrine complète de mes certifications et qualifications professionnelles. Appuyez sur n'importe quel certificat pour en savoir plus."
-    },
     "footer": {
         "copyright": "Tous droits réservés."
+    },
+    "chatbot": {
+        "title": "Assistant IA d'Ahsan",
+        "greeting": "Salut! Je suis l'assistant IA d'Ahsan. Posez-moi des questions sur ses compétences, ses projets ou comment le contacter. Comment puis-je vous aider?",
+        "inputPlaceholder": "Demandez-moi n'importe quoi..."
+    },
+    "education": {
+        "title": "Éducation",
+        "viewMore": "Voir les détails"
     }
 }
