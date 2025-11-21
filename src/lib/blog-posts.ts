@@ -1,3 +1,4 @@
+
 import placeholderData from '@/lib/placeholder-images.json';
 
 export type BlogPost = {
@@ -35,7 +36,7 @@ export const blogPosts: BlogPost[] = [
 
             <hr class="my-8 border-border/50">
 
-            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">The Boy Who Wanted to Be a Hero</h3>
+            <h3 class="text-2xl font-bold mt-8 mb-4 text-white">The Phase When I Chose The Wrong People Over The Right Path</h3>
             <p class="text-gray-400">Around Class 8, something inside me changed. I don’t know why — maybe because I was searching for identity, maybe because I wanted to feel powerful, maybe because I was just a kid trying to act older than he was.</p>
             <p class="text-gray-400">I became the boy who picked fights. The boy who loved attention. The boy who believed ego was strength. The boy who got suspended… again, and again.</p>
             <p class="text-gray-400">More than five times.</p>
