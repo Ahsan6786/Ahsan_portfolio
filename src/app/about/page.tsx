@@ -84,8 +84,8 @@ export default function AboutPage() {
                 {/* Hire Me */}
                 <Link href="/contact">
                   <Button
-                    size="lg"
-                    className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                    size="default"
+                    className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-6 py-5 text-sm md:px-8 md:py-6 md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   >
                     {translations.about.hireMe}
                   </Button>
@@ -94,9 +94,9 @@ export default function AboutPage() {
                 {/* Download CV */}
                 <a href="/AhsanCV.pdf" download="Ahsan-Imam-Khan-CV.pdf">
                   <Button
-                    size="lg"
+                    size="default"
                     variant="outline"
-                    className="font-semibold rounded-full border-foreground/50 hover:bg-foreground/10 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                    className="font-semibold rounded-full border-foreground/50 hover:bg-foreground/10 px-6 py-5 text-sm md:px-8 md:py-6 md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   >
                     Download CV
                     <Download className="ml-2 h-5 w-5" />

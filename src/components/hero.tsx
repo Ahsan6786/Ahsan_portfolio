@@ -125,10 +125,10 @@ export function Hero() {
                 <p className="text-xl md:text-3xl font-light mt-2">{currentContent.subText}</p>
                 <div className="mt-8 flex justify-center md:justify-start space-x-4">
                     <Link href="#contact">
-                    <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">{translations.hero.hireMe}</Button>
+                    <Button size="default" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-6 py-5 text-sm md:px-8 md:py-6 md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">{translations.hero.hireMe}</Button>
                     </Link>
                     <Link href="/projects">
-                    <Button size="lg" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-8 py-6 text-base md:border-foreground/50 md:hover:bg-foreground/10 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">{translations.hero.myWorks}</Button>
+                    <Button size="default" variant="outline" className="font-semibold rounded-full border-white/50 hover:bg-white/10 px-6 py-5 text-sm md:px-8 md:py-6 md:text-base md:border-foreground/50 md:hover:bg-foreground/10 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">{translations.hero.myWorks}</Button>
                     </Link>
                 </div>
                 <div className="mt-8 flex justify-center md:justify-start space-x-6">

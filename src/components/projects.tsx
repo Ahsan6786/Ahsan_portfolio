@@ -150,7 +150,7 @@ export function Projects() {
               {translations.projects.title}
             </p>
             <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              tap any card to see more details
+              These are some of my recent projects. Check out my GitHub for more. Tap any card to see more details.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -159,7 +159,7 @@ export function Projects() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button size="lg" asChild className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-pulse">
+            <Button size="default" asChild className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-6 py-5 text-sm md:px-8 md:py-6 md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 animate-pulse">
                 <Link href="/projects">View All Projects</Link>
             </Button>
           </div>

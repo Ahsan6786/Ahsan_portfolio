@@ -27,7 +27,7 @@ export function Education() {
               </p>
               <div className="text-center mt-8">
                 <Link href="/education">
-                    <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <Button size="default" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-6 py-5 text-sm md:px-8 md:py-6 md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                         <GraduationCap className="mr-2 h-5 w-5" />
                         {translations.education.viewMore}
                     </Button>
