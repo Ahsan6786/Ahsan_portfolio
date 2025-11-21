@@ -1,3 +1,4 @@
+
 "use client";
 
 import { notFound, useRouter, useParams } from "next/navigation";
@@ -5,19 +6,51 @@ import Image from "next/image";
 import { blogPosts } from "@/lib/blog-posts";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, User } from "lucide-react";
+import { ArrowLeft, Calendar, User, Share2 } from "lucide-react";
 import React from "react";
-import { cn } from "@/lib/utils";
+import { useToast } from "@/hooks/use-toast";
 
 export default function BlogPostPage() {
   const router = useRouter();
   const params = useParams();
+  const { toast } = useToast();
   const slug = params.slug as string;
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     notFound();
   }
+
+  const handleShare = async () => {
+    const shareData = {
+      title: post.title,
+      text: post.description,
+      url: window.location.href,
+    };
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        throw new Error("Web Share API not supported");
+      }
+    } catch (err) {
+      console.log("Share failed, falling back to clipboard:", err);
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        toast({
+          title: "Link Copied!",
+          description: "The post URL has been copied to your clipboard.",
+        });
+      } catch (copyErr) {
+        console.error("Failed to copy to clipboard:", copyErr);
+        toast({
+          title: "Error",
+          description: "Could not share or copy the link.",
+          variant: "destructive",
+        });
+      }
+    }
+  };
 
   return (
     <div className="bg-background min-h-screen font-sans">
@@ -52,6 +85,15 @@ export default function BlogPostPage() {
                     <Calendar className="w-4 h-4" />
                     <span>{post.date}</span>
                   </div>
+                  <Button
+                    onClick={handleShare}
+                    variant="outline"
+                    size="sm"
+                    className="rounded-full"
+                  >
+                    <Share2 className="w-4 h-4 mr-2" />
+                    Share
+                  </Button>
                 </div>
               </header>
             </AnimateOnScroll>
