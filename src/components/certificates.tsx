@@ -1,135 +1,73 @@
 
+
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import React, { useState, useRef } from "react";
-import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { X } from "lucide-react";
+import React from "react";
 import { useLanguage } from "@/contexts/language-context";
+import { Award, Download, CheckCircle } from "lucide-react";
+
 
 const certificates = [
   {
     title: "Smart India Hackathon 2025",
-    description: "Cleared 2 rounds of the world's biggest open innovation model, Smart India Hackathon 2025.",
-    backDescription: "Successfully advanced through two rigorous stages of the Smart India Hackathon, a national competition that promotes innovation and problem-solving. This achievement highlights strong teamwork, creative thinking, and the ability to develop practical solutions under pressure.",
+    description: "Cleared 2 rounds of the world's biggest open innovation model.",
+    issuer: "Govt. of India",
     image: placeholderData.certificateSIH,
+    downloadUrl: "/certificate1.1.png",
   },
   {
     title: "Deloitte Technology Job Simulation",
-    description: "Completed a job simulation focused on technology consulting, covering key areas of the field.",
-    backDescription: "This simulation provided hands-on experience in technology consulting, including analyzing client needs, developing solutions, and presenting recommendations. It demonstrates practical skills in a real-world business context, reflecting an ability to bridge the gap between technology and business goals.",
+    description: "Completed a job simulation focused on technology consulting.",
+    issuer: "Deloitte",
     image: placeholderData.certificateDeloitte,
+    downloadUrl: "/deloitte_certificate.png",
   },
 ];
 
 type Certificate = (typeof certificates)[0];
 
-function CertificateModal({ certificate, onClose }: { certificate: Certificate; onClose: () => void; }) {
-  const { translations, loading } = useLanguage();
-  if (loading) return null;
+function CertificateCard({ certificate }: { certificate: Certificate }) {
+  
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = certificate.downloadUrl;
+    link.download = `${certificate.title.replace(/ /g, '_')}_Certificate.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4"
-      onClick={onClose}
-    >
-      <motion.div
-        initial={{ scale: 0.95, rotateY: 90 }}
-        animate={{ scale: 1, rotateY: 0 }}
-        exit={{ scale: 0.95, rotateY: 90 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="bg-card rounded-2xl overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col relative"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="relative w-full h-64 md:h-96">
-            <Image
-                src={certificate.image.src}
-                alt={certificate.title}
-                fill
-                className="object-contain"
-                data-ai-hint={certificate.image.aiHint}
-            />
+    <div className="bg-card rounded-2xl border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col p-6 h-full">
+        <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center flex-shrink-0">
+                    <Award className="w-6 h-6" />
+                </div>
+                <div>
+                    <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
+                    <p className="text-sm text-muted-foreground">Issued by: {certificate.issuer}</p>
+                </div>
+            </div>
+            <div className="flex-shrink-0 flex items-center gap-1 text-emerald-500">
+                <CheckCircle className="w-4 h-4" />
+                <span className="text-xs font-semibold">Verified</span>
+            </div>
         </div>
-        <div className="p-8 overflow-y-auto">
-            <h2 className="text-3xl font-bold mb-4">{certificate.title}</h2>
-            <p className="text-muted-foreground mb-6">{certificate.backDescription}</p>
-        </div>
-        <Button size="icon" variant="ghost" className="absolute top-4 right-4 rounded-full bg-black/30 hover:bg-black/50 text-white" onClick={onClose}>
-            <X className="w-5 h-5"/>
+
+        <p className="text-muted-foreground text-sm my-4 flex-grow">{certificate.description}</p>
+        
+        <Button 
+            onClick={handleDownload}
+            className="w-full mt-auto bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90"
+        >
+            <Download className="mr-2 h-4 w-4" />
+            Download Certificate
         </Button>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-
-function CertificateCard({ certificate, onClick }: { certificate: Certificate, onClick: () => void }) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springConfig = { damping: 20, stiffness: 150 };
-  const mouseXSpring = useSpring(mouseX, springConfig);
-  const mouseYSpring = useSpring(mouseY, springConfig);
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["1.5deg", "-1.5deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-1.5deg", "1.5deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!ref.current) return;
-    const { left, top, width, height } = ref.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / (width / 2);
-    const y = (e.clientY - top - height / 2) / (height / 2);
-    mouseX.set(x);
-    mouseY.set(y);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
-
-  return (
-    <div className="w-full h-auto perspective-1000 group">
-       <motion.div 
-        ref={ref}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{
-            rotateX,
-            rotateY,
-            transformStyle: "preserve-3d",
-        }}
-        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-        className="relative w-full h-full cursor-pointer" 
-        onClick={onClick}
-      >
-        <div className="bg-card rounded-2xl overflow-hidden border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center p-4 h-[480px]">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg mb-4 flex-shrink-0">
-              <Image
-                src={certificate.image.src}
-                alt={certificate.title}
-                fill
-                className="object-contain"
-                data-ai-hint={certificate.image.aiHint}
-              />
-            </div>
-            <div className="flex flex-col flex-grow justify-between">
-              <div>
-                <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
-                <p className="text-sm text-muted-foreground mt-1 hidden md:block">{certificate.description}</p>
-              </div>
-            </div>
-        </div>
-      </motion.div>
     </div>
   );
 }
@@ -137,8 +75,6 @@ function CertificateCard({ certificate, onClick }: { certificate: Certificate, o
 
 export function Certificates() {
   const { translations, loading } = useLanguage();
-  const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
-
   if (loading) return null;
 
   return (
@@ -156,7 +92,7 @@ export function Certificates() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {certificates.map((certificate, index) => (
-              <CertificateCard key={index} certificate={certificate} onClick={() => setSelectedCertificate(certificate)} />
+              <CertificateCard key={index} certificate={certificate} />
             ))}
           </div>
           <div className="text-center mt-12">
@@ -168,11 +104,6 @@ export function Certificates() {
           </div>
         </div>
       </AnimateOnScroll>
-      <AnimatePresence>
-        {selectedCertificate && (
-          <CertificateModal certificate={selectedCertificate} onClose={() => setSelectedCertificate(null)} />
-        )}
-      </AnimatePresence>
     </section>
   );
 }
