@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
         author: "Ahsan Imam Khan",
         image: placeholderData.heroImage,
         content: `
-            <p class="text-lg italic text-muted-foreground">I was born in 2005, in a tiny village called Chaksikandar in Bihar. A place where mornings smelled of mitti, and evenings ended with the same old stories repeated under dim yellow bulbs.</p>
+            <p class="text-gray-400">I was born in 2005, in a tiny village called Chaksikandar in Bihar. A place where mornings smelled of mitti, and evenings ended with the same old stories repeated under dim yellow bulbs.</p>
             <p class="text-gray-400">My childhood was simple… maybe too simple.</p>
             <p class="text-gray-400">My father worked far away in Saudi Arabia. I grew up watching the door more than anything else — hoping one day he’d walk in. He rarely did. And that’s how I first learned that life gives you love… but with distances attached.</p>
             
