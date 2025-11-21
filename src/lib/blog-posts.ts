@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
         description: "A raw and real story of my journey through confusion, struggle, and growth. It’s not perfect, but it’s mine.",
         date: "September 16, 2025",
         author: "Ahsan Imam Khan",
-        image: placeholderData.heroImage3,
+        image: placeholderData.heroImage,
         content: `
             <p class="text-lg italic text-muted-foreground">I was born in 2005, in a tiny village called Chaksikandar in Bihar. A place where mornings smelled of mitti, and evenings ended with the same old stories repeated under dim yellow bulbs.</p>
             <p class="text-gray-400">My childhood was simple… maybe too simple.</p>
