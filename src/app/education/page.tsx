@@ -1,10 +1,12 @@
+
 "use client";
 
 import { useRouter } from "next/navigation";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, GraduationCap, School } from "lucide-react";
+import { ArrowLeft, Calendar, GraduationCap } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
+import Image from "next/image";
 
 const educationHistory = [
     {
@@ -13,7 +15,7 @@ const educationHistory = [
         duration: "July 2023 – Present",
         score: "CGPA: 8.2",
         description: "Studying core areas of computer science including algorithms, data structures, operating systems, software engineering, and web technologies. Built multiple academic and personal projects in web development and programming.",
-        icon: <GraduationCap className="w-8 h-8" />
+        image: "/mit.png"
     },
     {
         degree: "Higher Secondary Education (Class 11–12)",
@@ -21,7 +23,7 @@ const educationHistory = [
         duration: "Completed in 2022",
         score: "Percentage: 73%",
         description: "Focused on PCM (Physics, Chemistry, Mathematics) with computer science. Built strong academic foundation before entering engineering.",
-        icon: <School className="w-8 h-8" />
+        image: "/akshara.png"
     },
     {
         degree: "Matriculation (Class 10)",
@@ -29,7 +31,7 @@ const educationHistory = [
         duration: "Completed in 2020",
         score: null,
         description: "Completed secondary education with strong performance and active participation in school activities.",
-        icon: <School className="w-8 h-8" />
+        image: "/st.png"
     }
 ];
 
@@ -72,32 +74,41 @@ export default function EducationPage() {
                 </p>
             </div>
             
-            <div className="max-w-3xl mx-auto">
-              <div className="relative">
-                <div className="absolute left-9 top-0 h-full w-0.5 bg-border/50" aria-hidden="true"></div>
-                
+            <div className="max-w-4xl mx-auto space-y-8">
                 {educationHistory.map((edu, index) => (
-                  <div key={index} className="relative pl-20 pb-12 last:pb-0">
-                    <div className="absolute left-0 top-0">
-                        <div className="w-18 h-18 bg-card border-2 border-primary/50 text-primary rounded-full flex items-center justify-center p-2 shadow-md">
-                            {edu.icon}
+                    <div key={index} className="bg-card/80 backdrop-blur-sm border border-border/20 p-6 md:p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-primary/20 hover:border-primary/30">
+                        <div className="flex flex-col sm:flex-row items-start gap-6">
+                            <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 bg-background rounded-lg p-2 border border-border">
+                                <Image 
+                                    src={edu.image}
+                                    alt={`${edu.institution} logo`}
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
+                            <div className="flex-grow">
+                                <h3 className="text-xl md:text-2xl font-bold text-foreground">{edu.degree}</h3>
+                                <p className="text-md md:text-lg text-primary font-medium mt-1">{edu.institution}</p>
+                                
+                                <div className="flex flex-wrap items-center gap-4 mt-4 text-sm">
+                                    <div className="flex items-center gap-2 bg-secondary text-secondary-foreground px-3 py-1.5 rounded-full">
+                                        <Calendar className="w-4 h-4"/>
+                                        <span>{edu.duration}</span>
+                                    </div>
+                                    {edu.score && (
+                                        <div className="flex items-center gap-2 bg-secondary text-secondary-foreground px-3 py-1.5 rounded-full">
+                                            <GraduationCap className="w-4 h-4"/>
+                                            <span>{edu.score}</span>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mt-6 border-t border-border/50 pt-6">
+                            <p className="text-muted-foreground">{edu.description}</p>
                         </div>
                     </div>
-
-                    <div className="bg-card/80 backdrop-blur-sm border border-border/20 p-6 rounded-xl shadow-lg">
-                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
-                        <h3 className="text-xl font-bold text-foreground">{edu.degree}</h3>
-                        {edu.score && (
-                          <span className="text-sm font-semibold bg-primary/10 text-primary px-3 py-1 rounded-full mt-2 sm:mt-0">{edu.score}</span>
-                        )}
-                      </div>
-                      <p className="text-md text-primary font-medium">{edu.institution}</p>
-                      <p className="text-sm text-muted-foreground my-2">{edu.duration}</p>
-                      <p className="text-sm text-muted-foreground mt-4">{edu.description}</p>
-                    </div>
-                  </div>
                 ))}
-              </div>
             </div>
 
           </AnimateOnScroll>
