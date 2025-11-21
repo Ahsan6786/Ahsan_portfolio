@@ -127,10 +127,6 @@
     "src": "/mitra2.png",
     "aiHint": "AI chatbot for wellness"
   },
-  "mitra_screen3": {
-    "src": "/mitra3.png",
-    "aiHint": "wellness app dashboard"
-  },
   "mitra_screen4": {
     "src": "/mitra4.png",
     "aiHint": "guided meditation feature"

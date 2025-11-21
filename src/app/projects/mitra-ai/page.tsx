@@ -11,7 +11,6 @@ import { Button } from '@/components/ui/button';
 const screenshots = [
     placeholderData.mitra_screen1,
     placeholderData.mitra_screen2,
-    placeholderData.mitra_screen3,
     placeholderData.mitra_screen4,
     placeholderData.mitra_screen5,
     placeholderData.mitra_screen6,
@@ -212,3 +211,4 @@ export default function MitraAiProjectPage() {
 }
 
     
+
