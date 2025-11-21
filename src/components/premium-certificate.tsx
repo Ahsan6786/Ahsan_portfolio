@@ -93,7 +93,7 @@ export function PremiumCertificate({
           <h3 className="text-sm font-light uppercase tracking-[0.2em] text-yellow-400/80">
             Certificate of Excellence
           </h3>
-          <h1 className="text-3xl md:text-4xl font-serif font-bold text-white mt-2 mb-4"
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mt-2 mb-4"
               style={{textShadow: '0 2px 10px rgba(255,255,255,0.1)'}}
           >
             {certificateTitle}
@@ -103,11 +103,7 @@ export function PremiumCertificate({
           </p>
         </div>
 
-        <div className="relative w-16 h-16 mx-auto my-4 bg-black/30 rounded-full border-2 border-yellow-600/50 flex items-center justify-center p-2">
-            <Image src={logoUrl} alt="Institute Logo" fill className="object-contain invert brightness-0 "/>
-        </div>
-
-        <div className="text-center z-10">
+        <div className="text-center z-10 my-4">
           <p className="text-sm text-gray-400 max-w-md mx-auto">
             {certificateDescription}
           </p>
