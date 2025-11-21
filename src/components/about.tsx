@@ -21,7 +21,6 @@ export function About() {
                   {translations.about.title}
                 </p>
               </div>
-              <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">{translations.about.p1}</p>
               <div className="text-center mt-8">
                 <Link href="/about">
                     <Button size="lg" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-8 py-6 text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
