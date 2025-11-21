@@ -7,6 +7,8 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import React from "react";
+import { cn } from "@/lib/utils";
+import { CinematicImageTransition } from "@/components/cinematic-image-transition";
 
 export default function BlogPostPage() {
   const router = useRouter();
@@ -19,7 +21,7 @@ export default function BlogPostPage() {
   }
 
   return (
-    <div className="bg-background min-h-screen">
+    <div className="bg-background min-h-screen font-sans">
       <div className="container mx-auto px-4 md:px-6">
         <div className="pt-8 md:pt-16">
           <AnimateOnScroll>
@@ -54,23 +56,12 @@ export default function BlogPostPage() {
                 </div>
               </header>
             </AnimateOnScroll>
-
-            <AnimateOnScroll delay="0.1s">
-              <div className="relative aspect-video w-full rounded-2xl overflow-hidden mb-8 md:mb-12 shadow-lg">
-                <Image
-                  src={post.image.src}
-                  alt={post.title}
-                  fill
-                  className="object-cover"
-                  data-ai-hint={post.image.aiHint}
-                  priority
-                />
-              </div>
-            </AnimateOnScroll>
+            
+            <CinematicImageTransition />
 
             <AnimateOnScroll delay="0.2s">
               <div
-                className="prose prose-lg dark:prose-invert max-w-none mx-auto text-foreground/90"
+                className="max-w-none mx-auto text-foreground/90 space-y-6"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </AnimateOnScroll>

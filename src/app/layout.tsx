@@ -12,8 +12,8 @@ import { Chatbot } from "@/components/chatbot";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-display",
+  weight: ["400", "700"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -85,7 +85,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={cn("font-display antialiased", poppins.variable)}>
+      <body className={cn("font-sans antialiased", poppins.variable)}>
         <LanguageProvider>
           <ThemeProvider
             attribute="class"
