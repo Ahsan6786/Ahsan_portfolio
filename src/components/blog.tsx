@@ -31,7 +31,7 @@ export function Blog() {
           <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-4xl mx-auto">
             {featuredPosts.map((post) => (
               <Link href={`/blog/${post.slug}`} key={post.slug} className="group">
-                <div className="bg-card rounded-2xl overflow-hidden border-2 border-transparent hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+                <div className="bg-card rounded-2xl overflow-hidden border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full">
                   <div className="relative aspect-video w-full overflow-hidden">
                     <Image
                       src={post.image.src}
