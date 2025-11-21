@@ -93,7 +93,6 @@ function CertificateCard({ certificate }: { certificate: Certificate }) {
                 </div>
                 <div>
                     <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
-                    <p className="text-sm text-muted-foreground">Issued by: {certificate.issuer}</p>
                 </div>
             </div>
              <div className="flex-shrink-0 flex items-center gap-1 text-emerald-500">
