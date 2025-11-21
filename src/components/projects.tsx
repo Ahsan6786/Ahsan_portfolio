@@ -6,9 +6,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { ExternalLink, Github, Code, Info, X } from "lucide-react";
-import React, { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
+import { ExternalLink, Github, Info } from "lucide-react";
+import React from "react";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
 
@@ -39,44 +38,10 @@ const projects = [
 type Project = (typeof projects)[0] & { detailsPage?: string };
 
 function ProjectCard({ project }: { project: Project }) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springConfig = { damping: 20, stiffness: 150 };
-  const mouseXSpring = useSpring(mouseX, springConfig);
-  const mouseYSpring = useSpring(mouseY, springConfig);
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["1.5deg", "-1.5deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-1.5deg", "1.5deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!ref.current) return;
-    const { left, top, width, height } = ref.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / (width / 2);
-    const y = (e.clientY - top - height / 2) / (height / 2);
-    mouseX.set(x);
-    mouseY.set(y);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
   
   return (
-    <div className="w-full h-auto perspective-1000 group">
-      <motion.div 
-        ref={ref}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{
-            rotateX,
-            rotateY,
-            transformStyle: "preserve-3d",
-        }}
-        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+    <div className="w-full h-auto group">
+      <div 
         className="relative w-full h-full"
       >
         <div className="bg-card rounded-2xl overflow-hidden border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full">
@@ -92,44 +57,42 @@ function ProjectCard({ project }: { project: Project }) {
             </div>
           </div>
           <div className="p-6 flex flex-col flex-grow">
-            <div className="transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg">
-              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-              <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
-              
-              <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
-                {project.github && (
-                  <Button variant="outline" asChild className="rounded-full" size="sm">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
-                      Code
-                    </a>
-                  </Button>
-                )}
-                {project.liveDemo && (
-                  <Button asChild className="rounded-full" size="sm">
-                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
-                    </a>
-                  </Button>
-                )}
-                 {project.detailsPage && (
-                   <Button
-                    asChild
-                    size="sm"
-                    className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white"
-                  >
-                    <Link href={project.detailsPage}>
-                      <Info className="mr-2 h-4 w-4"/>
-                      Description
-                    </Link>
-                  </Button>
-                )}
-              </div>
+            <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+            <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
+            
+            <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
+              {project.github && (
+                <Button variant="outline" asChild className="rounded-full" size="sm">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2 h-4 w-4" />
+                    Code
+                  </a>
+                </Button>
+              )}
+              {project.liveDemo && (
+                <Button asChild className="rounded-full" size="sm">
+                  <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Demo
+                  </a>
+                </Button>
+              )}
+               {project.detailsPage && (
+                 <Button
+                  asChild
+                  size="sm"
+                  className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white"
+                >
+                  <Link href={project.detailsPage}>
+                    <Info className="mr-2 h-4 w-4"/>
+                    Description
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -148,9 +111,6 @@ export function Projects() {
             <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
             <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
               {translations.projects.title}
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              These are some of my recent projects. Check out my GitHub for more. Tap any card to see more details.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

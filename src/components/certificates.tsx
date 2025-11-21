@@ -15,15 +15,11 @@ const certificates = [
   {
     title: "Smart India Hackathon 2025",
     description: "Cleared 2 rounds of the world's biggest open innovation model.",
-    issuer: "Govt. of India",
-    image: placeholderData.certificateSIH,
     downloadUrl: "/certificate1.1.png",
   },
   {
     title: "Deloitte Technology Job Simulation",
     description: "Completed a job simulation focused on technology consulting.",
-    issuer: "Deloitte",
-    image: placeholderData.certificateDeloitte,
     downloadUrl: "/deloitte_certificate.png",
   },
 ];
@@ -84,9 +80,6 @@ export function Certificates() {
             <h2 className="text-4xl md:text-6xl font-bold">{translations.certificates.title}</h2>
             <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
               {translations.certificates.title}
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              {translations.certificates.subtitle}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">

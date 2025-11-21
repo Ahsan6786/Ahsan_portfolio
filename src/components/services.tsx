@@ -39,9 +39,6 @@ export function Services() {
             <p className="text-5xl sm:text-7xl md:text-8xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
               {translations.services.title}
             </p>
-            <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              I build high-performance websites and web applications focused on great user experiences.
-            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (

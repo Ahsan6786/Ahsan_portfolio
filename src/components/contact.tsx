@@ -19,9 +19,6 @@ export function Contact() {
             <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
               {translations.contact.title}
             </p>
-            <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              Have a project in mind? Let's talk. I am here to help you.
-            </p>
           </div>
           <div className="max-w-2xl mx-auto text-center">
               <Link href="/contact">

@@ -95,9 +95,6 @@ export function Testimonials() {
             <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
               Feedback
             </p>
-            <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-              What my clients say about my work.
-            </p>
           </div>
 
           <Carousel

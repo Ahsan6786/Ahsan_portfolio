@@ -22,9 +22,6 @@ export function Education() {
                   {translations.education.title}
                 </p>
               </div>
-               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                I am currently pursuing my Bachelor's degree in Computer Science and Engineering, focusing on building a strong foundation in technology and software development.
-              </p>
               <div className="text-center mt-8">
                 <Link href="/education">
                     <Button size="default" className="bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-6 py-5 text-sm md:px-8 md:py-6 md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
