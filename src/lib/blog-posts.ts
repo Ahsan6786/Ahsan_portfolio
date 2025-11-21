@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
         slug: "my-life-story-from-village-to-code",
         title: "My Story: From a Tiny Village to a World of Code",
         description: "A raw and real story of my journey through confusion, struggle, and growth. It’s not perfect, but it’s mine.",
-        date: "2024-07-30",
+        date: "September 16, 2025",
         author: "Ahsan Imam Khan",
         image: placeholderData.heroImage2,
         content: `
@@ -71,7 +71,8 @@ export const blogPosts: BlogPost[] = [
 
             <h3 class="text-2xl font-bold mt-8 mb-4">A Second Attempt — Not Victory, But Hope</h3>
             <p>I returned to Bihar. Studied again. Gave my second attempt. 86 percentile.</p>
-            <p>Better than before, but still not enough. Life didn’t give me the college I wanted. But it gave me something else — patience.</p>
+            <p>Better than before, but still not enough.</p>
+            <p>Life didn’t give me the college I wanted. But it gave me something else — patience.</p>
 
             <hr class="my-8 border-border/50">
 
