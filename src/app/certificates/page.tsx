@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -6,8 +7,8 @@ import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, X } from "lucide-react";
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useRef } from "react";
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useLanguage } from "@/contexts/language-context";
 
 const allCertificates = [
@@ -103,25 +104,65 @@ function CertificateModal({ certificate, onClose }: { certificate: Certificate; 
 
 
 function CertificateCard({ certificate, onClick }: { certificate: Certificate, onClick: () => void }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 20, stiffness: 150 };
+  const mouseXSpring = useSpring(mouseX, springConfig);
+  const mouseYSpring = useSpring(mouseY, springConfig);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["1.5deg", "-1.5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-1.5deg", "1.5deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (!ref.current) return;
+    const { left, top, width, height } = ref.current.getBoundingClientRect();
+    const x = (e.clientX - left - width / 2) / (width / 2);
+    const y = (e.clientY - top - height / 2) / (height / 2);
+    mouseX.set(x);
+    mouseY.set(y);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+  
   return (
-    <div className="w-full h-auto cursor-pointer" onClick={onClick}>
-      <div className="bg-card rounded-2xl overflow-hidden group border hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center p-4 h-[480px]">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg mb-4 flex-shrink-0">
-            <Image
-              src={certificate.image.src}
-              alt={certificate.title}
-              fill
-              className="object-contain"
-              data-ai-hint={certificate.image.aiHint}
-            />
-          </div>
-          <div className="flex flex-col flex-grow justify-between">
-            <div>
-              <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
-              <p className="text-sm text-muted-foreground mt-1">{certificate.description}</p>
+    <div className="w-full h-auto perspective-1000 group">
+      <motion.div 
+        ref={ref}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{
+            rotateX,
+            rotateY,
+            transformStyle: "preserve-3d",
+        }}
+        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+        className="relative w-full h-full cursor-pointer"
+        onClick={onClick}
+      >
+        <div className="bg-card rounded-2xl overflow-hidden border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center p-4 h-[480px]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg mb-4 flex-shrink-0">
+              <Image
+                src={certificate.image.src}
+                alt={certificate.title}
+                fill
+                className="object-contain"
+                data-ai-hint={certificate.image.aiHint}
+              />
             </div>
-          </div>
-      </div>
+            <div className="flex flex-col flex-grow justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-foreground">{certificate.title}</h3>
+                <p className="text-sm text-muted-foreground mt-1">{certificate.description}</p>
+              </div>
+            </div>
+        </div>
+      </motion.div>
     </div>
   );
 }
