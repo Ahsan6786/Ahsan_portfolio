@@ -40,10 +40,10 @@ export default function BlogPostPage() {
           <article className="max-w-4xl mx-auto pb-16 md:pb-24">
             <AnimateOnScroll>
               <header className="mb-8 md:mb-12 text-center">
-                <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+                <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
                   {post.title}
                 </h1>
-                <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <User className="w-4 h-4" />
                     <span>{post.author}</span>
