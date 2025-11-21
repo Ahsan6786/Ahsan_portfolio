@@ -40,7 +40,7 @@ export default function BlogPostPage() {
           <article className="max-w-4xl mx-auto pb-16 md:pb-24">
             <AnimateOnScroll>
               <header className="mb-8 md:mb-12 text-center">
-                <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
+                <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
                   {post.title}
                 </h1>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm text-muted-foreground">
