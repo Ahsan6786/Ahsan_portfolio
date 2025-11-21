@@ -1,6 +1,6 @@
 "use client";
 
-import { notFound, useRouter } from "next/navigation";
+import { notFound, useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import { blogPosts } from "@/lib/blog-posts";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
@@ -8,13 +8,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import React from "react";
 
-type Props = {
-  params: { slug: string };
-};
-
-export default function BlogPostPage({ params }: Props) {
+export default function BlogPostPage() {
   const router = useRouter();
-  const { slug } = params;
+  const params = useParams();
+  const slug = params.slug as string;
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
