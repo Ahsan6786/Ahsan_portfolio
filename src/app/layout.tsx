@@ -50,6 +50,9 @@ export const metadata: Metadata = {
     maximumScale: 1,
     userScalable: false,
   },
+  icons: {
+    icon: '/A.png',
+  },
 };
 
 const jsonLd = {
