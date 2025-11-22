@@ -8,7 +8,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { LanguageProvider } from "@/contexts/language-context";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { Chatbot } from "@/components/chatbot";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -102,7 +101,6 @@ export default function RootLayout({
             </div>
             <Toaster />
             <ScrollToTopButton />
-            <Chatbot />
           </ThemeProvider>
         </LanguageProvider>
         <script
