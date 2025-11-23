@@ -98,7 +98,7 @@ export default function BlogPostPage() {
               </header>
             </AnimateOnScroll>
 
-            <AnimateOnScroll delay="0.1s" className="mb-8 md:mb-12">
+            <AnimateOnScroll className="mb-8 md:mb-12">
                 <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-lg bg-black">
                     {post.backgroundImage && (
                         <Image
@@ -123,14 +123,14 @@ export default function BlogPostPage() {
                 </div>
             </AnimateOnScroll>
             
-            <AnimateOnScroll delay="0.2s">
+            <AnimateOnScroll>
               <div
                 className="max-w-none mx-auto text-foreground/90 space-y-6"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </AnimateOnScroll>
 
-            <AnimateOnScroll delay="0.3s" className="mt-8 md:mt-12 text-center">
+            <AnimateOnScroll className="mt-8 md:mt-12 text-center">
                 <h3 className="text-lg font-semibold mb-4">Enjoyed this story? Share it with your friends!</h3>
                 <Button
                     onClick={handleShare}
