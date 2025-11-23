@@ -1,86 +1,93 @@
+
 {
-    "header": {
-        "home": "Accueil",
-        "about": "À propos de moi",
-        "services": "Services",
-        "projects": "Projets",
-        "certificates": "Certificats",
-        "contact": "Contact",
-        "education": "Éducation"
-    },
-    "hero": {
-        "greeting1": "Bonjour, je suis Ahsan,",
-        "mainText1": "Un développeur Full-Stack",
-        "subText1": "Je conçois et construis des sites web et des applications.",
-        "greeting2": "Bienvenue dans mon monde,",
-        "mainText2": "Où les idées prennent vie",
-        "subText2": "Construisons quelque chose d'incroyable ensemble.",
-        "greeting3": "Besoin d'un développeur?",
-        "mainText3": "Créons ensemble",
-        "subText3": "Transformer votre vision en une réalité éblouissante.",
-        "hireMe": "Engagez-moi",
-        "myWorks": "Mes travaux"
-    },
-    "about": {
-        "title": "À propos de moi",
-        "name": "Je suis Ahsan Imam Khan,",
-        "p1": "un étudiant passionné en B.Tech Informatique à MIT-WPU, Pune. Mon parcours dans le monde de la technologie est motivé par une curiosité profonde et un désir de résoudre des problèmes du monde réel. J'aime le processus de transformer des idées complexes en solutions logicielles simples, belles et intuitives. Qu'il s'agisse de construire un site web réactif ou de développer une application web complète, je suis toujours prêt à relever un défi.",
-        "p2": "Au-delà du code, je crois fermement en l'apprentissage continu. Le paysage technologique est en constante évolution, et je mets un point d'honneur à rester à jour avec les dernières tendances et technologies. Cette quête constante de connaissances non seulement aiguise mes compétences, mais me permet également d'apporter des perspectives nouvelles et innovantes aux projets sur lesquels je travaille. Je m'épanouis dans les environnements collaboratifs et je suis toujours impatient de faire équipe avec des personnes partageant les mêmes idées pour créer quelque chose de vraiment percutant.",
-        "p3": "Quand je ne suis pas collé à mon écran, vous pourriez me trouver en train d'explorer de nouveaux tutoriels de codage, de contribuer à des projets open-source ou de réfléchir à ma prochaine grande idée. Je suis animé par la conviction que la technologie peut faire une différence significative, et je suis ravi de faire partie de ce changement.",
-        "projectsCompleted": "20+ Projets terminés",
-        "hireMe": "Engagez-moi",
-        "downloadCV": "Télécharger le CV"
-    },
-    "services": {
-        "title": "Mes Services",
-        "service1": "Développement Web",
-        "service2": "Applications Web",
-        "service3": "SEO & Performance"
-    },
-    "skills": {
-        "title": "Mes Compétences"
-    },
-    "projects": {
-        "title": "Mes Projets"
-    },
-    "certificates": {
-        "title": "Mes Certificats",
-        "subtitle": "Voici quelques-unes de mes réalisations.",
-        "viewAll": "Voir tous les certificats"
-    },
-    "certificatesPage": {
-        "title": "Certificats",
-        "gallery": "Galerie",
-        "subtitle": "Une collection de mes certifications et réalisations."
-    },
-    "contact": {
-        "title": "Contactez-moi",
-        "subtitle": "Je suis ouvert à la discussion de nouveaux projets et d'opportunités de freelance. N'hésitez pas à me contacter!",
-        "address": "Adresse",
-        "contactNumber": "Numéro de contact",
-        "emailAddress": "Adresse e-mail",
-        "form": {
-            "name": "Votre nom",
-            "namePlaceholder": "Entrez votre nom",
-            "email": "Votre e-mail",
-            "emailPlaceholder": "Entrez votre e-mail",
-            "subject": "Sujet",
-            "subjectPlaceholder": "Entrez le sujet",
-            "message": "Message",
-            "messagePlaceholder": "Entrez votre message",
-            "sendMessage": "Envoyer le message"
-        }
-    },
-    "footer": {
-        "copyright": "Tous droits réservés."
-    },
-    "chatbot": {
-        "title": "Assistant IA d'Ahsan",
-        "greeting": "Salut! Je suis l'assistant IA d'Ahsan. Posez-moi des questions sur ses compétences, ses projets ou comment le contacter. Comment puis-je vous aider?",
-        "inputPlaceholder": "Demandez-moi n'importe quoi..."
-    },
-    "education": {
-        "title": "Éducation",
-        "viewMore": "Voir les détails"
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "education": "Éducation",
+    "services": "Services",
+    "projects": "Projets",
+    "certificates": "Certificats",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting1": "Bonjour, je suis Ahsan",
+    "mainText1": "Un concepteur de sites web et développeur full-stack indépendant",
+    "subText1": "Je construis des sites web modernes et réactifs.",
+    "greeting2": "Je suis créatif",
+    "mainText2": "Je transforme vos idées en expériences numériques éblouissantes",
+    "subText2": "De la conception au déploiement, je m'occupe de tout.",
+    "greeting3": "Je suis un développeur",
+    "mainText3": "Je crée des applications web haute performance avec les technologies modernes",
+    "subText3": "Spécialisé en Next.js, React et Firebase.",
+    "hireMe": "Engagez-moi",
+    "myWorks": "Mes travaux"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "name": "Je suis Ahsan Imam Khan, un développeur et concepteur full-stack",
+    "p1": "Je suis un développeur web indépendant et ingénieur full-stack passionné et dévoué, spécialisé dans la création de sites web et d'applications modernes, réactifs et performants. Avec une base solide en Next.js, React et Firebase, je construis des expériences numériques fluides à partir de zéro, transformant des idées complexes en réalités fonctionnelles et esthétiques.",
+    "p2": "Mon parcours dans le développement web a commencé avec une profonde curiosité pour le fonctionnement des choses sur Internet. Cette curiosité s'est transformée en une carrière où j'apprends et m'adapte continuellement aux nouvelles technologies. Je m'épanouis dans les défis et je m'engage à fournir des solutions évolutives de haute qualité qui répondent aux besoins uniques de mes clients.",
+    "p3": "Que vous recherchiez une simple page de destination, une application web complexe ou une refonte complète de votre présence en ligne, j'ai les compétences et l'expérience nécessaires pour donner vie à votre vision. Travaillons ensemble pour créer quelque chose d'extraordinaire.",
+    "projectsCompleted": "20+ projets terminés",
+    "hireMe": "Engagez-moi",
+    "downloadCv": "Télécharger le CV"
+  },
+  "education": {
+    "title": "Éducation",
+    "viewMore": "Voir mon éducation"
+  },
+  "services": {
+    "title": "Services",
+    "service1": "Développement Web",
+    "service2": "Applications Web",
+    "service3": "SEO"
+  },
+  "skills": {
+    "title": "Compétences"
+  },
+  "projects": {
+    "title": "Projets"
+  },
+  "blog": {
+    "title": "Du Blog",
+    "backgroundTitle": "Articles",
+    "subtitle": "Ici, je partage mes réflexions sur le développement web, la technologie, et plus encore.",
+    "viewAll": "Voir tous les articles",
+    "readMore": "Lire la suite"
+  },
+  "certificates": {
+    "title": "Certificats et Réalisations",
+    "viewAll": "Voir tous les certificats"
+  },
+  "certificatesPage": {
+    "title": "Certificats et Réalisations",
+    "subtitle": "Une collection de mes certifications et réalisations professionnelles."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Vous avez un projet en tête ? J'aimerais beaucoup en savoir plus. Connectons-nous et construisons quelque chose d'incroyable ensemble. N'hésitez pas à me contacter via l'un des canaux ci-dessous.",
+    "address": "Adresse",
+    "contactNumber": "Numéro de contact",
+    "emailAddress": "Adresse e-mail",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "Votre e-mail",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Sujet",
+      "message": "Message",
+      "messagePlaceholder": "Votre message",
+      "sendMessage": "Envoyer le message"
     }
+  },
+  "footer": {
+    "copyright": "Tous droits réservés."
+  },
+  "blogPosts": {
+    "my-life-story-from-village-to-code": {
+      "title": "Pas parfait — mais en progrès",
+      "content": "<p class=\"text-gray-400\">Je suis né le 16 septembre 2005 à Chaksikandar Mansurpur, Bihar — ce n'est pas l'histoire d'un vieux village poussiéreux, ni un début marqué par la pauvreté, mais une enfance remplie de confort, de chaleur familiale, et de tous les souhaits que mes parents pouvaient réaliser.</p><p class=\"text-gray-400\">Mon père travaillait en Arabie Saoudite, et bien qu'il ne soit pas toujours à la maison, il s'assurait que je ne manque jamais de rien — ni de rêves, ni de soutien, ni de possibilités.</p><p class=\"text-gray-400\">Je n'ai pas grandi en luttant pour les besoins de base. J'ai grandi en apprenant la valeur de ce que j'avais déjà.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Un déménagement, un nouveau rythme de vie</h3><p class=\"text-gray-400\">Plus tard, nous avons déménagé à Hajipur, une ville avec plus de rythme, plus de gens, plus d'exposition. J'ai étudié un an à l'Ideal Public School sous la direction de Shahzad Sir — la première personne qui m'a fait sentir le poids et l'émerveillement de l'éducation.</p><p class=\"text-gray-400\">Mais mon parcours académique n'était pas linéaire.</p><p class=\"text-gray-400\">J'ai changé d'école, recommencé des chapitres, et finalement atterri à St. Paul's, l'endroit qui a façonné une version très brute de moi-même.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">La phase où j'ai choisi l'excitation plutôt que la direction</h3><p class=\"text-gray-400\">Vers la 8ème, j'ai dérivé — non pas à cause des circonstances, mais par curiosité… et honnêtement, à cause de mauvais choix.</p><p class=\"text-gray-400\">Je me suis entouré du mauvais type de personnes. Le drame semblait plus cool que la discipline. Les bagarres semblaient plus puissantes que la concentration. L'ego ressemblait à l'identité.</p><p class=\"text-gray-400\">Les suspensions sont arrivées. Plus de cinq fois.</p><p class=\"text-gray-400\">Je n'étais pas un mauvais gamin. Juste un gamin qui ne savait pas où il allait.</p><p class=\"text-gray-400\">La vie ne m'a pas arrêté. Elle a simplement attendu que je grandisse au-delà de cette version de moi-même.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">10ème année — Le redémarrage silencieux</h3><p class=\"text-gray-400\">En 10ème, le bruit en moi s'est calmé. Je suis devenu plus calme, plus silencieux, un peu perdu… mais plus conscient.</p><p class=\"text-gray-400\">J'ai obtenu 87,4 % — non pas le reflet de ma confusion, mais de mon potentiel.</p><p class=\"text-gray-400\">Ma famille a suggéré de déménager à Pune, non par nécessité, mais parce qu'ils croyaient que l'exposition apporte la clarté.</p><p class=\"text-gray-400\">Et ils avaient raison.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Pune — Une nouvelle ville, une étrange pause</h3><p class=\"text-gray-400\">J'ai rejoint Akshara International pour la 11ème et la 12ème. Mais le confinement est arrivé.</p><p class=\"text-gray-400\">Les salles de classe sont devenues des écrans. Les amis sont devenus des icônes. La vie s'est rétrécie à une seule pièce.</p><p class=\"text-gray-400\">Mes performances ont chuté. Pas par manque de ressources, mais parce que la vie en ligne vous déconnecte de l'apprentissage réel.</p><p class=\"text-gray-400\">Les professeurs ont donné des cours supplémentaires, j'ai essayé de rattraper mon retard, et j'ai réussi à passer la 12ème avec 72 %.</p><p class=\"text-gray-400\">Les notes ne m'ont pas dérangé. La confusion de 'Et maintenant ?' si.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Kota — Pas la lutte, mais l'intensité</h3><p class=\"text-gray-400\">Sans direction claire, j'ai pris une année sabbatique et j'ai déménagé à Kota pour la préparation au JEE.</p><p class=\"text-gray-400\">Kota ne concernait pas la pauvreté ou la pression de la vie — il s'agissait d'intensité, de compétition, et du sentiment de nager parmi des milliers de rêveurs à la fois.</p><p class=\"text-gray-400\">J'ai étudié honnêtement. Mais les résultats n'étaient pas à la hauteur de l'effort.</p><p class=\"text-gray-400\">Après 8 mois, ma première tentative a rapporté 66 percentile.</p><p class=\"text-gray-400\">Et en même temps, j'ai perdu mon grand-père.</p><p class=\"text-gray-400\">Je n'ai pas pu assister à ses derniers rituels — non pas parce que nous ne pouvions pas nous le permettre, mais parce que les vols n'étaient pas opérationnels et que les trains étaient retardés.</p><p class=\"text-gray-400\">Le moment était cruel. La culpabilité est restée.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Deuxième tentative — Un retour contrôlé</h3><p class=\"text-gray-400\">Je suis retourné au Bihar, plus ancré et plus calme. J'ai étudié à nouveau. J'ai passé ma deuxième tentative.</p><p class=\"text-gray-400\">86 percentile.</p><p class=\"text-gray-400\">Mieux. Mais toujours pas assez.</p><p class=\"text-gray-400\">Mais je ne me sentais pas brisé. Je me sentais patient.</p><p class=\"text-gray-400\">Certains voyages ne sont pas censés être des raccourcis.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Une porte de plus — Et finalement, elle s'est ouverte</h3><p class=\"text-gray-400\">Je me suis présenté au MHT-CET, et cette fois j'ai obtenu 93 percentile.</p><p class=\"text-gray-400\">Ce chiffre a tout changé.</p><p class=\"text-gray-400\">Il a ouvert les portes de MIT-WPU Pune, et soudain ma vie avait une direction, une clarté, et un chemin qui valait la peine d'être parcouru.</p><p class=\"text-gray-400\">Le garçon qui autrefois chassait le bruit a commencé à marcher vers un but.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Ce que mon voyage signifie vraiment</h3><p class=\"text-gray-400\">Ma vie n'est pas une histoire de lutte pour la survie. C'est une histoire de conscience de soi, d'apprentissage à choisir de meilleurs chemins, de compréhension de la façon dont l'environnement vous façonne, et de la façon dont l'état d'esprit vous transforme.</p><p class=\"text-gray-400 mt-4\">Voici ce que j'ai appris :</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>Toutes les histoires n'ont pas besoin de douleur. Certaines ont besoin de croissance.</li><li>Le confort ne vous rend pas faible ; la confusion si.</li><li>Changer votre cercle peut changer toute votre direction.</li><li>Vous n'avez pas besoin d'être parfait — juste honnête avec vous-même.</li></ul><p class=\"text-gray-400 mt-4\">Et plus important encore,</p><p class=\"text-center text-lg italic my-2 text-primary\">D'où vous venez importe moins que ce que vous choisissez de devenir.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Je ne suis pas à mon apogée. Je suis à mon commencement.</h3><p class=\"text-gray-400\">Aujourd'hui, je suis à Pune, j'étudie l'ingénierie, je développe des compétences, et je deviens la version de moi-même que j'ai toujours sentie mais jamais comprise.</p><p class=\"text-gray-400\">Mon histoire ne parle pas de lutte. Elle parle d'évolution.</p><p class=\"text-gray-400\">Pas de survie. Mais de devenir.</p><p class=\"text-gray-400\">Pas de manque. Mais d'apprentissage.</p><p class=\"text-gray-400\">C'est réel. C'est la mienne. Et elle est encore en cours d'écriture.</p>"
+    }
+  }
 }
