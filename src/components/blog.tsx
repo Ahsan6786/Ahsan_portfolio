@@ -4,7 +4,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { blogPosts } from "@/lib/blog-posts";
 import { useLanguage } from "@/contexts/language-context";
 
 export function Blog() {
