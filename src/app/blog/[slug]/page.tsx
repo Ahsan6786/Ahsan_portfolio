@@ -3,20 +3,19 @@
 
 import { notFound, useRouter, useParams } from "next/navigation";
 import Image from "next/image";
-import { blogPosts } from "@/lib/blog-posts";
+import { blogPosts, type BlogPost } from "@/lib/blog-posts";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, User, Share2, Languages, Loader } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { translate } from "@/ai/flows/translate-flow";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { DotLoader } from "react-spinners";
+import { useLanguage } from "@/contexts/language-context";
 
 const supportedLanguages = [
   { code: 'en', name: 'English' },
@@ -30,23 +29,38 @@ export default function BlogPostPage() {
   const params = useParams();
   const { toast } = useToast();
   const slug = params.slug as string;
-  const post = blogPosts.find((p) => p.slug === slug);
-
-  const [translatedContent, setTranslatedContent] = useState(post?.content || '');
-  const [isTranslating, setIsTranslating] = useState(false);
-  const [currentLang, setCurrentLang] = useState('en');
+  
+  const { translations, setLanguage, language, loading: langLoading } = useLanguage();
+  
+  const [post, setPost] = useState<BlogPost | undefined>(blogPosts.find((p) => p.slug === slug));
+  const [content, setContent] = useState('');
 
   useEffect(() => {
-    if (post) {
-      setTranslatedContent(post.content);
+    if (!langLoading && translations.blogPosts) {
+      const translatedPost = translations.blogPosts[slug];
+      if (translatedPost) {
+        setContent(translatedPost.content);
+        setPost(prevPost => prevPost ? { ...prevPost, ...translatedPost } : undefined);
+      } else {
+        // Fallback to default post content if translation not found
+        const defaultPost = blogPosts.find((p) => p.slug === slug);
+        setContent(defaultPost?.content || '');
+        setPost(defaultPost);
+      }
+    } else if (!langLoading) {
+      const defaultPost = blogPosts.find((p) => p.slug === slug);
+      setContent(defaultPost?.content || '');
+      setPost(defaultPost);
     }
-  }, [post]);
+  }, [slug, translations, langLoading]);
 
-  if (!post) {
+
+  if (!post && !langLoading) {
     notFound();
   }
 
   const handleShare = async () => {
+    if (!post) return;
     const shareData = {
       title: post.title,
       text: post.description,
@@ -76,34 +90,14 @@ export default function BlogPostPage() {
       }
     }
   };
-
-  const handleTranslate = async (langCode: string) => {
-    if (langCode === currentLang) return;
-
-    setIsTranslating(true);
-    setCurrentLang(langCode);
-
-    try {
-        const result = await translate({
-            text: post.content,
-            targetLang: langCode
-        });
-        setTranslatedContent(result.translatedText);
-    } catch (error) {
-        console.error("Translation failed:", error);
-        toast({
-            title: "Translation Error",
-            description: "Could not translate the post. Please try again.",
-            variant: "destructive",
-        });
-        // Revert to original content on failure
-        setTranslatedContent(post.content);
-        setCurrentLang('en');
-    } finally {
-        setIsTranslating(false);
-    }
-  };
-
+  
+  if (langLoading || !post) {
+      return (
+          <div className="flex items-center justify-center min-h-screen bg-background">
+              <Loader className="w-8 h-8 animate-spin text-primary" />
+          </div>
+      )
+  }
 
   return (
     <div className="bg-background min-h-screen font-sans">
@@ -156,7 +150,7 @@ export default function BlogPostPage() {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
                       {supportedLanguages.map(lang => (
-                        <DropdownMenuItem key={lang.code} onSelect={() => handleTranslate(lang.code)} disabled={isTranslating}>
+                        <DropdownMenuItem key={lang.code} onSelect={() => setLanguage(lang.code)}>
                           {lang.name}
                         </DropdownMenuItem>
                       ))}
@@ -192,17 +186,10 @@ export default function BlogPostPage() {
             </AnimateOnScroll>
             
             <AnimateOnScroll>
-            {isTranslating ? (
-                <div className="flex flex-col items-center justify-center text-center text-muted-foreground min-h-[300px]">
-                  <DotLoader color="hsl(var(--primary))" />
-                  <p className="mt-4 text-lg">Translating... Please wait.</p>
-                </div>
-              ) : (
                 <div
                     className="max-w-none mx-auto text-foreground/90 space-y-6"
-                    dangerouslySetInnerHTML={{ __html: translatedContent }}
+                    dangerouslySetInnerHTML={{ __html: content }}
                 />
-              )}
             </AnimateOnScroll>
 
             <AnimateOnScroll className="mt-8 md:mt-12 text-center">
