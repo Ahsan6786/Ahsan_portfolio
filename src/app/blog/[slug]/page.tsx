@@ -30,27 +30,27 @@ export default function BlogPostPage() {
   const { toast } = useToast();
   const slug = params.slug as string;
   
-  const { translations, setLanguage, language, loading: langLoading } = useLanguage();
+  const { translations, setLanguage, loading: langLoading } = useLanguage();
   
-  const [post, setPost] = useState<BlogPost | undefined>(blogPosts.find((p) => p.slug === slug));
+  const [post, setPost] = useState<BlogPost | undefined>(undefined);
   const [content, setContent] = useState('');
 
   useEffect(() => {
-    if (!langLoading && translations.blogPosts) {
-      const translatedPost = translations.blogPosts[slug];
-      if (translatedPost) {
-        setContent(translatedPost.content);
-        setPost(prevPost => prevPost ? { ...prevPost, ...translatedPost } : undefined);
-      } else {
-        // Fallback to default post content if translation not found
-        const defaultPost = blogPosts.find((p) => p.slug === slug);
-        setContent(defaultPost?.content || '');
+    const defaultPost = blogPosts.find((p) => p.slug === slug);
+
+    if (!langLoading && translations.blogPosts && translations.blogPosts[slug]) {
+        const translatedPostData = translations.blogPosts[slug];
+        // Combine default post data with translated data
+        setPost({
+            ...(defaultPost as BlogPost), // cast to avoid undefined issues, checked later
+            title: translatedPostData.title || defaultPost?.title,
+            description: translatedPostData.description || defaultPost?.description,
+        });
+        setContent(translatedPostData.content);
+    } else if (defaultPost) {
+        // Fallback to default post if no translation is available
         setPost(defaultPost);
-      }
-    } else if (!langLoading) {
-      const defaultPost = blogPosts.find((p) => p.slug === slug);
-      setContent(defaultPost?.content || '');
-      setPost(defaultPost);
+        setContent(defaultPost.content);
     }
   }, [slug, translations, langLoading]);
 
