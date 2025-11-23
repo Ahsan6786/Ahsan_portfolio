@@ -6,9 +6,24 @@ import Image from "next/image";
 import { blogPosts } from "@/lib/blog-posts";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, User, Share2 } from "lucide-react";
-import React from "react";
+import { ArrowLeft, Calendar, User, Share2, Languages, Loader } from "lucide-react";
+import React, { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { translate } from "@/ai/flows/translate-flow";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { DotLoader } from "react-spinners";
+
+const supportedLanguages = [
+  { code: 'en', name: 'English' },
+  { code: 'hi', name: 'Hindi' },
+  { code: 'ur', name: 'Urdu' },
+  { code: 'fr', name: 'French' },
+];
 
 export default function BlogPostPage() {
   const router = useRouter();
@@ -16,6 +31,16 @@ export default function BlogPostPage() {
   const { toast } = useToast();
   const slug = params.slug as string;
   const post = blogPosts.find((p) => p.slug === slug);
+
+  const [translatedContent, setTranslatedContent] = useState(post?.content || '');
+  const [isTranslating, setIsTranslating] = useState(false);
+  const [currentLang, setCurrentLang] = useState('en');
+
+  useEffect(() => {
+    if (post) {
+      setTranslatedContent(post.content);
+    }
+  }, [post]);
 
   if (!post) {
     notFound();
@@ -51,6 +76,34 @@ export default function BlogPostPage() {
       }
     }
   };
+
+  const handleTranslate = async (langCode: string) => {
+    if (langCode === currentLang) return;
+
+    setIsTranslating(true);
+    setCurrentLang(langCode);
+
+    try {
+        const result = await translate({
+            text: post.content,
+            targetLang: langCode
+        });
+        setTranslatedContent(result.translatedText);
+    } catch (error) {
+        console.error("Translation failed:", error);
+        toast({
+            title: "Translation Error",
+            description: "Could not translate the post. Please try again.",
+            variant: "destructive",
+        });
+        // Revert to original content on failure
+        setTranslatedContent(post.content);
+        setCurrentLang('en');
+    } finally {
+        setIsTranslating(false);
+    }
+  };
+
 
   return (
     <div className="bg-background min-h-screen font-sans">
@@ -94,6 +147,21 @@ export default function BlogPostPage() {
                     <Share2 className="w-4 h-4 mr-2" />
                     Share
                   </Button>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button variant="outline" size="sm" className="rounded-full">
+                        <Languages className="w-4 h-4 mr-2" />
+                        Translate
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      {supportedLanguages.map(lang => (
+                        <DropdownMenuItem key={lang.code} onSelect={() => handleTranslate(lang.code)} disabled={isTranslating}>
+                          {lang.name}
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </div>
               </header>
             </AnimateOnScroll>
@@ -124,10 +192,17 @@ export default function BlogPostPage() {
             </AnimateOnScroll>
             
             <AnimateOnScroll>
-              <div
-                className="max-w-none mx-auto text-foreground/90 space-y-6"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
+            {isTranslating ? (
+                <div className="flex flex-col items-center justify-center text-center text-muted-foreground min-h-[300px]">
+                  <DotLoader color="hsl(var(--primary))" />
+                  <p className="mt-4 text-lg">Translating... Please wait.</p>
+                </div>
+              ) : (
+                <div
+                    className="max-w-none mx-auto text-foreground/90 space-y-6"
+                    dangerouslySetInnerHTML={{ __html: translatedContent }}
+                />
+              )}
             </AnimateOnScroll>
 
             <AnimateOnScroll className="mt-8 md:mt-12 text-center">
