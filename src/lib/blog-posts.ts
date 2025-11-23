@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
     {
         slug: "my-life-story-from-village-to-code",
         title: "Not Perfect — But Progress",
-        description: "A raw and real story of my journey through confusion, struggle, and growth. It’s not perfect, but it’s mine.",
+        description: "A short look into where I started, what shaped me, and where I’m heading. Not the full story—just the beginning.",
         date: "September 16, 2025",
         author: "Ahsan Imam Khan",
         image: placeholderData.heroImage,

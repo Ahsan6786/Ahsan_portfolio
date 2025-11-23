@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -73,10 +74,10 @@ export default function BlogPage() {
                         {post.description}
                       </p>
                       <div className="mt-auto">
-                        <span className="font-semibold text-primary group-hover:underline">
+                        <Button variant="outline" className="rounded-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                           {translations.blog?.readMore || "Read More"}
-                          <ArrowRight className="inline-block ml-1 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                        </span>
+                          <ArrowRight className="inline-block ml-2 w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        </Button>
                       </div>
                     </div>
                   </div>
