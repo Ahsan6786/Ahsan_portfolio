@@ -20,7 +20,7 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
     {
         slug: "my-life-story-from-village-to-code",
-        title: "My Story: From a Tiny Village to a World of Code",
+        title: "Not Perfect — But Progress",
         description: "A raw and real story of my journey through confusion, struggle, and growth. It’s not perfect, but it’s mine.",
         date: "September 16, 2025",
         author: "Ahsan Imam Khan",
