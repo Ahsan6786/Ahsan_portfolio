@@ -38,7 +38,6 @@ export default function BlogPostPage() {
 
   useEffect(() => {
     if (langLoading) {
-      setIsLoading(true);
       return;
     }
 
@@ -48,22 +47,23 @@ export default function BlogPostPage() {
       setIsLoading(false);
       return;
     }
+    
+    const translatedPostData = translations.blogPosts?.[slug];
 
-    if (translations.blogPosts && translations.blogPosts[slug]) {
-        const translatedPostData = translations.blogPosts[slug];
+    if (translatedPostData) {
         setPost({
             ...defaultPost,
             title: translatedPostData.title || defaultPost.title,
             description: translatedPostData.description || defaultPost.description,
         });
-        setContent(translatedPostData.content);
+        setContent(translatedPostData.content || defaultPost.content);
     } else {
         setPost(defaultPost);
         setContent(defaultPost.content);
     }
     setIsLoading(false);
 
-  }, [slug, translations, langLoading]);
+  }, [slug, langLoading]);
 
 
   if (isLoading) {
