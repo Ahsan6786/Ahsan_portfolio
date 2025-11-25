@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { ContactForm } from "@/components/contact-form";
 import { MapPin, Mail, Github, Linkedin, Phone } from "lucide-react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
