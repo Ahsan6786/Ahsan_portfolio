@@ -26,7 +26,7 @@ header {
 
 @layer base {
   :root, .light, .light-yellow {
-    --background: 0 0% 100%;
+    --background: 48 85% 98%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -386,4 +386,9 @@ header {
 
 .header-scrolled {
   @apply bg-background/80 shadow-md backdrop-blur-sm;
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, hsl(var(--foreground) / 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
 }

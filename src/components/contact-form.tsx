@@ -75,13 +75,13 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{translations.contact.form.name}</FormLabel>
+              <FormLabel>{translations.contact.form.name} <span className="text-primary">*</span></FormLabel>
               <FormControl>
                 <Input placeholder={translations.contact.form.namePlaceholder} {...field} aria-label={translations.contact.form.name}/>
               </FormControl>
@@ -94,7 +94,7 @@ export function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{translations.contact.form.email}</FormLabel>
+              <FormLabel>{translations.contact.form.email} <span className="text-primary">*</span></FormLabel>
               <FormControl>
                 <Input placeholder={translations.contact.form.emailPlaceholder} {...field} aria-label={translations.contact.form.email} />
               </FormControl>
@@ -107,7 +107,7 @@ export function ContactForm() {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{translations.contact.form.subject}</FormLabel>
+              <FormLabel>{translations.contact.form.subject} <span className="text-primary">*</span></FormLabel>
               <FormControl>
                 <Input placeholder={translations.contact.form.subjectPlaceholder} {...field} aria-label={translations.contact.form.subject} />
               </FormControl>
@@ -120,15 +120,17 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{translations.contact.form.message}</FormLabel>
+              <FormLabel>{translations.contact.form.message} <span className="text-primary">*</span></FormLabel>
               <FormControl>
-                <Textarea placeholder={translations.contact.form.messagePlaceholder} {...field} aria-label={translations.contact.form.message} />
+                <Textarea placeholder={translations.contact.form.messagePlaceholder} {...field} aria-label={translations.contact.form.message} rows={5}/>
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" size="default" className="w-full bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 px-6 py-5 text-sm md:px-8 md:py-6 md:text-base shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">{translations.contact.form.sendMessage}</Button>
+        <Button type="submit" size="lg" className="w-full mt-4 font-semibold rounded-lg">
+          {translations.contact.form.sendMessage}
+        </Button>
       </form>
     </Form>
   );
