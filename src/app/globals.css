@@ -22,6 +22,10 @@ header {
   body {
     @apply bg-background text-foreground;
   }
+
+  .dark body {
+    background: linear-gradient(to bottom, #000000, #111111);
+  }
 }
 
 @layer base {
