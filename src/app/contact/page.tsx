@@ -2,12 +2,11 @@
 
 import React from "react";
 import { ContactForm } from "@/components/contact-form";
-import { MapPin, Mail, Github, Linkedin, Phone } from "lucide-react";
+import { MapPin, Mail, Github, Linkedin, Phone, ArrowLeft } from "lucide-react";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { useLanguage } from "@/contexts/language-context";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
 
 const contactDetails = [
     {
