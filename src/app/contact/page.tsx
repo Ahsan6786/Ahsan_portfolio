@@ -78,7 +78,7 @@ export default function ContactPage() {
               <div className="max-w-5xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12 text-center">
                     {contactDetails.map((detail, index) => (
-                        <div key={index} className="flex flex-col items-center">
+                        <div key={index} className="flex flex-col items-center bg-card/50 p-8 rounded-xl border border-border/20 shadow-sm hover:shadow-lg transition-shadow duration-300">
                             <div className="mb-4">
                                 {detail.icon}
                             </div>
