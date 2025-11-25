@@ -34,33 +34,51 @@ export default function BlogPostPage() {
   
   const [post, setPost] = useState<BlogPost | undefined>(undefined);
   const [content, setContent] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (langLoading) {
+      setIsLoading(true);
+      return;
+    }
+
     const defaultPost = blogPosts.find((p) => p.slug === slug);
 
-    if (!langLoading && translations.blogPosts && translations.blogPosts[slug]) {
+    if (!defaultPost) {
+      setIsLoading(false);
+      return;
+    }
+
+    if (translations.blogPosts && translations.blogPosts[slug]) {
         const translatedPostData = translations.blogPosts[slug];
-        // Combine default post data with translated data
         setPost({
-            ...(defaultPost as BlogPost), // cast to avoid undefined issues, checked later
-            title: translatedPostData.title || defaultPost?.title,
-            description: translatedPostData.description || defaultPost?.description,
+            ...defaultPost,
+            title: translatedPostData.title || defaultPost.title,
+            description: translatedPostData.description || defaultPost.description,
         });
         setContent(translatedPostData.content);
-    } else if (defaultPost) {
-        // Fallback to default post if no translation is available
+    } else {
         setPost(defaultPost);
         setContent(defaultPost.content);
     }
+    setIsLoading(false);
+
   }, [slug, translations, langLoading]);
 
 
-  if (!post && !langLoading) {
+  if (isLoading) {
+      return (
+          <div className="flex items-center justify-center min-h-screen bg-background">
+              <Loader className="w-8 h-8 animate-spin text-primary" />
+          </div>
+      )
+  }
+
+  if (!post) {
     notFound();
   }
 
   const handleShare = async () => {
-    if (!post) return;
     const shareData = {
       title: post.title,
       text: post.description,
@@ -91,14 +109,6 @@ export default function BlogPostPage() {
     }
   };
   
-  if (langLoading || !post) {
-      return (
-          <div className="flex items-center justify-center min-h-screen bg-background">
-              <Loader className="w-8 h-8 animate-spin text-primary" />
-          </div>
-      )
-  }
-
   return (
     <div className="bg-background min-h-screen font-sans">
       <div className="container mx-auto px-4 md:px-6">
