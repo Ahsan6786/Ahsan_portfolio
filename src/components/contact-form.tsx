@@ -129,7 +129,7 @@ export function ContactForm() {
           )}
         />
         <Button type="submit" size="lg" className="w-full mt-4 font-semibold rounded-lg">
-          {translations.contact.form.sendMessage}
+          Send Message
         </Button>
       </form>
     </Form>
