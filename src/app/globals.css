@@ -24,7 +24,7 @@ header {
   }
 
   .dark body {
-    background: linear-gradient(to bottom, #000000, #2c1a00);
+    background: linear-gradient(to bottom, #1a1a1a, #000000);
   }
 }
 
