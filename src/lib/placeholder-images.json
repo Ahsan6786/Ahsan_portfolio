@@ -75,6 +75,10 @@
     "src": "/certificate6.png",
     "aiHint": "professional certificate"
   },
+  "certificateLT": {
+    "src": "/lt.png",
+    "aiHint": "industry program certificate"
+  },
   "testimonialUmme": {
     "src": "/umme.png",
     "aiHint": "woman portrait"

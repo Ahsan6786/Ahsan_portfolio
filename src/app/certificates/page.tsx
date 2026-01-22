@@ -10,52 +10,67 @@ import { PremiumCertificate } from "@/components/premium-certificate";
 
 const allCertificates = [
   {
+    title: "L&T Industry Immersion Program",
+    description: "Successfully completed the National Academic Immersion Program on Industry-Ready Tech Foundations at the Larsen & Toubro Campus, Chennai.",
+    downloadUrl: "/lt.png",
+    skills: ['Tech Foundations', 'Industry Program', 'Immersion'],
+    date: "2026-01-20"
+  },
+  {
     title: "Smart India Hackathon 2025",
     description: "Cleared 2 rounds of the world's biggest open innovation model.",
     downloadUrl: "/certificate1.1.png",
-    skills: ['Innovation', 'Problem Solving', 'Teamwork']
+    skills: ['Innovation', 'Problem Solving', 'Teamwork'],
+    date: "2025-03-30"
   },
   {
     title: "Deloitte Technology Job Simulation",
     description: "Completed a job simulation focused on technology consulting.",
     downloadUrl: "/deloitte_certificate.png",
-    skills: ['Consulting', 'Tech Simulation', 'Analysis']
+    skills: ['Consulting', 'Tech Simulation', 'Analysis'],
+    date: "2024-06-15"
   },
   {
     title: "Python Programming",
     description: "Proficiency in Python programming, from fundamental to advanced concepts.",
     downloadUrl: "/certificate1.png",
-    skills: ['Python', 'Programming', 'Logic']
+    skills: ['Python', 'Programming', 'Logic'],
+    date: "2024-05-20"
   },
   {
     title: "Personal and Financial Planning",
     description: "Covers budgeting, investing, and building financial literacy.",
     downloadUrl: "/certificate2.png",
-    skills: ['Finance', 'Planning', 'Budgeting']
+    skills: ['Finance', 'Planning', 'Budgeting'],
+    date: "2024-04-10"
   },
   {
     title: "Social Emotional Learning",
     description: "Strong understanding of social and emotional intelligence.",
     downloadUrl: "/certificate3.png",
-    skills: ['Soft Skills', 'EQ', 'Communication']
+    skills: ['Soft Skills', 'EQ', 'Communication'],
+    date: "2024-03-05"
   },
   {
     title: "Critical Thinking and Problem Solving",
     description: "Skills in analyzing complex challenges and finding effective solutions.",
     downloadUrl: "/certificate4.png",
-    skills: ['Critical Thinking', 'Problem Solving', 'Analytics']
+    skills: ['Critical Thinking', 'Problem Solving', 'Analytics'],
+    date: "2024-02-15"
   },
   {
     title: "Teamwork and Collaboration",
     description: "Ability to work effectively in a team, emphasizing communication.",
     downloadUrl: "/certificate5.png",
-    skills: ['Teamwork', 'Collaboration', 'Agile']
+    skills: ['Teamwork', 'Collaboration', 'Agile'],
+    date: "2024-01-20"
   },
   {
     title: "Measuring Sustainable Development",
-    description: "Covers principles and practices of measuring sustainable development.",
+    "description": "Covers principles and practices of measuring sustainable development.",
     downloadUrl: "/certificate6.png",
-    skills: ['Sustainability', 'Development', 'Measurement']
+    skills: ['Sustainability', 'Development', 'Measurement'],
+    date: "2023-12-10"
   },
 ];
 
@@ -92,8 +107,8 @@ export default function CertificatesPage() {
                         recipientName="Ahsan Imam Khan"
                         certificateTitle={certificate.title}
                         certificateDescription={certificate.description}
-                        date="2024-07-29"
-                        credentialId={`CERT-2024-${index}`}
+                        date={certificate.date}
+                        credentialId={`CERT-${new Date(certificate.date).getFullYear()}-${index}`}
                         skills={certificate.skills}
                         verifyUrl={certificate.downloadUrl}
                     />
