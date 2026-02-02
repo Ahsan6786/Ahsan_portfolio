@@ -19,7 +19,7 @@ const allCertificates = [
   {
     title: "L&T Industry Immersion Program",
     description: "Successfully completed the National Academic Immersion Program on Industry-Ready Tech Foundations at the Larsen & Toubro Campus, Chennai.",
-    downloadUrl: "/lt.jpg",
+    downloadUrl: "/ltc.png",
     skills: ['Tech Foundations', 'Industry Program', 'Immersion'],
     date: "2026-01-20"
   },
