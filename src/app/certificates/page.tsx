@@ -17,6 +17,13 @@ const allCertificates = [
     date: "2026-01-20"
   },
   {
+    title: "Winter Internship - Lightning Resilient India Campaign",
+    description: "Successfully completed the Winter Internship with CROPC, demonstrating outstanding dedication and proficiency in understanding climate change, disaster management, and community resilience.",
+    downloadUrl: "/internship.jpeg",
+    skills: ['Climate Change', 'Disaster Management', 'Community Resilience'],
+    date: "2026-01-16"
+  },
+  {
     title: "Smart India Hackathon 2025",
     description: "Cleared 2 rounds of the world's biggest open innovation model.",
     downloadUrl: "/certificate1.1.png",

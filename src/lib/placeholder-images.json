@@ -43,6 +43,10 @@
     "src": "https://picsum.photos/seed/contact/600/600",
     "aiHint": "man portrait"
   },
+  "certificateInternship": {
+    "src": "/internship.jpeg",
+    "aiHint": "internship certificate"
+  },
   "certificateSIH": {
     "src": "/certificate1.1.png",
     "aiHint": "hackathon certificate"
