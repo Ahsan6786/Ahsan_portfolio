@@ -10,18 +10,18 @@ import { PremiumCertificate } from "@/components/premium-certificate";
 
 const allCertificates = [
   {
-    title: "L&T Industry Immersion Program",
-    description: "Successfully completed the National Academic Immersion Program on Industry-Ready Tech Foundations at the Larsen & Toubro Campus, Chennai.",
-    downloadUrl: "/lt.jpg",
-    skills: ['Tech Foundations', 'Industry Program', 'Immersion'],
-    date: "2026-01-20"
-  },
-  {
     title: "Winter Internship - Lightning Resilient India Campaign",
     description: "Successfully completed the Winter Internship with CROPC, demonstrating outstanding dedication and proficiency in understanding climate change, disaster management, and community resilience.",
     downloadUrl: "/internship.jpeg",
     skills: ['Climate Change', 'Disaster Management', 'Community Resilience'],
     date: "2026-01-16"
+  },
+  {
+    title: "L&T Industry Immersion Program",
+    description: "Successfully completed the National Academic Immersion Program on Industry-Ready Tech Foundations at the Larsen & Toubro Campus, Chennai.",
+    downloadUrl: "/lt.jpg",
+    skills: ['Tech Foundations', 'Industry Program', 'Immersion'],
+    date: "2026-01-20"
   },
   {
     title: "Smart India Hackathon 2025",
