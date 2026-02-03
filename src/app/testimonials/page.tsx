@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -44,6 +45,7 @@ function TestimonialCard({ testimonial }: { testimonial: (typeof allTestimonials
             src={testimonial.image.src}
             alt={testimonial.name}
             fill
+            sizes="6rem"
             className="object-cover"
             data-ai-hint={testimonial.image.aiHint}
           />

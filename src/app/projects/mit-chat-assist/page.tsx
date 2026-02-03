@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -92,6 +93,7 @@ export default function MITProjectPage() {
                                     src={img.src}
                                     alt={`MIT Chat Assist Screenshot ${index + 1}`}
                                     fill
+                                    sizes="60vw"
                                     className={`object-contain w-full h-full transition-opacity duration-1000 ${index === currentScreenshotIndex ? 'opacity-100' : 'opacity-0'}`}
                                     data-ai-hint={img.aiHint}
                                 />

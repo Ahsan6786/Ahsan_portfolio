@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -103,6 +104,7 @@ export default function MitraAiProjectPage() {
                                     src={img.src}
                                     alt={`Mitra AI Screenshot ${index + 1}`}
                                     fill
+                                    sizes="60vw"
                                     className={`object-contain w-full h-full transition-opacity duration-1000 ${index === currentScreenshotIndex ? 'opacity-100' : 'opacity-0'}`}
                                     data-ai-hint={img.aiHint}
                                 />
@@ -211,4 +213,3 @@ export default function MitraAiProjectPage() {
 }
 
     
-
