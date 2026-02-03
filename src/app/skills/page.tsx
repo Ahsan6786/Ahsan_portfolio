@@ -100,7 +100,7 @@ export default function SkillsPage() {
                                 <AccordionTrigger className="text-lg font-semibold hover:text-primary transition-colors py-6">
                                     <div className="flex items-center gap-4">
                                         <div className="relative w-8 h-8">
-                                            <Image src={skill.logo} alt={`${skill.name} logo`} fill className="object-contain"/>
+                                            <Image src={skill.logo} alt={`${skill.name} logo`} fill sizes="2rem" className="object-contain"/>
                                         </div>
                                         <span>{skill.name}</span>
                                     </div>

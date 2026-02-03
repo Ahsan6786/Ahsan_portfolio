@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -108,6 +109,7 @@ export function Hero() {
                     "object-cover object-center transition-opacity duration-1000 ease-in-out",
                     index === currentIndex ? "opacity-100" : "opacity-0"
                 )}
+                sizes="100vw"
                 data-ai-hint={image.aiHint}
                 priority={index === 0}
             />
@@ -159,6 +161,7 @@ export function Hero() {
                           "object-cover object-center transition-opacity duration-1000 ease-in-out",
                           index === currentIndex ? "opacity-100" : "opacity-0"
                       )}
+                      sizes="100vw"
                       data-ai-hint={image.aiHint}
                       priority={index === 0}
                   />

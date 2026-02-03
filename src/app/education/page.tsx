@@ -83,6 +83,7 @@ export default function EducationPage() {
                                     src={edu.image}
                                     alt={`${edu.institution} logo`}
                                     fill
+                                    sizes="6rem"
                                     className="object-contain"
                                 />
                             </div>

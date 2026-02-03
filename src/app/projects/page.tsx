@@ -98,6 +98,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                 src={project.image.src}
                 alt={project.title}
                 fill
+                sizes="90vw"
                 className="object-cover"
                 data-ai-hint={project.image.aiHint}
             />
@@ -186,6 +187,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
                 src={project.image.src}
                 alt={project.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
                 data-ai-hint={project.image.aiHint}
               />

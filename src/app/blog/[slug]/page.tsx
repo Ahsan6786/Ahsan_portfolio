@@ -177,6 +177,7 @@ export default function BlogPostPage() {
                             src={post.backgroundImage.src}
                             alt="Background"
                             fill
+                            sizes="100vw"
                             className="object-cover opacity-30"
                             data-ai-hint={post.backgroundImage.aiHint}
                         />
