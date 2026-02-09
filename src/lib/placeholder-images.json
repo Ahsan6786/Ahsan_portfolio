@@ -11,6 +11,10 @@
     "src": "/my-image-3.png?v=4",
     "aiHint": "modern art"
   },
+  "aboutPageImage": {
+    "src": "/about.png",
+    "aiHint": "man standing"
+  },
   "aboutImage": {
     "src": "/about.jpg",
     "aiHint": "man portrait"
