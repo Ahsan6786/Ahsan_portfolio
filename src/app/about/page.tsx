@@ -43,7 +43,7 @@ export default function AboutPage() {
               
               {/* Image Column */}
               <div className="md:col-span-2 flex justify-center">
-                <div className="relative w-full max-w-xs sm:max-w-sm aspect-[3/4] rounded-2xl shadow-2xl overflow-hidden rotate-[-3deg] hover:rotate-0 transition-transform duration-300">
+                <div className="relative w-full max-w-sm sm:max-w-md aspect-[3/4] rounded-2xl shadow-2xl overflow-hidden rotate-[-3deg] hover:rotate-0 transition-transform duration-300">
                   <Image
                       src={placeholderData.aboutPageImage.src}
                       alt="A portrait of Ahsan Imam Khan"
