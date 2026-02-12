@@ -41,7 +41,7 @@ const projectDetails = {
         ]
     },
     techStack: ["Next.js", "Firebase", "Tailwind CSS", "TypeScript", "Recharts"],
-    liveDemo: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
+    liveDemo: "https://fessup.onrender.com",
     github: "https://github.com/Ahsan6786/FessUP-",
 };
 
