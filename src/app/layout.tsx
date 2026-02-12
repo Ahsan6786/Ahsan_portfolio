@@ -16,22 +16,39 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ahsan Imam Khan - Freelance Web Developer",
-  description: "A freelance web designer and full-stack developer specializing in creating modern, responsive, and high-performance websites and applications using Next.js, React, and Firebase.",
-  keywords: ["Ahsan Imam Khan", "freelance web developer", "Next.js developer", "React developer", "Firebase developer", "full-stack developer", "portfolio", "web design"],
+  metadataBase: new URL("https://studio--studio-7268024832-f911c.us-central1.hosted.app/"),
+  title: "Ahsan Imam Khan | Freelance Full-Stack Developer from India",
+  description:
+    "Ahsan Imam Khan is a freelance full-stack developer specializing in building modern, responsive, and high-performance websites and applications using Next.js, React, and Firebase.",
+  keywords: [
+    "Ahsan Imam Khan",
+    "freelance web developer India",
+    "Next.js developer",
+    "React developer",
+    "Firebase developer",
+    "full-stack developer",
+    "portfolio",
+    "web design",
+  ],
   creator: "Ahsan Imam Khan",
-  authors: [{ name: "Ahsan Imam Khan", url: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/" }],
+  authors: [
+    {
+      name: "Ahsan Imam Khan",
+      url: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
+    },
+  ],
   openGraph: {
-    title: "Ahsan Imam Khan - Freelance Web Developer",
-    description: "A freelance web designer and full-stack developer.",
+    title: "Ahsan Imam Khan | Freelance Full-Stack Developer",
+    description:
+      "Freelance full-stack developer building scalable and high-performance web applications.",
     url: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
     siteName: "Ahsan Imam Khan Portfolio",
     images: [
       {
-        url: "/my-image-1.png?v=4",
-        width: 800,
-        height: 600,
-        alt: "Ahsan Imam Khan",
+        url: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/my-image-1.png?v=4",
+        width: 1200,
+        height: 630,
+        alt: "Ahsan Imam Khan - Full Stack Developer",
       },
     ],
     locale: "en_US",
@@ -39,40 +56,49 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ahsan Imam Khan - Freelance Web Developer",
-    description: "A freelance web designer and full-stack developer.",
+    title: "Ahsan Imam Khan | Freelance Full-Stack Developer",
+    description:
+      "Building modern and scalable web apps using Next.js, React, and Firebase.",
     creator: "@ahsanimamkhan",
-    images: ["/my-image-1.png?v=4"],
+    images: [
+      "https://studio--studio-7268024832-f911c.us-central1.hosted.app/my-image-1.png?v=4",
+    ],
   },
   viewport: {
-    width: 'device-width',
+    width: "device-width",
     initialScale: 1,
     maximumScale: 1,
     userScalable: false,
   },
   icons: {
-    icon: '/A.png',
+    icon: "/A.png",
   },
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Ahsan Imam Khan',
-  url: 'https://studio--studio-7268024832-f911c.us-central1.hosted.app/',
-  image: '/my-image-1.png?v=4',
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ahsan Imam Khan",
+  url: "https://studio--studio-7268024832-f911c.us-central1.hosted.app/",
+  image:
+    "https://studio--studio-7268024832-f911c.us-central1.hosted.app/my-image-1.png?v=4",
+  description:
+    "Freelance Full-Stack Developer specializing in Next.js, React, and Firebase.",
+  jobTitle: "Full-Stack Developer",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "India",
+  },
   sameAs: [
-    'https://www.linkedin.com/in/ahsan-imam-khan-9a0443328',
-    'https://github.com/Ahsan6786',
-    'https://www.instagram.com/khan_ahsan_8055',
+    "https://www.linkedin.com/in/ahsan-imam-khan-9a0443328",
+    "https://github.com/Ahsan6786",
+    "https://www.instagram.com/khan_ahsan_8055",
   ],
-  jobTitle: 'Full-Stack Developer',
   worksFor: {
-    '@type': 'Organization',
-    name: 'Freelance',
+    "@type": "Organization",
+    name: "Freelance",
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -107,7 +133,8 @@ export default function RootLayout({
         </LanguageProvider>
         <script
           type="text/javascript"
-          dangerouslySetInnerHTML={{ __html: `
+          dangerouslySetInnerHTML={{
+            __html: `
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){
             var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -117,7 +144,8 @@ export default function RootLayout({
             s1.setAttribute('crossorigin','*');
             s0.parentNode.insertBefore(s1,s0);
             })();
-          ` }}
+          `,
+          }}
         />
       </body>
     </html>
