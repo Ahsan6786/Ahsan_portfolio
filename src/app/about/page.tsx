@@ -6,8 +6,6 @@ import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { useLanguage } from "@/contexts/language-context";
 import { Download, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import placeholderData from '@/lib/placeholder-images.json';
 
 export default function AboutPage() {
   const { translations, loading } = useLanguage();
@@ -39,24 +37,10 @@ export default function AboutPage() {
         {/* ABOUT SECTION */}
         <section id="about" className="pb-16 md:pb-24 overflow-hidden">
           <AnimateOnScroll>
-            <div className="grid md:grid-cols-5 gap-10 md:gap-16 items-center">
+            <div className="max-w-4xl mx-auto">
               
-              {/* Image Column */}
-              <div className="md:col-span-2 flex justify-center">
-                <div className="relative w-full max-w-sm sm:max-w-md aspect-[3/4] rounded-2xl shadow-2xl overflow-hidden rotate-[-3deg] hover:rotate-0 transition-transform duration-300">
-                  <Image
-                      src={placeholderData.aboutPageImage.src}
-                      alt="A portrait of Ahsan Imam Khan"
-                      fill
-                      className="object-cover object-top"
-                      sizes="(max-width: 768px) 80vw, 30vw"
-                      data-ai-hint={placeholderData.aboutPageImage.aiHint}
-                  />
-                </div>
-              </div>
-
               {/* Text Column */}
-              <div className="relative text-center md:text-left md:col-span-3">
+              <div className="relative text-center">
                 <div className="relative mb-4">
                   <h2 className="text-4xl md:text-5xl font-bold">
                     {translations.about.title}
@@ -77,23 +61,23 @@ export default function AboutPage() {
                   </span>
                 </p>
 
-                <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl">
+                <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
                   {translations.about.p1}
                 </p>
-                <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl">
+                <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
                   {translations.about.p2}
                 </p>
-                <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl">
+                <p className="text-base md:text-lg text-muted-foreground mb-6 max-w-3xl mx-auto">
                   {translations.about.p3}
                 </p>
 
                  {/* Bottom Buttons */}
-                <div className="text-center md:text-left mt-12">
+                <div className="text-center mt-12">
                   <p className="text-xl md:text-2xl text-primary font-bold mb-6">
                     {translations.about.projectsCompleted}
                   </p>
 
-                  <div className="flex justify-center md:justify-start items-center gap-4 flex-wrap">
+                  <div className="flex justify-center items-center gap-4 flex-wrap">
 
                     {/* Hire Me */}
                     <Link href="/contact">
