@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     userScalable: false,
   },
   icons: {
-    icon: "/A.png",
+    icon: "/l.png",
   },
 };
 
