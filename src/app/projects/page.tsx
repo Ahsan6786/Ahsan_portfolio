@@ -180,9 +180,9 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
         transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
         className="relative w-full h-full"
       >
-        <div className="bg-card rounded-2xl overflow-hidden border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full">
-          <div className="relative">
-            <div className="relative aspect-video w-full overflow-hidden">
+        <div className="bg-card rounded-2xl border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+          <div className="relative group-hover:z-10">
+            <div className="relative aspect-video w-full">
               <Image
                 src={project.image.src}
                 alt={project.title}
@@ -194,7 +194,7 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
             </div>
           </div>
           <div className="p-6 flex flex-col flex-grow">
-            <div className="transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg">
+            <div>
               <h3 className="text-xl font-bold mb-2">{project.title}</h3>
               <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
               
