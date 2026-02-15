@@ -1,4 +1,3 @@
-
 "use client";
 import React from 'react';
 import Link from "next/link";
@@ -88,7 +87,18 @@ export function Header() {
                   : 'left-4 translate-x-0 md:left-0 md:transform-none'
             )}
         >
-            AHSAN
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={isScrolled ? "portfolio" : "ahsan"}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.3 }}
+              className="block"
+            >
+              {isScrolled ? "Portfolio" : "AHSAN"}
+            </motion.span>
+          </AnimatePresence>
         </Link>
         <div className={cn(
           "hidden md:flex items-center space-x-6 text-sm font-medium",
