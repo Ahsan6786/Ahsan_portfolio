@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -9,6 +10,13 @@ import { useLanguage } from "@/contexts/language-context";
 import { PremiumCertificate } from "@/components/premium-certificate";
 
 const allCertificates = [
+  {
+    title: "AI @ IISER Pune: Research and Training",
+    description: "Participated in the event 'AI @ IISER Pune: Pushing the Boundaries of Research and Training', held at IISER Pune.",
+    downloadUrl: "/cii.png",
+    skills: ['AI', 'Research', 'Training', 'IISER Pune'],
+    date: "2026-02-07"
+  },
   {
     title: "Winter Internship - Lightning Resilient India Campaign",
     description: "Successfully completed the Winter Internship with CROPC, demonstrating outstanding dedication and proficiency in understanding climate change, disaster management, and community resilience.",
