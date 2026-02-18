@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import Image from "next/image";
@@ -76,77 +74,6 @@ const projects = [
 type Project = (typeof projects)[0] & { detailsPage?: string; liveDemo?: string };
 
 
-function ProjectCard({ project }: { project: Project }) {
-  return (
-    <div className="group">
-      <div className="bg-card rounded-2xl border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full overflow-hidden">
-        <div className="relative">
-          <div className="relative aspect-video w-full">
-            <Image
-              src={project.image.src}
-              alt={project.title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              data-ai-hint={project.image.aiHint}
-            />
-          </div>
-        </div>
-        <div className="p-6 flex flex-col flex-grow">
-          <div>
-            <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-            <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
-            
-            <div className="mb-4">
-                <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
-                    <Code className="w-4 h-4"/>
-                    <span>Tech Stack</span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                {project.tags.map(tag => (
-                    <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
-                ))}
-                </div>
-            </div>
-            
-            <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
-              {project.github && (
-                <Button variant="outline" asChild className="rounded-full" size="sm">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    Code
-                  </a>
-                </Button>
-              )}
-              {project.liveDemo && (
-                <Button asChild className="rounded-full" size="sm">
-                  <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </a>
-                </Button>
-              )}
-               {project.detailsPage && (
-                 <Button
-                  asChild
-                  size="sm"
-                  className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white"
-                >
-                  <Link href={project.detailsPage}>
-                    <Info className="mr-2 h-4 w-4"/>
-                    Description
-                  </Link>
-                </Button>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-
 export default function ProjectsPage() {
   const { translations, loading } = useLanguage();
   const router = useRouter();
@@ -164,7 +91,7 @@ export default function ProjectsPage() {
                     <span className="sr-only">Back</span>
                 </Button>
             </div>
-            <div className="text-center mb-12 relative">
+            <div className="text-center mb-12 md:mb-20 relative">
               <h2 className="text-4xl md:text-5xl font-bold">{translations.projects.title}</h2>
               <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute w-full left-0 top-1/2 -translate-y-1/2 text-foreground/5 z-0 break-words">
                 {translations.projects.title}
@@ -173,11 +100,76 @@ export default function ProjectsPage() {
                 These are some of my recent projects. Check out my GitHub for more.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div className="space-y-20 md:space-y-28">
               {projects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
+                <AnimateOnScroll key={project.title} className="group">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                        {/* Image Column */}
+                        <div className={`relative aspect-video rounded-2xl overflow-hidden border-2 border-primary/20 group-hover:border-primary/50 shadow-lg group-hover:shadow-2xl transition-all duration-500 ${index % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}>
+                            <Image
+                                src={project.image.src}
+                                alt={project.title}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                data-ai-hint={project.image.aiHint}
+                            />
+                        </div>
+
+                        {/* Text Column */}
+                        <div className={`${index % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}>
+                            <h3 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+                            <p className="text-muted-foreground text-base mb-6">{project.description}</p>
+                            
+                            <div className="mb-6">
+                                <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
+                                    <Code className="w-4 h-4"/>
+                                    <span>Tech Stack</span>
+                                </div>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.tags.map(tag => (
+                                        <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-3 py-1 rounded-full">{tag}</span>
+                                    ))}
+                                </div>
+                            </div>
+                            
+                            <div className="flex flex-wrap items-center gap-4">
+                                {project.github && (
+                                    <Button variant="outline" asChild className="rounded-full" size="sm">
+                                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                        <Github className="mr-2 h-4 w-4" />
+                                        Code
+                                    </a>
+                                    </Button>
+                                )}
+                                {project.liveDemo && (
+                                    <Button asChild className="rounded-full" size="sm">
+                                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
+                                        <ExternalLink className="mr-2 h-4 w-4" />
+                                        Demo
+                                    </a>
+                                    </Button>
+                                )}
+                                {project.detailsPage && (
+                                    <Button
+                                        asChild
+                                        size="sm"
+                                        className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white"
+                                    >
+                                    <Link href={project.detailsPage}>
+                                        <Info className="mr-2 h-4 w-4"/>
+                                        Description
+                                    </Link>
+                                    </Button>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </AnimateOnScroll>
               ))}
             </div>
+
           </AnimateOnScroll>
         </section>
       </div>
