@@ -6,9 +6,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import placeholderData from '@/lib/placeholder-images.json';
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
-import { ExternalLink, Github, ArrowLeft, Code, Info, X } from "lucide-react";
-import React, { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from "framer-motion";
+import { ExternalLink, Github, ArrowLeft, Code, Info } from "lucide-react";
+import React from "react";
 import { useLanguage } from "@/contexts/language-context";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -76,42 +75,41 @@ const projects = [
 
 type Project = (typeof projects)[0] & { detailsPage?: string; liveDemo?: string };
 
-function ProjectModal({ project, onClose }: { project: Project; onClose: () => void; }) {
+
+function ProjectCard({ project }: { project: Project }) {
   return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4"
-      onClick={onClose}
-    >
-      <motion.div
-        initial={{ scale: 0.95, rotateY: 90 }}
-        animate={{ scale: 1, rotateY: 0 }}
-        exit={{ scale: 0.95, rotateY: 90 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="bg-card rounded-2xl overflow-hidden w-full max-w-4xl max-h-[90vh] flex flex-col relative"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="relative w-full h-64 md:h-96">
+    <div className="group">
+      <div className="bg-card rounded-2xl border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full overflow-hidden">
+        <div className="relative">
+          <div className="relative aspect-video w-full">
             <Image
-                src={project.image.src}
-                alt={project.title}
-                fill
-                sizes="90vw"
-                className="object-cover"
-                data-ai-hint={project.image.aiHint}
+              src={project.image.src}
+              alt={project.title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              data-ai-hint={project.image.aiHint}
             />
+          </div>
         </div>
-        <div className="p-8 overflow-y-auto">
-            <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
-            <p className="text-muted-foreground mb-6">{project.detailedDescription}</p>
-            <div className="flex flex-wrap gap-2 mb-8">
+        <div className="p-6 flex flex-col flex-grow">
+          <div>
+            <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+            <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
+            
+            <div className="mb-4">
+                <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
+                    <Code className="w-4 h-4"/>
+                    <span>Tech Stack</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
                 {project.tags.map(tag => (
                     <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
                 ))}
+                </div>
             </div>
-            <div className="flex items-center gap-4">
+            
+            <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
               {project.github && (
                 <Button variant="outline" asChild className="rounded-full" size="sm">
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
@@ -128,122 +126,22 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
                   </a>
                 </Button>
               )}
-            </div>
-        </div>
-        <Button size="icon" variant="ghost" className="absolute top-4 right-4 rounded-full bg-black/30 hover:bg-black/50 text-white" onClick={onClose}>
-            <X className="w-5 h-5"/>
-        </Button>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-
-function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: () => void }) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springConfig = { damping: 20, stiffness: 150 };
-  const mouseXSpring = useSpring(mouseX, springConfig);
-  const mouseYSpring = useSpring(mouseY, springConfig);
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["1.5deg", "-1.5deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-1.5deg", "1.5deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    if (!ref.current) return;
-    const { left, top, width, height } = ref.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / (width / 2);
-    const y = (e.clientY - top - height / 2) / (height / 2);
-    mouseX.set(x);
-    mouseY.set(y);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
-  
-  return (
-    <div className="w-full h-auto perspective-1000 group">
-      <motion.div 
-        ref={ref}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        style={{
-            rotateX,
-            rotateY,
-            transformStyle: "preserve-3d",
-        }}
-        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-        className="relative w-full h-full"
-      >
-        <div className="bg-card rounded-2xl border-2 border-primary/20 hover:border-primary/50 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full">
-          <div className="relative group-hover:z-10">
-            <div className="relative aspect-video w-full">
-              <Image
-                src={project.image.src}
-                alt={project.title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                data-ai-hint={project.image.aiHint}
-              />
-            </div>
-          </div>
-          <div className="p-6 flex flex-col flex-grow">
-            <div>
-              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-              <p className="text-muted-foreground text-sm flex-grow mb-4">{project.description}</p>
-              
-              <div className="mb-4">
-                  <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
-                      <Code className="w-4 h-4"/>
-                      <span>Tech Stack</span>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                  {project.tags.map(tag => (
-                      <span key={tag} className="text-xs bg-secondary text-secondary-foreground px-2 py-1 rounded-full">{tag}</span>
-                  ))}
-                  </div>
-              </div>
-              
-              <div className="mt-auto flex flex-wrap justify-start items-center gap-4">
-                {project.github && (
-                  <Button variant="outline" asChild className="rounded-full" size="sm">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="mr-2 h-4 w-4" />
-                      Code
-                    </a>
-                  </Button>
-                )}
-                {project.liveDemo && (
-                  <Button asChild className="rounded-full" size="sm">
-                    <a href={project.liveDemo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
-                    </a>
-                  </Button>
-                )}
-                 {project.detailsPage && (
-                   <Button
-                    asChild
-                    size="sm"
-                    className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white"
-                  >
-                    <Link href={project.detailsPage}>
-                      <Info className="mr-2 h-4 w-4"/>
-                      Description
-                    </Link>
-                  </Button>
-                )}
-              </div>
+               {project.detailsPage && (
+                 <Button
+                  asChild
+                  size="sm"
+                  className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white"
+                >
+                  <Link href={project.detailsPage}>
+                    <Info className="mr-2 h-4 w-4"/>
+                    Description
+                  </Link>
+                </Button>
+              )}
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -251,7 +149,6 @@ function ProjectCard({ project, onInfoClick }: { project: Project, onInfoClick: 
 
 export default function ProjectsPage() {
   const { translations, loading } = useLanguage();
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const router = useRouter();
 
   if (loading) return null;
@@ -273,22 +170,17 @@ export default function ProjectsPage() {
                 {translations.projects.title}
               </p>
               <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                These are some of my recent projects. Check out my GitHub for more. Tap any card to see more details.
+                These are some of my recent projects. Check out my GitHub for more.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
-                <ProjectCard key={index} project={project} onInfoClick={() => setSelectedProject(project)} />
+                <ProjectCard key={index} project={project} />
               ))}
             </div>
           </AnimateOnScroll>
         </section>
       </div>
-      <AnimatePresence>
-        {selectedProject && (
-          <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
-        )}
-      </AnimatePresence>
     </div>
   );
 }
