@@ -101,17 +101,25 @@ export function Header() {
           </AnimatePresence>
         </Link>
         <div className={cn(
-          "hidden md:flex items-center space-x-6 text-sm font-medium",
+          "hidden md:flex items-center space-x-2 text-sm font-medium",
         )}>
-            <nav className="flex items-center space-x-6">
+            <nav className="flex items-center space-x-1">
                 {navLinks.map((link) => (
-                    <Link
+                    <Button
                         key={link.href}
-                        href={link.href}
-                        className={cn('hover:text-primary transition-colors', pathname === link.href ? 'text-primary border-b-2 border-primary pb-1' : '')}
+                        asChild
+                        variant="ghost"
+                        size="sm"
+                        className={cn("rounded-full font-semibold", 
+                            pathname === link.href 
+                            ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+                            : "hover:bg-accent/80"
+                        )}
                     >
-                        {link.label}
-                    </Link>
+                        <Link href={link.href}>
+                            {link.label}
+                        </Link>
+                    </Button>
                 ))}
             </nav>
         </div>
