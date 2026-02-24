@@ -27,7 +27,7 @@ export const blogPosts: BlogPost[] = [
         author: "Ahsan Imam Khan",
         image: placeholderData.blogPostAI,
         backgroundImage: placeholderData.aiBackground,
-        readingTime: "2 min read",
+        readingTime: "4 min read",
         content: `
             <h3 class="text-2xl font-bold mt-8 mb-4 text-white">Is AI a Blessing or a Risk?</h3>
             <p class="text-gray-400">Artificial Intelligence is changing everything. From our hospitals to our schools, it’s making things faster and smarter. But while we see the short-term wins, it's crucial to ask a bigger question: where is this all heading?</p>
