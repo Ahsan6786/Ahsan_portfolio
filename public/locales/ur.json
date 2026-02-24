@@ -1,103 +1,93 @@
 
 {
-  "header": {
-    "home": "Home",
-    "about": "About",
-    "education": "Education",
-    "services": "Services",
-    "skills": "Skills",
-    "projects": "Projects",
-    "blog": "Blog",
-    "testimonials": "Testimonials",
-    "certificates": "Certificates",
-    "contact": "Contact"
-  },
-  "hero": {
-    "greeting1": "Hello, I'm Ahsan,",
-    "mainText1": "Full-Stack Developer",
-    "subText1": "I build modern web experiences.",
-    "greeting2": "I'm a Creator,",
-    "mainText2": "Digital Craftsman",
-    "subText2": "Bringing ideas to life with code.",
-    "greeting3": "I'm a Problem-Solver,",
-    "mainText3": "Technology Enthusiast",
-    "subText3": "Passionate about innovation.",
-    "hireMe": "Hire Me",
-    "myWorks": "My Works"
-  },
-  "about": {
-    "title": "About Me",
-    "name": "I am Ahsan Imam Khan",
-    "p1": "I am a freelance full-stack developer based in India, specializing in building modern, responsive, and high-performance websites and applications. My expertise lies in the MERN stack, Next.js, and Firebase, but I'm always eager to explore new technologies.",
-    "p2": "My journey in web development started with a simple 'Hello, World!' and grew into a passion for creating seamless digital experiences. I believe in writing clean, scalable, and maintainable code.",
-    "p3": "Whether it's a personal portfolio, a business website, or a complex web application, I am dedicated to delivering high-quality solutions that meet my clients' needs and exceed their expectations. Let's build something amazing together.",
-    "projectsCompleted": "10+ Projects Completed",
-    "hireMe": "Hire Me"
-  },
-  "education": {
-    "title": "Education",
-    "viewMore": "View My Journey"
-  },
-  "services": {
-    "title": "Services",
-    "service1": "Web Development",
-    "service2": "Web App Development",
-    "service3": "SEO Optimization"
-  },
-  "skills": {
-    "title": "My Skills"
-  },
-  "projects": {
-    "title": "Projects"
-  },
-  "blog": {
-    "title": "From the Blog",
-    "backgroundTitle": "Articles",
-    "subtitle": "Here I share my thoughts on web development, technology, and more.",
-    "readMore": "Read More",
-    "viewAll": "View All Posts"
-  },
-  "testimonials": {
-    "title": "Testimonials",
-    "subtitle": "What my clients say about me."
-  },
-  "certificates": {
-    "title": "Licenses & Certifications",
-    "viewAll": "View All Certificates"
-  },
-  "certificatesPage": {
-    "title": "My Certificates",
-    "subtitle": "A collection of my professional licenses and certifications."
-  },
-  "contact": {
-    "title": "Contact",
-    "subtitle": "Have a project in mind or just want to say hi? Feel free to reach out. I'm always open to discussing new ideas and opportunities.",
-    "form": {
-      "name": "Name",
-      "namePlaceholder": "Your Name",
-      "email": "Email",
-      "emailPlaceholder": "Your Email",
-      "subject": "Subject",
-      "subjectPlaceholder": "Subject of your message",
-      "message": "Message",
-      "messagePlaceholder": "Your Message"
-    }
-  },
-  "footer": {
-    "copyright": "All rights reserved."
-  },
-  "blogPosts": {
-    "ai-alteration-vs-tampering": {
-      "title": "AI: تبدیلی بمقابلہ چھیڑ چھاڑ — ایک اخلاقی دوراہا",
-      "description": "AI کے اخلاقی اور حفاظتی مضمرات کی کھوج، اس کے قلیل مدتی فوائد سے لے کر انسانی خود مختاری کے ساتھ چھیڑ چھاڑ کے طویل مدتی خطرات تک۔",
-      "content": "<h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">کیا AI ایک نعمت ہے یا ایک خطرہ؟</h3><p class=\"text-gray-400\">مصنوعی ذہانت ہر چیز کو بدل رہی ہے۔ ہمارے ہسپتالوں سے لے کر ہمارے اسکولوں تک، یہ چیزوں کو تیز اور ہوشیار بنا رہی ہے۔ لیکن جب ہم قلیل مدتی فوائد دیکھتے ہیں، تو ایک بڑا سوال پوچھنا ضروری ہے: یہ سب کہاں جا رہا ہے؟</p><p class=\"text-gray-300 mt-4 italic\">کیا ہم صرف اپنی دنیا کو بہتر بنا رہے ہیں, یا ہم نادانستہ طور پر کنٹرول چھوڑ رہے ہیں؟</p><p class=\"text-gray-400 mt-4\">یہ سوال ہمیں ہائپ سے آگے دیکھنے اور AI کی اخلاقیات کے بارے میں سوچنے پر مجبور کرتا ہے - نہ صرف یہ کہ یہ کیا کر سکتا ہے، بلکہ اسے کیا *کرنا* چاہیے۔</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">قلیل مدتی: AI ایک سمارٹ ٹول کے طور پر</h3><p class=\"text-gray-400\">ابھی، AI زیادہ تر ایک طاقتور معاون ہے۔ یہ ہماری جگہ نہیں لیتا؛ یہ ہماری مدد کرتا ہے۔ اس کے بارے میں سوچیں:</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>ڈاکٹر بیماریوں کا جلد پتہ لگانے کے لیے AI کا استعمال کر رہے ہیں۔</li><li>سائبرسیکیوریٹی سسٹم خطرات کی نگرانی کے لیے AI کا استعمال کر رہے ہیں۔</li><li>بار بار کیے جانے والے کام خودکار ہو رہے ہیں، جس سے ہمارا وقت بچ رہا ہے۔</li></ul><p class=\"text-gray-400 mt-4\">ان صورتوں میں، AI صرف بہتر کے لیے ہمارے ورک فلوز کو *تبدیل* کر رہا ہے۔ یہ ایک ایسا آلہ ہے جو ہمارے کام کو بہتر بناتا ہے۔ جب تک یہ ہماری واضح <strong>رضامندی</strong> سے کام کرتا ہے، یہ ہماری اپنی صلاحیتوں میں توسیع ہے۔</p><p class=\"text-gray-300 mt-2 font-semibold\">یہ بہتری کے بارے میں ہے، کنٹرول کے بارے میں نہیں۔</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">طویل مدتی: چھیڑ چھاڑ کا خطرہ</h3><p class=\"text-gray-400\">تاہم، مستقبل مختلف ہو سکتا ہے۔ کسی نظام کو تبدیل کرنے اور انسانی انتخاب کے ساتھ <strong>چھیڑ چھاڑ</strong> کرنے کے درمیان ایک پتلی لکیر ہے۔ ایک مددگار مشورہ کب ایک ہیرا پھیری والی کہنی بن جاتا ہے؟</p><p class=\"text-gray-400 mt-4\">اگر AI ہماری رائے کو متاثر کرنا شروع کر دے، ہمارے طرز عمل کو تشکیل دے، یا ہماری پوری آگاہی کے بغیر اہم فیصلے کرے، تو ہم نے ایک حد پار کر لی ہے۔ خطرات حقیقی ہیں:</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>الگورتھم جو ہمارے انتخاب میں ہیرا پھیری کرتے ہیں۔</li><li>فیصلوں کے لیے مشینوں پر حد سے زیادہ انحصار۔</li><li>انسانی تنقیدی سوچ میں گراوٹ۔</li></ul><p class=\"text-gray-400 mt-4\">جب AI ایک آلہ بننا چھوڑ دیتا ہے اور ہمیں چلانا شروع کر دیتا ہے، تو یہ اب صرف ایک عمل کو تبدیل نہیں کر رہا ہے۔ یہ ہماری آزادی کے ساتھ <strong>چھیڑ چھاڑ</strong> کر رہا ہے۔ یہ کوڈ میں کوئی بگ نہیں ہے؛ یہ ہماری اخلاقیات میں ناکامی ہے۔</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">رضامندی ہی سب کچھ ہے</h3><p class=\"text-gray-400\">سیکیورٹی کی دنیا میں، <strong>رضامندی</strong> سنہری اصول ہے۔ اجازت کے بغیر ڈیٹا تک رسائی ہیکنگ ہے۔ ان کی رضامندی کے بغیر لوگوں کو متاثر کرنا ہیرا پھیری ہے۔</p><p class=\"text-gray-400 mt-4\">AI کو بھی اسی اصول پر عمل کرنا چاہیے۔ ہمیں ضرورت ہے:</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>شفاف الگورتھم جنہیں ہم سمجھ سکتے ہیں۔</li><li>واضح نگرانی اور ضوابط۔</li><li>ہر صارف سے واضح اور باخبر <strong>رضامندی</strong>۔</li></ul><p class=\"text-gray-400 mt-4\">اصل سوال یہ نہیں ہے کہ AI ہوشیار ہے، بلکہ یہ ہے کہ کیا ہم اسے ذمہ داری سے تعینات کر رہے ہیں۔</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">نتیجہ: ہمارے ہاتھوں میں ایک آلہ</h3><p class=\"text-gray-400\">AI خود غیر جانبدار ہے۔ یہ ترقی کے لیے ایک آلہ ہو سکتا ہے یا، اگر ہم محتاط نہیں ہیں، تو ایک ایسا نظام جو ہماری خود مختاری سے چھیڑ چھاڑ کرتا ہے۔ اس کا مستقبل کا اثر اس کی طاقت پر کم اور ہماری اقدار پر زیادہ منحصر ہے۔</p><p class=\"text-gray-300 mt-4 font-semibold\">چیلنج صرف ہوشیار مشینیں بنانا نہیں ہے، بلکہ یہ یقینی بنانا ہے کہ ہماری حکمت ان کی ذہانت کے ساتھ ہم آہنگ رہے۔</p><p class=\"text-gray-400 mt-6 italic\">AI کے اخلاقی مضمرات پر سائبرسیکیوریٹی لیب کی بحث سے متاثر۔</p>"
+    "header": {
+      "home": "ہوم",
+      "about": "میرے بارے میں",
+      "education": "تعلیم",
+      "services": "خدمات",
+      "projects": "پروجیکٹس",
+      "certificates": "اسناد",
+      "contact": "رابطہ"
     },
-    "my-life-story-from-village-to-code": {
-      "title": "Not Perfect — But Progress",
-      "description": "A short look into where I started, what shaped me, and where I’m heading. Not the full story—just the beginning.",
-      "content": "<p class=\"text-gray-400\">I was born on September 16, 2005, in Chaksikandar Mansurpur, Bihar — not a dusty old village story, not a poverty-driven beginning, but a childhood filled with comfort, family warmth, and every wish my parents could fulfill.</p><p class=\"text-gray-400\">My father worked in Saudi Arabia, and though he wasn’t always home, he made sure I never felt a lack of anything — not dreams, not support, not possibilities.</p><p class=\"text-gray-400\">I didn’t grow up struggling for basics. I grew up learning the value of what I already had.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">A Move, A New Rhythm of Life</h3><p class=\"text-gray-400\">We later shifted to Hajipur, a town with more pace, more people, more exposure. I studied a year at Ideal Public School under Shahzad Sir — the first person who made me feel the weight and wonder of education.</p><p class=\"text-gray-400\">But my academic path was not linear.</p><p class=\"text-gray-400\">I switched schools, restarted chapters, and eventually landed in St. Paul’s, the place that shaped a very raw version of me.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">The Phase When I Chose Excitement Over Direction</h3><p class=\"text-gray-400\">Around Class 8, I drifted — not because of circumstances, but because of curiosity… and honestly, wrong choices.</p><p class=\"text-gray-400\">I surrounded myself with the wrong kind of crowd. Drama looked cooler than discipline. Fights felt more powerful than focus. Ego felt like identity.</p><p class=\"text-gray-400\">Suspensions came. More than five times.</p><p class=\"text-gray-400\">I wasn’t a bad kid. Just a kid who didn’t know where he was heading.</p><p class=\"text-gray-400\">Life didn’t stop me. It simply waited for me to outgrow that version of myself.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">10th Grade — The Quiet Reset</h3><p class=\"text-gray-400\">By Class 10, the noise inside me slowed down. I became calmer, quieter, a little lost… but more aware.</p><p class=\"text-gray-400\">I scored 87.4% — not a reflection of my confusion, but of my potential.</p><p class=\"text-gray-400\">My family suggested moving to Pune, not out of necessity, but because they believed exposure brings clarity.</p><p class=\"text-gray-400\">And they were right.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Pune — A New City, A Strange Pause</h3><p class=\"text-gray-400\">I joined Akshara International for 11th and 12th. But then lockdown hit.</p><p class=\"text-gray-400\">Classrooms turned into screens. Friends became icons. Life shrank into a room.</p><p class=\"text-gray-400\">My performance dipped. Not due to lack of resources, but because online life disconnects you from real learning.</p><p class=\"text-gray-400\">Teachers gave extra classes, I tried catching up, and somehow passed 12th with 72%.</p><p class=\"text-gray-400\">The marks didn’t bother me. The confusion of “What now?” did.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Kota — Not Struggle, But Intensity</h3><p class=\"text-gray-400\">With no clear direction, I took a drop year and moved to Kota for JEE preparation.</p><p class=\"text-gray-400\">Kota wasn’t about poverty or pressure from life — it was about intensity, competition, and the feeling of swimming among thousands of dreamers at once.</p><p class=\"text-gray-400\">I studied honestly. But results didn’t align with effort.</p><p class=\"text-gray-400\">After 8 months, my first attempt brought 66 percentile.</p><p class=\"text-gray-400\">And at the same time, I lost my grandfather.</p><p class=\"text-gray-400\">I couldn’t attend his last rituals — not because we couldn’t afford to, but because flights weren’t operational and trains were delayed.</p><p class=\"text-gray-400\">The timing was cruel. The guilt stayed.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Second Attempt — A Controlled Comeback</h3><p class=\"text-gray-400\">I returned to Bihar, grounded and calmer. Studied again. Gave my second attempt.</p><p class=\"text-gray-400\">86 percentile.</p><p class=\"text-gray-400\">Better. Still not enough.</p><p class=\"text-gray-400\">But I didn’t feel broken. I felt patient.</p><p class=\"text-gray-400\">Some journeys aren’t meant to be shortcuts.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">One More Door — And Finally, It Opened</h3><p class=\"text-gray-400\">I appeared for MHT-CET, and this time scored 93 percentile.</p><p class=\"text-gray-400\">That number changed everything.</p><p class=\"text-gray-400\">It opened the doors of MIT-WPU Pune, and suddenly my life had direction, clarity, and a path worth walking.</p><p class=\"text-gray-400\">The boy who once chased noise started walking toward purpose.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">What My Journey Really Means</h3><p class=\"text-gray-400\">My life is not a struggle-for-survival story. It’s a story of self-awareness, of learning to choose better paths, of understanding how environment shapes you, and how mindset transforms you.</p><p class=\"text-gray-400 mt-4\">Here’s what I learned:</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>Not every story needs pain. Some need growth.</li><li>Comfort doesn’t make you weak; confusion does.</li><li>Changing your circle can change your entire direction.</li><li>You don’t need to be perfect — just honest with yourself.</li></ul><p class=\"text-gray-400 mt-4\">And most importantly,</p><p class=\"text-center text-lg italic my-2 text-primary\">Where you come from matters less than who you choose to become.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">I’m Not at My Peak. I’m at My Beginning.</h3><p class=\"text-gray-400\">Today, I’m in Pune, studying engineering, building skills, and becoming the version of myself I always sensed but never understood.</p><p class=\"text-gray-400\">My story isn’t about struggle. It’s about evolution.</p><p class=\"text-gray-400\">Not about survival. But becoming.</p><p class=\"text-gray-400\">Not about lack. But learning.</p><p class=\"text-gray-400\">It’s real. It’s mine. And it’s still being written.</p>"
+    "hero": {
+      "greeting1": "ہیلو، میں احسن امام خان ہوں",
+      "mainText1": "ایک فری لانس فل اسٹیک ڈویلپر",
+      "subText1": "ہندوستان سے۔",
+      "greeting2": "میں ویب کے لیے چیزیں بناتا ہوں۔",
+      "mainText2": "جدید ویب سائٹس اور ویب ایپس",
+      "subText2": "جدید ٹیکنالوجی کا استعمال کرتے ہوئے۔",
+      "greeting3": "ایک ڈویلپر کی ضرورت ہے؟",
+      "mainText3": "آئیے کچھ بہت اچھا بنائیں",
+      "subText3": "ایک ساتھ۔",
+      "hireMe": "مجھے کام پر رکھیں",
+      "myWorks": "میرے کام"
+    },
+    "about": {
+      "title": "میرے بارے میں",
+      "name": "میں احسن امام خان ہوں",
+      "p1": "ہندوستان میں مقیم ایک پرجوش اور سرشار فری لانس فل اسٹیک ڈویلپر۔ میں جدید، ذمہ دار، اور اعلیٰ کارکردگی والی ویب سائٹس اور ایپلیکیشنز بنانے میں مہارت رکھتا ہوں جو ایک ہموار صارف کا تجربہ فراہم کرتی ہیں۔ میری مہارت فرنٹ اینڈ اور بیک اینڈ ڈویلپمنٹ میں ہے، اور میں اعلیٰ معیار کے حل فراہم کرنے کے لیے پرعزم ہوں جو میرے کلائنٹس کی منفرد ضروریات کو پورا کرتے ہیں۔",
+      "p2": "چھوٹی عمر سے ہی، میں ٹیکنالوجی اور حقیقی دنیا کے مسائل کو حل کرنے کی اس کی صلاحیت سے متوجہ رہا ہوں۔ اس جذبے نے مجھے ویب ڈویلپمنٹ میں کیریئر بنانے پر مجبور کیا، جہاں میں اپنی تخلیقی صلاحیتوں کو اپنی تکنیکی مہارتوں کے ساتھ ملا کر جدید اور مؤثر ڈیجیٹل مصنوعات بنا سکتا ہوں۔",
+      "p3": "میں Next.js، React، Firebase، اور دیگر مختلف جدید فریم ورکس سمیت ٹیکنالوجیز کی ایک وسیع رینج میں ماہر ہوں۔ چاہے آپ کو ایک سادہ پورٹ فولیو ویب سائٹ، ایک پیچیدہ ویب ایپلیکیشن، یا ایک مضبوط ای کامرس پلیٹ فارم کی ضرورت ہو، میرے پاس آپ کے وژن کو زندگی بخشنے کے لیے مہارت اور تجربہ ہے۔",
+      "projectsCompleted": "50+ پروجیکٹس مکمل ہوئے۔",
+      "hireMe": "مجھے کام پر رکھیں",
+      "downloadCV": "سی وی ڈاؤن لوڈ کریں"
+    },
+    "services": {
+      "title": "خدمات",
+      "service1": "ویب سائٹ ڈویلپمنٹ",
+      "service2": "ویب ایپلیکیشن ڈویلپمنٹ",
+      "service3": "SEO اور پرفارمنس آپٹیمائزیشن"
+    },
+    "projects": {
+      "title": "پروجیکٹس",
+      "viewProject": "پروجیکٹ دیکھیں",
+      "details": "تفصیلات",
+      "liveDemo": "لائیو ڈیمو"
+    },
+    "certificates": {
+      "title": "اسناد",
+      "viewAll": "تمام اسناد دیکھیں"
+    },
+    "education": {
+      "title": "تعلیم",
+      "viewMore": "میری تعلیم دیکھیں"
+    },
+    "contact": {
+      "title": "رابطہ",
+      "subtitle": "میں ہمیشہ نئے پروجیکٹس، تخلیقی خیالات، یا آپ کے وژن کا حصہ بننے کے مواقع پر بات کرنے کے لیے تیار ہوں۔ مجھ سے رابطہ کرنے میں ہچکچاہٹ محسوس نہ کریں۔",
+      "form": {
+        "name": "آپ کا نام",
+        "namePlaceholder": "اپنا نام درج کریں",
+        "email": "آپ کا ای میل",
+        "emailPlaceholder": "اپنا ای میل پتہ درج کریں",
+        "subject": "موضوع",
+        "subjectPlaceholder": "اپنے پیغام کا موضوع درج کریں",
+        "message": "آپ کا پیغام",
+        "messagePlaceholder": "اپنا پیغام یہاں ٹائپ کریں..."
+      }
+    },
+    "footer": {
+      "copyright": "جملہ حقوق محفوظ ہیں۔"
+    },
+    "blog": {
+      "title": "بلاگ سے",
+      "backgroundTitle": "مضامین",
+      "subtitle": "یہاں میں ویب ڈویلپمنٹ، ٹیکنالوجی، اور مزید پر اپنے خیالات کا اشتراک کرتا ہوں۔",
+      "readMore": "مزید پڑھیں",
+      "viewAll": "تمام پوسٹس دیکھیں"
+    },
+    "skills": {
+      "title": "مہارتیں"
+    },
+    "certificatesPage": {
+      "title": "میرے سرٹیفکیٹس",
+      "subtitle": "میرے پیشہ ورانہ سرٹیفیکیشنز اور کامیابیوں کا ایک مجموعہ۔"
+    },
+    "blogPosts": {
+      "ai-alteration-vs-tampering": {
+        "title": "AI: تبدیلی بمقابلہ چھیڑ چھاڑ — ایک اخلاقی دوراہا",
+        "description": "AI کے اخلاقی اور حفاظتی مضمرات کی کھوج، اس کے قلیل مدتی فوائد سے لے کر انسانی خودمختاری کے ساتھ چھیڑ چھاڑ کے طویل مدتی خطرات تک۔",
+        "content": "<h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">کیا AI ایک نعمت ہے یا ایک خطرہ؟</h3><p class=\"text-gray-400\">یہ ہمارے سائبر سیکیورٹی لیب سیشنز میں سے ایک کے دوران ایک سادہ سوال کے طور پر شروع ہوا۔</p><p class=\"text-gray-400 mt-4\">منگیش بیڈکر سر نے لیکچر روکا اور پوچھا:</p><blockquote class=\"border-l-4 border-primary pl-4 italic text-gray-300 my-4\">“AI ابھی طاقتور ہے۔ لیکن مجھے بتاؤ — طویل مدت میں، کیا یہ اب بھی ہماری خدمت کرے گا… یا یہ ہمیں کنٹرول کرنا شروع کر دے گا؟”</blockquote><p class=\"text-gray-400\">لیب میں خاموشی چھا گئی۔</p><p class=\"text-gray-400 mt-4\">اس لمحے تک، AI ہمیشہ دلچسپ محسوس ہوا تھا — موثر، جدید، انقلابی۔ لیکن اس سوال نے نقطہ نظر بدل دیا۔ یہ اس بارے میں نہیں تھا کہ AI کیا کر سکتا ہے۔ یہ اس بارے میں تھا کہ یہ کیا بن سکتا ہے۔</p><p class=\"text-gray-400 mt-4\">یہ بحث لیب ختم ہونے کے بہت بعد تک میرے ساتھ رہی۔ اور اس نے مجھے ایک گہری تشویش کو تلاش کرنے پر مجبور کیا:</p><p class=\"text-gray-300 mt-4 italic text-center\">کیا ہم صرف بہتری کے لیے اپنے نظام کو تبدیل کر رہے ہیں —<br>یا کیا ہم آہستہ آہستہ ٹیکنالوجی کو انسانی خودمختاری کے ساتھ چھیڑ چھاڑ کرنے کی اجازت دے رہے ہیں؟</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">قلیل مدتی: ذہین تبدیلی کے طور پر AI</h3><p class=\"text-gray-400\">ابھی، AI بلاشبہ تبدیلی لا رہا ہے — ایک مثبت انداز میں۔</p><ul class=\"list-disc list-inside text-gray-400 mt-4 space-y-2\"><li>ڈاکٹر بیماریوں کا جلد پتہ لگانے کے لیے AI کا استعمال کرتے ہیں۔</li><li>سائبر سیکیورٹی سسٹم حقیقی وقت میں بے ضابطگیوں کی نگرانی کے لیے AI کا استعمال کرتے ہیں۔</li><li>طلباء زیادہ موثر طریقے سے سیکھنے کے لیے AI ٹولز کا استعمال کرتے ہیں۔</li><li>کاروبار پیداواری صلاحیت کو بڑھانے کے لیے بار بار آنے والے کاموں کو خودکار بناتے ہیں۔</li></ul><p class=\"text-gray-400 mt-4\">ان مثالوں میں، AI انسانی فیصلے کی جگہ نہیں لے رہا ہے — یہ اصلاح کے لیے ورک فلوز کو تبدیل کر رہا ہے۔</p><p class=\"text-gray-400 mt-4\">یہ عمل کو بہتر بناتا ہے۔<br>یہ رفتار کو بڑھاتا ہے۔<br>یہ غلطی کو کم کرتا ہے۔</p><p class=\"text-gray-400 mt-4\">سب سے اہم بات یہ ہے کہ جب شفافیت اور واضح صارف کی <strong>رضامندی</strong> کے ساتھ تعینات کیا جاتا ہے، تو AI انسانی صلاحیت کا ایک توسیع بن جاتا ہے — اس کا متبادل نہیں۔</p><p class=\"text-gray-300 mt-4 font-semibold\">قلیل مدت میں، AI بہتری کے بارے میں ہے، کنٹرول کے بارے میں نہیں۔</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">باریک تبدیلی: تبدیلی سے چھیڑ چھاڑ تک</h3><p class=\"text-gray-400\">لیکن طویل مدتی سوال زیادہ پیچیدہ ہے۔</p><p class=\"text-gray-400 mt-4\">ان کے درمیان ایک پتلی اخلاقی حد ہے:</p><ul class=\"list-disc list-inside text-gray-400 my-4 space-y-1\"><li>کارکردگی کے لیے نظام کو تبدیل کرنا</li><li class=\"list-none text-center\">اور</li><li>انسانی انتخاب کے ساتھ <strong>چھیڑ چھاڑ</strong> کرنا۔</li></ul><p class=\"text-gray-400\">ایک مددگار سفارش کب رویے پر اثر انداز ہوتی ہے؟</p><p class=\"text-gray-400 mt-2\">آٹومیشن کب انحصار بن جاتا ہے؟</p><p class=\"text-gray-400 mt-4\">اگر AI واضح آگاہی یا باخبر <strong>رضامندی</strong> کے بغیر رائے بنانا، حقیقتوں کو فلٹر کرنا، یا فیصلوں کو آگے بڑھانا شروع کر دیتا ہے، تو ہم مدد سے آگے بڑھ جاتے ہیں۔</p><p class=\"text-gray-300 mt-2 font-semibold\">ہم ہیرا پھیری میں داخل ہوتے ہیں۔</p><p class=\"text-gray-400 mt-4\">طویل مدتی خطرات میں شامل ہیں:</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>ذاتی انتخاب پر الگورتھمک اثر</li><li>خودکار فیصلہ سازی کے نظام پر زیادہ انحصار</li><li>انسانی تنقیدی سوچ میں کمی</li><li>رازداری اور خودمختاری کا نقصان</li><li>AI سے چلنے والے پلیٹ فارمز کے اندر طاقت کا مرکزیت</li></ul><p class=\"text-gray-400 mt-4\">جب AI رویے کی حمایت کرنے کے بجائے اسے چلانا شروع کر دیتا ہے، تو یہ اب صرف عمل کو تبدیل نہیں کر رہا ہے — یہ آزادی کے ساتھ <strong>چھیڑ چھاڑ</strong> کر رہا ہے۔</p><p class=\"text-gray-400 mt-4\">اور یہ کوئی تکنیکی خرابی نہیں ہے۔</p><p class=\"text-gray-300 mt-2 font-semibold\">یہ ایک اخلاقی ناکامی ہے۔</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">رضامندی: سائبر سیکیورٹی کا نقطہ نظر</h3><p class=\"text-gray-400\">سائبر سیکیورٹی میں، ایک اصول سب سے بڑھ کر ہے:</p><p class=\"text-primary text-2xl font-bold my-4 text-center\">رضامندی۔</p><p class=\"text-gray-400 mt-4\">رضامندی کے بغیر رسائی دخل اندازی ہے۔<br>رضامندی کے بغیر ڈیٹا اکٹھا کرنا نگرانی ہے۔<br>رضامندی کے بغیر اثر و رسوخ ہیرا پھیری ہے۔</p><p class=\"text-gray-400 mt-4\">AI سسٹمز کو بھی اسی اخلاقی معیار پر عمل کرنا چاہیے۔</p><p class=\"text-gray-400 mt-4\">ہمیں ضرورت ہے:</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>شفاف الگورتھم</li><li>قابل وضاحت فیصلہ سازی</li><li>ریگولیٹری نگرانی</li><li>واضح اور باخبر صارف کی <strong>رضامندی</strong></li></ul><p class=\"text-gray-400 mt-4\"><strong>رضامندی</strong> کے بغیر، سب سے جدید AI بھی اخلاقی طور پر غیر مستحکم ہو جاتا ہے۔</p><p class=\"text-gray-300 mt-4\">مسئلہ ذہانت کا نہیں ہے۔</p><p class=\"text-gray-300 mt-2 font-semibold\">مسئلہ جوابدہی کا ہے۔</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">لیب سے باہر ایک عکاسی</h3><p class=\"text-gray-400\">اس دن لیب میں، بحث ڈرامائی نہیں تھی۔ دنیا پر قبضہ کرنے والی مشینوں کے بارے میں کوئی انتہائی پیش گوئیاں نہیں تھیں۔</p><p class=\"text-gray-400 mt-4\">یہ ایک پرسکون تشویش تھی۔</p><p class=\"text-gray-300 mt-2 font-semibold\">ایک زیادہ حقیقت پسندانہ۔</p><p class=\"text-gray-400 mt-4\">ٹیکنالوجی اچانک معاشرے کو ختم نہیں کرتی ہے۔ یہ آہستہ آہستہ اس میں ضم ہو جاتی ہے۔ یہ آہستہ آہستہ عادات کو بدلتی ہے۔ یہ لطیف طریقے سے رویے کو نئی شکل دیتی ہے۔</p><p class=\"text-gray-400 mt-4\">اصل خطرہ یہ نہیں ہے کہ AI برائی بن جائے۔</p><p class=\"text-gray-300 mt-2 font-semibold\">اصل خطرہ یہ ہے کہ ہم یہ دیکھنا چھوڑ دیں کہ ہم نے کتنا کنٹرول چھوڑ دیا ہے۔</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">نتیجہ: حدود کے ساتھ ترقی</h3><p class=\"text-gray-400\">مصنوعی ذہانت نہ تو ولن ہے اور نہ ہی نجات دہندہ۔</p><p class=\"text-gray-300 mt-4 font-semibold\">یہ ایک آلہ ہے۔</p><p class=\"text-gray-400 mt-4\">قلیل مدت میں، یہ کارکردگی اور ترقی کے لیے نظام کو تبدیل کرتا ہے۔<br>طویل مدت میں، اگر اسے بغیر جانچ کے چھوڑ دیا جائے، تو اس میں خودمختاری کے ساتھ <strong>چھیڑ چھاڑ</strong> کرنے کی صلاحیت ہے۔</p><p class=\"text-gray-400 mt-4\">اس کا مستقبل کا اثر اس کی کمپیوٹیشنل طاقت پر کم اور ان اخلاقی حدود پر زیادہ منحصر ہوگا جو ہم نافذ کرتے ہیں۔</p><p class=\"text-gray-400 mt-4\">چیلنج صرف ہوشیار مشینیں بنانا نہیں ہے۔</p><p class=\"text-gray-300 mt-2 font-semibold\">یہ یقینی بنانا ہے کہ انسانی حکمت، ضابطے، اور <strong>رضامندی</strong> ان کے ساتھ ساتھ تیار ہوں۔</p><p class=\"text-gray-400 mt-4\">کیونکہ سوال یہ نہیں ہے:</p><blockquote class=\"border-l-4 border-primary pl-4 italic text-gray-300 my-4\">“کیا AI ذہین ہے؟”</blockquote><p class=\"text-gray-400 mt-4\">اصل سوال یہ ہے:</p><blockquote class=\"border-l-4 border-primary pl-4 italic text-gray-300 my-4\">“کیا ہم جو کچھ بناتے ہیں اسے کنٹرول کرنے کے لیے کافی ذمہ دار ہیں؟”</blockquote><hr class=\"my-8 border-border/50\"><p class=\"text-gray-500 mt-6 italic text-sm\">مصنوعی ذہانت کے اخلاقی مضمرات پر منگیش بیڈکر سر کے ساتھ سائبر سیکیورٹی لیب کی بحث سے متاثر۔</p>"
+      }
     }
   }
-}
-
-    
