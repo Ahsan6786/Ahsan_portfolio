@@ -5,60 +5,71 @@
     "about": "About",
     "education": "Education",
     "services": "Services",
+    "skills": "Skills",
     "projects": "Projects",
     "certificates": "Certificates",
     "contact": "Contact"
   },
   "hero": {
-    "greeting1": "Hello, I'm Ahsan Imam Khan",
+    "greeting1": "Hello, I'm Ahsan",
     "mainText1": "A Freelance Full-Stack Developer",
-    "subText1": "from India.",
-    "greeting2": "I build things for the web.",
-    "mainText2": "Modern Websites & Web Apps",
-    "subText2": "using cutting-edge technology.",
-    "greeting3": "Need a developer?",
-    "mainText3": "Let's Build Something Great",
-    "subText3": "together.",
+    "subText1": "from India",
+    "greeting2": "I Build",
+    "mainText2": "Modern & Scalable Web Apps",
+    "subText2": "using cutting-edge technologies",
+    "greeting3": "Let's Create",
+    "mainText3": "Something Amazing Together",
+    "subText3": "Have an idea? Let's talk",
     "hireMe": "Hire Me",
     "myWorks": "My Works"
   },
   "about": {
     "title": "About Me",
-    "name": "I am Ahsan Imam Khan",
-    "p1": "a passionate and dedicated freelance full-stack developer based in India. I specialize in building modern, responsive, and high-performance websites and applications that provide a seamless user experience. My expertise lies in front-end and back-end development, and I am committed to delivering high-quality solutions that meet the unique needs of my clients.",
-    "p2": "From a young age, I have been fascinated by technology and its ability to solve real-world problems. This passion led me to pursue a career in web development, where I can combine my creativity with my technical skills to build innovative and impactful digital products.",
-    "p3": "I am proficient in a wide range of technologies, including Next.js, React, Firebase, and various other modern frameworks. Whether you need a simple portfolio website, a complex web application, or a robust e-commerce platform, I have the skills and experience to bring your vision to life.",
-    "projectsCompleted": "50+ Projects Completed",
+    "name": "I'm Ahsan Imam Khan, a Full-Stack Developer",
+    "p1": "I am a dedicated and passionate freelance full-stack developer based in India, with a strong focus on building modern, responsive, and high-performance websites and applications. My expertise lies in leveraging cutting-edge technologies like Next.js, React, and Firebase to deliver seamless and engaging user experiences.",
+    "p2": "My journey in web development started with a fascination for how ideas can be transformed into interactive digital realities. Over the years, I've honed my skills in both front-end and back-end development, allowing me to handle projects from concept to deployment. I thrive on solving complex problems and am committed to writing clean, efficient, and maintainable code.",
+    "p3": "Whether it's a personal portfolio, a business website, or a complex web application, I approach every project with the same level of dedication and attention to detail. I'm always eager to learn new technologies and stay updated with the latest industry trends to ensure my work is not just functional but also future-proof. Let's collaborate to bring your vision to life!",
+    "projectsCompleted": "10+ Projects Completed",
     "hireMe": "Hire Me",
-    "downloadCV": "Download CV"
-  },
-  "services": {
-    "title": "Services",
-    "service1": "Website Development",
-    "service2": "Web Application Development",
-    "service3": "SEO & Performance Optimization"
-  },
-  "projects": {
-    "title": "Projects",
-    "viewProject": "View Project",
-    "details": "Details",
-    "liveDemo": "Live Demo"
-  },
-  "certificates": {
-    "title": "Certificates",
-    "viewAll": "View All Certificates"
+    "downloadCv": "Download CV"
   },
   "education": {
     "title": "Education",
     "viewMore": "View My Education"
   },
+  "services": {
+    "title": "Services",
+    "service1": "Web Development",
+    "service2": "Web Applications",
+    "service3": "SEO Optimization"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "blog": {
+    "title": "From the Blog",
+    "backgroundTitle": "Articles",
+    "subtitle": "Here I share my thoughts on web development, technology, and more.",
+    "viewAll": "View All Posts",
+    "readMore": "Read More"
+  },
+  "testimonials": {
+    "title": "Testimonials"
+  },
+  "certificates": {
+    "title": "Certificates & Achievements",
+    "viewAll": "View All Certificates"
+  },
   "contact": {
     "title": "Contact",
-    "subtitle": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out to me.",
+    "subtitle": "Have a project in mind? I'd love to hear from you. Feel free to send me a message.",
     "form": {
       "name": "Your Name",
-      "namePlaceholder": "Enter your name",
-      "email": "Your Email",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email Address",
       "emailPlaceholder": "Enter your email address",
       "subject": "Subject",
       "subjectPlaceholder": "Enter the subject of your message",
@@ -69,16 +80,6 @@
   "footer": {
     "copyright": "All rights reserved."
   },
-  "blog": {
-    "title": "From the Blog",
-    "backgroundTitle": "Articles",
-    "subtitle": "Here I share my thoughts on web development, technology, and more.",
-    "readMore": "Read More",
-    "viewAll": "View All Posts"
-  },
-  "skills": {
-    "title": "Skills"
-  },
   "certificatesPage": {
     "title": "My Certificates",
     "subtitle": "A collection of my professional certifications and achievements."
@@ -87,7 +88,11 @@
     "ai-alteration-vs-tampering": {
       "title": "AI: Alteration vs. Tampering — An Ethical Crossroads",
       "description": "Exploring the ethical and security implications of AI, from its short-term benefits to its long-term risks of tampering with human autonomy.",
-      "content": "<h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Is AI a Blessing or a Risk?</h3><p class=\"text-gray-400\">It started as a simple question during one of our Cyber Security lab sessions.</p><p class=\"text-gray-400 mt-4\">Mangesh Bedkar Sir paused the lecture and asked:</p><blockquote class=\"border-l-4 border-primary pl-4 italic text-gray-300 my-4\">“AI is powerful right now. But tell me — in the long run, will it still serve us… or will it start controlling us?”</blockquote><p class=\"text-gray-400\">The lab went silent.</p><p class=\"text-gray-400 mt-4\">Until that moment, AI had always felt exciting — efficient, innovative, revolutionary. But that question shifted the perspective. It wasn’t about what AI can do. It was about what it might become.</p><p class=\"text-gray-400 mt-4\">That discussion stayed with me long after the lab ended. And it pushed me to explore a deeper concern:</p><p class=\"text-gray-300 mt-4 italic text-center\">Are we merely altering our systems for improvement —<br>or are we slowly allowing technology to tamper with human autonomy?</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Short-Term: AI as Intelligent Alteration</h3><p class=\"text-gray-400\">Right now, AI is undeniably transformative — in a positive way.</p><ul class=\"list-disc list-inside text-gray-400 mt-4 space-y-2\"><li>Doctors use AI to detect diseases earlier.</li><li>Cybersecurity systems use AI to monitor anomalies in real time.</li><li>Students use AI tools to learn more efficiently.</li><li>Businesses automate repetitive tasks to increase productivity.</li></ul><p class=\"text-gray-400 mt-4\">In these examples, AI is not replacing human judgment — it is altering workflows for optimization.</p><p class=\"text-gray-400 mt-4\">It refines processes.<br>It enhances speed.<br>It reduces error.</p><p class=\"text-gray-400 mt-4\">Most importantly, when deployed with transparency and clear user <strong>consent</strong>, AI becomes an extension of human capability — not a substitute for it.</p><p class=\"text-gray-300 mt-4 font-semibold\">In the short term, AI is about improvement, not control.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">The Subtle Shift: From Alteration to Tampering</h3><p class=\"text-gray-400\">But the long-term question is more complex.</p><p class=\"text-gray-400 mt-4\">There is a thin ethical boundary between:</p><ul class=\"list-disc list-inside text-gray-400 my-4 space-y-1\"><li>Altering systems for efficiency</li><li class=\"list-none text-center\">and</li><li><strong>Tampering</strong> with human choice.</li></ul><p class=\"text-gray-400\">When does a helpful recommendation become behavioral influence?</p><p class=\"text-gray-400 mt-2\">When does automation become dependence?</p><p class=\"text-gray-400 mt-4\">If AI begins shaping opinions, filtering realities, or nudging decisions without explicit awareness or informed <strong>consent</strong>, then we move beyond assistance.</p><p class=\"text-gray-300 mt-2 font-semibold\">We enter manipulation.</p><p class=\"text-gray-400 mt-4\">Long-term risks include:</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>Algorithmic influence over personal choices</li><li>Over-dependence on automated decision systems</li><li>Decline in human critical thinking</li><li>Loss of privacy and autonomy</li><li>Centralization of power within AI-driven platforms</li></ul><p class=\"text-gray-400 mt-4\">When AI starts steering behavior rather than supporting it, it is no longer simply altering processes — it is <strong>tampering</strong> with freedom.</p><p class=\"text-gray-400 mt-4\">And that is not a technical glitch.</p><p class=\"text-gray-300 mt-2 font-semibold\">It is an ethical failure.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Consent: The Cyber Security Perspective</h3><p class=\"text-gray-400\">In cybersecurity, one principle stands above all:</p><p class=\"text-primary text-2xl font-bold my-4 text-center\">Consent.</p><p class=\"text-gray-400 mt-4\">Access without consent is intrusion.<br>Data collection without consent is surveillance.<br>Influence without consent is manipulation.</p><p class=\"text-gray-400 mt-4\">AI systems must follow the same ethical standard.</p><p class=\"text-gray-400 mt-4\">We need:</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>Transparent algorithms</li><li>Explainable decision-making</li><li>Regulatory oversight</li><li>Explicit and informed user <strong>consent</strong></li></ul><p class=\"text-gray-400 mt-4\">Without <strong>consent</strong>, even the most advanced AI becomes ethically unstable.</p><p class=\"text-gray-300 mt-4\">The issue is not intelligence.</p><p class=\"text-gray-300 mt-2 font-semibold\">The issue is accountability.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">A Reflection Beyond the Lab</h3><p class=\"text-gray-400\">That day in the lab, the discussion wasn’t dramatic. There were no extreme predictions about machines taking over the world.</p><p class=\"text-gray-400 mt-4\">It was a quieter concern.</p><p class=\"text-gray-300 mt-2 font-semibold\">A more realistic one.</p><p class=\"text-gray-400 mt-4\">Technology does not suddenly overthrow society. It gradually integrates into it. It slowly alters habits. It subtly reshapes behavior.</p><p class=\"text-gray-400 mt-4\">The real risk is not that AI becomes evil.</p><p class=\"text-gray-300 mt-2 font-semibold\">The real risk is that we stop noticing how much control we have surrendered.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Conclusion: Progress With Boundaries</h3><p class=\"text-gray-400\">Artificial Intelligence is neither a villain nor a savior.</p><p class=\"text-gray-300 mt-4 font-semibold\">It is a tool.</p><p class=\"text-gray-400 mt-4\">In the short term, it alters systems for efficiency and progress.<br>In the long term, if unchecked, it has the potential to <strong>tamper</strong> with autonomy.</p><p class=\"text-gray-400 mt-4\">Its future impact will depend less on its computational power and more on the ethical boundaries we enforce.</p><p class=\"text-gray-400 mt-4\">The challenge is not simply building smarter machines.</p><p class=\"text-gray-300 mt-2 font-semibold\">It is ensuring that human wisdom, regulation, and <strong>consent</strong> evolve alongside them.</p><p class=\"text-gray-400 mt-4\">Because the question is not:</p><blockquote class=\"border-l-4 border-primary pl-4 italic text-gray-300 my-4\">“Is AI intelligent?”</blockquote><p class=\"text-gray-400 mt-4\">The real question is:</p><blockquote class=\"border-l-4 border-primary pl-4 italic text-gray-300 my-4\">“Are we responsible enough to control what we create?”</blockquote><hr class=\"my-8 border-border/50\"><p class=\"text-gray-500 mt-6 italic text-sm\">Inspired by a cybersecurity lab discussion with Mangesh Bedkar Sir on the ethical implications of Artificial Intelligence.</p>"
+      "content": "<h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Is AI a Blessing or a Risk?</h3><p class=\"text-gray-400\">It started as a simple question during one of our Cyber Security lab sessions.</p><p class=\"text-gray-400 mt-4\">Mangesh Bedkar Sir paused the lecture and asked:</p><blockquote class=\"border-l-4 border-primary pl-4 italic text-gray-300 my-4\">“AI is powerful right now. But tell me — in the long run, will it still serve us… or will it start controlling us?”</blockquote><p class=\"text-gray-400\">The lab went silent.</p><p class=\"text-gray-400 mt-4\">Until that moment, AI had always felt exciting — efficient, innovative, revolutionary. But that question shifted the perspective. It wasn’t about what AI can do. It was about what it might become.</p><p class=\"text-gray-400 mt-4\">That discussion stayed with me long after the lab ended. And it pushed me to explore a deeper concern:</p><p class=\"text-gray-300 mt-4 italic text-center\">Are we merely altering our systems for improvement —<br>or are we slowly allowing technology to tamper with human autonomy?</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Short-Term: AI as Intelligent Alteration</h3><p class=\"text-gray-400\">Right now, AI is undeniably transformative — in a positive way.</p><ul class=\"list-disc list-inside text-gray-400 mt-4 space-y-2\"><li>Doctors use AI to detect diseases earlier.</li><li>Cybersecurity systems use AI to monitor anomalies in real time.</li><li>Students use AI tools to learn more efficiently.</li><li>Businesses automate repetitive tasks to increase productivity.</li></ul><p class=\"text-gray-400 mt-4\">In these examples, AI is not replacing human judgment — it is altering workflows for optimization.</p><p class=\"text-gray-400 mt-4\">It refines processes.<br>It enhances speed.<br>It reduces error.</p><p class=\"text-gray-400 mt-4\">Most importantly, when deployed with transparency and clear user <strong>consent</strong>, AI becomes an extension of human capability — not a substitute for it.</p><p class=\"text-gray-300 mt-4 font-semibold\">In the short term, AI is about improvement, not control.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">The Subtle Shift: From Alteration to Tampering</h3><p class=\"text-gray-400\">But the long-term question is more complex.</p><p class=\"text-gray-400 mt-4\">There is a thin ethical boundary between:</p><ul class=\"list-disc list-inside text-gray-400 my-4 space-y-1\"><li>Altering systems for efficiency</li><li class=\"list-none text-center\">and</li><li><strong>Tampering</strong> with human choice.</li></ul><p class=\"text-gray-400\">When does a helpful recommendation become behavioral influence?</p><p class=\"text-gray-400 mt-2\">When does automation become dependence?</p><p class=\"text-gray-400 mt-4\">If AI begins shaping opinions, filtering realities, or nudging decisions without explicit awareness or informed <strong>consent</strong>, then we move beyond assistance.</p><p class=\"text-gray-300 mt-2 font-semibold\">We enter manipulation.</p><p class=\"text-gray-400 mt-4\">Long-term risks include:</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>Algorithmic influence over personal choices</li><li>Over-dependence on automated decision systems</li><li>Decline in human critical thinking</li><li>Loss of privacy and autonomy</li><li>Centralization of power within AI-driven platforms</li></ul><p class=\"text-gray-400 mt-4\">When AI starts steering behavior rather than supporting it, it is no longer simply altering processes — it is <strong>tampering</strong> with freedom.</p><p class=\"text-gray-400 mt-4\">And that is not a technical glitch.</p><p class=\"text-gray-300 mt-2 font-semibold\">It is an ethical failure.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Consent: The Cyber Security Perspective</h3><p class=\"text-gray-400\">In cybersecurity, one principle stands above all:</p><p class=\"text-primary text-2xl font-bold my-4 text-center\">Consent.</p><p class=\"text-gray-400 mt-4\">Access without consent is intrusion.<br>Data collection without consent is surveillance.<br>Influence without consent is manipulation.</p><p class=\"text-gray-400 mt-4\">AI systems must follow the same ethical standard.</p><p class=\"text-gray-400 mt-4\">We need:</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>Transparent algorithms</li><li>Explainable decision-making</li><li>Regulatory oversight</li><li>Explicit and informed user <strong>consent</strong></li></ul><p class=\"text-gray-400 mt-4\">Without <strong>consent</strong>, even the most advanced AI becomes ethically unstable.</p><p class=\"text-gray-300 mt-4\">The issue is not intelligence.</p><p class=\"text-gray-300 mt-2 font-semibold\">The issue is accountability.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">A Reflection Beyond the Lab</h3><p class=\"text-gray-400\">That day in the lab, the discussion wasn’t dramatic. There were no extreme predictions about machines taking over the world.</p><p class=\"text-gray-400 mt-4\">It was a quieter concern.</p><p class=\"text-gray-300 mt-2 font-semibold\">A more realistic one.</p><p class=\"text-gray-400 mt-4\">Technology does not suddenly overthrow society. It gradually integrates into it. It slowly alters habits. It subtly reshapes behavior.</p><p class=\"text-gray-400 mt-4\">The real risk is not that AI becomes evil.</p><p class=\"text-gray-300 mt-2 font-semibold\">The real risk is that we stop noticing how much control we have surrendered.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Conclusion: Progress With Boundaries</h3><p class=\"text-gray-400\">Artificial Intelligence is neither a villain nor a savior.</p><p class=\"text-gray-300 mt-4 font-semibold\">It is a tool.</p><p class=\"text-gray-400 mt-4\">In the short term, it alters systems for efficiency and progress.<br>In the long term, if unchecked, it has the potential to <strong>tamper</strong> with autonomy.</p><p class=\"text-gray-400 mt-4\">Its future impact will depend less on its computational power<br>and more on the ethical boundaries we enforce.</p><p class=\"text-gray-400 mt-4\">The challenge is not simply building smarter machines.</p><p class=\"text-gray-300 mt-2 font-semibold\">It is ensuring that human wisdom, regulation, and <strong>consent</strong> evolve alongside them.</p><p class=\"text-gray-400 mt-4\">Because the question is not:</p><blockquote class=\"border-l-4 border-primary pl-4 italic text-gray-300 my-4\">“Is AI intelligent?”</blockquote><p class=\"text-gray-400 mt-4\">The real question is:</p><blockquote class=\"border-l-4 border-primary pl-4 italic text-gray-300 my-4\">“Are we responsible enough to control what we create?”</blockquote><hr class=\"my-8 border-border/50\"><p class=\"text-gray-500 mt-6 italic text-sm\">Inspired by a cybersecurity lab discussion with Mangesh Bedkar Sir on the ethical implications of Artificial Intelligence.</p>"
+    },
+    "my-life-story-from-village-to-code": {
+      "title": "Not Perfect — But Progress",
+      "description": "A short look into where I started, what shaped me, and where I’m heading. Not the full story—just the beginning."
     }
   }
 }
