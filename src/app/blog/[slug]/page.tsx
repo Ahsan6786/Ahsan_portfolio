@@ -6,7 +6,7 @@ import Image from "next/image";
 import { blogPosts, type BlogPost } from "@/lib/blog-posts";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, User, Share2, Languages, Loader } from "lucide-react";
+import { ArrowLeft, User, Share2, Languages, Loader, Clock } from "lucide-react";
 import React, { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import {
@@ -63,7 +63,7 @@ export default function BlogPostPage() {
     }
     setIsLoading(false);
 
-  }, [slug, langLoading]);
+  }, [slug, langLoading, translations.blogPosts]);
 
 
   if (isLoading) {
@@ -139,9 +139,14 @@ export default function BlogPostPage() {
                     <span>{post.author}</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
                     <span>{post.date}</span>
                   </div>
+                  {post.readingTime && (
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      <span>{post.readingTime}</span>
+                    </div>
+                  )}
                   <Button
                     onClick={handleShare}
                     variant="outline"
@@ -198,7 +203,7 @@ export default function BlogPostPage() {
             
             <AnimateOnScroll>
                 <div
-                    className="max-w-none mx-auto text-foreground/90 space-y-6"
+                    className="prose prose-lg dark:prose-invert max-w-none mx-auto text-foreground/90 space-y-6"
                     dangerouslySetInnerHTML={{ __html: content }}
                 />
             </AnimateOnScroll>
