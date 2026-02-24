@@ -194,9 +194,5 @@
   "blogPostAI": {
     "src": "/ai.jpeg",
     "aiHint": "artificial intelligence brain"
-  },
-  "aiBackground": {
-    "src": "https://picsum.photos/seed/aibg/1920/1080",
-    "aiHint": "abstract technology"
   }
 }

@@ -26,7 +26,6 @@ export const blogPosts: BlogPost[] = [
         date: "February 24, 2026",
         author: "Ahsan Imam Khan",
         image: placeholderData.blogPostAI,
-        backgroundImage: placeholderData.aiBackground,
         readingTime: "4 min read",
         content: `
             <h3 class="text-2xl font-bold mt-8 mb-4 text-white">Is AI a Blessing or a Risk?</h3>
@@ -139,7 +138,6 @@ export const blogPosts: BlogPost[] = [
         date: "September 16, 2025",
         author: "Ahsan Imam Khan",
         image: placeholderData.heroImage,
-        backgroundImage: placeholderData.biharBackground,
         readingTime: "5 min read",
         content: `
             <p class="text-gray-400">I was born on September 16, 2005, in Chaksikandar Mansurpur, Bihar — not a dusty old village story, not a poverty-driven beginning, but a childhood filled with comfort, family warmth, and every wish my parents could fulfill.</p>

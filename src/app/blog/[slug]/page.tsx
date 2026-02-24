@@ -176,28 +176,16 @@ export default function BlogPostPage() {
             </AnimateOnScroll>
 
             <AnimateOnScroll className="mb-8 md:mb-12">
-                <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-lg bg-black">
-                    {post.backgroundImage && (
-                        <Image
-                            src={post.backgroundImage.src}
-                            alt="Background"
-                            fill
-                            sizes="100vw"
-                            className="object-cover opacity-30"
-                            data-ai-hint={post.backgroundImage.aiHint}
-                        />
-                    )}
-                    <div className="absolute inset-0 flex items-center justify-center p-4">
-                        <Image
-                            src={post.image.src}
-                            alt={post.title}
-                            width={500}
-                            height={300}
-                            className="object-contain"
-                            data-ai-hint={post.image.aiHint}
-                            priority
-                        />
-                    </div>
+                <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-lg">
+                    <Image
+                        src={post.image.src}
+                        alt={post.title}
+                        fill
+                        sizes="(max-width: 768px) 90vw, 56rem"
+                        className="object-cover"
+                        data-ai-hint={post.image.aiHint}
+                        priority
+                    />
                 </div>
             </AnimateOnScroll>
             
