@@ -13,7 +13,6 @@ export type BlogPost = {
     date: string;
     author: string;
     image: ImageType;
-    backgroundImage?: ImageType;
     content: string;
     readingTime: string;
 };
@@ -30,7 +29,7 @@ export const blogPosts: BlogPost[] = [
         content: `
             <h3 class="text-2xl font-bold mt-8 mb-4 text-white">Is AI a Blessing or a Risk?</h3>
             <p class="text-gray-400">It started as a simple question during one of our Cyber Security lab sessions.</p>
-            <p class="text-gray-400 mt-4">Mangesh Bedkar Sir paused the lecture and asked:</p>
+            <p class="text-gray-400 mt-4">Dr. Mangesh Vilas Bedekar sir paused the lecture and asked:</p>
             <blockquote class="border-l-4 border-primary pl-4 italic text-gray-300 my-4">
             “AI is powerful right now. But tell me — in the long run, will it still serve us… or will it start controlling us?”
             </blockquote>
@@ -128,7 +127,7 @@ export const blogPosts: BlogPost[] = [
             
             <hr class="my-8 border-border/50">
             
-            <p class="text-gray-500 mt-6 italic text-sm">Inspired by a cybersecurity lab discussion with Mangesh Bedkar Sir on the ethical implications of Artificial Intelligence.</p>
+            <p class="text-gray-500 mt-6 italic text-sm">Inspired by a cybersecurity lab discussion with Dr. Mangesh Vilas Bedekar sir on the ethical implications of Artificial Intelligence.</p>
         `
     },
     {
@@ -230,5 +229,7 @@ export const blogPosts: BlogPost[] = [
         `
     }
 ];
+
+    
 
     
