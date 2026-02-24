@@ -190,5 +190,13 @@
   "biharBackground": {
     "src": "/b.png",
     "aiHint": "abstract texture"
+  },
+  "blogPostAI": {
+    "src": "/ai.png",
+    "aiHint": "artificial intelligence brain"
+  },
+  "aiBackground": {
+    "src": "https://picsum.photos/seed/aibg/1920/1080",
+    "aiHint": "abstract technology"
   }
 }
