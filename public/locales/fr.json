@@ -1,93 +1,103 @@
 
 {
   "header": {
-    "home": "Accueil",
-    "about": "À propos",
-    "education": "Éducation",
+    "home": "Home",
+    "about": "About",
+    "education": "Education",
     "services": "Services",
-    "projects": "Projets",
-    "certificates": "Certificats",
+    "skills": "Skills",
+    "projects": "Projects",
+    "blog": "Blog",
+    "testimonials": "Testimonials",
+    "certificates": "Certificates",
     "contact": "Contact"
   },
   "hero": {
-    "greeting1": "Bonjour, je suis Ahsan",
-    "mainText1": "Un concepteur de sites web et développeur full-stack indépendant",
-    "subText1": "Je construis des sites web modernes et réactifs.",
-    "greeting2": "Je suis créatif",
-    "mainText2": "Je transforme vos idées en expériences numériques éblouissantes",
-    "subText2": "De la conception au déploiement, je m'occupe de tout.",
-    "greeting3": "Je suis un développeur",
-    "mainText3": "Je crée des applications web haute performance avec les technologies modernes",
-    "subText3": "Spécialisé en Next.js, React et Firebase.",
-    "hireMe": "Engagez-moi",
-    "myWorks": "Mes travaux"
+    "greeting1": "Hello, I'm Ahsan,",
+    "mainText1": "Full-Stack Developer",
+    "subText1": "I build modern web experiences.",
+    "greeting2": "I'm a Creator,",
+    "mainText2": "Digital Craftsman",
+    "subText2": "Bringing ideas to life with code.",
+    "greeting3": "I'm a Problem-Solver,",
+    "mainText3": "Technology Enthusiast",
+    "subText3": "Passionate about innovation.",
+    "hireMe": "Hire Me",
+    "myWorks": "My Works"
   },
   "about": {
-    "title": "À propos de moi",
-    "name": "Je suis Ahsan Imam Khan, un développeur et concepteur full-stack",
-    "p1": "Je suis un développeur web indépendant et ingénieur full-stack passionné et dévoué, spécialisé dans la création de sites web et d'applications modernes, réactifs et performants. Avec une base solide en Next.js, React et Firebase, je construis des expériences numériques fluides à partir de zéro, transformant des idées complexes en réalités fonctionnelles et esthétiques.",
-    "p2": "Mon parcours dans le développement web a commencé avec une profonde curiosité pour le fonctionnement des choses sur Internet. Cette curiosité s'est transformée en une carrière où j'apprends et m'adapte continuellement aux nouvelles technologies. Je m'épanouis dans les défis et je m'engage à fournir des solutions évolutives de haute qualité qui répondent aux besoins uniques de mes clients.",
-    "p3": "Que vous recherchiez une simple page de destination, une application web complexe ou une refonte complète de votre présence en ligne, j'ai les compétences et l'expérience nécessaires pour donner vie à votre vision. Travaillons ensemble pour créer quelque chose d'extraordinaire.",
-    "projectsCompleted": "20+ projets terminés",
-    "hireMe": "Engagez-moi",
-    "downloadCv": "Télécharger le CV"
+    "title": "About Me",
+    "name": "I am Ahsan Imam Khan",
+    "p1": "I am a freelance full-stack developer based in India, specializing in building modern, responsive, and high-performance websites and applications. My expertise lies in the MERN stack, Next.js, and Firebase, but I'm always eager to explore new technologies.",
+    "p2": "My journey in web development started with a simple 'Hello, World!' and grew into a passion for creating seamless digital experiences. I believe in writing clean, scalable, and maintainable code.",
+    "p3": "Whether it's a personal portfolio, a business website, or a complex web application, I am dedicated to delivering high-quality solutions that meet my clients' needs and exceed their expectations. Let's build something amazing together.",
+    "projectsCompleted": "10+ Projects Completed",
+    "hireMe": "Hire Me"
   },
   "education": {
-    "title": "Éducation",
-    "viewMore": "Voir mon éducation"
+    "title": "Education",
+    "viewMore": "View My Journey"
   },
   "services": {
     "title": "Services",
-    "service1": "Développement Web",
-    "service2": "Applications Web",
-    "service3": "SEO"
+    "service1": "Web Development",
+    "service2": "Web App Development",
+    "service3": "SEO Optimization"
   },
   "skills": {
-    "title": "Compétences"
+    "title": "My Skills"
   },
   "projects": {
-    "title": "Projets"
+    "title": "Projects"
   },
   "blog": {
-    "title": "Du Blog",
+    "title": "From the Blog",
     "backgroundTitle": "Articles",
-    "subtitle": "Ici, je partage mes réflexions sur le développement web, la technologie, et plus encore.",
-    "viewAll": "Voir tous les articles",
-    "readMore": "Lire la suite"
+    "subtitle": "Here I share my thoughts on web development, technology, and more.",
+    "readMore": "Read More",
+    "viewAll": "View All Posts"
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "What my clients say about me."
   },
   "certificates": {
-    "title": "Certificats et Réalisations",
-    "viewAll": "Voir tous les certificats"
+    "title": "Licenses & Certifications",
+    "viewAll": "View All Certificates"
   },
   "certificatesPage": {
-    "title": "Certificats et Réalisations",
-    "subtitle": "Une collection de mes certifications et réalisations professionnelles."
+    "title": "My Certificates",
+    "subtitle": "A collection of my professional licenses and certifications."
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Vous avez un projet en tête ? J'aimerais beaucoup en savoir plus. Connectons-nous et construisons quelque chose d'incroyable ensemble. N'hésitez pas à me contacter via l'un des canaux ci-dessous.",
-    "address": "Adresse",
-    "contactNumber": "Numéro de contact",
-    "emailAddress": "Adresse e-mail",
+    "subtitle": "Have a project in mind or just want to say hi? Feel free to reach out. I'm always open to discussing new ideas and opportunities.",
     "form": {
-      "name": "Nom",
-      "namePlaceholder": "Votre nom",
+      "name": "Name",
+      "namePlaceholder": "Your Name",
       "email": "Email",
-      "emailPlaceholder": "Votre e-mail",
-      "subject": "Sujet",
-      "subjectPlaceholder": "Sujet",
+      "emailPlaceholder": "Your Email",
+      "subject": "Subject",
+      "subjectPlaceholder": "Subject of your message",
       "message": "Message",
-      "messagePlaceholder": "Votre message",
-      "sendMessage": "Envoyer le message"
+      "messagePlaceholder": "Your Message"
     }
   },
   "footer": {
-    "copyright": "Tous droits réservés."
+    "copyright": "All rights reserved."
   },
   "blogPosts": {
+    "ai-alteration-vs-tampering": {
+      "title": "IA : Altération vs. Falsification — Un Carrefour Éthique",
+      "description": "Explorer les implications éthiques et de sécurité de l'IA, de ses avantages à court terme à ses risques à long terme de falsification de l'autonomie humaine.",
+      "content": "<h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">L'IA est-elle une bénédiction ou un risque ?</h3><p class=\"text-gray-400\">L'intelligence artificielle change tout. De nos hôpitaux à nos écoles, elle rend les choses plus rapides et plus intelligentes. Mais alors que nous voyons les gains à court terme, il est crucial de se poser une question plus large : où tout cela nous mène-t-il ?</p><p class=\"text-gray-300 mt-4 italic\">Améliorons-nous simplement notre monde, ou abandonnons-nous accidentellement le contrôle ?</p><p class=\"text-gray-400 mt-4\">Cette question nous pousse à regarder au-delà du battage médiatique et à réfléchir à l'éthique de l'IA - non seulement à ce qu'elle peut faire, mais à ce qu'elle *devrait* faire.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">À court terme : l'IA comme outil intelligent</h3><p class=\"text-gray-400\">Pour l'instant, l'IA est principalement un assistant puissant. Elle ne nous remplace pas ; elle nous aide. Pensez à :</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>Les médecins utilisant l'IA pour détecter les maladies plus tôt.</li><li>Les systèmes de cybersécurité utilisant l'IA pour surveiller les menaces.</li><li>Les tâches répétitives sont automatisées, libérant notre temps.</li></ul><p class=\"text-gray-400 mt-4\">Dans ces cas, l'IA *altère* simplement nos flux de travail pour le mieux. C'est un outil qui affine notre travail. Tant qu'elle fonctionne avec notre <strong>consentement</strong> clair, c'est une extension de nos propres capacités.</p><p class=\"text-gray-300 mt-2 font-semibold\">Il s'agit d'amélioration, pas de contrôle.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">À long terme : le danger de la falsification</h3><p class=\"text-gray-400\">L'avenir, cependant, pourrait être différent. Il y a une ligne mince entre altérer un système et <strong>falsifier</strong> le choix humain. Quand une suggestion utile devient-elle un coup de coude manipulateur ?</p><p class=\"text-gray-400 mt-4\">Si l'IA commence à influencer nos opinions, à façonner nos comportements ou à prendre des décisions critiques sans notre pleine conscience, nous avons franchi une ligne. Les risques sont réels :</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>Des algorithmes qui manipulent nos choix.</li><li>Une dépendance excessive aux machines pour les décisions.</li><li>Un déclin de la pensée critique humaine.</li></ul><p class=\"text-gray-400 mt-4\">Lorsque l'IA cesse d'être un outil et commence à nous diriger, elle n'altère plus seulement un processus. Elle <strong>falsifie</strong> notre liberté. Ce n'est pas un bogue dans le code ; c'est un échec de notre éthique.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Le consentement est tout</h3><p class=\"text-gray-400\">Dans le monde de la sécurité, le <strong>consentement</strong> est la règle d'or. L'accès aux données sans autorisation est du piratage. Influencer les gens sans leur accord est de la manipulation.</p><p class=\"text-gray-400 mt-4\">L'IA doit suivre la même règle. Nous avons besoin de :</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>Algorithmes transparents que nous pouvons comprendre.</li><li>Une surveillance et des réglementations claires.</li><li>Un <strong>consentement</strong> explicite et éclairé de chaque utilisateur.</li></ul><p class=\"text-gray-400 mt-4\">La vraie question n'est pas de savoir si l'IA est intelligente, mais si nous la déployons de manière responsable.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Conclusion : un outil entre nos mains</h3><p class=\"text-gray-400\">L'IA elle-même est neutre. Elle peut être un outil de progrès ou, si nous ne faisons pas attention, un système qui falsifie notre autonomie. Son impact futur dépend moins de sa puissance que de nos valeurs.</p><p class=\"text-gray-300 mt-4 font-semibold\">Le défi n'est pas seulement de construire des machines plus intelligentes, mais de s'assurer que notre sagesse suit le rythme de leur intelligence.</p><p class=\"text-gray-400 mt-6 italic\">Inspiré par une discussion de laboratoire de cybersécurité sur les implications éthiques de l'IA.</p>"
+    },
     "my-life-story-from-village-to-code": {
-      "title": "Pas parfait — mais en progrès",
-      "content": "<p class=\"text-gray-400\">Je suis né le 16 septembre 2005 à Chaksikandar Mansurpur, Bihar — ce n'est pas l'histoire d'un vieux village poussiéreux, ni un début marqué par la pauvreté, mais une enfance remplie de confort, de chaleur familiale, et de tous les souhaits que mes parents pouvaient réaliser.</p><p class=\"text-gray-400\">Mon père travaillait en Arabie Saoudite, et bien qu'il ne soit pas toujours à la maison, il s'assurait que je ne manque jamais de rien — ni de rêves, ni de soutien, ni de possibilités.</p><p class=\"text-gray-400\">Je n'ai pas grandi en luttant pour les besoins de base. J'ai grandi en apprenant la valeur de ce que j'avais déjà.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Un déménagement, un nouveau rythme de vie</h3><p class=\"text-gray-400\">Plus tard, nous avons déménagé à Hajipur, une ville avec plus de rythme, plus de gens, plus d'exposition. J'ai étudié un an à l'Ideal Public School sous la direction de Shahzad Sir — la première personne qui m'a fait sentir le poids et l'émerveillement de l'éducation.</p><p class=\"text-gray-400\">Mais mon parcours académique n'était pas linéaire.</p><p class=\"text-gray-400\">J'ai changé d'école, recommencé des chapitres, et finalement atterri à St. Paul's, l'endroit qui a façonné une version très brute de moi-même.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">La phase où j'ai choisi l'excitation plutôt que la direction</h3><p class=\"text-gray-400\">Vers la 8ème, j'ai dérivé — non pas à cause des circonstances, mais par curiosité… et honnêtement, à cause de mauvais choix.</p><p class=\"text-gray-400\">Je me suis entouré du mauvais type de personnes. Le drame semblait plus cool que la discipline. Les bagarres semblaient plus puissantes que la concentration. L'ego ressemblait à l'identité.</p><p class=\"text-gray-400\">Les suspensions sont arrivées. Plus de cinq fois.</p><p class=\"text-gray-400\">Je n'étais pas un mauvais gamin. Juste un gamin qui ne savait pas où il allait.</p><p class=\"text-gray-400\">La vie ne m'a pas arrêté. Elle a simplement attendu que je grandisse au-delà de cette version de moi-même.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">10ème année — Le redémarrage silencieux</h3><p class=\"text-gray-400\">En 10ème, le bruit en moi s'est calmé. Je suis devenu plus calme, plus silencieux, un peu perdu… mais plus conscient.</p><p class=\"text-gray-400\">J'ai obtenu 87,4 % — non pas le reflet de ma confusion, mais de mon potentiel.</p><p class=\"text-gray-400\">Ma famille a suggéré de déménager à Pune, non par nécessité, mais parce qu'ils croyaient que l'exposition apporte la clarté.</p><p class=\"text-gray-400\">Et ils avaient raison.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Pune — Une nouvelle ville, une étrange pause</h3><p class=\"text-gray-400\">J'ai rejoint Akshara International pour la 11ème et la 12ème. Mais le confinement est arrivé.</p><p class=\"text-gray-400\">Les salles de classe sont devenues des écrans. Les amis sont devenus des icônes. La vie s'est rétrécie à une seule pièce.</p><p class=\"text-gray-400\">Mes performances ont chuté. Pas par manque de ressources, mais parce que la vie en ligne vous déconnecte de l'apprentissage réel.</p><p class=\"text-gray-400\">Les professeurs ont donné des cours supplémentaires, j'ai essayé de rattraper mon retard, et j'ai réussi à passer la 12ème avec 72 %.</p><p class=\"text-gray-400\">Les notes ne m'ont pas dérangé. La confusion de 'Et maintenant ?' si.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Kota — Pas la lutte, mais l'intensité</h3><p class=\"text-gray-400\">Sans direction claire, j'ai pris une année sabbatique et j'ai déménagé à Kota pour la préparation au JEE.</p><p class=\"text-gray-400\">Kota ne concernait pas la pauvreté ou la pression de la vie — il s'agissait d'intensité, de compétition, et du sentiment de nager parmi des milliers de rêveurs à la fois.</p><p class=\"text-gray-400\">J'ai étudié honnêtement. Mais les résultats n'étaient pas à la hauteur de l'effort.</p><p class=\"text-gray-400\">Après 8 mois, ma première tentative a rapporté 66 percentile.</p><p class=\"text-gray-400\">Et en même temps, j'ai perdu mon grand-père.</p><p class=\"text-gray-400\">Je n'ai pas pu assister à ses derniers rituels — non pas parce que nous ne pouvions pas nous le permettre, mais parce que les vols n'étaient pas opérationnels et que les trains étaient retardés.</p><p class=\"text-gray-400\">Le moment était cruel. La culpabilité est restée.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Deuxième tentative — Un retour contrôlé</h3><p class=\"text-gray-400\">Je suis retourné au Bihar, plus ancré et plus calme. J'ai étudié à nouveau. J'ai passé ma deuxième tentative.</p><p class=\"text-gray-400\">86 percentile.</p><p class=\"text-gray-400\">Mieux. Mais toujours pas assez.</p><p class=\"text-gray-400\">Mais je ne me sentais pas brisé. Je me sentais patient.</p><p class=\"text-gray-400\">Certains voyages ne sont pas censés être des raccourcis.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Une porte de plus — Et finalement, elle s'est ouverte</h3><p class=\"text-gray-400\">Je me suis présenté au MHT-CET, et cette fois j'ai obtenu 93 percentile.</p><p class=\"text-gray-400\">Ce chiffre a tout changé.</p><p class=\"text-gray-400\">Il a ouvert les portes de MIT-WPU Pune, et soudain ma vie avait une direction, une clarté, et un chemin qui valait la peine d'être parcouru.</p><p class=\"text-gray-400\">Le garçon qui autrefois chassait le bruit a commencé à marcher vers un but.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Ce que mon voyage signifie vraiment</h3><p class=\"text-gray-400\">Ma vie n'est pas une histoire de lutte pour la survie. C'est une histoire de conscience de soi, d'apprentissage à choisir de meilleurs chemins, de compréhension de la façon dont l'environnement vous façonne, et de la façon dont l'état d'esprit vous transforme.</p><p class=\"text-gray-400 mt-4\">Voici ce que j'ai appris :</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>Toutes les histoires n'ont pas besoin de douleur. Certaines ont besoin de croissance.</li><li>Le confort ne vous rend pas faible ; la confusion si.</li><li>Changer votre cercle peut changer toute votre direction.</li><li>Vous n'avez pas besoin d'être parfait — juste honnête avec vous-même.</li></ul><p class=\"text-gray-400 mt-4\">Et plus important encore,</p><p class=\"text-center text-lg italic my-2 text-primary\">D'où vous venez importe moins que ce que vous choisissez de devenir.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Je ne suis pas à mon apogée. Je suis à mon commencement.</h3><p class=\"text-gray-400\">Aujourd'hui, je suis à Pune, j'étudie l'ingénierie, je développe des compétences, et je deviens la version de moi-même que j'ai toujours sentie mais jamais comprise.</p><p class=\"text-gray-400\">Mon histoire ne parle pas de lutte. Elle parle d'évolution.</p><p class=\"text-gray-400\">Pas de survie. Mais de devenir.</p><p class=\"text-gray-400\">Pas de manque. Mais d'apprentissage.</p><p class=\"text-gray-400\">C'est réel. C'est la mienne. Et elle est encore en cours d'écriture.</p>"
+      "title": "Not Perfect — But Progress",
+      "description": "A short look into where I started, what shaped me, and where I’m heading. Not the full story—just the beginning.",
+      "content": "<p class=\"text-gray-400\">I was born on September 16, 2005, in Chaksikandar Mansurpur, Bihar — not a dusty old village story, not a poverty-driven beginning, but a childhood filled with comfort, family warmth, and every wish my parents could fulfill.</p><p class=\"text-gray-400\">My father worked in Saudi Arabia, and though he wasn’t always home, he made sure I never felt a lack of anything — not dreams, not support, not possibilities.</p><p class=\"text-gray-400\">I didn’t grow up struggling for basics. I grew up learning the value of what I already had.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">A Move, A New Rhythm of Life</h3><p class=\"text-gray-400\">We later shifted to Hajipur, a town with more pace, more people, more exposure. I studied a year at Ideal Public School under Shahzad Sir — the first person who made me feel the weight and wonder of education.</p><p class=\"text-gray-400\">But my academic path was not linear.</p><p class=\"text-gray-400\">I switched schools, restarted chapters, and eventually landed in St. Paul’s, the place that shaped a very raw version of me.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">The Phase When I Chose Excitement Over Direction</h3><p class=\"text-gray-400\">Around Class 8, I drifted — not because of circumstances, but because of curiosity… and honestly, wrong choices.</p><p class=\"text-gray-400\">I surrounded myself with the wrong kind of crowd. Drama looked cooler than discipline. Fights felt more powerful than focus. Ego felt like identity.</p><p class=\"text-gray-400\">Suspensions came. More than five times.</p><p class=\"text-gray-400\">I wasn’t a bad kid. Just a kid who didn’t know where he was heading.</p><p class=\"text-gray-400\">Life didn’t stop me. It simply waited for me to outgrow that version of myself.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">10th Grade — The Quiet Reset</h3><p class=\"text-gray-400\">By Class 10, the noise inside me slowed down. I became calmer, quieter, a little lost… but more aware.</p><p class=\"text-gray-400\">I scored 87.4% — not a reflection of my confusion, but of my potential.</p><p class=\"text-gray-400\">My family suggested moving to Pune, not out of necessity, but because they believed exposure brings clarity.</p><p class=\"text-gray-400\">And they were right.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Pune — A New City, A Strange Pause</h3><p class=\"text-gray-400\">I joined Akshara International for 11th and 12th. But then lockdown hit.</p><p class=\"text-gray-400\">Classrooms turned into screens. Friends became icons. Life shrank into a room.</p><p class=\"text-gray-400\">My performance dipped. Not due to lack of resources, but because online life disconnects you from real learning.</p><p class=\"text-gray-400\">Teachers gave extra classes, I tried catching up, and somehow passed 12th with 72%.</p><p class=\"text-gray-400\">The marks didn’t bother me. The confusion of “What now?” did.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Kota — Not Struggle, But Intensity</h3><p class=\"text-gray-400\">With no clear direction, I took a drop year and moved to Kota for JEE preparation.</p><p class=\"text-gray-400\">Kota wasn’t about poverty or pressure from life — it was about intensity, competition, and the feeling of swimming among thousands of dreamers at once.</p><p class=\"text-gray-400\">I studied honestly. But results didn’t align with effort.</p><p class=\"text-gray-400\">After 8 months, my first attempt brought 66 percentile.</p><p class=\"text-gray-400\">And at the same time, I lost my grandfather.</p><p class=\"text-gray-400\">I couldn’t attend his last rituals — not because we couldn’t afford to, but because flights weren’t operational and trains were delayed.</p><p class=\"text-gray-400\">The timing was cruel. The guilt stayed.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">Second Attempt — A Controlled Comeback</h3><p class=\"text-gray-400\">I returned to Bihar, grounded and calmer. Studied again. Gave my second attempt.</p><p class=\"text-gray-400\">86 percentile.</p><p class=\"text-gray-400\">Better. Still not enough.</p><p class=\"text-gray-400\">But I didn’t feel broken. I felt patient.</p><p class=\"text-gray-400\">Some journeys aren’t meant to be shortcuts.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">One More Door — And Finally, It Opened</h3><p class=\"text-gray-400\">I appeared for MHT-CET, and this time scored 93 percentile.</p><p class=\"text-gray-400\">That number changed everything.</p><p class=\"text-gray-400\">It opened the doors of MIT-WPU Pune, and suddenly my life had direction, clarity, and a path worth walking.</p><p class=\"text-gray-400\">The boy who once chased noise started walking toward purpose.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">What My Journey Really Means</h3><p class=\"text-gray-400\">My life is not a struggle-for-survival story. It’s a story of self-awareness, of learning to choose better paths, of understanding how environment shapes you, and how mindset transforms you.</p><p class=\"text-gray-400 mt-4\">Here’s what I learned:</p><ul class=\"list-disc list-inside text-gray-400 mt-2 space-y-2\"><li>Not every story needs pain. Some need growth.</li><li>Comfort doesn’t make you weak; confusion does.</li><li>Changing your circle can change your entire direction.</li><li>You don’t need to be perfect — just honest with yourself.</li></ul><p class=\"text-gray-400 mt-4\">And most importantly,</p><p class=\"text-center text-lg italic my-2 text-primary\">Where you come from matters less than who you choose to become.</p><hr class=\"my-8 border-border/50\"><h3 class=\"text-2xl font-bold mt-8 mb-4 text-white\">I’m Not at My Peak. I’m at My Beginning.</h3><p class=\"text-gray-400\">Today, I’m in Pune, studying engineering, building skills, and becoming the version of myself I always sensed but never understood.</p><p class=\"text-gray-400\">My story isn’t about struggle. It’s about evolution.</p><p class=\"text-gray-400\">Not about survival. But becoming.</p><p class=\"text-gray-400\">Not about lack. But learning.</p><p class=\"text-gray-400\">It’s real. It’s mine. And it’s still being written.</p>"
     }
   }
 }
+
+    
