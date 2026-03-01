@@ -15,12 +15,13 @@ import { useRouter } from "next/navigation";
 const projects = [
   {
     title: "Blingish",
-    description: "A premium freelance jewellery e-commerce platform built for a seamless shopping experience.",
-    detailedDescription: "Blingish is a high-end jewellery website developed as a freelance project. It features a modern, elegant design tailored for luxury products, ensuring a smooth and responsive user experience across all devices. The project was completed within a tight 4-day deadline, focusing on clean aesthetics and functional excellence.",
+    description: "A premium freelance jewellery e-commerce platform built in just 4 days. It features a modern luxury aesthetic with WhatsApp-based ordering for a personalized 'Quiet Luxury' experience.",
+    detailedDescription: "Blingish is a high-end jewellery website developed as a freelance project. It features a modern, elegant design tailored for luxury products, ensuring a smooth and responsive user experience. Instead of a traditional payment gateway, it uses WhatsApp-based ordering to maintain a personalized and trustworthy shopping experience.",
     tags: ["Next.js", "React", "Tailwind CSS"],
     image: placeholderData.projectBling,
     liveDemo: "https://bling-svz9.vercel.app/",
     github: "https://github.com/Ahsan6786/bling",
+    detailsPage: "/projects/blingish"
   },
   {
     title: "FessUp!",
@@ -50,7 +51,7 @@ const projects = [
     image: placeholderData.project4,
     liveDemo: "https://mitraai.shop/",
     github: "https://github.com/Ahsan6786/MitraAi",
-    detailsPage: "/projects/mit-ai"
+    detailsPage: "/projects/mitra-ai"
   },
   {
     title: "Ahsanverse",
@@ -80,9 +81,6 @@ const projects = [
     github: "https://github.com/Ahsan6786",
   },
 ];
-
-type Project = (typeof projects)[0] & { detailsPage?: string; liveDemo?: string };
-
 
 export default function ProjectsPage() {
   const { translations, loading } = useLanguage();

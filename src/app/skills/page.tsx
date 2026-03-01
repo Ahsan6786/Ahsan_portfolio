@@ -19,6 +19,7 @@ const allProjects = [
   {
     title: "Blingish",
     tags: ["Next.js", "React", "Tailwind CSS"],
+    detailsPage: "/projects/blingish"
   },
   {
     title: "FessUp!",
