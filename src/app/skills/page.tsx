@@ -19,7 +19,6 @@ const allProjects = [
   {
     title: "Blingish",
     tags: ["Next.js", "React", "Tailwind CSS"],
-    detailsPage: "/projects/blingish"
   },
   {
     title: "FessUp!",
@@ -82,7 +81,7 @@ export default function SkillsPage() {
           <AnimateOnScroll>
             <div className="mb-8">
                 <Button onClick={() => router.back()} variant="ghost" size="icon" className="hover:bg-accent border border-transparent hover:border-border rounded-full">
-                    <ArrowLeft className="w-4 h-4" />
+                    <ArrowLeft className="get w-4 h-4" />
                     <span className="sr-only">Back</span>
                 </Button>
             </div>

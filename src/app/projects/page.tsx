@@ -21,7 +21,6 @@ const projects = [
     image: placeholderData.projectBling,
     liveDemo: "https://bling-svz9.vercel.app/",
     github: "https://github.com/Ahsan6786/bling",
-    detailsPage: "/projects/blingish"
   },
   {
     title: "FessUp!",
@@ -51,7 +50,7 @@ const projects = [
     image: placeholderData.project4,
     liveDemo: "https://mitraai.shop/",
     github: "https://github.com/Ahsan6786/MitraAi",
-    detailsPage: "/projects/mitra-ai"
+    detailsPage: "/projects/mit-ai"
   },
   {
     title: "Ahsanverse",
@@ -184,4 +183,3 @@ export default function ProjectsPage() {
     </div>
   );
 }
-
