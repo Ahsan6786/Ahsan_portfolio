@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -13,9 +14,9 @@ import { useRouter } from "next/navigation";
 
 const projects = [
   {
-    title: "Bling",
+    title: "Blingish",
     description: "A premium freelance jewellery e-commerce platform built for a seamless shopping experience.",
-    detailedDescription: "Bling is a high-end jewellery website developed as a freelance project. It features a modern, elegant design tailored for luxury products, ensuring a smooth and responsive user experience across all devices. The project was completed within a tight 4-day deadline, focusing on clean aesthetics and functional excellence.",
+    detailedDescription: "Blingish is a high-end jewellery website developed as a freelance project. It features a modern, elegant design tailored for luxury products, ensuring a smooth and responsive user experience across all devices. The project was completed within a tight 4-day deadline, focusing on clean aesthetics and functional excellence.",
     tags: ["Next.js", "React", "Tailwind CSS"],
     image: placeholderData.projectBling,
     liveDemo: "https://bling-svz9.vercel.app/",
