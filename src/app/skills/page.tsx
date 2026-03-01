@@ -1,7 +1,6 @@
-
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter } from "navigation";
 import { AnimateOnScroll } from "@/components/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -16,6 +15,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const allProjects = [
+  {
+    title: "Bling",
+    tags: ["Next.js", "React", "Tailwind CSS"],
+  },
   {
     title: "FessUp!",
     tags: ["Next.js", "Firebase", "Tailwind CSS", "React"],

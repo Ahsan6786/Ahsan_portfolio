@@ -13,6 +13,15 @@ import { useRouter } from "next/navigation";
 
 const projects = [
   {
+    title: "Bling",
+    description: "A premium freelance jewellery e-commerce platform built for a seamless shopping experience.",
+    detailedDescription: "Bling is a high-end jewellery website developed as a freelance project. It features a modern, elegant design tailored for luxury products, ensuring a smooth and responsive user experience across all devices. The project was completed within a tight 4-day deadline, focusing on clean aesthetics and functional excellence.",
+    tags: ["Next.js", "React", "Tailwind CSS"],
+    image: placeholderData.projectBling,
+    liveDemo: "https://bling-svz9.vercel.app/",
+    github: "https://github.com/Ahsan6786/bling",
+  },
+  {
     title: "FessUp!",
     description: "A dynamic and anonymous social platform for college students to share confessions, thoughts, and campus happenings.",
     detailedDescription: "FessUp! is a dynamic and anonymous social platform designed specifically for college students. It provides a safe and open space for users to share confessions, thoughts, and campus happenings without revealing their identity, fostering a unique environment for genuine and unfiltered expression. The platform is built with Next.js for a fast, server-rendered frontend, Firebase for real-time data and authentication, and styled with Tailwind CSS for a modern, responsive design.",
@@ -40,7 +49,7 @@ const projects = [
     image: placeholderData.project4,
     liveDemo: "https://mitraai.shop/",
     github: "https://github.com/Ahsan6786/MitraAi",
-    detailsPage: "/projects/mitra-ai"
+    detailsPage: "/projects/mit-ai"
   },
   {
     title: "Ahsanverse",

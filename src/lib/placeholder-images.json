@@ -43,6 +43,10 @@
     "src": "/mit.png",
     "aiHint": "AI chatbot interface"
   },
+  "projectBling": {
+    "src": "https://picsum.photos/seed/bling/800/450",
+    "aiHint": "jewelry website"
+  },
   "contactImage": {
     "src": "https://picsum.photos/seed/contact/600/600",
     "aiHint": "man portrait"
