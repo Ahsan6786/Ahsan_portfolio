@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 const projects = [
   {
     title: "Blingish",
-    description: "A premium freelance jewellery e-commerce platform built in just 4 days. It features a modern luxury aesthetic with WhatsApp-based ordering for a personalized 'Quiet Luxury' experience.",
+    description: "A premium freelance jewellery e-commerce platform featuring a modern luxury aesthetic with WhatsApp-based ordering for a personalized 'Quiet Luxury' experience.",
     detailedDescription: "Blingish is a high-end jewellery website developed as a freelance project. It features a modern, elegant design tailored for luxury products, ensuring a smooth and responsive user experience. Instead of a traditional payment gateway, it uses WhatsApp-based ordering to maintain a personalized and trustworthy shopping experience.",
     tags: ["Next.js", "React", "Tailwind CSS"],
     image: placeholderData.projectBling,
@@ -184,3 +184,4 @@ export default function ProjectsPage() {
     </div>
   );
 }
+

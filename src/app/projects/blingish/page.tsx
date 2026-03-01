@@ -13,7 +13,7 @@ const projectDetails = {
     title: "Blingish",
     subtitle: "A premium freelance jewellery e-commerce platform for 'Quiet Luxury'.",
     description: [
-        "Blingish is a high-end jewellery website developed as a freelance project. It was completed within a very tight 4-day deadline, focusing on clean aesthetics and a seamless user experience that resonates with the soul.",
+        "Blingish is a high-end jewellery website developed as a freelance project, focusing on clean aesthetics and a seamless user experience that resonates with the soul.",
         "The platform follows a 'Quiet Luxury' approach, where the shopping experience is personalized through direct WhatsApp integration instead of a standard payment gateway. This allows for a more artisanal and trustworthy interaction between the brand and its customers.",
         "From everyday shine to once-in-a-lifetime pieces, Blingish is designed to tell a story through ethically sourced stones and recycled metals, blending hand-crafted legacy with modern design precision."
     ],
@@ -52,17 +52,46 @@ export default function BlingishProjectPage() {
                 </Button>
             </div>
 
-            {/* Project Hero Image */}
-            <div className="container mx-auto px-4 md:px-6 mb-12">
-                <AnimateOnScroll className="relative aspect-video w-full max-w-5xl mx-auto rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl">
-                    <Image
-                        src={placeholderData.projectBling.src}
-                        alt="Blingish Website Preview"
-                        fill
-                        className="object-cover"
-                        data-ai-hint={placeholderData.projectBling.aiHint}
-                        priority
-                    />
+            {/* Laptop Hero Section */}
+            <div className="w-full h-auto md:h-[80vh] flex items-center justify-center perspective-[1200px] mb-12 md:mb-0">
+                <AnimateOnScroll className="w-full h-full">
+                    <div 
+                        className="relative w-[90%] scale-[0.8] md:w-[80%] md:scale-[0.9] lg:w-[60%] lg:scale-100 max-w-4xl mx-auto"
+                        style={{ 
+                            transform: 'perspective(1200px) rotateX(10deg)',
+                            transformStyle: 'preserve-3d' 
+                        }}
+                    >
+                        {/* Laptop Screen Content */}
+                        <div 
+                            className="absolute overflow-hidden"
+                            style={{
+                                top: '5.5%',
+                                left: '11.2%',
+                                width: '77.6%',
+                                height: '86.5%'
+                            }}
+                        >
+                            <Image
+                                src={placeholderData.projectBling.src}
+                                alt="Blingish Website Screenshot"
+                                fill
+                                sizes="60vw"
+                                className="object-cover w-full h-full"
+                                data-ai-hint={placeholderData.projectBling.aiHint}
+                                priority
+                            />
+                        </div>
+                        {/* Laptop Frame */}
+                        <Image
+                            src={placeholderData.laptop_frame.src}
+                            alt="Laptop Frame"
+                            width={1000}
+                            height={600}
+                            className="relative w-full h-auto"
+                            data-ai-hint={placeholderData.laptop_frame.aiHint}
+                        />
+                    </div>
                 </AnimateOnScroll>
             </div>
 
