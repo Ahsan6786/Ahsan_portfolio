@@ -41,7 +41,7 @@ const projectDetails = {
         ]
     },
     techStack: ["Next.js", "Firebase", "Tailwind CSS", "TypeScript", "Recharts"],
-    liveDemo: "https://fessup.onrender.com",
+    liveDemo: "https://fessup.fun/",
     github: "https://github.com/Ahsan6786/FessUP-",
 };
 
@@ -199,6 +199,3 @@ export default function FessUpProjectPage() {
         </div>
     );
 }
-
-
-    

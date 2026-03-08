@@ -15,12 +15,13 @@ import { useRouter } from "next/navigation";
 const projects = [
   {
     title: "Blingish",
-    description: "A premium freelance jewellery e-commerce platform featuring a modern luxury aesthetic with WhatsApp-based ordering for a personalized 'Quiet Luxury' experience.",
-    detailedDescription: "Blingish is a high-end jewellery website developed as a freelance project. It features a modern, elegant design tailored for luxury products, ensuring a smooth and responsive user experience. Instead of a traditional payment gateway, it uses WhatsApp-based ordering to maintain a personalized and trustworthy shopping experience.",
+    description: "A premium freelance jewellery e-commerce platform ranking at the top of Google. It features a modern luxury aesthetic with WhatsApp-based ordering for a personalized 'Quiet Luxury' experience.",
+    detailedDescription: "Blingish is a high-end jewellery website developed as a freelance project. It features a modern, elegant design tailored for luxury products, ensuring a smooth and responsive user experience. Currently ranking at the top of Google search results. Instead of a traditional payment gateway, it uses WhatsApp-based ordering to maintain a personalized and trustworthy shopping experience.",
     tags: ["Next.js", "React", "Tailwind CSS"],
     image: placeholderData.projectBling,
-    liveDemo: "https://bling-svz9.vercel.app/",
+    liveDemo: "https://www.blingish.in/",
     github: "https://github.com/Ahsan6786/bling",
+    detailsPage: "/projects/blingish"
   },
   {
     title: "FessUp!",
@@ -28,7 +29,7 @@ const projects = [
     detailedDescription: "FessUp! is a dynamic and anonymous social platform designed specifically for college students. It provides a safe and open space for users to share confessions, thoughts, and campus happenings without revealing their identity, fostering a unique environment for genuine and unfiltered expression. The platform is built with Next.js for a fast, server-rendered frontend, Firebase for real-time data and authentication, and styled with Tailwind CSS for a modern, responsive design.",
     tags: ["Next.js", "Firebase", "Tailwind CSS"],
     image: placeholderData.projectFessUp,
-    liveDemo: "https://fessup.onrender.com",
+    liveDemo: "https://fessup.fun/",
     github: "https://github.com/Ahsan6786/FessUP-",
     detailsPage: "/projects/fessup"
   },
@@ -50,7 +51,7 @@ const projects = [
     image: placeholderData.project4,
     liveDemo: "https://mitraai.shop/",
     github: "https://github.com/Ahsan6786/MitraAi",
-    detailsPage: "/projects/mit-ai"
+    detailsPage: "/projects/mitra-ai"
   },
   {
     title: "Ahsanverse",

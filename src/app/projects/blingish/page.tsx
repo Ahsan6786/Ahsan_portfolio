@@ -11,9 +11,9 @@ import { Button } from '@/components/ui/button';
 
 const projectDetails = {
     title: "Blingish",
-    subtitle: "A premium freelance jewellery e-commerce platform for 'Quiet Luxury'.",
+    subtitle: "A premium freelance jewellery e-commerce platform ranking at the top of Google.",
     description: [
-        "Blingish is a high-end jewellery website developed as a freelance project, focusing on clean aesthetics and a seamless user experience that resonates with the soul.",
+        "Blingish is a high-end jewellery website developed as a freelance project, focusing on clean aesthetics and a seamless user experience that resonates with the soul. It is currently ranking at the top of Google search results.",
         "The platform follows a 'Quiet Luxury' approach, where the shopping experience is personalized through direct WhatsApp integration instead of a standard payment gateway. This allows for a more artisanal and trustworthy interaction between the brand and its customers.",
         "From everyday shine to once-in-a-lifetime pieces, Blingish is designed to tell a story through ethically sourced stones and recycled metals, blending hand-crafted legacy with modern design precision."
     ],
@@ -36,7 +36,7 @@ const projectDetails = {
         ]
     },
     techStack: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Framer Motion"],
-    liveDemo: "https://bling-svz9.vercel.app/",
+    liveDemo: "https://www.blingish.in/",
     github: "https://github.com/Ahsan6786/bling",
 };
 
