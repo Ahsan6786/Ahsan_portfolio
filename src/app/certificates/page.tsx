@@ -127,6 +127,16 @@ export default function CertificatesPage() {
   const { translations, loading } = useLanguage();
   const router = useRouter();
 
+  const getSafeYear = (dateStr: string) => {
+    try {
+      const formatted = dateStr.replace(/-/g, "/");
+      const d = new Date(formatted);
+      return isNaN(d.getTime()) ? 2026 : d.getFullYear();
+    } catch (e) {
+      return 2026;
+    }
+  };
+
   if (loading) return null;
   
   return (
@@ -165,13 +175,13 @@ export default function CertificatesPage() {
                 <span>Verified Endorsements</span>
               </div>
               <h1 className="text-4xl md:text-6xl font-bold font-serif tracking-wide bg-gradient-to-r from-foreground via-yellow-600 to-yellow-500 dark:from-white dark:via-yellow-200 dark:to-yellow-500 bg-clip-text text-transparent">
-                {translations.certificatesPage.title}
+                {translations?.certificatesPage?.title || "My Certificates"}
               </h1>
               <p className="text-5xl sm:text-7xl md:text-9xl font-bold absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-foreground/5 z-0 select-none break-words w-full" aria-hidden="true">
                 CREDENTIALS
               </p>
               <p className="text-sm md:text-base text-muted-foreground mt-4 max-w-xl mx-auto tracking-wide uppercase font-mono">
-                {translations.certificatesPage.subtitle}
+                {translations?.certificatesPage?.subtitle || "Verified Credentials & Accreditations"}
               </p>
             </div>
 
@@ -184,7 +194,7 @@ export default function CertificatesPage() {
                   certificateTitle={certificate.title}
                   certificateDescription={certificate.description}
                   date={certificate.date}
-                  credentialId={certificate.credentialId || `CERT-${new Date(certificate.date).getFullYear()}-${index}`}
+                  credentialId={certificate.credentialId || `CERT-${getSafeYear(certificate.date)}-${index}`}
                   skills={certificate.skills}
                   verifyUrl={certificate.verifyUrl}
                   downloadUrl={certificate.downloadUrl}

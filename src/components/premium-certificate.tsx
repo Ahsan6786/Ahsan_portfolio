@@ -97,6 +97,17 @@ export function PremiumCertificate({
         document.body.removeChild(link);
     };
 
+    const getFormattedDate = (dateStr: string) => {
+        try {
+            const formatted = dateStr.replace(/-/g, "/");
+            const d = new Date(formatted);
+            if (isNaN(d.getTime())) return dateStr;
+            return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+        } catch (e) {
+            return dateStr;
+        }
+    };
+
   return (
     <div className="flex flex-col items-center gap-4 w-full max-w-xl mx-auto">
         <motion.div 
@@ -208,7 +219,7 @@ export function PremiumCertificate({
                         {date && (
                             <div className="col-span-2 flex items-center gap-1 mt-0.5 pt-0.5 border-t border-gray-800/30 text-[9px] sm:text-[10px] text-gray-500">
                                 <Calendar className="w-3 h-3 text-yellow-500/40" />
-                                <span>Issued on: {new Date(date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                                <span>Issued on: {getFormattedDate(date)}</span>
                             </div>
                         )}
                     </div>
