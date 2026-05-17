@@ -1,0 +1,191 @@
+"use client";
+import React from 'react';
+import Link from "next/link";
+import { usePathname } from 'next/navigation';
+import { Button } from "@/components/ui/button";
+import { Menu, Instagram, Linkedin, Github, X } from 'lucide-react';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import { ThemeToggle } from '@/components/theme-toggle';
+import { LanguageToggle } from '@/components/language-toggle';
+import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/language-context';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const socialLinks = [
+  {
+    href: "https://www.instagram.com/khan_ahsan_8055?igsh=MWhpYnJ1OGo2Y214ZA%3D%3D&utm_source=qr",
+    icon: <Instagram className="w-5 h-5" />,
+    label: "Instagram"
+  },
+  {
+    href: "https://www.linkedin.com/in/ahsan-imam-khan-9a0443328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    icon: <Linkedin className="w-5 h-5" />,
+    label: "LinkedIn"
+  },
+  {
+    href: "https://github.com/Ahsan6786",
+    icon: <Github className="w-5 h-5" />,
+    label: "Github"
+  },
+];
+
+export function Header() {
+  const [isSheetOpen, setIsSheetOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
+  const { translations, loading } = useLanguage();
+  const pathname = usePathname();
+
+  const navLinks = loading ? [] : [
+    { href: "/", label: translations.header.home },
+    { href: "/about", label: translations.header.about },
+    { href: "/education", label: translations.header.education },
+    { href: "/services", label: translations.header.services },
+    { href: "/skills", label: "Skills" },
+    { href: "/projects", label: translations.header.projects },
+    { href: "/blog", label: "Blog" },
+    { href: "/testimonials", label: "Testimonials" },
+    { href: "/certificates", label: translations.header.certificates },
+    { href: "/contact", label: translations.header.contact },
+  ];
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) { 
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  if (loading) return null;
+
+  return (
+    <header className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        "p-4 md:p-6",
+        "flex items-center md:justify-between",
+        isScrolled ? "header-scrolled" : "bg-background/80 md:bg-transparent",
+    )}>
+        <Link 
+            href="/" 
+            className={cn(
+                "text-2xl font-bold tracking-wider text-primary transition-all duration-500",
+                "absolute md:static",
+                isScrolled 
+                  ? 'left-1/2 -translate-x-1/2 md:left-0 md:transform-none'
+                  : 'left-4 translate-x-0 md:left-0 md:transform-none'
+            )}
+        >
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={isScrolled ? "portfolio" : "ahsan"}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.3 }}
+              className="block"
+            >
+              {isScrolled ? "Portfolio" : "AHSAN"}
+            </motion.span>
+          </AnimatePresence>
+        </Link>
+        <div className={cn(
+          "hidden md:flex items-center space-x-2 text-sm font-medium",
+        )}>
+            <nav className="flex items-center space-x-1">
+                {navLinks.map((link) => (
+                    <Button
+                        key={link.href}
+                        asChild
+                        variant="ghost"
+                        size="sm"
+                        className={cn("rounded-full font-semibold", 
+                            pathname === link.href 
+                            ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+                            : "hover:bg-accent/80"
+                        )}
+                    >
+                        <Link href={link.href}>
+                            {link.label}
+                        </Link>
+                    </Button>
+                ))}
+            </nav>
+        </div>
+        <div className="hidden md:flex items-center space-x-2">
+          {socialLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground hover:text-primary transition-colors p-2"
+              aria-label={link.label}
+            >
+              {link.icon}
+            </a>
+          ))}
+          <ThemeToggle />
+          <LanguageToggle />
+        </div>
+        <div className="md:hidden flex items-center gap-2 ml-auto">
+          <ThemeToggle />
+          <LanguageToggle />
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" aria-label="Open menu">
+                <Menu />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="top" className="p-0">
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+              <SheetClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+                  <X className="h-6 w-6" />
+                  <span className="sr-only">Close</span>
+                </SheetClose>
+                <div className="p-6 pt-16 text-center">
+                  <nav className="flex flex-col items-center space-y-6">
+                      {navLinks.map((link) => (
+                          <SheetClose key={link.label} asChild>
+                            <Link
+                                href={link.href}
+                                className={cn('text-xl hover:text-primary transition-colors', pathname === link.href ? 'text-primary' : '')}
+                            >
+                                {link.label}
+                            </Link>
+                          </SheetClose>
+                      ))}
+                  </nav>
+                  <div className="flex justify-center space-x-6 mt-8">
+                    {socialLinks.map((link) => (
+                        <SheetClose asChild key={link.href}>
+                            <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-foreground hover:text-primary transition-colors"
+                            aria-label={link.label}
+                            >
+                            {React.cloneElement(link.icon, { className: "w-6 h-6"})}
+                            </a>
+                        </SheetClose>
+                      ))}
+                  </div>
+                </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+    </header>
+  );
+}

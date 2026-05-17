@@ -1,0 +1,202 @@
+{
+  "heroImage": {
+    "src": "/my-image-1.png?v=3",
+    "aiHint": "abstract background"
+  },
+  "heroImage2": {
+    "src": "/my-image-2.png?v=1",
+    "aiHint": "abstract design"
+  },
+  "heroImage3": {
+    "src": "/my-image-3.png?v=4",
+    "aiHint": "modern art"
+  },
+  "aboutPageImage": {
+    "src": "/about.png",
+    "aiHint": "man standing"
+  },
+  "aboutImage": {
+    "src": "/about.jpg",
+    "aiHint": "man portrait"
+  },
+  "project1": {
+    "src": "/img1.png",
+    "aiHint": "blockchain technology"
+  },
+  "project2": {
+    "src": "/img2.png",
+    "aiHint": "news archive"
+  },
+  "project3": {
+    "src": "/img3.png?v=2",
+    "aiHint": "code editor"
+  },
+  "project4": {
+    "src": "/img4.png",
+    "aiHint": "mental wellness"
+  },
+  "projectFessUp": {
+    "src": "/fess.png",
+    "aiHint": "anonymous social media"
+  },
+  "projectMitChatAssist": {
+    "src": "/mit.png",
+    "aiHint": "AI chatbot interface"
+  },
+  "projectBling": {
+    "src": "/bling.png",
+    "aiHint": "jewelry website"
+  },
+  "contactImage": {
+    "src": "https://picsum.photos/seed/contact/600/600",
+    "aiHint": "man portrait"
+  },
+  "certificateInternship": {
+    "src": "/internship.jpeg",
+    "aiHint": "internship certificate"
+  },
+  "certificateSIH": {
+    "src": "/certificate1.1.png",
+    "aiHint": "hackathon certificate"
+  },
+  "certificateDeloitte": {
+    "src": "/deloitte_certificate.png",
+    "aiHint": "technology certificate"
+  },
+  "certificate1": {
+    "src": "/certificate1.png",
+    "aiHint": "python programming certificate"
+  },
+  "certificate2": {
+    "src": "/certificate2.png",
+    "aiHint": "personal finance certificate"
+  },
+  "certificate3": {
+    "src": "/certificate3.png",
+    "aiHint": "social learning certificate"
+  },
+  "certificate4": {
+    "src": "/certificate4.png",
+    "aiHint": "critical thinking certificate"
+  },
+  "certificate5": {
+    "src": "/certificate5.png",
+    "aiHint": "teamwork certificate"
+  },
+  "certificate6": {
+    "src": "/certificate6.png",
+    "aiHint": "professional certificate"
+  },
+  "certificateLT": {
+    "src": "/ltc.png",
+    "aiHint": "industry program certificate"
+  },
+  "testimonialUmme": {
+    "src": "/umme.png",
+    "aiHint": "woman portrait"
+  },
+  "testimonialZiya": {
+    "src": "/ziya.png",
+    "aiHint": "man portrait"
+  },
+  "testimonialTaniya": {
+    "src": "/taniya.png",
+    "aiHint": "woman portrait"
+  },
+  "laptop_frame": {
+    "src": "/laptop-frame-transparent.png",
+    "aiHint": "laptop mockup frame"
+  },
+  "laptop_frame_bjp": {
+    "src": "/bjp.png",
+    "aiHint": "news website mockup"
+  },
+  "fessup_screen1": {
+    "src": "/fessup-screen1.png",
+    "aiHint": "social media feed"
+  },
+  "fessup_screen2": {
+    "src": "/fessup-screen2.png",
+    "aiHint": "user profile page"
+  },
+  "fessup_screen3": {
+    "src": "/fessup-screen3.png",
+    "aiHint": "anonymous post creation"
+  },
+  "mit_screen1": {
+    "src": "/mit1.png?v=2",
+    "aiHint": "AI chatbot conversation"
+  },
+  "mit_screen2": {
+    "src": "/mit2.png",
+    "aiHint": "course recommender interface"
+  },
+  "mit_screen3": {
+    "src": "/mit3.png",
+    "aiHint": "AI admin dashboard"
+  },
+  "mitra_screen1": {
+    "src": "/mitra1.png",
+    "aiHint": "mental wellness app interface"
+  },
+  "mitra_screen2": {
+    "src": "/mitra2.png",
+    "aiHint": "AI chatbot for wellness"
+  },
+  "mitra_screen4": {
+    "src": "/mitra4.png",
+    "aiHint": "guided meditation feature"
+  },
+  "mitra_screen5": {
+    "src": "/mitra5.png",
+    "aiHint": "mood tracking journal"
+  },
+  "mitra_screen6": {
+    "src": "/mitra6.png",
+    "aiHint": "community support forum"
+  },
+  "mitra_screen7": {
+    "src": "/mitra7.png",
+    "aiHint": "user profile settings"
+  },
+  "mitra_screen8": {
+    "src": "/mitra8.png",
+    "aiHint": "resource library"
+  },
+  "mitra_screen9": {
+    "src": "/mitra9.png",
+    "aiHint": "chatbot conversation example"
+  },
+  "mitra_screen10": {
+    "src": "/mitra10.png",
+    "aiHint": "daily check-in prompt"
+  },
+  "mitra_screen11": {
+    "src": "/mitra11.png",
+    "aiHint": "progress analytics"
+  },
+  "mitra_screen12": {
+    "src": "/mitra12.png",
+    "aiHint": "breathing exercise interface"
+  },
+  "mitra_screen13": {
+    "src": "/mitra13.png",
+    "aiHint": "app onboarding screen"
+  },
+  "mitra_screen14": {
+    "src": "/mitra14.png",
+    "aiHint": "notification settings"
+  },
+  "mitra_screen15": {
+    "src": "/mitra15.png",
+    "aiHint": "login page"
+  },
+  "biharBackground": {
+    "src": "/b.png",
+    "aiHint": "abstract texture"
+  },
+  "blogPostAI": {
+    "src": "/ai.jpeg",
+    "aiHint": "artificial intelligence brain"
+  }
+}
