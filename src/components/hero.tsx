@@ -119,7 +119,7 @@ export function Hero() {
       </div>
       <div className="container relative mx-auto px-4 md:px-12 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <AnimateOnScroll className="text-center md:text-left relative min-h-[250px] md:min-h-[300px] flex flex-col justify-center pt-32 md:pt-36">
+          <AnimateOnScroll className="text-center md:text-left relative min-h-[250px] md:min-h-[300px] flex flex-col justify-center pt-32 md:pt-12">
               <div className="w-full">
                 <p className="text-lg font-medium mb-2">{currentContent.greeting}</p>
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight text-foreground">
@@ -170,41 +170,6 @@ export function Hero() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll Down Indicator */}
-      <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center">
-        <Link href="#about" aria-label="Scroll Down">
-          <motion.div
-            animate={{
-              y: [0, 8, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="flex flex-col items-center cursor-pointer group"
-          >
-            <span className="text-[10px] md:text-xs uppercase tracking-widest text-muted-foreground group-hover:text-primary transition-colors duration-300 font-mono mb-1.5 select-none">
-              Scroll Down
-            </span>
-            <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-muted-foreground group-hover:border-primary rounded-full p-1 transition-colors duration-300 flex justify-center">
-              <motion.div
-                animate={{
-                  y: [0, 10, 0],
-                  opacity: [1, 0, 1],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="w-1 md:w-1.5 h-1 md:h-1.5 bg-muted-foreground group-hover:bg-primary rounded-full transition-colors duration-300"
-              />
-            </div>
-          </motion.div>
-        </Link>
       </div>
     </section>
   );
