@@ -27,7 +27,7 @@ const projects = [
     detailedDescription: "Revial is an intelligent, real-time AI speaking coach designed to help individuals overcome speech hesitation and build communication confidence. It provides personalized, daily coaching sessions and interactive exercises. The platform analyzes your speech structure, vocabulary, and pacing in real time, delivering instant actionable feedback to refine your communication skills. Developed with a high-performance frontend and advanced AI voice processing services.",
     tags: ["Next.js", "AI Speaking Coach", "Real-Time AI", "Tailwind CSS"],
     image: {
-      src: "/revial.png",
+      src: "/revial.png?v=2",
       aiHint: "AI speaking coach dashboard mockup"
     },
     liveDemo: "https://www.revial.online",
@@ -61,7 +61,7 @@ const projects = [
     detailedDescription: "WEBIS is a premium freelance agency portfolio and digital studio designed to showcase cutting-edge web development, creative design, and technical engineering capabilities. It features an interactive, futuristic dark-mode UI with high-performance animations, dynamic styling, and custom integration. Developed using Next.js, Framer Motion, and Tailwind CSS to ensure a lightning-fast, ultra-premium client experience.",
     tags: ["Next.js", "React", "Framer Motion", "Tailwind CSS"],
     image: {
-      src: "/webis.png",
+      src: "/webis.png?v=2",
       aiHint: "digital engineering studio portfolio mockup"
     },
     liveDemo: "https://www.webiss.shop/",

@@ -7,6 +7,7 @@ import { useLanguage } from "@/contexts/language-context";
 import { Download, ArrowLeft, Award, Sparkles, Code, Globe, ShieldCheck, Target, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { CardFlip } from "@/components/card-flip";
 
 export default function AboutPage() {
   const { translations, loading } = useLanguage();
@@ -90,14 +91,24 @@ export default function AboutPage() {
               {/* Accent line */}
               <div className="absolute left-0 top-1/4 w-1 h-1/2 bg-gradient-to-b from-yellow-500 to-amber-600 rounded-r" />
 
-              <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-4">
-                {translations.about.name}
-              </h2>
-              
-              <div className="space-y-4 text-muted-foreground dark:text-gray-300 text-sm sm:text-base leading-relaxed">
-                <p>{translations.about.p1}</p>
-                <p>{translations.about.p2}</p>
-                <p>{translations.about.p3}</p>
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                {/* Card side */}
+                <div className="col-span-1 md:col-span-5 flex justify-center items-center w-full">
+                  <CardFlip frontImage="/front.png" backImage="/back.png" className="shadow-2xl" />
+                </div>
+
+                {/* Biography text side */}
+                <div className="col-span-1 md:col-span-7 space-y-4">
+                  <h2 className="text-xl sm:text-2xl font-serif font-bold text-foreground">
+                    {translations.about.name}
+                  </h2>
+                  
+                  <div className="space-y-4 text-muted-foreground dark:text-gray-300 text-sm sm:text-base leading-relaxed">
+                    <p>{translations.about.p1}</p>
+                    <p>{translations.about.p2}</p>
+                    <p>{translations.about.p3}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </AnimateOnScroll>
